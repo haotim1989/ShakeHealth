@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		/* App */
+		APP001 /* ShakeHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001; };
+		APP002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC002; };
+		
+		/* Models */
+		MOD001 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC003; };
+		MOD002 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC004; };
+		MOD003 /* DrinkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC005; };
+		MOD004 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC006; };
+		MOD005 /* FilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC007; };
+		
+		/* Services */
+		SVC001 /* DrinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC008; };
+		SVC002 /* RandomPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC009; };
+		SVC003 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC010; };
+		SVC004 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC011; };
+		
+		/* Utilities */
+		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012; };
+		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013; };
+		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014; };
+		
+		/* Components */
+		CMP001 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC015; };
+		CMP002 /* CharacterCountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC016; };
+		CMP003 /* FilterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC017; };
+		CMP004 /* CalorieIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC018; };
+		CMP005 /* ShakeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC019; };
+		CMP006 /* DrinkResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC020; };
+		
+		/* RandomPicker Feature */
+		RND001 /* RandomPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC021; };
+		RND002 /* RandomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC022; };
+		RND003 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC023; };
+		
+		/* Encyclopedia Feature */
+		ENC001 /* EncyclopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC024; };
+		ENC002 /* EncyclopediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC025; };
+		ENC003 /* AddToLogModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC026; };
+		
+		/* Diary Feature */
+		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027; };
+		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028; };
+		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029; };
+		
+		/* Assets */
+		AST001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = RES001; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		PROD01 /* ShakeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		
+		/* Source Files */
+		SRC001 /* ShakeHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeHealthApp.swift; sourceTree = "<group>"; };
+		SRC002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		SRC003 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		SRC004 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		SRC005 /* DrinkLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkLog.swift; sourceTree = "<group>"; };
+		SRC006 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		SRC007 /* FilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCriteria.swift; sourceTree = "<group>"; };
+		SRC008 /* DrinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkService.swift; sourceTree = "<group>"; };
+		SRC009 /* RandomPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPickerService.swift; sourceTree = "<group>"; };
+		SRC010 /* DiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
+		SRC011 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		SRC012 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		SRC013 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		SRC014 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		SRC015 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		SRC016 /* CharacterCountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCountTextField.swift; sourceTree = "<group>"; };
+		SRC017 /* FilterChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChip.swift; sourceTree = "<group>"; };
+		SRC018 /* CalorieIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieIndicator.swift; sourceTree = "<group>"; };
+		SRC019 /* ShakeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeAnimationView.swift; sourceTree = "<group>"; };
+		SRC020 /* DrinkResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkResultCard.swift; sourceTree = "<group>"; };
+		SRC021 /* RandomPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPickerViewModel.swift; sourceTree = "<group>"; };
+		SRC022 /* RandomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPickerView.swift; sourceTree = "<group>"; };
+		SRC023 /* FilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheet.swift; sourceTree = "<group>"; };
+		SRC024 /* EncyclopediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopediaViewModel.swift; sourceTree = "<group>"; };
+		SRC025 /* EncyclopediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopediaView.swift; sourceTree = "<group>"; };
+		SRC026 /* AddToLogModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToLogModal.swift; sourceTree = "<group>"; };
+		SRC027 /* DiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewModel.swift; sourceTree = "<group>"; };
+		SRC028 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		SRC029 /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
+		
+		/* Resources */
+		RES001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		ROOT /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				GRP001 /* ShakeHealth */,
+				GRP002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		GRP001 /* ShakeHealth */ = {
+			isa = PBXGroup;
+			children = (
+				GRP003 /* App */,
+				GRP004 /* Core */,
+				GRP005 /* Features */,
+				GRP006 /* Components */,
+				GRP007 /* Resources */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		GRP002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				PROD01 /* ShakeHealth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		GRP003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				SRC001 /* ShakeHealthApp.swift */,
+				SRC002 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		GRP004 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				GRP008 /* Models */,
+				GRP009 /* Services */,
+				GRP010 /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		GRP005 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				GRP011 /* RandomPicker */,
+				GRP012 /* Encyclopedia */,
+				GRP013 /* Diary */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		GRP006 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				SRC015 /* StarRatingView.swift */,
+				SRC016 /* CharacterCountTextField.swift */,
+				SRC017 /* FilterChip.swift */,
+				SRC018 /* CalorieIndicator.swift */,
+				SRC019 /* ShakeAnimationView.swift */,
+				SRC020 /* DrinkResultCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		GRP007 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				RES001 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		GRP008 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				SRC003 /* Brand.swift */,
+				SRC004 /* Drink.swift */,
+				SRC005 /* DrinkLog.swift */,
+				SRC006 /* Enums.swift */,
+				SRC007 /* FilterCriteria.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GRP009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				SRC008 /* DrinkService.swift */,
+				SRC009 /* RandomPickerService.swift */,
+				SRC010 /* DiaryService.swift */,
+				SRC011 /* MapService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GRP010 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				SRC012 /* Color+Theme.swift */,
+				SRC013 /* HapticManager.swift */,
+				SRC014 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		GRP011 /* RandomPicker */ = {
+			isa = PBXGroup;
+			children = (
+				GRP014 /* ViewModels */,
+				GRP015 /* Views */,
+			);
+			path = RandomPicker;
+			sourceTree = "<group>";
+		};
+		GRP012 /* Encyclopedia */ = {
+			isa = PBXGroup;
+			children = (
+				GRP016 /* ViewModels */,
+				GRP017 /* Views */,
+			);
+			path = Encyclopedia;
+			sourceTree = "<group>";
+		};
+		GRP013 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				GRP018 /* ViewModels */,
+				GRP019 /* Views */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		GRP014 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				SRC021 /* RandomPickerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		GRP015 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				SRC022 /* RandomPickerView.swift */,
+				SRC023 /* FilterSheet.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		GRP016 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				SRC024 /* EncyclopediaViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		GRP017 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				SRC025 /* EncyclopediaView.swift */,
+				SRC026 /* AddToLogModal.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		GRP018 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				SRC027 /* DiaryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		GRP019 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				SRC028 /* DiaryView.swift */,
+				SRC029 /* DiaryDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TGT001 /* ShakeHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFG001 /* Build configuration list for PBXNativeTarget "ShakeHealth" */;
+			buildPhases = (
+				PHS001 /* Sources */,
+				PHS002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShakeHealth;
+			productName = ShakeHealth;
+			productReference = PROD01 /* ShakeHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PRJ001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					TGT001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = CFG002 /* Build configuration list for PBXProject "ShakeHealth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "zh-Hant";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hant",
+			);
+			mainGroup = ROOT;
+			productRefGroup = GRP002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TGT001 /* ShakeHealth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		PHS001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP001,
+				APP002,
+				MOD001,
+				MOD002,
+				MOD003,
+				MOD004,
+				MOD005,
+				SVC001,
+				SVC002,
+				SVC003,
+				SVC004,
+				UTL001,
+				UTL002,
+				UTL003,
+				CMP001,
+				CMP002,
+				CMP003,
+				CMP004,
+				CMP005,
+				CMP006,
+				RND001,
+				RND002,
+				RND003,
+				ENC001,
+				ENC002,
+				ENC003,
+				DRY001,
+				DRY002,
+				DRY003,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		PHS002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AST001,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BLD001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BLD002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BLD003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ShakeHealth/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "搖搖健康飲";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakehealth.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BLD004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ShakeHealth/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "搖搖健康飲";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakehealth.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFG001 /* Build configuration list for PBXNativeTarget "ShakeHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BLD003 /* Debug */,
+				BLD004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFG002 /* Build configuration list for PBXProject "ShakeHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BLD001 /* Debug */,
+				BLD002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PRJ001 /* Project object */;
+}

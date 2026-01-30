@@ -1,0 +1,442 @@
+{
+    "brands": [
+        {
+            "brand_id": "50lan",
+            "brand_name": "50嵐",
+            "logo_url": null,
+            "is_active": true
+        },
+        {
+            "brand_id": "coco",
+            "brand_name": "CoCo都可",
+            "logo_url": null,
+            "is_active": true
+        },
+        {
+            "brand_id": "milkshop",
+            "brand_name": "迷客夏",
+            "logo_url": null,
+            "is_active": true
+        },
+        {
+            "brand_id": "teamagic",
+            "brand_name": "茶的魔手",
+            "logo_url": null,
+            "is_active": true
+        },
+        {
+            "brand_id": "kebuke",
+            "brand_name": "可不可熟成紅茶",
+            "logo_url": null,
+            "is_active": true
+        },
+        {
+            "brand_id": "dayun",
+            "brand_name": "大苑子",
+            "logo_url": null,
+            "is_active": true
+        }
+    ],
+    "drinks": [
+        {
+            "drink_id": "50lan_001",
+            "brand_id": "50lan",
+            "name": "四季春青茶",
+            "category": "pureTea",
+            "image_url": null,
+            "base_calories": 80,
+            "calories_by_sugar": {
+                "無糖": 5,
+                "微糖": 35,
+                "半糖": 50,
+                "少糖": 65,
+                "正常": 80
+            },
+            "has_caffeine": true,
+            "caffeine_content": 50,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "50lan_002",
+            "brand_id": "50lan",
+            "name": "波霸奶茶",
+            "category": "milkTea",
+            "image_url": null,
+            "base_calories": 450,
+            "calories_by_sugar": {
+                "無糖": 280,
+                "微糖": 330,
+                "半糖": 380,
+                "少糖": 420,
+                "正常": 450
+            },
+            "has_caffeine": true,
+            "caffeine_content": 80,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "50lan_003",
+            "brand_id": "50lan",
+            "name": "檸檬綠茶",
+            "category": "fruitTea",
+            "image_url": null,
+            "base_calories": 180,
+            "calories_by_sugar": null,
+            "has_caffeine": true,
+            "caffeine_content": 45,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "coco_001",
+            "brand_id": "coco",
+            "name": "珍珠奶茶",
+            "category": "milkTea",
+            "image_url": null,
+            "base_calories": 480,
+            "calories_by_sugar": {
+                "無糖": 300,
+                "微糖": 350,
+                "半糖": 400,
+                "少糖": 450,
+                "正常": 480
+            },
+            "has_caffeine": true,
+            "caffeine_content": 85,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "coco_002",
+            "brand_id": "coco",
+            "name": "百香雙響炮",
+            "category": "fruitTea",
+            "image_url": null,
+            "base_calories": 220,
+            "calories_by_sugar": null,
+            "has_caffeine": true,
+            "caffeine_content": 40,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰"
+            ]
+        },
+        {
+            "drink_id": "coco_003",
+            "brand_id": "coco",
+            "name": "芒果冰沙",
+            "category": "special",
+            "image_url": null,
+            "base_calories": 350,
+            "calories_by_sugar": null,
+            "has_caffeine": false,
+            "caffeine_content": null,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "正常冰"
+            ]
+        },
+        {
+            "drink_id": "milkshop_001",
+            "brand_id": "milkshop",
+            "name": "大甲芋頭鮮奶",
+            "category": "fresh",
+            "image_url": null,
+            "base_calories": 380,
+            "calories_by_sugar": null,
+            "has_caffeine": false,
+            "caffeine_content": null,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "milkshop_002",
+            "brand_id": "milkshop",
+            "name": "厚奶茶",
+            "category": "milkTea",
+            "image_url": null,
+            "base_calories": 320,
+            "calories_by_sugar": {
+                "無糖": 180,
+                "微糖": 220,
+                "半糖": 270,
+                "少糖": 300,
+                "正常": 320
+            },
+            "has_caffeine": true,
+            "caffeine_content": 70,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "milkshop_003",
+            "brand_id": "milkshop",
+            "name": "娜杯紅茶拿鐵",
+            "category": "milkTea",
+            "image_url": null,
+            "base_calories": 290,
+            "calories_by_sugar": null,
+            "has_caffeine": true,
+            "caffeine_content": 65,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "teamagic_001",
+            "brand_id": "teamagic",
+            "name": "高山青茶",
+            "category": "pureTea",
+            "image_url": null,
+            "base_calories": 60,
+            "calories_by_sugar": {
+                "無糖": 0,
+                "微糖": 25,
+                "半糖": 40,
+                "少糖": 50,
+                "正常": 60
+            },
+            "has_caffeine": true,
+            "caffeine_content": 55,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "teamagic_002",
+            "brand_id": "teamagic",
+            "name": "冬瓜紅茶",
+            "category": "pureTea",
+            "image_url": null,
+            "base_calories": 200,
+            "calories_by_sugar": null,
+            "has_caffeine": true,
+            "caffeine_content": 40,
+            "available_sugar_levels": [
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "kebuke_001",
+            "brand_id": "kebuke",
+            "name": "熟成紅茶",
+            "category": "pureTea",
+            "image_url": null,
+            "base_calories": 90,
+            "calories_by_sugar": {
+                "無糖": 0,
+                "微糖": 35,
+                "半糖": 55,
+                "少糖": 75,
+                "正常": 90
+            },
+            "has_caffeine": true,
+            "caffeine_content": 60,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "kebuke_002",
+            "brand_id": "kebuke",
+            "name": "熟成歐蕾",
+            "category": "milkTea",
+            "image_url": null,
+            "base_calories": 280,
+            "calories_by_sugar": null,
+            "has_caffeine": true,
+            "caffeine_content": 55,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰",
+                "熱飲"
+            ]
+        },
+        {
+            "drink_id": "dayun_001",
+            "brand_id": "dayun",
+            "name": "鮮柚綠",
+            "category": "fruitTea",
+            "image_url": null,
+            "base_calories": 150,
+            "calories_by_sugar": null,
+            "has_caffeine": true,
+            "caffeine_content": 35,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰"
+            ]
+        },
+        {
+            "drink_id": "dayun_002",
+            "brand_id": "dayun",
+            "name": "芒果冰茶",
+            "category": "fruitTea",
+            "image_url": null,
+            "base_calories": 250,
+            "calories_by_sugar": null,
+            "has_caffeine": true,
+            "caffeine_content": 30,
+            "available_sugar_levels": [
+                "無糖",
+                "微糖",
+                "半糖",
+                "少糖",
+                "正常"
+            ],
+            "available_ice_levels": [
+                "去冰",
+                "少冰",
+                "微冰",
+                "正常冰"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+import Foundation
+
+/// 應用程式常數
+enum Constants {
+    /// 評論字數限制
+    static let maxCommentLength = 20
+    
+    /// 動畫持續時間
+    enum Animation {
+        static let shakeAnimation: Double = 1.5
+        static let cardAppear: Double = 0.3
+        static let buttonPress: Double = 0.15
+    }
+    
+    /// UserDefaults Keys
+    enum StorageKeys {
+        static let anonymousUserId = "anonymousUserId"
+        static let lastFilterCriteria = "lastFilterCriteria"
+        static let onboardingCompleted = "onboardingCompleted"
+    }
+    
+    /// Google Maps
+    enum Maps {
+        static let googleMapsScheme = "comgooglemaps://"
+        static let googleMapsWebURL = "https://www.google.com/maps/search/"
+    }
+}
