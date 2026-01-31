@@ -5,6 +5,22 @@ import SwiftData
 struct ShakeHealthApp: App {
     @StateObject private var appState = AppState()
     
+    // 建立 ModelContainer (處理 schema 遷移)
+    var sharedModelContainer: ModelContainer = {
+        let schema = Schema([DrinkLog.self])
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false
+        )
+        
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            // 如果遷移失敗，嘗試刪除舊資料重建
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
+    
     init() {
         setupAppearance()
     }
@@ -14,7 +30,7 @@ struct ShakeHealthApp: App {
             ContentView()
                 .environmentObject(appState)
         }
-        .modelContainer(for: DrinkLog.self)
+        .modelContainer(sharedModelContainer)
     }
     
     private func setupAppearance() {

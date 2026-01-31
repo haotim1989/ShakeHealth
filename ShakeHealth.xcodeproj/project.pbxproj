@@ -7,59 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		/* App */
-		APP001 /* ShakeHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001; };
-		APP002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC002; };
-		
-		/* Models */
-		MOD001 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC003; };
-		MOD002 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC004; };
-		MOD003 /* DrinkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC005; };
-		MOD004 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC006; };
-		MOD005 /* FilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC007; };
-		
-		/* Services */
-		SVC001 /* DrinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC008; };
-		SVC002 /* RandomPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC009; };
-		SVC003 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC010; };
-		SVC004 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC011; };
-		
-		/* Utilities */
-		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012; };
-		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013; };
-		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014; };
-		
-		/* Components */
-		CMP001 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC015; };
-		CMP002 /* CharacterCountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC016; };
-		CMP003 /* FilterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC017; };
-		CMP004 /* CalorieIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC018; };
-		CMP005 /* ShakeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC019; };
-		CMP006 /* DrinkResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC020; };
-		
-		/* RandomPicker Feature */
-		RND001 /* RandomPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC021; };
-		RND002 /* RandomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC022; };
-		RND003 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC023; };
-		
-		/* Encyclopedia Feature */
-		ENC001 /* EncyclopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC024; };
-		ENC002 /* EncyclopediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC025; };
-		ENC003 /* AddToLogModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC026; };
-		
-		/* Diary Feature */
-		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027; };
-		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028; };
-		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029; };
-		
-		/* Assets */
-		AST001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = RES001; };
+		APP001 /* ShakeHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001 /* ShakeHealthApp.swift */; };
+		APP002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC002 /* ContentView.swift */; };
+		AST001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = RES001 /* Assets.xcassets */; };
+		CMP001 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC015 /* StarRatingView.swift */; };
+		CMP002 /* CharacterCountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC016 /* CharacterCountTextField.swift */; };
+		CMP003 /* FilterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC017 /* FilterChip.swift */; };
+		CMP004 /* CalorieIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC018 /* CalorieIndicator.swift */; };
+		CMP005 /* ShakeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC019 /* ShakeAnimationView.swift */; };
+		CMP006 /* DrinkResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC020 /* DrinkResultCard.swift */; };
+		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027 /* DiaryViewModel.swift */; };
+		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028 /* DiaryView.swift */; };
+		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029 /* DiaryDetailView.swift */; };
+		EEFB60132F2DD17C000D7169 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB60122F2DD17C000D7169 /* ShareService.swift */; };
+		ENC001 /* EncyclopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC024 /* EncyclopediaViewModel.swift */; };
+		ENC002 /* EncyclopediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC025 /* EncyclopediaView.swift */; };
+		ENC003 /* AddToLogModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC026 /* AddToLogModal.swift */; };
+		MOD001 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC003 /* Brand.swift */; };
+		MOD002 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC004 /* Drink.swift */; };
+		MOD003 /* DrinkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC005 /* DrinkLog.swift */; };
+		MOD004 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC006 /* Enums.swift */; };
+		MOD005 /* FilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC007 /* FilterCriteria.swift */; };
+		RND001 /* RandomPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC021 /* RandomPickerViewModel.swift */; };
+		RND002 /* RandomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC022 /* RandomPickerView.swift */; };
+		RND003 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC023 /* FilterSheet.swift */; };
+		SVC001 /* DrinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC008 /* DrinkService.swift */; };
+		SVC002 /* RandomPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC009 /* RandomPickerService.swift */; };
+		SVC003 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC010 /* DiaryService.swift */; };
+		SVC004 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC011 /* MapService.swift */; };
+		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* Color+Theme.swift */; };
+		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* HapticManager.swift */; };
+		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EEFB60122F2DD17C000D7169 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		PROD01 /* ShakeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		
-		/* Source Files */
+		RES001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		SRC001 /* ShakeHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeHealthApp.swift; sourceTree = "<group>"; };
 		SRC002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		SRC003 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
@@ -89,21 +73,10 @@
 		SRC027 /* DiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewModel.swift; sourceTree = "<group>"; };
 		SRC028 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		SRC029 /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
-		
-		/* Resources */
-		RES001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		ROOT /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				GRP001 /* ShakeHealth */,
-				GRP002 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		GRP001 /* ShakeHealth */ = {
+		GRP001 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				GRP003 /* App */,
@@ -188,6 +161,7 @@
 		GRP009 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EEFB60122F2DD17C000D7169 /* ShareService.swift */,
 				SRC008 /* DrinkService.swift */,
 				SRC009 /* RandomPickerService.swift */,
 				SRC010 /* DiaryService.swift */,
@@ -284,6 +258,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		ROOT = {
+			isa = PBXGroup;
+			children = (
+				GRP001 /* Sources */,
+				GRP002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,55 +319,56 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		PHS001 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				APP001,
-				APP002,
-				MOD001,
-				MOD002,
-				MOD003,
-				MOD004,
-				MOD005,
-				SVC001,
-				SVC002,
-				SVC003,
-				SVC004,
-				UTL001,
-				UTL002,
-				UTL003,
-				CMP001,
-				CMP002,
-				CMP003,
-				CMP004,
-				CMP005,
-				CMP006,
-				RND001,
-				RND002,
-				RND003,
-				ENC001,
-				ENC002,
-				ENC003,
-				DRY001,
-				DRY002,
-				DRY003,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
 /* Begin PBXResourcesBuildPhase section */
 		PHS002 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AST001,
+				AST001 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		PHS001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP001 /* ShakeHealthApp.swift in Sources */,
+				APP002 /* ContentView.swift in Sources */,
+				MOD001 /* Brand.swift in Sources */,
+				MOD002 /* Drink.swift in Sources */,
+				MOD003 /* DrinkLog.swift in Sources */,
+				MOD004 /* Enums.swift in Sources */,
+				MOD005 /* FilterCriteria.swift in Sources */,
+				SVC001 /* DrinkService.swift in Sources */,
+				SVC002 /* RandomPickerService.swift in Sources */,
+				SVC003 /* DiaryService.swift in Sources */,
+				SVC004 /* MapService.swift in Sources */,
+				EEFB60132F2DD17C000D7169 /* ShareService.swift in Sources */,
+				UTL001 /* Color+Theme.swift in Sources */,
+				UTL002 /* HapticManager.swift in Sources */,
+				UTL003 /* Constants.swift in Sources */,
+				CMP001 /* StarRatingView.swift in Sources */,
+				CMP002 /* CharacterCountTextField.swift in Sources */,
+				CMP003 /* FilterChip.swift in Sources */,
+				CMP004 /* CalorieIndicator.swift in Sources */,
+				CMP005 /* ShakeAnimationView.swift in Sources */,
+				CMP006 /* DrinkResultCard.swift in Sources */,
+				RND001 /* RandomPickerViewModel.swift in Sources */,
+				RND002 /* RandomPickerView.swift in Sources */,
+				RND003 /* FilterSheet.swift in Sources */,
+				ENC001 /* EncyclopediaViewModel.swift in Sources */,
+				ENC002 /* EncyclopediaView.swift in Sources */,
+				ENC003 /* AddToLogModal.swift in Sources */,
+				DRY001 /* DiaryViewModel.swift in Sources */,
+				DRY002 /* DiaryView.swift in Sources */,
+				DRY003 /* DiaryDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		BLD001 /* Debug */ = {
@@ -512,14 +495,14 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ShakeHealth/Info.plist";
+				INFOPLIST_FILE = ShakeHealth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "搖搖健康飲";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,14 +526,14 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ShakeHealth/Info.plist";
+				INFOPLIST_FILE = ShakeHealth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "搖搖健康飲";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
