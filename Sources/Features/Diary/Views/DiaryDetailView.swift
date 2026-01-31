@@ -88,19 +88,60 @@ struct DiaryDetailView: View {
                     .foregroundColor(.secondary)
             }
             
-            // 熱量
-            CalorieIndicator(calories: log.caloriesSnapshot, style: .detailed)
+            // 熱量與咖啡因
+            HStack(spacing: 12) {
+                CalorieIndicator(calories: log.caloriesSnapshot, style: .detailed)
+                
+                if log.hasCaffeineSnapshot {
+                    CaffeineIcon(hasCaffeine: true, showLabel: true)
+                }
+            }
             
             // 紀錄時間
             Text(log.createdAt.formatted(date: .abbreviated, time: .shortened))
                 .font(.caption)
                 .foregroundColor(.secondary)
+            
+            // 分享按鈕
+            shareButton
         }
         .frame(maxWidth: .infinity)
         .padding(24)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(color: .black.opacity(0.05), radius: 10, y: 5)
+    }
+    
+    private var shareButton: some View {
+        Menu {
+            ForEach(ShareService.Platform.allCases) { platform in
+                Button {
+                    ShareService.share(log: log, to: platform)
+                } label: {
+                    Label(platform.rawValue, systemImage: platform.iconName)
+                }
+            }
+            
+            Divider()
+            
+            Button {
+                ShareService.shareViaSystem(message: ShareService.generateShareMessage(for: log))
+            } label: {
+                Label("其他方式...", systemImage: "ellipsis.circle")
+            }
+        } label: {
+            HStack {
+                Image(systemName: "square.and.arrow.up")
+                Text("分享")
+            }
+            .font(.subheadline)
+            .fontWeight(.medium)
+            .foregroundColor(.teaBrown)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+            .background(Color.teaBrown.opacity(0.1))
+            .clipShape(Capsule())
+        }
     }
     
     private var specificationCard: some View {
@@ -301,7 +342,8 @@ struct DiaryDetailView: View {
                 comment: "很好喝！",
                 drinkName: "四季春青茶",
                 brandName: "50嵐",
-                caloriesSnapshot: 80
+                caloriesSnapshot: 80,
+                hasCaffeineSnapshot: true
             )
         )
     }

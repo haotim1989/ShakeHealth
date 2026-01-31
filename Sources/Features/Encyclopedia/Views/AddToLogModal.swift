@@ -234,7 +234,8 @@ struct AddToLogModal: View {
             comment: comment,
             drinkName: drink.name,
             brandName: drink.brand?.name ?? "",
-            caloriesSnapshot: estimatedCalories
+            caloriesSnapshot: estimatedCalories,
+            hasCaffeineSnapshot: drink.hasCaffeine
         )
         
         modelContext.insert(log)

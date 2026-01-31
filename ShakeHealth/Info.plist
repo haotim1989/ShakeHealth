@@ -24,6 +24,9 @@
 	<array>
 		<string>comgooglemaps</string>
 		<string>maps</string>
+		<string>fb-messenger</string>
+		<string>line</string>
+		<string>slack</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

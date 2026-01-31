@@ -24,4 +24,10 @@ enum Constants {
         static let googleMapsScheme = "comgooglemaps://"
         static let googleMapsWebURL = "https://www.google.com/maps/search/"
     }
+    
+    /// App Store (分享功能用)
+    enum AppStore {
+        static let appId = "id000000000"  // TODO: 替換為實際的 App ID
+        static let downloadURL = "https://apps.apple.com/app/\(appId)"
+    }
 }

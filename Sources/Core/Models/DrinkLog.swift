@@ -21,6 +21,7 @@ final class DrinkLog {
     var drinkName: String
     var brandName: String
     var caloriesSnapshot: Int
+    var hasCaffeineSnapshot: Bool
     
     var createdAt: Date
     var updatedAt: Date
@@ -51,6 +52,7 @@ final class DrinkLog {
         drinkName: String,
         brandName: String,
         caloriesSnapshot: Int,
+        hasCaffeineSnapshot: Bool = false,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -65,6 +67,7 @@ final class DrinkLog {
         self.drinkName = drinkName
         self.brandName = brandName
         self.caloriesSnapshot = caloriesSnapshot
+        self.hasCaffeineSnapshot = hasCaffeineSnapshot
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
