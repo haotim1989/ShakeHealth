@@ -55,6 +55,7 @@ struct CalorieIndicator: View {
 struct CaffeineIcon: View {
     let hasCaffeine: Bool
     let showLabel: Bool
+    @State private var showTooltip = false
     
     init(hasCaffeine: Bool, showLabel: Bool = false) {
         self.hasCaffeine = hasCaffeine
@@ -67,10 +68,11 @@ struct CaffeineIcon: View {
                 .font(.caption)
                 .foregroundColor(hasCaffeine ? .brown : .green)
             
-            if showLabel {
+            if showLabel || showTooltip {
                 Text(hasCaffeine ? "含咖啡因" : "無咖啡因")
                     .font(.caption)
                     .foregroundColor(hasCaffeine ? .brown : .green)
+                    .transition(.opacity.combined(with: .scale))
             }
         }
         .padding(.horizontal, 8)
@@ -79,6 +81,20 @@ struct CaffeineIcon: View {
             (hasCaffeine ? Color.brown : Color.green).opacity(0.1)
         )
         .clipShape(Capsule())
+        .onTapGesture {
+            if !showLabel {
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    showTooltip = true
+                }
+                // 2秒後自動隱藏
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        showTooltip = false
+                    }
+                }
+                HapticManager.shared.light()
+            }
+        }
     }
 }
 

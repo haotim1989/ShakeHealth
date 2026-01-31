@@ -87,6 +87,11 @@ struct AddToLogModal: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
+                
+                // 咖啡因標示
+                if drink.hasCaffeine {
+                    CaffeineIcon(hasCaffeine: true, showLabel: true)
+                }
             }
             
             Spacer()

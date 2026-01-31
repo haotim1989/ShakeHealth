@@ -7,7 +7,7 @@ enum Constants {
     
     /// 動畫持續時間
     enum Animation {
-        static let shakeAnimation: Double = 1.5
+        static let shakeAnimation: Double = 0.8
         static let cardAppear: Double = 0.3
         static let buttonPress: Double = 0.15
     }

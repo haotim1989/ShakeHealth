@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 @main
 struct ShakeHealthApp: App {
@@ -13,6 +14,7 @@ struct ShakeHealthApp: App {
             ContentView()
                 .environmentObject(appState)
         }
+        .modelContainer(for: DrinkLog.self)
     }
     
     private func setupAppearance() {

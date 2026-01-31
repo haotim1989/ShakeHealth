@@ -117,7 +117,7 @@ struct DrinkListRow: View {
                     CalorieIndicator(calories: drink.baseCalories, style: .badge)
                     
                     if drink.hasCaffeine {
-                        CaffeineIcon(hasCaffeine: true)
+                        CaffeineIcon(hasCaffeine: true, showLabel: true)
                     }
                 }
             }
