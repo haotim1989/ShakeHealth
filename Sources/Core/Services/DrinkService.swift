@@ -75,7 +75,7 @@ final class DrinkService: DrinkServiceProtocol {
     // MARK: - Protocol Methods
     
     func fetchAllDrinks() async throws -> [Drink] {
-        try? await Task.sleep(nanoseconds: 100_000_000.0)
+        try? await Task.sleep(nanoseconds: 100_000_000)
         return cachedDrinks ?? Drink.sampleDrinks
     }
     
