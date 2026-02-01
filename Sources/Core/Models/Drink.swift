@@ -11,6 +11,7 @@ struct Drink: Identifiable, Codable, Hashable {
     // 營養資訊
     let baseCalories: Int                     // 基礎熱量 (正常糖)
     let caloriesBySugar: [String: Int]?       // 各甜度對應熱量 (String key for Codable)
+    let sugarGrams: Double?                   // 總糖量 (克)
     let hasCaffeine: Bool
     let caffeineContent: Int?                 // mg (可選)
     
@@ -26,6 +27,7 @@ struct Drink: Identifiable, Codable, Hashable {
         imageURL: String? = nil,
         baseCalories: Int,
         caloriesBySugar: [SugarLevel: Int]? = nil,
+        sugarGrams: Double? = nil,
         hasCaffeine: Bool,
         caffeineContent: Int? = nil,
         availableSugarLevels: [SugarLevel] = SugarLevel.allCases,
@@ -41,6 +43,7 @@ struct Drink: Identifiable, Codable, Hashable {
         self.caloriesBySugar = caloriesBySugar?.reduce(into: [:]) { result, pair in
             result[pair.key.rawValue] = pair.value
         }
+        self.sugarGrams = sugarGrams
         self.hasCaffeine = hasCaffeine
         self.caffeineContent = caffeineContent
         self.availableSugarLevels = availableSugarLevels
@@ -70,6 +73,7 @@ struct Drink: Identifiable, Codable, Hashable {
         case imageURL = "image_url"
         case baseCalories = "base_calories"
         case caloriesBySugar = "calories_by_sugar"
+        case sugarGrams = "sugar_grams"
         case hasCaffeine = "has_caffeine"
         case caffeineContent = "caffeine_content"
         case availableSugarLevels = "available_sugar_levels"

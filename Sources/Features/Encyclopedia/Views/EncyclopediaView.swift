@@ -113,11 +113,30 @@ struct DrinkListRow: View {
                     .font(.body)
                     .fontWeight(.medium)
                 
-                HStack(spacing: 8) {
+                // 熱量與糖量
+                HStack(spacing: 6) {
                     CalorieIndicator(calories: drink.baseCalories, style: .badge)
                     
-                    if drink.hasCaffeine {
+                    if let sugar = drink.sugarGrams, sugar > 0 {
+                        Text("\(Int(sugar))g糖")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 3)
+                            .background(Color.gray.opacity(0.1))
+                            .clipShape(Capsule())
+                    }
+                }
+                
+                // 咖啡因
+                if drink.hasCaffeine {
+                    HStack(spacing: 4) {
                         CaffeineIcon(hasCaffeine: true, showLabel: true)
+                        if let mg = drink.caffeineContent, mg > 0 {
+                            Text("(\(mg)mg)")
+                                .font(.caption2)
+                                .foregroundColor(.brown.opacity(0.8))
+                        }
                     }
                 }
             }
