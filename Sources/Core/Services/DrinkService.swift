@@ -51,7 +51,7 @@ final class DrinkService: DrinkServiceProtocol {
                     id: drinkData.drink_id,
                     brandId: drinkData.brand_id,
                     name: drinkData.name,
-                    category: DrinkCategory(rawValue: drinkData.category) ?? .special,
+                    category: Self.mapCategory(drinkData.category),
                     imageURL: drinkData.image_url,
                     baseCalories: drinkData.base_calories,
                     caloriesBySugar: nil,
@@ -69,6 +69,21 @@ final class DrinkService: DrinkServiceProtocol {
             print("❌ 解析 SampleData.json 失敗: \(error)")
             cachedDrinks = Drink.sampleDrinks
             cachedBrands = Brand.sampleBrands
+        }
+    }
+    
+    // MARK: - Category Mapping
+    
+    /// 將英文分類 key 轉換為 DrinkCategory
+    private static func mapCategory(_ key: String) -> DrinkCategory {
+        switch key {
+        case "milkTea": return .milkTea
+        case "pureTea": return .pureTea
+        case "fruitTea": return .fruitTea
+        case "coffee": return .coffee
+        case "fresh": return .fresh
+        case "special": return .special
+        default: return .special
         }
     }
     
