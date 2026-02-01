@@ -34,7 +34,19 @@ extension Brand {
         Brand(id: "dayun", name: "大苑子", logoURL: nil),
     ]
     
+    /// 所有品牌 (優先從 DrinkService 取得)
+    static var allBrands: [Brand] {
+        get async {
+            do {
+                return try await DrinkService.shared.fetchAllBrands()
+            } catch {
+                return sampleBrands
+            }
+        }
+    }
+    
     static func find(byId id: String) -> Brand? {
+        // 同步查找，使用備用資料
         sampleBrands.first { $0.id == id }
     }
 }
