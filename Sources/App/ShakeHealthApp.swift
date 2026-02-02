@@ -4,6 +4,7 @@ import SwiftData
 @main
 struct ShakeHealthApp: App {
     @StateObject private var appState = AppState()
+    @StateObject private var userManager = UserManager.shared
     
     // 建立 ModelContainer (處理 schema 遷移)
     var sharedModelContainer: ModelContainer = {
@@ -23,14 +24,32 @@ struct ShakeHealthApp: App {
     
     init() {
         setupAppearance()
+        setupSDKs()
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(appState)
+                .environmentObject(userManager)
         }
         .modelContainer(sharedModelContainer)
+    }
+    
+    private func setupSDKs() {
+        // TODO: 待 API Key 設定後啟用
+        // 1. RevenueCat
+        // Purchases.configure(withAPIKey: SecretsManager.shared.revenueCatAPIKey ?? "")
+        
+        // 2. AdMob
+        // GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        // 3. ATT 追蹤授權 (延遲請求，避免啟動時彈窗)
+        // DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        //     ATTrackingManager.requestTrackingAuthorization { _ in }
+        // }
+        
+        print("📱 ShakeHealth 啟動 (測試模式: \(SecretsManager.shared.isTestMode))")
     }
     
     private func setupAppearance() {

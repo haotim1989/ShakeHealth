@@ -4,3 +4,18 @@
 *.xcodeproj/project.xcworkspace
 *.xcodeproj/xcuserdata
 DerivedData/
+
+# === 🔐 Security - API Keys & Secrets ===
+Secrets.plist
+GoogleService-Info.plist
+*.xcconfig
+
+# Firebase
+firebase*.json
+
+# RevenueCat
+revenuecat*.json
+
+# Environment files
+.env
+.env.*
