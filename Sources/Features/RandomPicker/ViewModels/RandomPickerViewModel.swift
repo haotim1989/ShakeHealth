@@ -138,4 +138,18 @@ final class RandomPickerViewModel: ObservableObject {
         criteria.hasCaffeine = hasCaffeine
         hapticManager.selection()
     }
+    
+    // MARK: - Pro Features
+    
+    /// 設定智慧推薦 (Pro)
+    func setSmartPriority(_ enabled: Bool) {
+        criteria.smartPriority = enabled
+        hapticManager.selection()
+    }
+    
+    /// 設定避雷模式 (Pro)
+    func setAntiThunder(_ enabled: Bool) {
+        criteria.antiThunder = enabled
+        hapticManager.selection()
+    }
 }

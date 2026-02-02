@@ -8,6 +8,10 @@ struct FilterCriteria: Equatable {
     var calorieRange: CalorieRange?
     var hasCaffeine: Bool?
     
+    // Pro 功能
+    var smartPriority: Bool = false  // 優先推薦 (≥4星)
+    var antiThunder: Bool = false    // 避雷模式 (排除≤2星)
+    
     /// 是否為空篩選條件
     var isEmpty: Bool {
         selectedBrands.isEmpty &&
@@ -68,5 +72,7 @@ struct FilterCriteria: Equatable {
         selectedSugarLevels = []
         calorieRange = nil
         hasCaffeine = nil
+        smartPriority = false
+        antiThunder = false
     }
 }

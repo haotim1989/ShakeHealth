@@ -3,12 +3,19 @@ import SwiftUI
 /// 篩選條件 Sheet
 struct FilterSheet: View {
     @ObservedObject var viewModel: RandomPickerViewModel
+    @EnvironmentObject var userManager: UserManager
     @Environment(\.dismiss) private var dismiss
+    @State private var showPaywall = false
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
+                    // Pro 功能區
+                    proFeaturesSection
+                    
+                    Divider()
+                    
                     // 品牌篩選
                     filterSection(title: "品牌", icon: "building.2") {
                         FlowLayout(spacing: 8) {
@@ -100,7 +107,112 @@ struct FilterSheet: View {
                     .fontWeight(.semibold)
                 }
             }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
+                    .environmentObject(userManager)
+            }
         }
+    }
+    
+    // MARK: - Pro Features Section
+    
+    private var proFeaturesSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                Image(systemName: "crown.fill")
+                    .foregroundColor(.yellow)
+                Text("Pro 功能")
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                
+                if userManager.isProUser {
+                    Text("已解鎖")
+                        .font(.caption)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .background(Color.green.opacity(0.2))
+                        .foregroundColor(.green)
+                        .clipShape(Capsule())
+                }
+            }
+            
+            // 優先推薦
+            proFeatureToggle(
+                title: "智慧推薦",
+                description: "優先顯示你評分 ≥ 4 星的飲料",
+                icon: "sparkles",
+                isOn: Binding(
+                    get: { viewModel.criteria.smartPriority },
+                    set: { newValue in
+                        if userManager.isProUser {
+                            viewModel.setSmartPriority(newValue)
+                        } else if newValue {
+                            showPaywall = true
+                        }
+                    }
+                )
+            )
+            
+            // 避雷模式
+            proFeatureToggle(
+                title: "避雷模式",
+                description: "自動排除評分 ≤ 2 星的飲料",
+                icon: "hand.thumbsdown.fill",
+                isOn: Binding(
+                    get: { viewModel.criteria.antiThunder },
+                    set: { newValue in
+                        if userManager.isProUser {
+                            viewModel.setAntiThunder(newValue)
+                        } else if newValue {
+                            showPaywall = true
+                        }
+                    }
+                )
+            )
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.yellow.opacity(0.1))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.yellow.opacity(0.3), lineWidth: 1)
+                )
+        )
+    }
+    
+    private func proFeatureToggle(title: String, description: String, icon: String, isOn: Binding<Bool>) -> some View {
+        HStack {
+            Image(systemName: icon)
+                .font(.title3)
+                .foregroundColor(.teaBrown)
+                .frame(width: 30)
+            
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 4) {
+                    Text(title)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                    
+                    if !userManager.isProUser {
+                        Image(systemName: "lock.fill")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                
+                Text(description)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+            
+            Toggle("", isOn: isOn)
+                .labelsHidden()
+                .tint(.teaBrown)
+        }
+        .padding(.vertical, 4)
     }
     
     // MARK: - Helper Views
