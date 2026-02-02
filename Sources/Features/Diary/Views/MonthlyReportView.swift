@@ -8,18 +8,33 @@ struct MonthlyReportView: View {
     
     let logs: [DrinkLog]
     
+    // 月份選擇
+    @State private var selectedMonthOffset: Int = 0  // 0 = 當月, -1 = 上個月, etc.
+    
+    private var availableMonths: [Int] {
+        // 提供最近 12 個月的選項
+        Array((-11...0).reversed())
+    }
+    
+    private var selectedDate: Date {
+        Calendar.current.date(byAdding: .month, value: selectedMonthOffset, to: Date()) ?? Date()
+    }
+    
     // 計算屬性
-    private var currentMonth: String {
+    private var displayMonth: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy 年 M 月"
-        return formatter.string(from: Date())
+        return formatter.string(from: selectedDate)
     }
     
     private var monthlyLogs: [DrinkLog] {
         let calendar = Calendar.current
-        let now = Date()
-        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: now))!
-        return logs.filter { $0.createdAt >= startOfMonth }
+        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: selectedDate))!
+        var endComponents = calendar.dateComponents([.year, .month], from: selectedDate)
+        endComponents.month! += 1
+        let endOfMonth = calendar.date(from: endComponents)!
+        
+        return logs.filter { $0.createdAt >= startOfMonth && $0.createdAt < endOfMonth }
     }
     
     private var totalCalories: Int {
@@ -42,6 +57,19 @@ struct MonthlyReportView: View {
             brandCounts[log.brandName, default: 0] += 1
         }
         return brandCounts.sorted { $0.value > $1.value }.prefix(3).map { ($0.key, $0.value) }
+    }
+    
+    // 計算該月份的天數
+    private var daysInMonth: Int {
+        let calendar = Calendar.current
+        if selectedMonthOffset == 0 {
+            // 當月：使用今天的日期
+            return calendar.component(.day, from: Date())
+        } else {
+            // 過去月份：使用該月的總天數
+            let range = calendar.range(of: .day, in: .month, for: selectedDate)!
+            return range.count
+        }
     }
     
     // 健康紅綠燈 (根據衛福部建議: 每日糖分 < 50g，每月約 1500g)
@@ -90,6 +118,9 @@ struct MonthlyReportView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
+                    // 月份選擇器
+                    monthSelector
+                    
                     // 健康紅綠燈
                     healthStatusCard
                     
@@ -100,11 +131,16 @@ struct MonthlyReportView: View {
                     if !topBrands.isEmpty {
                         topBrandsSection
                     }
+                    
+                    // 無資料提示
+                    if monthlyLogs.isEmpty {
+                        noDataView
+                    }
                 }
                 .padding()
             }
             .background(Color.backgroundPrimary)
-            .navigationTitle("\(currentMonth) 報表")
+            .navigationTitle("月報表")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -114,6 +150,60 @@ struct MonthlyReportView: View {
                 }
             }
         }
+    }
+    
+    // MARK: - Month Selector
+    
+    private var monthSelector: some View {
+        HStack {
+            Button {
+                withAnimation {
+                    selectedMonthOffset = max(selectedMonthOffset - 1, -11)
+                }
+            } label: {
+                Image(systemName: "chevron.left.circle.fill")
+                    .font(.title2)
+                    .foregroundColor(selectedMonthOffset > -11 ? .teaBrown : .gray)
+            }
+            .disabled(selectedMonthOffset <= -11)
+            
+            Spacer()
+            
+            Text(displayMonth)
+                .font(.title2)
+                .fontWeight(.bold)
+            
+            Spacer()
+            
+            Button {
+                withAnimation {
+                    selectedMonthOffset = min(selectedMonthOffset + 1, 0)
+                }
+            } label: {
+                Image(systemName: "chevron.right.circle.fill")
+                    .font(.title2)
+                    .foregroundColor(selectedMonthOffset < 0 ? .teaBrown : .gray)
+            }
+            .disabled(selectedMonthOffset >= 0)
+        }
+        .padding()
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+    }
+    
+    private var noDataView: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "tray")
+                .font(.system(size: 40))
+                .foregroundColor(.secondary)
+            Text("這個月還沒有紀錄")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(40)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
     
     // MARK: - Health Status Card
@@ -156,7 +246,7 @@ struct MonthlyReportView: View {
     
     private var statisticsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("本月統計")
+            Text(displayMonth + " 統計")
                 .font(.headline)
             
             HStack(spacing: 16) {
@@ -166,7 +256,7 @@ struct MonthlyReportView: View {
             
             HStack(spacing: 16) {
                 statCard(title: "平均評分", value: String(format: "%.1f", averageRating), unit: "星", icon: "star.fill", color: .yellow)
-                statCard(title: "日均杯數", value: String(format: "%.1f", Double(totalDrinks) / Double(Calendar.current.component(.day, from: Date()))), unit: "杯", icon: "calendar", color: .blue)
+                statCard(title: "日均杯數", value: String(format: "%.1f", daysInMonth > 0 ? Double(totalDrinks) / Double(daysInMonth) : 0), unit: "杯", icon: "calendar", color: .blue)
             }
         }
     }

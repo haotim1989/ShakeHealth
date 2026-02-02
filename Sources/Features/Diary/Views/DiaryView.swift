@@ -66,8 +66,10 @@ struct DiaryView: View {
             }
         } label: {
             HStack(spacing: 4) {
-                Image(systemName: "chart.bar.fill")
+                Image(systemName: "doc.text.magnifyingglass")
                     .font(.body)
+                Text("月報表")
+                    .font(.caption)
                 if !userManager.isProUser {
                     Image(systemName: "lock.fill")
                         .font(.caption2)

@@ -234,10 +234,10 @@ struct DiaryDetailView: View {
     private func editableSpecButton(title: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Text(title)
-                .font(.caption)
+                .font(.subheadline)
                 .fontWeight(isSelected ? .semibold : .regular)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
                 .background(isSelected ? Color.teaBrown : Color.gray.opacity(0.1))
                 .foregroundColor(isSelected ? .white : .primary)
                 .clipShape(Capsule())

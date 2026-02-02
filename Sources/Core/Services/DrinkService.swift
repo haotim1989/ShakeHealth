@@ -113,6 +113,11 @@ final class DrinkService: DrinkServiceProtocol {
     func fetchAllBrands() async throws -> [Brand] {
         return cachedBrands ?? Brand.sampleBrands
     }
+    
+    /// 同步取得快取的品牌資料 (供 Brand.find 使用)
+    func getCachedBrands() -> [Brand]? {
+        return cachedBrands
+    }
 }
 
 // MARK: - JSON Data Structures
