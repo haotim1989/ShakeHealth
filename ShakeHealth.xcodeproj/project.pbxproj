@@ -44,6 +44,7 @@
 		CMP007 /* ProFeatureLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC032 /* ProFeatureLock.swift */; };
 		CMP008 /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC033 /* AdViews.swift */; };
 		SUB001 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC034 /* PaywallView.swift */; };
+		DRY004 /* MonthlyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC035 /* MonthlyReportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		SRC032 /* ProFeatureLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeatureLock.swift; sourceTree = "<group>"; };
 		SRC033 /* AdViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViews.swift; sourceTree = "<group>"; };
 		SRC034 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		SRC035 /* MonthlyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyReportView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -272,6 +274,7 @@
 			children = (
 				SRC028 /* DiaryView.swift */,
 				SRC029 /* DiaryDetailView.swift */,
+				SRC035 /* MonthlyReportView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				CMP007 /* ProFeatureLock.swift in Sources */,
 				CMP008 /* AdViews.swift in Sources */,
 				SUB001 /* PaywallView.swift in Sources */,
+				DRY004 /* MonthlyReportView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

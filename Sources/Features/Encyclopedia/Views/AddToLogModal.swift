@@ -9,12 +9,21 @@ struct AddToLogModal: View {
     
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var userManager: UserManager
     
     @State private var selectedSugar: SugarLevel = .sugar50
     @State private var selectedIce: IceLevel = .lessIce
     @State private var rating: Int = 3
     @State private var comment: String = ""
     @State private var showCalorieWarning = false
+    
+    // 日期選擇 (Pro 功能)
+    @State private var selectedDate: Date = Date()
+    @State private var showDatePicker = false
+    
+    // Paywall
+    @State private var showPaywall = false
+    @State private var showDailyLimitAlert = false
     
     private var isValidForm: Bool {
         rating >= 1 && rating <= 5 && comment.count <= Constants.maxCommentLength
@@ -24,10 +33,17 @@ struct AddToLogModal: View {
         drink.calories(for: selectedSugar)
     }
     
+    private var isBackdating: Bool {
+        !Calendar.current.isDateInToday(selectedDate)
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
+                    // 日期選擇 (Pro 功能)
+                    dateSection
+                    
                     // 飲料資訊卡片
                     drinkInfoCard
                     
@@ -54,13 +70,98 @@ struct AddToLogModal: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("儲存") {
-                        saveLog()
+                        attemptSave()
                     }
                     .fontWeight(.semibold)
                     .disabled(!isValidForm)
                 }
             }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
+                    .environmentObject(userManager)
+            }
+            .alert("今日額度已達上限", isPresented: $showDailyLimitAlert) {
+                Button("升級 Pro") {
+                    showPaywall = true
+                }
+                Button("取消", role: .cancel) {}
+            } message: {
+                Text("免費版每日僅能記錄 1 杯飲料。升級 Pro 解鎖無限記錄！")
+            }
         }
+    }
+    
+    // MARK: - Date Section
+    
+    private var dateSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: "calendar")
+                    .foregroundColor(.teaBrown)
+                Text("記錄日期")
+                    .font(.headline)
+                
+                Spacer()
+                
+                // Pro 標籤
+                if !userManager.isProUser {
+                    HStack(spacing: 4) {
+                        Image(systemName: "lock.fill")
+                            .font(.caption2)
+                        Text("Pro")
+                            .font(.caption)
+                    }
+                    .foregroundColor(.secondary)
+                }
+            }
+            
+            Button {
+                if userManager.isProUser {
+                    showDatePicker.toggle()
+                } else {
+                    showPaywall = true
+                }
+            } label: {
+                HStack {
+                    Text(selectedDate, style: .date)
+                        .foregroundColor(.primary)
+                    
+                    Spacer()
+                    
+                    if isBackdating {
+                        Text("補登")
+                            .font(.caption)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 2)
+                            .background(Color.orange.opacity(0.2))
+                            .foregroundColor(.orange)
+                            .clipShape(Capsule())
+                    }
+                    
+                    Image(systemName: "chevron.right")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .padding()
+                .background(Color.gray.opacity(0.05))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            .buttonStyle(.plain)
+            
+            if showDatePicker && userManager.isProUser {
+                DatePicker(
+                    "選擇日期",
+                    selection: $selectedDate,
+                    in: ...Date(),
+                    displayedComponents: .date
+                )
+                .datePickerStyle(.graphical)
+                .labelsHidden()
+            }
+        }
+        .padding(16)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
     
     // MARK: - Subviews
@@ -222,6 +323,17 @@ struct AddToLogModal: View {
     
     // MARK: - Actions
     
+    /// 嘗試儲存 (檢查每日額度)
+    private func attemptSave() {
+        // 檢查今日額度 (免費版限制)
+        if !userManager.isProUser && !userManager.canAddDiaryEntry() {
+            showDailyLimitAlert = true
+            return
+        }
+        
+        saveLog()
+    }
+    
     private func saveLog() {
         // 建立日記紀錄
         let log = DrinkLog(
@@ -235,13 +347,20 @@ struct AddToLogModal: View {
             drinkName: drink.name,
             brandName: drink.brand?.name ?? "",
             caloriesSnapshot: estimatedCalories,
-            hasCaffeineSnapshot: drink.hasCaffeine
+            hasCaffeineSnapshot: drink.hasCaffeine,
+            createdAt: selectedDate  // 使用選擇的日期
         )
         
         modelContext.insert(log)
         
         do {
             try modelContext.save()
+            
+            // 記錄今日額度
+            if Calendar.current.isDateInToday(selectedDate) {
+                userManager.recordDiaryEntry()
+            }
+            
             HapticManager.shared.success()
             onSave(selectedSugar, selectedIce, rating, comment)
         } catch {
@@ -257,4 +376,6 @@ struct AddToLogModal: View {
         onSave: { _, _, _, _ in }
     )
     .environmentObject(AppState())
+    .environmentObject(UserManager.shared)
 }
+

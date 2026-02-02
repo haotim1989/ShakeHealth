@@ -1,6 +1,7 @@
 import UIKit
 
 /// 觸覺回饋管理器
+@MainActor
 final class HapticManager {
     static let shared = HapticManager()
     

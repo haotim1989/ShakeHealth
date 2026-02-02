@@ -5,10 +5,14 @@ import SwiftData
 struct DiaryView: View {
     @StateObject private var viewModel = DiaryViewModel()
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var userManager: UserManager
     @Environment(\.modelContext) private var modelContext
     
     @Query(sort: \DrinkLog.createdAt, order: .reverse)
     private var logs: [DrinkLog]
+    
+    @State private var showMonthlyReport = false
+    @State private var showPaywall = false
     
     var body: some View {
         NavigationStack {
@@ -25,6 +29,9 @@ struct DiaryView: View {
             .navigationTitle("我的日記")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    reportButton
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     addButton
                 }
@@ -37,10 +44,38 @@ struct DiaryView: View {
             } message: {
                 Text("確定要刪除這筆日記嗎？此操作無法復原。")
             }
+            .sheet(isPresented: $showMonthlyReport) {
+                MonthlyReportView(logs: logs)
+                    .environmentObject(userManager)
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
+                    .environmentObject(userManager)
+            }
         }
     }
     
     // MARK: - Subviews
+    
+    private var reportButton: some View {
+        Button {
+            if userManager.isProUser {
+                showMonthlyReport = true
+            } else {
+                showPaywall = true
+            }
+        } label: {
+            HStack(spacing: 4) {
+                Image(systemName: "chart.bar.fill")
+                    .font(.body)
+                if !userManager.isProUser {
+                    Image(systemName: "lock.fill")
+                        .font(.caption2)
+                }
+            }
+            .foregroundColor(.teaBrown)
+        }
+    }
     
     private var addButton: some View {
         Button {

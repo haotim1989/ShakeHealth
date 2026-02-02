@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// 分享服務
+@MainActor
 enum ShareService {
     /// 分享平台
     enum Platform: String, CaseIterable, Identifiable {
