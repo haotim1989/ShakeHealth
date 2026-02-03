@@ -11,9 +11,23 @@ struct MonthlyReportView: View {
     // 月份選擇
     @State private var selectedMonthOffset: Int = 0  // 0 = 當月, -1 = 上個月, etc.
     
-    private var availableMonths: [Int] {
-        // 提供最近 12 個月的選項
-        Array((-11...0).reversed())
+    /// 計算有資料的月份 (用於限制切換範圍)
+    private var monthsWithData: Set<Int> {
+        var months = Set<Int>()
+        let calendar = Calendar.current
+        let now = Date()
+        
+        for log in logs {
+            let monthDiff = calendar.dateComponents([.month], from: log.createdAt, to: now).month ?? 0
+            if monthDiff >= 0 && monthDiff <= 11 {
+                months.insert(-monthDiff)
+            }
+        }
+        return months
+    }
+    
+    private var hasMultipleMonthsWithData: Bool {
+        monthsWithData.count > 1
     }
     
     private var selectedDate: Date {
@@ -156,16 +170,23 @@ struct MonthlyReportView: View {
     
     private var monthSelector: some View {
         HStack {
-            Button {
-                withAnimation {
-                    selectedMonthOffset = max(selectedMonthOffset - 1, -11)
+            // 前一個有資料的月份
+            if hasMultipleMonthsWithData, let prevMonth = previousMonthWithData {
+                Button {
+                    withAnimation {
+                        selectedMonthOffset = prevMonth
+                    }
+                } label: {
+                    Image(systemName: "chevron.left.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(.teaBrown)
                 }
-            } label: {
+            } else {
+                // 佔位
                 Image(systemName: "chevron.left.circle.fill")
                     .font(.title2)
-                    .foregroundColor(selectedMonthOffset > -11 ? .teaBrown : .gray)
+                    .foregroundColor(.clear)
             }
-            .disabled(selectedMonthOffset <= -11)
             
             Spacer()
             
@@ -175,20 +196,37 @@ struct MonthlyReportView: View {
             
             Spacer()
             
-            Button {
-                withAnimation {
-                    selectedMonthOffset = min(selectedMonthOffset + 1, 0)
+            // 後一個有資料的月份
+            if hasMultipleMonthsWithData, let nextMonth = nextMonthWithData {
+                Button {
+                    withAnimation {
+                        selectedMonthOffset = nextMonth
+                    }
+                } label: {
+                    Image(systemName: "chevron.right.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(.teaBrown)
                 }
-            } label: {
+            } else {
+                // 佔位
                 Image(systemName: "chevron.right.circle.fill")
                     .font(.title2)
-                    .foregroundColor(selectedMonthOffset < 0 ? .teaBrown : .gray)
+                    .foregroundColor(.clear)
             }
-            .disabled(selectedMonthOffset >= 0)
         }
         .padding()
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 12))
+    }
+    
+    private var previousMonthWithData: Int? {
+        let sorted = monthsWithData.sorted(by: >)  // 從大到小排序
+        return sorted.first { $0 < selectedMonthOffset }
+    }
+    
+    private var nextMonthWithData: Int? {
+        let sorted = monthsWithData.sorted()  // 從小到大排序
+        return sorted.first { $0 > selectedMonthOffset }
     }
     
     private var noDataView: some View {

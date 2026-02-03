@@ -57,11 +57,6 @@ struct RandomPickerView: View {
             }
             .navigationTitle("隨機喝")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    filterButton
-                }
-            }
             .sheet(isPresented: $viewModel.showFilterSheet) {
                 FilterSheet(viewModel: viewModel)
                     .presentationDetents([.medium, .large])
@@ -89,9 +84,24 @@ struct RandomPickerView: View {
     private var filterSection: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                // 篩選條件數量 badge
-                if viewModel.hasActiveFilters {
-                    activeFiltersBadge
+                // 篩選按鈕 (移到最左邊)
+                Button {
+                    viewModel.showFilterSheet = true
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "slider.horizontal.3")
+                        Text("篩選")
+                        if viewModel.hasActiveFilters {
+                            Text("(\(viewModel.criteria.activeFilterCount))")
+                        }
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 8)
+                    .background(viewModel.hasActiveFilters ? Color.teaBrown : Color.teaBrown.opacity(0.2))
+                    .foregroundColor(viewModel.hasActiveFilters ? .white : .teaBrown)
+                    .clipShape(Capsule())
                 }
                 
                 // 快速篩選 chips

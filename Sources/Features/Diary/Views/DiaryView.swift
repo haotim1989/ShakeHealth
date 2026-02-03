@@ -24,15 +24,21 @@ struct DiaryView: View {
                     emptyStateView
                 } else {
                     diaryList
+                    
+                    // 懸浮 + 按鈕 (只在有日記時顯示)
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            floatingAddButton
+                        }
+                        .padding(.trailing, 24)
+                        .padding(.bottom, 90)
+                    }
                 }
             }
             .navigationTitle("我的日記")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    addButton
-                }
-            }
             .alert("確認刪除", isPresented: $viewModel.showDeleteConfirmation) {
                 Button("取消", role: .cancel) {}
                 Button("刪除", role: .destructive) {
@@ -89,6 +95,21 @@ struct DiaryView: View {
             Image(systemName: "plus.circle.fill")
                 .font(.title2)
                 .foregroundColor(.teaBrown)
+        }
+    }
+    
+    private var floatingAddButton: some View {
+        Button {
+            appState.selectedTab = .encyclopedia
+        } label: {
+            Image(systemName: "plus")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .frame(width: 56, height: 56)
+                .background(Color.teaBrown)
+                .clipShape(Circle())
+                .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 4)
         }
     }
     
