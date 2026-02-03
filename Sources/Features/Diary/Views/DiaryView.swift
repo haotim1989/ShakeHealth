@@ -29,9 +29,6 @@ struct DiaryView: View {
             .navigationTitle("我的日記")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    reportButton
-                }
                 ToolbarItem(placement: .topBarTrailing) {
                     addButton
                 }
@@ -150,7 +147,11 @@ struct DiaryView: View {
                 }
                 .onDelete(perform: deleteLogs)
             } header: {
-                Text("紀錄列表")
+                HStack {
+                    Text("紀錄列表")
+                    Spacer()
+                    reportButton
+                }
             }
         }
         .listStyle(.insetGrouped)

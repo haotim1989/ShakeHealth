@@ -115,7 +115,7 @@ struct PaywallView: View {
                         ProgressView()
                             .tint(.white)
                     } else {
-                        Text("開始 7 天免費試用")
+                        Text("繼續")
                             .fontWeight(.semibold)
                     }
                 }
@@ -140,7 +140,7 @@ struct PaywallView: View {
     // MARK: - Legal Section
     
     private var legalSection: some View {
-        Text("訂閱將自動續訂，可隨時在設定中取消。試用期結束後將收取 \(selectedPackage.price)。")
+        Text("訂閱將自動續訂，可隨時在設定中取消。訂閱後將收取 \(selectedPackage.price)。")
             .font(.caption2)
             .foregroundColor(.secondary)
             .multilineTextAlignment(.center)

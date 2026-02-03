@@ -118,14 +118,14 @@ enum SubscriptionPackage: String, CaseIterable, Identifiable {
     
     var price: String {
         switch self {
-        case .monthly: return "NT$ 49"
+        case .monthly: return "NT$ 59"
         case .yearly: return "NT$ 499"
         }
     }
     
     var pricePerMonth: String {
         switch self {
-        case .monthly: return "NT$ 49/月"
+        case .monthly: return "NT$ 59/月"
         case .yearly: return "NT$ 42/月"
         }
     }
@@ -133,14 +133,15 @@ enum SubscriptionPackage: String, CaseIterable, Identifiable {
     var savings: String? {
         switch self {
         case .monthly: return nil
-        case .yearly: return "省 NT$ 89"
+        case .yearly: return "七折優惠！"
         }
     }
     
     var description: String {
         switch self {
-        case .monthly: return "按月付費，隨時取消"
-        case .yearly: return "年繳最划算，相當於 10 個月價格"
+        case .monthly: return "一杯飲料，換你整月健康，可隨時取消"
+        case .yearly: return "每天$1.3，解鎖你的專屬熱量圖鑑與無限日記"
         }
     }
 }
+

@@ -50,23 +50,21 @@ struct ContentView: View {
         } label: {
             HStack(spacing: 4) {
                 Image(systemName: "crown.fill")
-                    .font(.subheadline)
+                    .font(.title3)
                 if userManager.isProUser {
                     Text("Pro")
                         .font(.caption)
                         .fontWeight(.bold)
                 }
             }
-            .padding(.horizontal, userManager.isProUser ? 12 : 10)
-            .padding(.vertical, 8)
-            .background(
-                userManager.isProUser
-                    ? Color.yellow.opacity(0.9)
-                    : Color.yellow.opacity(0.8)
+            .foregroundStyle(
+                LinearGradient(
+                    colors: [Color(red: 1.0, green: 0.84, blue: 0.0), Color(red: 0.85, green: 0.65, blue: 0.13)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
             )
-            .foregroundColor(.black)
-            .clipShape(Capsule())
-            .shadow(color: .black.opacity(0.15), radius: 4, y: 2)
+            .shadow(color: .black.opacity(0.3), radius: 1, y: 1)
         }
     }
 }
