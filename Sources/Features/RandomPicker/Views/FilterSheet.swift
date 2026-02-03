@@ -83,9 +83,6 @@ struct FilterSheet: View {
                             caffeineButton(title: "無咖啡因", value: false)
                         }
                     }
-                    
-                    // 符合條件數量
-                    resultCountView
                 }
                 .padding(20)
             }

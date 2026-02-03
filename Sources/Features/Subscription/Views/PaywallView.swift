@@ -78,7 +78,7 @@ struct PaywallView: View {
             
             FeatureRow(icon: "sparkles", title: "智慧推薦", description: "優先顯示你喜歡的飲料")
             FeatureRow(icon: "hand.thumbsdown.fill", title: "避雷模式", description: "自動排除低評價飲料")
-            FeatureRow(icon: "chart.bar.fill", title: "月報表", description: "完整健康數據分析")
+            FeatureRow(icon: "doc.text.magnifyingglass", title: "月報表", description: "完整健康數據分析")
             FeatureRow(icon: "infinity", title: "無限日記", description: "每日無筆數限制")
             FeatureRow(icon: "xmark.circle.fill", title: "無廣告", description: "純淨使用體驗")
         }

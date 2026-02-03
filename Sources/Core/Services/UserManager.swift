@@ -118,22 +118,22 @@ enum SubscriptionPackage: String, CaseIterable, Identifiable {
     
     var price: String {
         switch self {
-        case .monthly: return "NT$ 30"
-        case .yearly: return "NT$ 300"
+        case .monthly: return "NT$ 49"
+        case .yearly: return "NT$ 499"
         }
     }
     
     var pricePerMonth: String {
         switch self {
-        case .monthly: return "NT$ 30/月"
-        case .yearly: return "NT$ 25/月"
+        case .monthly: return "NT$ 49/月"
+        case .yearly: return "NT$ 42/月"
         }
     }
     
     var savings: String? {
         switch self {
         case .monthly: return nil
-        case .yearly: return "省 NT$ 60"
+        case .yearly: return "省 NT$ 89"
         }
     }
     

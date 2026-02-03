@@ -65,17 +65,23 @@ struct DiaryView: View {
                 showPaywall = true
             }
         } label: {
-            HStack(spacing: 4) {
+            HStack(spacing: 6) {
                 Image(systemName: "doc.text.magnifyingglass")
-                    .font(.body)
+                    .font(.title3)
+                    .fontWeight(.medium)
                 Text("月報表")
-                    .font(.caption)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
                 if !userManager.isProUser {
                     Image(systemName: "lock.fill")
-                        .font(.caption2)
+                        .font(.caption)
                 }
             }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(Color.teaBrown.opacity(0.1))
             .foregroundColor(.teaBrown)
+            .clipShape(Capsule())
         }
     }
     

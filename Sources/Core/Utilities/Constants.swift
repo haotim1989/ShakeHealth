@@ -3,7 +3,7 @@ import Foundation
 /// 應用程式常數
 enum Constants {
     /// 評論字數限制
-    static let maxCommentLength = 20
+    static let maxCommentLength = 30
     
     /// 動畫持續時間
     enum Animation {
