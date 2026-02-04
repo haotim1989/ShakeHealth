@@ -118,6 +118,11 @@ final class DrinkService: DrinkServiceProtocol {
     func getCachedBrands() -> [Brand]? {
         return cachedBrands
     }
+    
+    /// 根據 ID 取得飲料
+    func getDrink(byId drinkId: String) -> Drink? {
+        return cachedDrinks?.first { $0.id == drinkId }
+    }
 }
 
 // MARK: - JSON Data Structures

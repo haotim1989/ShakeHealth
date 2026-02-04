@@ -22,6 +22,11 @@ struct DiaryDetailView: View {
         self._editedIce = State(initialValue: log.selectedIce)
     }
     
+    /// 表單驗證：評論不能超過 30 字
+    private var isValidForm: Bool {
+        editedComment.count <= 30
+    }
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -51,6 +56,7 @@ struct DiaryDetailView: View {
                     isEditing.toggle()
                 }
                 .fontWeight(.semibold)
+                .disabled(isEditing && !isValidForm)
             }
         }
         .alert("確認刪除", isPresented: $showDeleteConfirmation) {
@@ -308,19 +314,11 @@ struct DiaryDetailView: View {
     // MARK: - Actions
     
     private func saveChanges() {
-        // 驗證評論字數 (限制 30 字)
-        if editedComment.count > 30 {
-            editedComment = String(editedComment.prefix(30))
-        }
-        
-        // 如果甜度改變，重新計算熱量
+        // 如果甜度改變，使用原始飲料資料重新計算熱量
         if editedSugar != log.selectedSugar {
-            // 先反推基準熱量（以原本甜度的 multiplier 反推）
-            let originalMultiplier = log.selectedSugar.multiplier
-            let baseCalories = Double(log.caloriesSnapshot) / originalMultiplier
-            // 用新甜度計算熱量
-            let newCalories = Int(baseCalories * editedSugar.multiplier)
-            log.caloriesSnapshot = newCalories
+            if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+                log.caloriesSnapshot = drink.calories(for: editedSugar)
+            }
         }
         
         log.rating = editedRating
