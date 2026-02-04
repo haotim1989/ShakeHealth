@@ -118,7 +118,7 @@ struct FilterSheet: View {
             HStack(spacing: 8) {
                 Image(systemName: "crown.fill")
                     .foregroundColor(.yellow)
-                Text("Pro 功能")
+                Text("Premium 功能")
                     .font(.headline)
                     .foregroundColor(.primary)
                 
