@@ -33,7 +33,7 @@ struct PaywallView: View {
                 .padding()
             }
             .background(Color.backgroundPrimary)
-            .navigationTitle("升級 Pro")
+            .navigationTitle("升級 Premium")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -58,7 +58,7 @@ struct PaywallView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.yellow)
             
-            Text("ShakeHealth Pro")
+            Text("ShakeHealth Premium")
                 .font(.title)
                 .fontWeight(.bold)
             

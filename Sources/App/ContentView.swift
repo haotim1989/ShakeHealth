@@ -41,30 +41,29 @@ struct ContentView: View {
     }
     
     private var proCrownButton: some View {
-        Button {
-            if userManager.isProUser {
-                // 已是 Pro 用戶，可顯示訂閱資訊或不做任何動作
-            } else {
-                showPaywall = true
-            }
-        } label: {
-            HStack(spacing: 4) {
-                Image(systemName: "crown.fill")
-                    .font(.title3)
-                if userManager.isProUser {
-                    Text("Pro")
-                        .font(.caption)
-                        .fontWeight(.bold)
+        Group {
+            // 只有非 Premium 用戶才顯示皇冠按鈕
+            if !userManager.isProUser {
+                Button {
+                    showPaywall = true
+                } label: {
+                    VStack(spacing: 2) {
+                        Image(systemName: "crown.fill")
+                            .font(.title3)
+                        Text("Premium")
+                            .font(.system(size: 9))
+                            .fontWeight(.bold)
+                    }
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [Color(red: 1.0, green: 0.84, blue: 0.0), Color(red: 0.85, green: 0.65, blue: 0.13)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .shadow(color: .black.opacity(0.3), radius: 1, y: 1)
                 }
             }
-            .foregroundStyle(
-                LinearGradient(
-                    colors: [Color(red: 1.0, green: 0.84, blue: 0.0), Color(red: 0.85, green: 0.65, blue: 0.13)],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
-            .shadow(color: .black.opacity(0.3), radius: 1, y: 1)
         }
     }
 }
