@@ -31,6 +31,17 @@ enum SugarLevel: String, Codable, CaseIterable, Identifiable {
         case .sugar100: return "全糖"
         }
     }
+    
+    /// 糖分比例 (0.0 - 1.0)
+    var sugarPercentage: Double {
+        switch self {
+        case .sugar0: return 0.0
+        case .sugar30: return 0.3
+        case .sugar50: return 0.5
+        case .sugar70: return 0.7
+        case .sugar100: return 1.0
+        }
+    }
 }
 
 /// 冰塊等級

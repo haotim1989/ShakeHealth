@@ -92,6 +92,7 @@ extension Drink {
             category: .pureTea,
             baseCalories: 80,
             caloriesBySugar: [.sugar0: 5, .sugar30: 35, .sugar50: 50, .sugar70: 65, .sugar100: 80],
+            sugarGrams: 35,
             hasCaffeine: true,
             caffeineContent: 50
         ),
@@ -102,6 +103,7 @@ extension Drink {
             category: .milkTea,
             baseCalories: 450,
             caloriesBySugar: [.sugar0: 280, .sugar30: 330, .sugar50: 380, .sugar70: 420, .sugar100: 450],
+            sugarGrams: 52,
             hasCaffeine: true,
             caffeineContent: 80
         ),
@@ -111,6 +113,7 @@ extension Drink {
             name: "檸檬綠茶",
             category: .fruitTea,
             baseCalories: 180,
+            sugarGrams: 60,
             hasCaffeine: true,
             caffeineContent: 45
         ),
@@ -123,6 +126,7 @@ extension Drink {
             category: .milkTea,
             baseCalories: 480,
             caloriesBySugar: [.sugar0: 300, .sugar30: 350, .sugar50: 400, .sugar70: 450, .sugar100: 480],
+            sugarGrams: 55,
             hasCaffeine: true,
             caffeineContent: 85
         ),
@@ -132,6 +136,7 @@ extension Drink {
             name: "百香雙響炮",
             category: .fruitTea,
             baseCalories: 220,
+            sugarGrams: 65,
             hasCaffeine: true,
             caffeineContent: 40
         ),
@@ -141,6 +146,7 @@ extension Drink {
             name: "芒果冰沙",
             category: .special,
             baseCalories: 350,
+            sugarGrams: 70,
             hasCaffeine: false
         ),
         
@@ -151,6 +157,7 @@ extension Drink {
             name: "大甲芋頭鮮奶",
             category: .fresh,
             baseCalories: 380,
+            sugarGrams: 45,
             hasCaffeine: false,
             availableSugarLevels: [.sugar0, .sugar30, .sugar50]
         ),
@@ -161,6 +168,7 @@ extension Drink {
             category: .milkTea,
             baseCalories: 320,
             caloriesBySugar: [.sugar0: 180, .sugar30: 220, .sugar50: 270, .sugar70: 300, .sugar100: 320],
+            sugarGrams: 42,
             hasCaffeine: true,
             caffeineContent: 70
         ),
@@ -170,6 +178,7 @@ extension Drink {
             name: "娜杯紅茶拿鐵",
             category: .milkTea,
             baseCalories: 290,
+            sugarGrams: 40,
             hasCaffeine: true,
             caffeineContent: 65
         ),
@@ -182,6 +191,7 @@ extension Drink {
             category: .pureTea,
             baseCalories: 60,
             caloriesBySugar: [.sugar0: 0, .sugar30: 25, .sugar50: 40, .sugar70: 50, .sugar100: 60],
+            sugarGrams: 30,
             hasCaffeine: true,
             caffeineContent: 55
         ),
@@ -191,6 +201,7 @@ extension Drink {
             name: "冬瓜紅茶",
             category: .pureTea,
             baseCalories: 200,
+            sugarGrams: 45,
             hasCaffeine: true,
             caffeineContent: 40,
             availableSugarLevels: [.sugar50, .sugar70, .sugar100] // 冬瓜糖無法去糖
@@ -204,6 +215,7 @@ extension Drink {
             category: .pureTea,
             baseCalories: 90,
             caloriesBySugar: [.sugar0: 0, .sugar30: 35, .sugar50: 55, .sugar70: 75, .sugar100: 90],
+            sugarGrams: 35,
             hasCaffeine: true,
             caffeineContent: 60
         ),
@@ -213,6 +225,7 @@ extension Drink {
             name: "熟成歐蕾",
             category: .milkTea,
             baseCalories: 280,
+            sugarGrams: 45,
             hasCaffeine: true,
             caffeineContent: 55
         ),
@@ -224,6 +237,7 @@ extension Drink {
             name: "鮮柚綠",
             category: .fruitTea,
             baseCalories: 150,
+            sugarGrams: 55,
             hasCaffeine: true,
             caffeineContent: 35
         ),
@@ -233,6 +247,7 @@ extension Drink {
             name: "芒果冰茶",
             category: .fruitTea,
             baseCalories: 250,
+            sugarGrams: 60,
             hasCaffeine: true,
             caffeineContent: 30
         ),

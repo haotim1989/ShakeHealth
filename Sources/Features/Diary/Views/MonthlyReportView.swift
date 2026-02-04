@@ -87,17 +87,41 @@ struct MonthlyReportView: View {
     }
     
     // 健康紅綠燈 (根據衛福部建議: 每日糖分 < 50g，每月約 1500g)
+    // 判定標準：
+    // 🟢 < 600g
+    // 🟡 600-1200g
+    // 🔴 ≥ 1200g
     private var healthStatus: HealthStatus {
-        // 假設每杯含糖飲料約 40g 糖 (中糖標準)
-        let estimatedSugar = monthlyLogs.count * 40
+        let estimatedSugar = calculateTotalSugar()
         
-        if estimatedSugar < 600 { // 每週少於 4 杯
+        if estimatedSugar < 600 {
             return .green
-        } else if estimatedSugar < 1200 { // 每週 4-8 杯
+        } else if estimatedSugar < 1200 {
             return .yellow
         } else {
             return .red
         }
+    }
+    
+    private func calculateTotalSugar() -> Double {
+        var totalSugar: Double = 0
+        
+        for log in monthlyLogs {
+            // 嘗試從 Service 取得飲品原始資料
+            if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+                // 基礎糖量 (若無數據則預設 50g)
+                let baseSugar = drink.sugarGrams ?? 50.0
+                // 根據甜度比例計算
+                totalSugar += baseSugar * log.selectedSugar.sugarPercentage
+            } else {
+                // 若找不到飲品資料，使用備援估算
+                // 純茶/果茶類通常糖分較低 (約 35-45g)，奶茶類較高 (約 45-55g)
+                // 這裡簡單使用 40g * 甜度比例 作為估算
+                totalSugar += 40.0 * log.selectedSugar.sugarPercentage
+            }
+        }
+        
+        return totalSugar
     }
     
     enum HealthStatus {
