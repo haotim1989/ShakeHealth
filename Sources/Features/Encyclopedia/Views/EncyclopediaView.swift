@@ -4,9 +4,6 @@ import SwiftUI
 struct EncyclopediaView: View {
     @StateObject private var viewModel = EncyclopediaViewModel()
     @EnvironmentObject var appState: AppState
-    @EnvironmentObject var userManager: UserManager
-    
-    @State private var showPaywall = false
     
     var body: some View {
         NavigationStack {
@@ -22,11 +19,6 @@ struct EncyclopediaView: View {
             }
             .navigationTitle("找熱量")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    premiumCrownButton
-                }
-            }
             .searchable(
                 text: $viewModel.searchText,
                 prompt: "搜尋飲料或品牌..."
@@ -49,40 +41,9 @@ struct EncyclopediaView: View {
                     .presentationDetents([.medium])
                 }
             }
-            .sheet(isPresented: $showPaywall) {
-                PaywallView()
-                    .environmentObject(userManager)
-            }
             .task {
                 if viewModel.drinks.isEmpty {
                     await viewModel.loadData()
-                }
-            }
-        }
-    }
-    
-    // MARK: - Premium Crown
-    
-    private var premiumCrownButton: some View {
-        Group {
-            if !userManager.isProUser {
-                Button {
-                    showPaywall = true
-                } label: {
-                    VStack(spacing: 2) {
-                        Image(systemName: "crown.fill")
-                            .font(.body)
-                        Text("Premium")
-                            .font(.system(size: 8))
-                            .fontWeight(.bold)
-                    }
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [Color(red: 1.0, green: 0.84, blue: 0.0), Color(red: 0.85, green: 0.65, blue: 0.13)],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
                 }
             }
         }

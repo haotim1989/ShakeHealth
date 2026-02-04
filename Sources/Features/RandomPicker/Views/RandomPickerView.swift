@@ -4,9 +4,6 @@ import SwiftUI
 struct RandomPickerView: View {
     @StateObject private var viewModel = RandomPickerViewModel()
     @EnvironmentObject var appState: AppState
-    @EnvironmentObject var userManager: UserManager
-    
-    @State private var showPaywall = false
     
     var body: some View {
         NavigationStack {
@@ -60,18 +57,9 @@ struct RandomPickerView: View {
             }
             .navigationTitle("隨機喝")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    premiumCrownButton
-                }
-            }
             .sheet(isPresented: $viewModel.showFilterSheet) {
                 FilterSheet(viewModel: viewModel)
                     .presentationDetents([.medium, .large])
-            }
-            .sheet(isPresented: $showPaywall) {
-                PaywallView()
-                    .environmentObject(userManager)
             }
             .alert("找不到符合條件的飲料", isPresented: $viewModel.showNoResultAlert) {
                 Button("調整篩選") {
@@ -86,33 +74,6 @@ struct RandomPickerView: View {
             .task {
                 if viewModel.allDrinks.isEmpty {
                     await viewModel.loadData()
-                }
-            }
-        }
-    }
-    
-    // MARK: - Premium Crown
-    
-    private var premiumCrownButton: some View {
-        Group {
-            if !userManager.isProUser {
-                Button {
-                    showPaywall = true
-                } label: {
-                    VStack(spacing: 2) {
-                        Image(systemName: "crown.fill")
-                            .font(.body)
-                        Text("Premium")
-                            .font(.system(size: 8))
-                            .fontWeight(.bold)
-                    }
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [Color(red: 1.0, green: 0.84, blue: 0.0), Color(red: 0.85, green: 0.65, blue: 0.13)],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
                 }
             }
         }

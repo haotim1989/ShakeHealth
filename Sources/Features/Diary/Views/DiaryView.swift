@@ -39,11 +39,6 @@ struct DiaryView: View {
             }
             .navigationTitle("我的日記")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    premiumCrownButton
-                }
-            }
             .alert("確認刪除", isPresented: $viewModel.showDeleteConfirmation) {
                 Button("取消", role: .cancel) {}
                 Button("刪除", role: .destructive) {
@@ -59,33 +54,6 @@ struct DiaryView: View {
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
                     .environmentObject(userManager)
-            }
-        }
-    }
-    
-    // MARK: - Premium Crown
-    
-    private var premiumCrownButton: some View {
-        Group {
-            if !userManager.isProUser {
-                Button {
-                    showPaywall = true
-                } label: {
-                    VStack(spacing: 2) {
-                        Image(systemName: "crown.fill")
-                            .font(.body)
-                        Text("Premium")
-                            .font(.system(size: 8))
-                            .fontWeight(.bold)
-                    }
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [Color(red: 1.0, green: 0.84, blue: 0.0), Color(red: 0.85, green: 0.65, blue: 0.13)],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                }
             }
         }
     }
