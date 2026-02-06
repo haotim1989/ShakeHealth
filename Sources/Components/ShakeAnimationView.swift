@@ -6,23 +6,28 @@ struct ShakeAnimationView: View {
     
     @State private var rotation: Double = 0
     @State private var scale: CGFloat = 1.0
+    @State private var glowOpacity: Double = 0.3
+    @State private var dotOffset: CGFloat = 0
+    @State private var textIndex: Int = 0
+    
+    private let animatedTexts = ["搖搖搖～", "選什麼呢？", "🍵", "就決定是你了！"]
     
     var body: some View {
         VStack(spacing: 24) {
             // 搖搖杯圖示
             ZStack {
-                // 背景光暈
+                // 背景光暈 (脈動效果)
                 Circle()
                     .fill(
                         RadialGradient(
-                            colors: [Color.teaBrown.opacity(0.3), Color.clear],
+                            colors: [Color.teaBrown.opacity(glowOpacity), Color.clear],
                             center: .center,
                             startRadius: 40,
                             endRadius: 120
                         )
                     )
                     .frame(width: 200, height: 200)
-                    .scaleEffect(isShaking ? 1.2 : 1.0)
+                    .scaleEffect(isShaking ? 1.3 : 1.0)
                 
                 // 飲料杯
                 Image(systemName: "cup.and.saucer.fill")
@@ -36,15 +41,29 @@ struct ShakeAnimationView: View {
                     )
                     .rotationEffect(.degrees(rotation))
                     .scaleEffect(scale)
+                
+                // 彈跳小點點
+                if isShaking {
+                    ForEach(0..<3, id: \.self) { index in
+                        Circle()
+                            .fill(Color.teaBrown.opacity(0.6))
+                            .frame(width: 8, height: 8)
+                            .offset(
+                                x: CGFloat(index - 1) * 20,
+                                y: -60 + dotOffset + CGFloat(index) * 3
+                            )
+                    }
+                }
             }
             
-            // 提示文字
+            // 動態提示文字
             if isShaking {
-                Text("搖搖搖～")
+                Text(animatedTexts[textIndex])
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.teaBrown)
-                    .transition(.opacity)
+                    .transition(.scale.combined(with: .opacity))
+                    .id(textIndex)  // 讓 SwiftUI 知道文字變了
             }
         }
         .onChange(of: isShaking) { _, newValue in
@@ -54,23 +73,55 @@ struct ShakeAnimationView: View {
                 stopShakeAnimation()
             }
         }
+        .onAppear {
+            if isShaking {
+                startShakeAnimation()
+            }
+        }
     }
     
     private func startShakeAnimation() {
         // 搖晃動畫
         withAnimation(
-            .easeInOut(duration: 0.1)
+            .easeInOut(duration: 0.08)
             .repeatForever(autoreverses: true)
         ) {
-            rotation = 15
+            rotation = 12
         }
         
         // 縮放動畫
         withAnimation(
+            .easeInOut(duration: 0.15)
+            .repeatForever(autoreverses: true)
+        ) {
+            scale = 1.15
+        }
+        
+        // 光暈脈動
+        withAnimation(
+            .easeInOut(duration: 0.4)
+            .repeatForever(autoreverses: true)
+        ) {
+            glowOpacity = 0.6
+        }
+        
+        // 小點點彈跳
+        withAnimation(
             .easeInOut(duration: 0.2)
             .repeatForever(autoreverses: true)
         ) {
-            scale = 1.1
+            dotOffset = -10
+        }
+        
+        // 文字輪播
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            if !isShaking {
+                timer.invalidate()
+                return
+            }
+            withAnimation(.spring(response: 0.3)) {
+                textIndex = (textIndex + 1) % animatedTexts.count
+            }
         }
     }
     
@@ -78,7 +129,10 @@ struct ShakeAnimationView: View {
         withAnimation(.spring(response: 0.4, dampingFraction: 0.5)) {
             rotation = 0
             scale = 1.0
+            glowOpacity = 0.3
+            dotOffset = 0
         }
+        textIndex = 0
     }
 }
 
