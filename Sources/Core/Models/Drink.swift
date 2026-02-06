@@ -51,12 +51,31 @@ struct Drink: Identifiable, Codable, Hashable {
     }
     
     /// 根據甜度計算熱量
+    /// 公式：基底熱量 = 全糖熱量 - (全糖糖量 × 4)
+    ///       各甜度熱量 = 基底熱量 + (全糖糖量 × 甜度比例 × 4)
     func calories(for sugarLevel: SugarLevel) -> Int {
+        // 如果有預設的各甜度熱量數據，直接使用
         if let calories = caloriesBySugar?[sugarLevel.rawValue] {
             return calories
         }
-        // 若無特定數據，使用估算公式
-        return Int(Double(baseCalories) * sugarLevel.multiplier)
+        
+        // 使用新公式計算
+        guard let sugar = sugarGrams else {
+            // 若無糖量數據，使用舊的 multiplier 估算
+            return Int(Double(baseCalories) * sugarLevel.multiplier)
+        }
+        
+        // 計算糖的熱量 (全糖時)
+        let fullSugarCalories = sugar * 4.0
+        
+        // 基底熱量 = 全糖熱量 - 糖熱量
+        let baseCaloriesWithoutSugar = Double(baseCalories) - fullSugarCalories
+        
+        // 各甜度的糖熱量 = 糖量 × 甜度比例 × 4
+        let sugarCaloriesAtLevel = sugar * sugarLevel.sugarPercentage * 4.0
+        
+        // 總熱量 = 基底 + 該甜度的糖熱量
+        return Int(baseCaloriesWithoutSugar + sugarCaloriesAtLevel)
     }
     
     /// 取得關聯品牌
