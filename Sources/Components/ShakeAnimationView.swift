@@ -5,65 +5,55 @@ struct ShakeAnimationView: View {
     @Binding var isShaking: Bool
     
     @State private var rotation: Double = 0
-    @State private var scale: CGFloat = 1.0
-    @State private var glowOpacity: Double = 0.3
-    @State private var dotOffset: CGFloat = 0
-    @State private var textIndex: Int = 0
-    
-    private let animatedTexts = ["搖搖搖～", "選什麼呢？", "🍵", "就決定是你了！"]
+    @State private var yOffset: CGFloat = 0
+    @State private var shadowRadius: CGFloat = 8
     
     var body: some View {
-        VStack(spacing: 24) {
-            // 搖搖杯圖示
+        VStack(spacing: 32) {
+            // 飲料杯圖示
             ZStack {
-                // 背景光暈 (脈動效果)
-                Circle()
-                    .fill(
-                        RadialGradient(
-                            colors: [Color.teaBrown.opacity(glowOpacity), Color.clear],
-                            center: .center,
-                            startRadius: 40,
-                            endRadius: 120
-                        )
-                    )
-                    .frame(width: 200, height: 200)
-                    .scaleEffect(isShaking ? 1.3 : 1.0)
+                // 柔和陰影底座
+                Ellipse()
+                    .fill(Color.black.opacity(0.08))
+                    .frame(width: 100, height: 20)
+                    .offset(y: 50)
+                    .blur(radius: isShaking ? 6 : 4)
+                    .scaleEffect(isShaking ? 0.9 : 1.0)
                 
                 // 飲料杯
                 Image(systemName: "cup.and.saucer.fill")
-                    .font(.system(size: 80))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.teaBrown, .milkCream],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .rotationEffect(.degrees(rotation))
-                    .scaleEffect(scale)
-                
-                // 彈跳小點點
-                if isShaking {
-                    ForEach(0..<3, id: \.self) { index in
-                        Circle()
-                            .fill(Color.teaBrown.opacity(0.6))
-                            .frame(width: 8, height: 8)
-                            .offset(
-                                x: CGFloat(index - 1) * 20,
-                                y: -60 + dotOffset + CGFloat(index) * 3
-                            )
-                    }
-                }
-            }
-            
-            // 動態提示文字
-            if isShaking {
-                Text(animatedTexts[textIndex])
-                    .font(.title2)
-                    .fontWeight(.bold)
+                    .font(.system(size: 72, weight: .regular))
                     .foregroundColor(.teaBrown)
-                    .transition(.scale.combined(with: .opacity))
-                    .id(textIndex)  // 讓 SwiftUI 知道文字變了
+                    .rotationEffect(.degrees(rotation))
+                    .offset(y: yOffset)
+                    .shadow(color: .teaBrown.opacity(0.2), radius: shadowRadius, y: 4)
+            }
+            .frame(height: 140)
+            
+            // 載入指示器
+            if isShaking {
+                VStack(spacing: 16) {
+                    // 三個跳動的點
+                    HStack(spacing: 8) {
+                        ForEach(0..<3, id: \.self) { index in
+                            Circle()
+                                .fill(Color.teaBrown)
+                                .frame(width: 10, height: 10)
+                                .offset(y: isShaking ? -8 : 0)
+                                .animation(
+                                    .easeInOut(duration: 0.4)
+                                    .repeatForever()
+                                    .delay(Double(index) * 0.15),
+                                    value: isShaking
+                                )
+                        }
+                    }
+                    
+                    Text("選飲料中...")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.secondary)
+                }
             }
         }
         .onChange(of: isShaking) { _, newValue in
@@ -81,58 +71,37 @@ struct ShakeAnimationView: View {
     }
     
     private func startShakeAnimation() {
-        // 搖晃動畫
+        // 左右搖晃
         withAnimation(
-            .easeInOut(duration: 0.08)
+            .easeInOut(duration: 0.1)
             .repeatForever(autoreverses: true)
         ) {
-            rotation = 12
+            rotation = 8
         }
         
-        // 縮放動畫
+        // 上下彈跳
         withAnimation(
-            .easeInOut(duration: 0.15)
+            .easeInOut(duration: 0.25)
             .repeatForever(autoreverses: true)
         ) {
-            scale = 1.15
+            yOffset = -12
         }
         
-        // 光暈脈動
+        // 陰影脈動
         withAnimation(
-            .easeInOut(duration: 0.4)
+            .easeInOut(duration: 0.25)
             .repeatForever(autoreverses: true)
         ) {
-            glowOpacity = 0.6
-        }
-        
-        // 小點點彈跳
-        withAnimation(
-            .easeInOut(duration: 0.2)
-            .repeatForever(autoreverses: true)
-        ) {
-            dotOffset = -10
-        }
-        
-        // 文字輪播
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-            if !isShaking {
-                timer.invalidate()
-                return
-            }
-            withAnimation(.spring(response: 0.3)) {
-                textIndex = (textIndex + 1) % animatedTexts.count
-            }
+            shadowRadius = 16
         }
     }
     
     private func stopShakeAnimation() {
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.5)) {
+        withAnimation(.spring(response: 0.5, dampingFraction: 0.6)) {
             rotation = 0
-            scale = 1.0
-            glowOpacity = 0.3
-            dotOffset = 0
+            yOffset = 0
+            shadowRadius = 8
         }
-        textIndex = 0
     }
 }
 
