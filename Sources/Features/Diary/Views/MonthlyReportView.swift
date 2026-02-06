@@ -10,6 +10,7 @@ struct MonthlyReportView: View {
     
     // 月份選擇
     @State private var selectedMonthOffset: Int = 0  // 0 = 當月, -1 = 上個月, etc.
+    @State private var showHealthInfo = false  // 顯示衛福部建議提示
     
     /// 計算有資料的月份 (用於限制切換範圍)
     private var monthsWithData: Set<Int> {
@@ -86,17 +87,17 @@ struct MonthlyReportView: View {
         }
     }
     
-    // 健康紅綠燈 (根據衛福部建議: 每日糖分 < 50g，每月約 1500g)
-    // 判定標準：
-    // 🟢 < 600g
-    // 🟡 600-1200g
-    // 🔴 ≥ 1200g
+    // 健康紅綠燈 (根據衛福部建議: 每日糖分 < 50g)
+    // 判定標準（依日均糖量）：
+    // 🟢 適中：日均 < 40g
+    // 🟡 注意：日均 40g ~ 60g
+    // 🔴 警告：日均 > 60g
     private var healthStatus: HealthStatus {
-        let estimatedSugar = calculateTotalSugar()
+        let dailyAverage = daysInMonth > 0 ? calculateTotalSugar() / Double(daysInMonth) : 0
         
-        if estimatedSugar < 600 {
+        if dailyAverage < 40 {
             return .green
-        } else if estimatedSugar < 1200 {
+        } else if dailyAverage <= 60 {
             return .yellow
         } else {
             return .red
@@ -137,9 +138,9 @@ struct MonthlyReportView: View {
         
         var message: String {
             switch self {
-            case .green: return "太棒了！這個月飲料攝取量適中 🎉"
-            case .yellow: return "注意！建議適度控制含糖飲料 ⚠️"
-            case .red: return "警告！本月飲料攝取量較高，請注意健康 🚨"
+            case .green: return "太棒了！日均糖分攝取適中 🎉"
+            case .yellow: return "注意！日均糖分已超過 40g ⚠️"
+            case .red: return "警告！日均糖分超過 60g，請注意健康 🚨"
             }
         }
         
@@ -272,13 +273,24 @@ struct MonthlyReportView: View {
     
     private var healthStatusCard: some View {
         VStack(spacing: 16) {
-            Image(systemName: healthStatus.icon)
-                .font(.system(size: 50))
-                .foregroundColor(healthStatus.color)
+            // 可點擊的圖示
+            Button {
+                showHealthInfo = true
+            } label: {
+                Image(systemName: healthStatus.icon)
+                    .font(.system(size: 50))
+                    .foregroundColor(healthStatus.color)
+            }
             
             Text(healthStatus.message)
                 .font(.headline)
                 .multilineTextAlignment(.center)
+            
+            // 日均糖量顯示
+            let dailyAvg = daysInMonth > 0 ? calculateTotalSugar() / Double(daysInMonth) : 0
+            Text("日均糖量：\(String(format: "%.1f", dailyAvg))g")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
             
             // 紅綠燈指示器
             HStack(spacing: 12) {
@@ -292,6 +304,11 @@ struct MonthlyReportView: View {
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(color: .black.opacity(0.05), radius: 5, y: 2)
+        .alert("衛福部建議", isPresented: $showHealthInfo) {
+            Button("我知道了", role: .cancel) { }
+        } message: {
+            Text("每日攝取糖量不超過 50g\n（約一杯全糖手搖飲料）")
+        }
     }
     
     private func trafficLight(_ color: Color, isActive: Bool) -> some View {
