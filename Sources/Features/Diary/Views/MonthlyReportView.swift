@@ -317,8 +317,13 @@ struct MonthlyReportView: View {
             }
             
             HStack(spacing: 16) {
+                statCard(title: "總糖量", value: String(format: "%.0f", calculateTotalSugar()), unit: "g", icon: "cube.fill", color: .pink)
                 statCard(title: "平均評分", value: String(format: "%.1f", averageRating), unit: "星", icon: "star.fill", color: .yellow)
+            }
+            
+            HStack(spacing: 16) {
                 statCard(title: "日均杯數", value: String(format: "%.1f", daysInMonth > 0 ? Double(totalDrinks) / Double(daysInMonth) : 0), unit: "杯", icon: "calendar", color: .blue)
+                statCard(title: "日均糖量", value: String(format: "%.0f", daysInMonth > 0 ? calculateTotalSugar() / Double(daysInMonth) : 0), unit: "g", icon: "chart.bar.fill", color: .purple)
             }
         }
     }
