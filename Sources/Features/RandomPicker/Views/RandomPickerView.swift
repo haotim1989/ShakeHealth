@@ -10,7 +10,7 @@ struct RandomPickerView: View {
     
     /// 當前用戶的日記記錄
     private var userLogs: [DrinkLog] {
-        allLogs.filter { $0.userId == userManager.currentUserId }
+        allLogs.filter { $0.userId == appState.userId }
     }
     
     var body: some View {
