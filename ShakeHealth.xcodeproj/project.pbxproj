@@ -20,6 +20,7 @@
 		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027 /* DiaryViewModel.swift */; };
 		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028 /* DiaryView.swift */; };
 		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029 /* DiaryDetailView.swift */; };
+		DRY005 /* CustomDrinkModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC036 /* CustomDrinkModal.swift */; };
 		EEFB60132F2DD17C000D7169 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB60122F2DD17C000D7169 /* ShareService.swift */; };
 		ENC001 /* EncyclopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC024 /* EncyclopediaViewModel.swift */; };
 		ENC002 /* EncyclopediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC025 /* EncyclopediaView.swift */; };
@@ -87,6 +88,7 @@
 		SRC033 /* AdViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViews.swift; sourceTree = "<group>"; };
 		SRC034 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		SRC035 /* MonthlyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyReportView.swift; sourceTree = "<group>"; };
+		SRC036 /* CustomDrinkModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrinkModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -275,6 +277,7 @@
 				SRC028 /* DiaryView.swift */,
 				SRC029 /* DiaryDetailView.swift */,
 				SRC035 /* MonthlyReportView.swift */,
+				SRC036 /* CustomDrinkModal.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				CMP008 /* AdViews.swift in Sources */,
 				SUB001 /* PaywallView.swift in Sources */,
 				DRY004 /* MonthlyReportView.swift in Sources */,
+				DRY005 /* CustomDrinkModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
