@@ -6,20 +6,17 @@ protocol RandomPickerServiceProtocol {
     func getFilteredDrinks(criteria: FilterCriteria, userLogs: [DrinkLog]) async throws -> [Drink]
 }
 
-/// 智慧推薦結果
-struct SmartPickResult {
-    let drinks: [Drink]
-    let hasInsufficientData: Bool  // 資料不足，已 fallback 到普通隨機
-}
-
 /// 隨機推薦服務實作
 final class RandomPickerService: RandomPickerServiceProtocol {
     static let shared = RandomPickerService()
     
     private let drinkService: DrinkServiceProtocol
     
-    /// 智慧推薦的最低資料門檻 (至少要有 3 筆有評分的紀錄)
-    private let minLogsForSmartRecommendation = 3
+    /// 智慧推薦的最低資料門檻 (至少要有 10 筆不重複飲料紀錄)
+    private let minLogsForSmartRecommendation = 10
+    
+    /// 偏好池最少需要的飲料數量，否則 fallback 到探索池
+    private let minPriorityPoolSize = 3
     
     init(drinkService: DrinkServiceProtocol = DrinkService.shared) {
         self.drinkService = drinkService
@@ -39,12 +36,12 @@ final class RandomPickerService: RandomPickerServiceProtocol {
         // 先套用基本篩選條件
         var filtered = criteria.isEmpty ? allDrinks : allDrinks.filter { criteria.matches($0) }
         
-        // 避雷模式：排除 1-2 星評價的飲料
+        // 避雷模式：只排除評價 1-2 星的特定飲料 (不排除品牌)
         if criteria.antiThunder {
             filtered = applyAvoidMode(to: filtered, logs: userLogs)
         }
         
-        // 智慧推薦：加權抽選 (80% 高評/常喝，20% 新飲料)
+        // 智慧推薦：動態機率決定從偏好池或探索池抽取
         if criteria.smartPriority {
             filtered = applySmartRecommendation(to: filtered, logs: userLogs)
         }
@@ -54,79 +51,108 @@ final class RandomPickerService: RandomPickerServiceProtocol {
     
     // MARK: - 避雷模式
     
-    /// 排除用戶評價 1-2 星的飲料
+    /// 只排除用戶給 1-2 星的特定飲料 (不影響同品牌其他飲料)
     private func applyAvoidMode(to drinks: [Drink], logs: [DrinkLog]) -> [Drink] {
-        // 取得所有評價 <= 2 星的飲料 ID
+        // 取得所有評價 1-2 星的特定飲料 ID
         let lowRatedDrinkIds = Set(
-            logs.filter { $0.rating <= 2 }
+            logs.filter { $0.rating >= 1 && $0.rating <= 2 }
                 .map { $0.drinkId }
         )
         
-        // 排除這些飲料
+        // 只排除這些特定飲料，不影響同品牌其他飲料
         return drinks.filter { !lowRatedDrinkIds.contains($0.id) }
     }
     
     // MARK: - 智慧推薦
     
-    /// 智慧推薦邏輯：
-    /// - 80% 機率從「偏好池」抽取 (4-5星評價 + 常喝的品牌/品類)
-    /// - 20% 機率從「探索池」抽取 (從未喝過的飲料)
+    /// 計算不重複飲料數量
+    private func uniqueDrinkCount(from logs: [DrinkLog]) -> Int {
+        return Set(logs.map { $0.drinkId }).count
+    }
+    
+    /// 根據資料量取得偏好池機率
+    /// - < 10 筆：0% (完全隨機)
+    /// - 10-19 筆：20%
+    /// - 20-29 筆：50%
+    /// - 30-49 筆：70%
+    /// - >= 50 筆：90%
+    private func getPriorityPoolProbability(uniqueCount: Int) -> Double {
+        switch uniqueCount {
+        case 0..<10:
+            return 0.0
+        case 10..<20:
+            return 0.2
+        case 20..<30:
+            return 0.5
+        case 30..<50:
+            return 0.7
+        default:
+            return 0.9
+        }
+    }
+    
+    /// 智慧推薦主邏輯
     private func applySmartRecommendation(to drinks: [Drink], logs: [DrinkLog]) -> [Drink] {
-        // 資料不足時直接返回全部
-        let ratedLogs = logs.filter { $0.rating > 0 }
-        guard ratedLogs.count >= minLogsForSmartRecommendation else {
+        let uniqueCount = uniqueDrinkCount(from: logs)
+        
+        // 資料不足時直接返回全部 (探索模式)
+        guard uniqueCount >= minLogsForSmartRecommendation else {
             return drinks
         }
         
-        // 取得高評價飲料 ID (4-5星)
+        // 取得偏好池 (只包含 4-5 星評價的飲料)
         let highRatedDrinkIds = Set(
-            ratedLogs.filter { $0.rating >= 4 }
-                     .map { $0.drinkId }
+            logs.filter { $0.rating >= 4 }
+                .map { $0.drinkId }
+        )
+        let priorityPool = drinks.filter { highRatedDrinkIds.contains($0.id) }
+        
+        // 取得探索池 (不在偏好池中的其他飲料)
+        let explorationPool = drinks.filter { !highRatedDrinkIds.contains($0.id) }
+        
+        // 如果偏好池太小，強制使用探索池
+        guard priorityPool.count >= minPriorityPoolSize else {
+            return explorationPool.isEmpty ? drinks : explorationPool
+        }
+        
+        // 動態機率決定抽哪個池
+        let probability = getPriorityPoolProbability(uniqueCount: uniqueCount)
+        let random = Double.random(in: 0...1)
+        
+        if random < probability {
+            // 命中偏好池：加權抽取 (5星=3倍權重，4星=1倍權重)
+            return applyWeightedPriorityPool(priorityPool: priorityPool, logs: logs)
+        } else {
+            // 命中探索池
+            return explorationPool.isEmpty ? drinks : explorationPool
+        }
+    }
+    
+    /// 對偏好池進行加權處理 (5星=3倍權重，4星=1倍權重)
+    private func applyWeightedPriorityPool(priorityPool: [Drink], logs: [DrinkLog]) -> [Drink] {
+        // 取得 5 星飲料 ID
+        let fiveStarIds = Set(
+            logs.filter { $0.rating == 5 }
+                .map { $0.drinkId }
         )
         
-        // 取得喝過的飲料 ID
-        let triedDrinkIds = Set(logs.map { $0.drinkId })
-        
-        // 統計最常喝的品牌 (取前 3 名)
-        let brandCounts = Dictionary(grouping: logs, by: { $0.brandId })
-            .mapValues { $0.count }
-            .sorted { $0.value > $1.value }
-            .prefix(3)
-            .map { $0.key }
-        let favoriteBrands = Set(brandCounts)
-        
-        // 分類飲料
-        var priorityPool: [Drink] = []  // 偏好池
-        var explorationPool: [Drink] = []  // 探索池
-        
-        for drink in drinks {
-            if highRatedDrinkIds.contains(drink.id) || favoriteBrands.contains(drink.brandId) {
-                // 高評價或常喝品牌 → 偏好池
-                priorityPool.append(drink)
-            } else if !triedDrinkIds.contains(drink.id) {
-                // 沒喝過 → 探索池
-                explorationPool.append(drink)
+        // 建立加權陣列
+        var weightedPool: [Drink] = []
+        for drink in priorityPool {
+            if fiveStarIds.contains(drink.id) {
+                // 5 星：放入 3 次
+                weightedPool.append(contentsOf: [drink, drink, drink])
+            } else {
+                // 4 星：放入 1 次
+                weightedPool.append(drink)
             }
         }
         
-        // 決定從哪個池抽取 (80% 偏好池，20% 探索池)
-        let random = Double.random(in: 0...1)
-        
-        if random < 0.8 && !priorityPool.isEmpty {
-            return priorityPool
-        } else if !explorationPool.isEmpty {
-            return explorationPool
-        } else if !priorityPool.isEmpty {
-            return priorityPool
-        } else {
-            // 兩個池都空，回傳原始列表
-            return drinks
-        }
+        return weightedPool
     }
     
     /// 檢查是否有足夠資料進行智慧推薦
     func hasInsufficientData(logs: [DrinkLog]) -> Bool {
-        let ratedLogs = logs.filter { $0.rating > 0 }
-        return ratedLogs.count < minLogsForSmartRecommendation
+        return uniqueDrinkCount(from: logs) < minLogsForSmartRecommendation
     }
 }
