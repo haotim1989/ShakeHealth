@@ -126,10 +126,8 @@ struct DiaryView: View {
                 Label {
                     HStack {
                         Text("自訂飲料")
-                        if !userManager.isProUser {
-                            Image(systemName: "lock.fill")
-                                .font(.caption)
-                        }
+                        Image(systemName: "lock.fill")
+                            .font(.caption)
                     }
                 } icon: {
                     Image(systemName: "square.and.pencil")
@@ -198,10 +196,8 @@ struct DiaryView: View {
                     HStack {
                         Image(systemName: "square.and.pencil")
                         Text("自訂飲料")
-                        if !userManager.isProUser {
-                            Image(systemName: "lock.fill")
-                                .font(.caption)
-                        }
+                        Image(systemName: "lock.fill")
+                            .font(.caption)
                     }
                     .font(.headline)
                     .foregroundColor(.teaBrown)
