@@ -58,7 +58,7 @@ struct PaywallView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.yellow)
             
-            Text("ShakeHealth Premium")
+            Text("飲料日記 Premium")
                 .font(.title)
                 .fontWeight(.bold)
             

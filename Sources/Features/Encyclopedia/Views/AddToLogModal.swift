@@ -81,12 +81,12 @@ struct AddToLogModal: View {
                     .environmentObject(userManager)
             }
             .alert("今日額度已達上限", isPresented: $showDailyLimitAlert) {
-                Button("升級 Pro") {
+                Button("升級 Premium") {
                     showPaywall = true
                 }
                 Button("取消", role: .cancel) {}
             } message: {
-                Text("免費版每日僅能記錄 1 杯飲料。升級 Pro 解鎖無限記錄！")
+                Text("免費版每日僅能記錄 1 杯飲料。升級 Premium 解鎖無限記錄！")
             }
         }
     }
@@ -108,7 +108,7 @@ struct AddToLogModal: View {
                     HStack(spacing: 4) {
                         Image(systemName: "lock.fill")
                             .font(.caption2)
-                        Text("Pro")
+                        Text("Premium")
                             .font(.caption)
                     }
                     .foregroundColor(.secondary)
