@@ -34,7 +34,7 @@ struct CustomDrinkModal: View {
     
     // 可選的糖度與冰塊
     private let allSugarLevels: [SugarLevel] = [.sugar0, .sugar30, .sugar50, .sugar70, .sugar100]
-    private let allIceLevels: [IceLevel] = [.hot, .warm, .roomTemp, .noIce, .littleIce, .lessIce, .regular]
+    private let allIceLevels: [IceLevel] = [.hot, .noIce, .lightIce, .lessIce, .normalIce]
     
     private var isValidForm: Bool {
         !drinkName.trimmingCharacters(in: .whitespaces).isEmpty &&
