@@ -117,9 +117,23 @@ struct DiaryView: View {
             }
             
             Button {
-                showCustomDrinkModal = true
+                if userManager.isProUser {
+                    showCustomDrinkModal = true
+                } else {
+                    showPaywall = true
+                }
             } label: {
-                Label("自訂飲料", systemImage: "square.and.pencil")
+                Label {
+                    HStack {
+                        Text("自訂飲料")
+                        if !userManager.isProUser {
+                            Image(systemName: "lock.fill")
+                                .font(.caption)
+                        }
+                    }
+                } icon: {
+                    Image(systemName: "square.and.pencil")
+                }
             }
         } label: {
             Image(systemName: "plus")
@@ -173,13 +187,21 @@ struct DiaryView: View {
                     .clipShape(Capsule())
                 }
                 
-                // 自訂飲料
+                // 自訂飲料 (Premium)
                 Button {
-                    showCustomDrinkModal = true
+                    if userManager.isProUser {
+                        showCustomDrinkModal = true
+                    } else {
+                        showPaywall = true
+                    }
                 } label: {
                     HStack {
                         Image(systemName: "square.and.pencil")
                         Text("自訂飲料")
+                        if !userManager.isProUser {
+                            Image(systemName: "lock.fill")
+                                .font(.caption)
+                        }
                     }
                     .font(.headline)
                     .foregroundColor(.teaBrown)
