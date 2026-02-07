@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 /// 隨機推薦 ViewModel
 @MainActor
@@ -13,11 +14,15 @@ final class RandomPickerViewModel: ObservableObject {
     @Published var showNoResultAlert = false
     @Published var showFilterSheet = false
     @Published var errorMessage: String?
+    @Published var showInsufficientDataHint = false  // 資料不足提示
     
     // MARK: - Dependencies
     private let pickerService: RandomPickerServiceProtocol
     private let drinkService: DrinkServiceProtocol
     private let hapticManager = HapticManager.shared
+    
+    // 用戶日記記錄 (由外部注入)
+    var userLogs: [DrinkLog] = []
     
     // MARK: - Computed Properties
     var filteredCount: Int {
@@ -56,11 +61,19 @@ final class RandomPickerViewModel: ObservableObject {
         isShaking = true
         hapticManager.playShake()
         
+        // 檢查智慧推薦資料是否足夠
+        if criteria.smartPriority {
+            let service = pickerService as? RandomPickerService
+            if service?.hasInsufficientData(logs: userLogs) == true {
+                showInsufficientDataHint = true
+            }
+        }
+        
         // 動畫延遲
         try? await Task.sleep(nanoseconds: UInt64(Constants.Animation.shakeAnimation * 1_000_000_000))
         
         do {
-            let drinks = try await pickerService.getFilteredDrinks(criteria: criteria)
+            let drinks = try await pickerService.getFilteredDrinks(criteria: criteria, userLogs: userLogs)
             
             if let drink = drinks.randomElement() {
                 withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {

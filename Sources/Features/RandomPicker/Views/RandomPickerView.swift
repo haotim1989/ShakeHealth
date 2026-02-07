@@ -1,9 +1,17 @@
 import SwiftUI
+import SwiftData
 
 /// 隨機推薦頁面
 struct RandomPickerView: View {
     @StateObject private var viewModel = RandomPickerViewModel()
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var userManager: UserManager
+    @Query private var allLogs: [DrinkLog]
+    
+    /// 當前用戶的日記記錄
+    private var userLogs: [DrinkLog] {
+        allLogs.filter { $0.userId == userManager.currentUserId }
+    }
     
     var body: some View {
         NavigationStack {
@@ -71,10 +79,21 @@ struct RandomPickerView: View {
             } message: {
                 Text("請放寬篩選條件，或清除所有篩選重新開始。")
             }
+            .alert("智慧推薦提示", isPresented: $viewModel.showInsufficientDataHint) {
+                Button("我知道了", role: .cancel) { }
+            } message: {
+                Text("累積更多評分後，推薦會更準確喔！\n目前紀錄較少，將使用普通隨機模式。")
+            }
             .task {
                 if viewModel.allDrinks.isEmpty {
                     await viewModel.loadData()
                 }
+            }
+            .onChange(of: userLogs) { _, newLogs in
+                viewModel.userLogs = newLogs
+            }
+            .onAppear {
+                viewModel.userLogs = userLogs
             }
         }
     }
