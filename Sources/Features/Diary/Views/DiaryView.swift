@@ -123,15 +123,7 @@ struct DiaryView: View {
                     showPaywall = true
                 }
             } label: {
-                Label {
-                    HStack {
-                        Text("自訂飲料")
-                        Image(systemName: "lock.fill")
-                            .font(.caption)
-                    }
-                } icon: {
-                    Image(systemName: "square.and.pencil")
-                }
+                Label("自訂飲料 🔒", systemImage: "square.and.pencil")
             }
         } label: {
             Image(systemName: "plus")
