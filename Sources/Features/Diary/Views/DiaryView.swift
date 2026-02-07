@@ -13,6 +13,8 @@ struct DiaryView: View {
     
     @State private var showMonthlyReport = false
     @State private var showPaywall = false
+    @State private var showCustomDrinkModal = false
+    @State private var showAddOptions = false
     
     var body: some View {
         NavigationStack {
@@ -54,6 +56,14 @@ struct DiaryView: View {
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
                     .environmentObject(userManager)
+            }
+            .sheet(isPresented: $showCustomDrinkModal) {
+                CustomDrinkModal(
+                    onDismiss: { showCustomDrinkModal = false },
+                    onSave: { showCustomDrinkModal = false }
+                )
+                .environmentObject(appState)
+                .environmentObject(userManager)
             }
         }
     }
@@ -99,8 +109,18 @@ struct DiaryView: View {
     }
     
     private var floatingAddButton: some View {
-        Button {
-            appState.selectedTab = .encyclopedia
+        Menu {
+            Button {
+                appState.selectedTab = .encyclopedia
+            } label: {
+                Label("從圖鑑新增", systemImage: "book")
+            }
+            
+            Button {
+                showCustomDrinkModal = true
+            } label: {
+                Label("自訂飲料", systemImage: "square.and.pencil")
+            }
         } label: {
             Image(systemName: "plus")
                 .font(.title2)
@@ -136,20 +156,40 @@ struct DiaryView: View {
                     .foregroundColor(.secondary)
             }
             
-            Button {
-                appState.selectedTab = .encyclopedia
-            } label: {
-                HStack {
-                    Image(systemName: "plus")
-                    Text("加入第一筆")
+            VStack(spacing: 12) {
+                // 從圖鑑新增
+                Button {
+                    appState.selectedTab = .encyclopedia
+                } label: {
+                    HStack {
+                        Image(systemName: "book")
+                        Text("從圖鑑新增")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 14)
+                    .background(Color.teaBrown)
+                    .clipShape(Capsule())
                 }
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding(.horizontal, 24)
-                .padding(.vertical, 14)
-                .background(Color.teaBrown)
-                .clipShape(Capsule())
+                
+                // 自訂飲料
+                Button {
+                    showCustomDrinkModal = true
+                } label: {
+                    HStack {
+                        Image(systemName: "square.and.pencil")
+                        Text("自訂飲料")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.teaBrown)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 14)
+                    .background(Color.teaBrown.opacity(0.1))
+                    .clipShape(Capsule())
+                }
             }
+            .padding(.horizontal, 40)
         }
         .padding()
     }
