@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		APP001 /* ShakeHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001 /* ShakeHealthApp.swift */; };
-		RES002 /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = DAT001 /* SampleData.json */; };
 		APP002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC002 /* ContentView.swift */; };
 		AST001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = RES001 /* Assets.xcassets */; };
 		CMP001 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC015 /* StarRatingView.swift */; };
@@ -17,9 +16,12 @@
 		CMP004 /* CalorieIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC018 /* CalorieIndicator.swift */; };
 		CMP005 /* ShakeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC019 /* ShakeAnimationView.swift */; };
 		CMP006 /* DrinkResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC020 /* DrinkResultCard.swift */; };
+		CMP007 /* ProFeatureLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC032 /* ProFeatureLock.swift */; };
+		CMP008 /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC033 /* AdViews.swift */; };
 		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027 /* DiaryViewModel.swift */; };
 		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028 /* DiaryView.swift */; };
 		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029 /* DiaryDetailView.swift */; };
+		DRY004 /* MonthlyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC035 /* MonthlyReportView.swift */; };
 		DRY005 /* CustomDrinkModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC036 /* CustomDrinkModal.swift */; };
 		EEFB60132F2DD17C000D7169 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB60122F2DD17C000D7169 /* ShareService.swift */; };
 		ENC001 /* EncyclopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC024 /* EncyclopediaViewModel.swift */; };
@@ -30,22 +32,20 @@
 		MOD003 /* DrinkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC005 /* DrinkLog.swift */; };
 		MOD004 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC006 /* Enums.swift */; };
 		MOD005 /* FilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC007 /* FilterCriteria.swift */; };
+		RES002 /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = DAT001 /* SampleData.json */; };
 		RND001 /* RandomPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC021 /* RandomPickerViewModel.swift */; };
 		RND002 /* RandomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC022 /* RandomPickerView.swift */; };
 		RND003 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC023 /* FilterSheet.swift */; };
+		SUB001 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC034 /* PaywallView.swift */; };
 		SVC001 /* DrinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC008 /* DrinkService.swift */; };
 		SVC002 /* RandomPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC009 /* RandomPickerService.swift */; };
 		SVC003 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC010 /* DiaryService.swift */; };
 		SVC004 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC011 /* MapService.swift */; };
+		SVC005 /* SecretsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC030 /* SecretsManager.swift */; };
+		SVC006 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC031 /* UserManager.swift */; };
 		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* Color+Theme.swift */; };
 		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* HapticManager.swift */; };
 		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* Constants.swift */; };
-		SVC005 /* SecretsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC030 /* SecretsManager.swift */; };
-		SVC006 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC031 /* UserManager.swift */; };
-		CMP007 /* ProFeatureLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC032 /* ProFeatureLock.swift */; };
-		CMP008 /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC033 /* AdViews.swift */; };
-		SUB001 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC034 /* PaywallView.swift */; };
-		DRY004 /* MonthlyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC035 /* MonthlyReportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -350,6 +350,10 @@
 				"zh-Hant",
 			);
 			mainGroup = ROOT;
+			packageReferences = (
+				EE9EBFD02F3844BB006E8951 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+				EE9EBFD12F384521006E8951 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = GRP002 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -617,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE9EBFD02F3844BB006E8951 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.58.0;
+			};
+		};
+		EE9EBFD12F384521006E8951 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = PRJ001 /* Project object */;
 }
