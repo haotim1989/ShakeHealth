@@ -32,22 +32,21 @@ struct ShakeHealthApp: App {
             ContentView()
                 .environmentObject(appState)
                 .environmentObject(userManager)
+                .task {
+                    // 延遲請求 ATT 追蹤授權 (避免啟動時立即彈窗)
+                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    await AdManager.shared.requestTrackingAuthorization()
+                }
         }
         .modelContainer(sharedModelContainer)
     }
     
     private func setupSDKs() {
-        // TODO: 待 API Key 設定後啟用
-        // 1. RevenueCat
-        // Purchases.configure(withAPIKey: SecretsManager.shared.revenueCatAPIKey ?? "")
+        // 1. RevenueCat 訂閱服務
+        SubscriptionService.shared.configure()
         
-        // 2. AdMob
-        // GADMobileAds.sharedInstance().start(completionHandler: nil)
-        
-        // 3. ATT 追蹤授權 (延遲請求，避免啟動時彈窗)
-        // DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-        //     ATTrackingManager.requestTrackingAuthorization { _ in }
-        // }
+        // 2. AdMob 廣告服務
+        AdManager.shared.configure()
         
         print("📱 ShakeHealth 啟動 (測試模式: \(SecretsManager.shared.isTestMode))")
     }

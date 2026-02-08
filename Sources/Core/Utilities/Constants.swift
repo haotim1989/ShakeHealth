@@ -2,6 +2,21 @@ import Foundation
 
 /// 應用程式常數
 enum Constants {
+    /// Feature Flags - 功能開關
+    enum FeatureFlags {
+        /// 是否啟用訂閱功能
+        static let subscriptionEnabled = true
+        
+        /// 是否啟用廣告
+        static let adsEnabled = true
+        
+        /// 是否啟用 Interstitial 廣告
+        static let interstitialAdsEnabled = false
+        
+        /// 免費用戶每日日記筆數限制
+        static let freeDailyDiaryLimit = 1
+    }
+    
     /// 評論字數限制
     static let maxCommentLength = 30
     
