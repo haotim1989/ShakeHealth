@@ -123,7 +123,7 @@ struct DiaryView: View {
                     showPaywall = true
                 }
             } label: {
-                Label("自訂飲料 🔒", systemImage: "square.and.pencil")
+                Label("自訂飲料 (Premium)", systemImage: "square.and.pencil")
             }
         } label: {
             Image(systemName: "plus")
