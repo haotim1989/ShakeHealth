@@ -52,14 +52,20 @@ struct EncyclopediaView: View {
     private var drinkList: some View {
         List {
             ForEach(Array(viewModel.drinksGroupedByBrand.enumerated()), id: \.element.brand.id) { index, group in
-                // 每 3 個品牌插入一則 Native 廣告
-                if index > 0 && index % 3 == 0 {
+                // 每個品牌之間插入一則 Native 廣告
+                if index > 0 {
                     NativeAdCardView()
                         .listRowBackground(Color.clear)
                 }
                 
                 Section {
-                    ForEach(group.drinks) { drink in
+                    ForEach(Array(group.drinks.enumerated()), id: \.element.id) { drinkIndex, drink in
+                        // 每 10 個品項插入一則 Native 廣告
+                        if drinkIndex > 0 && drinkIndex % 10 == 0 {
+                            NativeAdCardView()
+                                .listRowBackground(Color.clear)
+                        }
+                        
                         DrinkListRow(
                             drink: drink,
                             onAddToLog: { viewModel.prepareAddLog(for: drink) }
@@ -73,6 +79,7 @@ struct EncyclopediaView: View {
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
     }
+
 
     
     private func brandHeader(_ brand: Brand) -> some View {
