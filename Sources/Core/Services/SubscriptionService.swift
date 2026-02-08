@@ -4,7 +4,7 @@ import RevenueCat
 /// RevenueCat 訂閱服務
 /// 管理訂閱狀態、購買流程與 Offerings
 @MainActor
-final class SubscriptionService: ObservableObject {
+final class SubscriptionService: NSObject, ObservableObject {
     static let shared = SubscriptionService()
     
     // MARK: - Published Properties
@@ -31,7 +31,10 @@ final class SubscriptionService: ObservableObject {
     
     // MARK: - Initialization
     
-    private init() {}
+    private override init() {
+        super.init()
+    }
+
     
     // MARK: - Configuration
     

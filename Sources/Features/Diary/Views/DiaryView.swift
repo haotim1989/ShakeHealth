@@ -123,7 +123,7 @@ struct DiaryView: View {
                     showPaywall = true
                 }
             } label: {
-                Label("自訂飲料 (Premium)", systemImage: "square.and.pencil")
+                Label(userManager.isProUser ? "自訂飲料" : "自訂飲料 (Premium)", systemImage: "square.and.pencil")
             }
         } label: {
             Image(systemName: "plus")
@@ -188,8 +188,10 @@ struct DiaryView: View {
                     HStack {
                         Image(systemName: "square.and.pencil")
                         Text("自訂飲料")
-                        Image(systemName: "lock.fill")
-                            .font(.caption)
+                        if !userManager.isProUser {
+                            Image(systemName: "lock.fill")
+                                .font(.caption)
+                        }
                     }
                     .font(.headline)
                     .foregroundColor(.teaBrown)
@@ -211,7 +213,13 @@ struct DiaryView: View {
             
             // 日記列表
             Section {
-                ForEach(logs) { log in
+                ForEach(Array(logs.enumerated()), id: \.element.id) { index, log in
+                    // 每 5 筆日記插入一則 Native 廣告
+                    if index > 0 && index % 5 == 0 {
+                        NativeAdCardView()
+                            .environmentObject(userManager)
+                    }
+                    
                     NavigationLink(destination: DiaryDetailView(log: log)) {
                         DiaryEntryRow(log: log)
                     }

@@ -5,26 +5,31 @@ struct ContentView: View {
     @EnvironmentObject var userManager: UserManager
     
     var body: some View {
-        TabView(selection: $appState.selectedTab) {
-            RandomPickerView()
-                .tabItem {
-                    Label("隨機喝", systemImage: "dice.fill")
-                }
-                .tag(AppState.Tab.randomPicker)
+        VStack(spacing: 0) {
+            TabView(selection: $appState.selectedTab) {
+                RandomPickerView()
+                    .tabItem {
+                        Label("隨機喝", systemImage: "dice.fill")
+                    }
+                    .tag(AppState.Tab.randomPicker)
+                
+                EncyclopediaView()
+                    .tabItem {
+                        Label("找熱量", systemImage: "magnifyingglass")
+                    }
+                    .tag(AppState.Tab.encyclopedia)
+                
+                DiaryView()
+                    .tabItem {
+                        Label("我的日記", systemImage: "book.fill")
+                    }
+                    .tag(AppState.Tab.diary)
+            }
+            .tint(.teaBrown)
             
-            EncyclopediaView()
-                .tabItem {
-                    Label("找熱量", systemImage: "magnifyingglass")
-                }
-                .tag(AppState.Tab.encyclopedia)
-            
-            DiaryView()
-                .tabItem {
-                    Label("我的日記", systemImage: "book.fill")
-                }
-                .tag(AppState.Tab.diary)
+            // Banner 廣告 (免費用戶顯示)
+            BannerAdView()
         }
-        .tint(.teaBrown)
     }
 }
 

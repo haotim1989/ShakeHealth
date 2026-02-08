@@ -46,6 +46,10 @@
 		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* Color+Theme.swift */; };
 		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* HapticManager.swift */; };
 		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* Constants.swift */; };
+		SPM001 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD01 /* RevenueCat */; };
+		SPM002 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD02 /* GoogleMobileAds */; };
+		SVC007 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC037 /* AdManager.swift */; };
+		SVC008 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC038 /* SubscriptionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +93,8 @@
 		SRC034 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		SRC035 /* MonthlyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyReportView.swift; sourceTree = "<group>"; };
 		SRC036 /* CustomDrinkModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrinkModal.swift; sourceTree = "<group>"; };
+		SRC037 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		SRC038 /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -188,6 +194,8 @@
 				SRC011 /* MapService.swift */,
 				SRC030 /* SecretsManager.swift */,
 				SRC031 /* UserManager.swift */,
+				SRC037 /* AdManager.swift */,
+				SRC038 /* SubscriptionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -308,12 +316,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		PHS003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				SPM001 /* RevenueCat in Frameworks */,
+				SPM002 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		TGT001 /* ShakeHealth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFG001 /* Build configuration list for PBXNativeTarget "ShakeHealth" */;
 			buildPhases = (
 				PHS001 /* Sources */,
+				PHS003 /* Frameworks */,
 				PHS002 /* Resources */,
 			);
 			buildRules = (
@@ -321,6 +342,10 @@
 			dependencies = (
 			);
 			name = ShakeHealth;
+			packageProductDependencies = (
+				SPMPROD01 /* RevenueCat */,
+				SPMPROD02 /* GoogleMobileAds */,
+			);
 			productName = ShakeHealth;
 			productReference = PROD01 /* ShakeHealth.app */;
 			productType = "com.apple.product-type.application";
@@ -417,6 +442,8 @@
 				SUB001 /* PaywallView.swift in Sources */,
 				DRY004 /* MonthlyReportView.swift in Sources */,
 				DRY005 /* CustomDrinkModal.swift in Sources */,
+				SVC007 /* AdManager.swift in Sources */,
+				SVC008 /* SubscriptionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +667,19 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		SPMPROD01 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE9EBFD02F3844BB006E8951 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		SPMPROD02 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE9EBFD12F384521006E8951 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = PRJ001 /* Project object */;
 }

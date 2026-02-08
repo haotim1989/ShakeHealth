@@ -15,7 +15,7 @@ struct BannerAdView: View {
         if !userManager.isProUser && adManager.shouldShowAds {
             VStack(spacing: 0) {
                 if adManager.isInitialized {
-                    GADBannerViewRepresentable()
+                    BannerViewRepresentable()
                         .frame(height: 50)
                 } else {
                     // SDK 尚未初始化，顯示佔位
@@ -61,13 +61,14 @@ struct BannerAdView: View {
     }
 }
 
-// MARK: - GADBannerView Representable
+// MARK: - BannerView Representable
 
-/// UIKit GADBannerView 的 SwiftUI 包裝器
-struct GADBannerViewRepresentable: UIViewRepresentable {
+/// UIKit BannerView 的 SwiftUI 包裝器
+struct BannerViewRepresentable: UIViewRepresentable {
+    typealias UIViewType = GoogleMobileAds.BannerView
     
-    func makeUIView(context: Context) -> GADBannerView {
-        let bannerView = GADBannerView(adSize: GADAdSizeBanner)
+    func makeUIView(context: Context) -> GoogleMobileAds.BannerView {
+        let bannerView = GoogleMobileAds.BannerView(adSize: AdSizeBanner)
         bannerView.adUnitID = AdManager.shared.bannerAdUnitID
         bannerView.delegate = context.coordinator
         
@@ -77,13 +78,13 @@ struct GADBannerViewRepresentable: UIViewRepresentable {
         }
         
         // 載入廣告
-        let request = GADRequest()
+        let request = GoogleMobileAds.Request()
         bannerView.load(request)
         
         return bannerView
     }
     
-    func updateUIView(_ uiView: GADBannerView, context: Context) {
+    func updateUIView(_ uiView: GoogleMobileAds.BannerView, context: Context) {
         // 不需要更新
     }
     
@@ -91,12 +92,12 @@ struct GADBannerViewRepresentable: UIViewRepresentable {
         Coordinator()
     }
     
-    class Coordinator: NSObject, GADBannerViewDelegate {
-        func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+    class Coordinator: NSObject, BannerViewDelegate {
+        func bannerViewDidReceiveAd(_ bannerView: GoogleMobileAds.BannerView) {
             print("✅ Banner 廣告載入成功")
         }
         
-        func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        func bannerView(_ bannerView: GoogleMobileAds.BannerView, didFailToReceiveAdWithError error: Error) {
             print("❌ Banner 廣告載入失敗: \(error.localizedDescription)")
         }
     }
@@ -106,15 +107,15 @@ struct GADBannerViewRepresentable: UIViewRepresentable {
 
 /// 原生廣告視圖
 /// 用於圖鑑列表中每 N 項插入
-struct NativeAdView: View {
+struct NativeAdCardView: View {
     @EnvironmentObject var userManager: UserManager
-    @StateObject private var adLoader = NativeAdLoader()
+    @StateObject private var adLoader = NativeAdLoaderWrapper()
     
     var body: some View {
         // Pro 用戶不顯示廣告
         if !userManager.isProUser {
             if adLoader.nativeAd != nil {
-                GADNativeAdViewRepresentable(nativeAd: adLoader.nativeAd!)
+                NativeAdViewRepresentable(nativeAd: adLoader.nativeAd!)
                     .frame(height: 80)
             } else {
                 // 廣告載入中或失敗，顯示佔位
@@ -164,37 +165,37 @@ struct NativeAdView: View {
     }
 }
 
-// MARK: - Native Ad Loader
+// MARK: - Native Ad Loader Wrapper
 
 /// 原生廣告載入器
 @MainActor
-class NativeAdLoader: NSObject, ObservableObject {
-    @Published var nativeAd: GADNativeAd?
+class NativeAdLoaderWrapper: NSObject, ObservableObject {
+    @Published var nativeAd: GoogleMobileAds.NativeAd?
     @Published var isLoading = false
     
-    private var adLoader: GADAdLoader?
+    private var adLoaderInstance: GoogleMobileAds.AdLoader?
     
     func loadAd() {
         guard !isLoading, nativeAd == nil else { return }
         
         isLoading = true
         
-        let options = GADNativeAdMediaAdLoaderOptions()
+        let options = NativeAdMediaAdLoaderOptions()
         options.mediaAspectRatio = .landscape
         
-        adLoader = GADAdLoader(
+        adLoaderInstance = GoogleMobileAds.AdLoader(
             adUnitID: AdManager.shared.nativeAdUnitID,
             rootViewController: UIApplication.shared.rootViewController,
             adTypes: [.native],
             options: [options]
         )
-        adLoader?.delegate = self
-        adLoader?.load(GADRequest())
+        adLoaderInstance?.delegate = self
+        adLoaderInstance?.load(GoogleMobileAds.Request())
     }
 }
 
-extension NativeAdLoader: GADNativeAdLoaderDelegate {
-    nonisolated func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+extension NativeAdLoaderWrapper: NativeAdLoaderDelegate {
+    nonisolated func adLoader(_ adLoader: GoogleMobileAds.AdLoader, didReceive nativeAd: GoogleMobileAds.NativeAd) {
         Task { @MainActor in
             self.nativeAd = nativeAd
             self.isLoading = false
@@ -202,7 +203,7 @@ extension NativeAdLoader: GADNativeAdLoaderDelegate {
         }
     }
     
-    nonisolated func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+    nonisolated func adLoader(_ adLoader: GoogleMobileAds.AdLoader, didFailToReceiveAdWithError error: Error) {
         Task { @MainActor in
             self.isLoading = false
             print("❌ Native 廣告載入失敗: \(error.localizedDescription)")
@@ -210,14 +211,16 @@ extension NativeAdLoader: GADNativeAdLoaderDelegate {
     }
 }
 
-// MARK: - GADNativeAdView Representable
+// MARK: - NativeAdView Representable
 
-/// UIKit GADNativeAdView 的 SwiftUI 包裝器
-struct GADNativeAdViewRepresentable: UIViewRepresentable {
-    let nativeAd: GADNativeAd
+/// UIKit NativeAdView 的 SwiftUI 包裝器
+struct NativeAdViewRepresentable: UIViewRepresentable {
+    typealias UIViewType = GoogleMobileAds.NativeAdView
     
-    func makeUIView(context: Context) -> GADNativeAdView {
-        let nativeAdView = GADNativeAdView()
+    let nativeAd: GoogleMobileAds.NativeAd
+    
+    func makeUIView(context: Context) -> GoogleMobileAds.NativeAdView {
+        let nativeAdView = GoogleMobileAds.NativeAdView()
         
         // 建立並配置子視圖
         let headlineLabel = UILabel()
@@ -254,18 +257,22 @@ struct GADNativeAdViewRepresentable: UIViewRepresentable {
         return nativeAdView
     }
     
-    func updateUIView(_ uiView: GADNativeAdView, context: Context) {
+    func updateUIView(_ uiView: GoogleMobileAds.NativeAdView, context: Context) {
         uiView.nativeAd = nativeAd
         (uiView.headlineView as? UILabel)?.text = nativeAd.headline
         (uiView.bodyView as? UILabel)?.text = nativeAd.body
     }
 }
 
+// MARK: - Backward Compatibility Alias
+// 保持舊名稱的相容性
+typealias NativeAdView = NativeAdCardView
+
 // MARK: - Preview
 
 #Preview {
     VStack {
-        NativeAdView()
+        NativeAdCardView()
             .padding()
         
         Spacer()

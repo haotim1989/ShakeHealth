@@ -57,5 +57,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<!-- Google AdMob App ID (測試用) -->
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<!-- App Tracking Transparency 描述 -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>此 App 會收集追蹤資料以提供個人化廣告體驗</string>
 </dict>
 </plist>
