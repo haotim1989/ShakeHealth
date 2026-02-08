@@ -48,15 +48,25 @@ struct FilterSheet: View {
                     
                     Divider()
                     
-                    // 甜度篩選
+                    // 甜度篩選（單選）
                     filterSection(title: "甜度", icon: "drop") {
-                        FlowLayout(spacing: 8) {
-                            ForEach(SugarLevel.allCases) { level in
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8) {
+                                // 全部選項
                                 FilterChip(
-                                    title: level.rawValue,
-                                    isSelected: viewModel.criteria.selectedSugarLevels.contains(level)
+                                    title: "全部",
+                                    isSelected: viewModel.criteria.selectedSugarLevel == nil
                                 ) {
-                                    viewModel.toggleSugarLevel(level)
+                                    viewModel.setSugarLevel(nil)
+                                }
+                                
+                                ForEach(SugarLevel.allCases) { level in
+                                    FilterChip(
+                                        title: level.rawValue,
+                                        isSelected: viewModel.criteria.selectedSugarLevel == level
+                                    ) {
+                                        viewModel.setSugarLevel(level)
+                                    }
                                 }
                             }
                         }

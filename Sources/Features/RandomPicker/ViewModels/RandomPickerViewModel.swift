@@ -130,13 +130,9 @@ final class RandomPickerViewModel: ObservableObject {
         hapticManager.selection()
     }
     
-    /// 切換甜度篩選
-    func toggleSugarLevel(_ level: SugarLevel) {
-        if criteria.selectedSugarLevels.contains(level) {
-            criteria.selectedSugarLevels.remove(level)
-        } else {
-            criteria.selectedSugarLevels.insert(level)
-        }
+    /// 設定甜度
+    func setSugarLevel(_ level: SugarLevel?) {
+        criteria.selectedSugarLevel = level
         hapticManager.selection()
     }
     

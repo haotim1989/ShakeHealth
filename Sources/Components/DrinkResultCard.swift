@@ -3,10 +3,21 @@ import SwiftUI
 /// 飲料卡片 (用於隨機推薦結果)
 struct DrinkResultCard: View {
     let drink: Drink
+    let criteria: FilterCriteria  // 新增：用於計算正確熱量
     let onFindStore: () -> Void
     let onPickAgain: () -> Void
     
     @State private var appeared = false
+    
+    /// 根據篩選條件計算的熱量
+    private var displayCalories: Int {
+        criteria.caloriesForDrink(drink)
+    }
+    
+    /// 顯示的甜度標籤（如果有選擇）
+    private var sugarLabel: String? {
+        criteria.selectedSugarLevel?.rawValue
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -54,10 +65,22 @@ struct DrinkResultCard: View {
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.center)
                 
-                // 營養資訊
+                // 營養資訊（使用根據甜度計算的熱量）
                 HStack(spacing: 16) {
-                    CalorieIndicator(calories: drink.baseCalories, style: .detailed)
+                    CalorieIndicator(calories: displayCalories, style: .detailed)
                     CaffeineIcon(hasCaffeine: drink.hasCaffeine, showLabel: true)
+                }
+                
+                // 甜度標籤（如果有選擇）
+                if let sugar = sugarLabel {
+                    Text(sugar)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 4)
+                        .background(Color.orange.opacity(0.1))
+                        .foregroundColor(.orange)
+                        .clipShape(Capsule())
                 }
                 
                 // 分類標籤
@@ -128,6 +151,7 @@ struct DrinkResultCard: View {
 #Preview {
     DrinkResultCard(
         drink: Drink.sampleDrinks[1],
+        criteria: FilterCriteria(),
         onFindStore: {},
         onPickAgain: {}
     )

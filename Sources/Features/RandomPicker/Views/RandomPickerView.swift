@@ -31,6 +31,7 @@ struct RandomPickerView: View {
                         // 結果卡片
                         DrinkResultCard(
                             drink: drink,
+                            criteria: viewModel.criteria,
                             onFindStore: { viewModel.openInMaps() },
                             onPickAgain: {
                                 Task { await viewModel.pickAgain() }

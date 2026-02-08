@@ -4,7 +4,7 @@ import Foundation
 struct FilterCriteria: Equatable {
     var selectedBrands: Set<String> = []
     var selectedCategories: Set<DrinkCategory> = []
-    var selectedSugarLevels: Set<SugarLevel> = []
+    var selectedSugarLevel: SugarLevel? = nil  // 改為單選，用於計算熱量
     var calorieRange: CalorieRange?
     var hasCaffeine: Bool?
     
@@ -16,7 +16,7 @@ struct FilterCriteria: Equatable {
     var isEmpty: Bool {
         selectedBrands.isEmpty &&
         selectedCategories.isEmpty &&
-        selectedSugarLevels.isEmpty &&
+        selectedSugarLevel == nil &&
         calorieRange == nil &&
         hasCaffeine == nil
     }
@@ -26,7 +26,7 @@ struct FilterCriteria: Equatable {
         var count = 0
         if !selectedBrands.isEmpty { count += 1 }
         if !selectedCategories.isEmpty { count += 1 }
-        if !selectedSugarLevels.isEmpty { count += 1 }
+        if selectedSugarLevel != nil { count += 1 }
         if calorieRange != nil { count += 1 }
         if hasCaffeine != nil { count += 1 }
         return count
@@ -44,17 +44,19 @@ struct FilterCriteria: Equatable {
             return false
         }
         
-        // 甜度篩選 (檢查飲品是否支援任一選擇的甜度)
-        if !selectedSugarLevels.isEmpty {
-            let available = Set(drink.availableSugarLevels)
-            if selectedSugarLevels.isDisjoint(with: available) {
+        // 甜度篩選：檢查飲品是否支援選擇的甜度
+        if let sugar = selectedSugarLevel {
+            if !drink.availableSugarLevels.contains(sugar) {
                 return false
             }
         }
         
-        // 熱量篩選
-        if let range = calorieRange, !range.range.contains(drink.baseCalories) {
-            return false
+        // 熱量篩選：根據選擇的甜度計算熱量
+        if let range = calorieRange {
+            let calories = caloriesForDrink(drink)
+            if !range.range.contains(calories) {
+                return false
+            }
         }
         
         // 咖啡因篩選
@@ -65,14 +67,23 @@ struct FilterCriteria: Equatable {
         return true
     }
     
+    /// 根據選擇的甜度計算熱量（用於篩選和顯示）
+    func caloriesForDrink(_ drink: Drink) -> Int {
+        if let sugar = selectedSugarLevel {
+            return drink.calories(for: sugar)
+        }
+        return drink.baseCalories
+    }
+    
     /// 重置所有篩選條件
     mutating func reset() {
         selectedBrands = []
         selectedCategories = []
-        selectedSugarLevels = []
+        selectedSugarLevel = nil
         calorieRange = nil
         hasCaffeine = nil
         smartPriority = false
         antiThunder = false
     }
 }
+
