@@ -34,11 +34,14 @@ struct ContentView: View {
             }
             .tag(AppState.Tab.diary)
             
-            SettingsView()
-                .tabItem {
-                    Label("設定", systemImage: "gearshape.fill")
-                }
-                .tag(AppState.Tab.settings)
+            VStack(spacing: 0) {
+                SettingsView()
+                BannerAdView()
+            }
+            .tabItem {
+                Label("設定", systemImage: "gearshape.fill")
+            }
+            .tag(AppState.Tab.settings)
         }
         .tint(.teaBrown)
     }

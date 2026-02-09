@@ -4,6 +4,7 @@ import SwiftUI
 struct EncyclopediaView: View {
     @StateObject private var viewModel = EncyclopediaViewModel()
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         NavigationStack {
@@ -38,6 +39,8 @@ struct EncyclopediaView: View {
                             appState.selectedTab = .diary
                         }
                     )
+                    .environmentObject(appState)
+                    .environmentObject(userManager)
                     .presentationDetents([.medium])
                 }
             }
