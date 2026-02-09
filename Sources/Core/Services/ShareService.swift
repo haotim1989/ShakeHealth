@@ -18,17 +18,43 @@ enum ShareService {
             case .slack: return "number"
             }
         }
-        
-        var urlScheme: String {
-            switch self {
-            case .messenger: return "fb-messenger://"
-            case .line: return "line://"
-            case .slack: return "slack://"
-            }
-        }
     }
     
-    /// 生成分享訊息
+    // MARK: - App 分享
+    
+    /// 分享 App (包含圖片與文字)
+    static func shareApp() {
+        let text = """
+        🧋 飲料日記 - 記錄你的飲料生活
+        
+        追蹤每日飲料攝取、熱量與咖啡因，讓你喝得更健康！
+        
+        📲 立即下載：\(Constants.AppStore.downloadURL)
+        """
+        
+        // 生成推廣圖片
+        let image = generateAppPromoImage()
+        
+        // 準備分享項目
+        var items: [Any] = [text]
+        if let image = image {
+            items.append(image)
+        }
+        
+        shareViaSystem(items: items)
+    }
+    
+    /// 生成 App 推廣圖片
+    static func generateAppPromoImage() -> UIImage? {
+        let view = AppPromoCard()
+        let renderer = ImageRenderer(content: view)
+        renderer.scale = UIScreen.main.scale
+        return renderer.uiImage
+    }
+    
+    // MARK: - 日記分享
+    
+    /// 生成日記分享訊息
     static func generateShareMessage(for log: DrinkLog) -> String {
         let stars = String(repeating: "★", count: log.rating) + String(repeating: "☆", count: 5 - log.rating)
         let caffeineText = log.hasCaffeineSnapshot ? "☕ 含咖啡因" : "🌿 無咖啡因"
@@ -50,71 +76,95 @@ enum ShareService {
         
         
         ---
-        📱 用「搖搖健康飲」記錄你的飲料！
+        📱 用「搖搖健康飲」記錄你的飲料生活！
         👉 下載連結：\(Constants.AppStore.downloadURL)
         """
         
         return message
     }
     
-    /// 分享到指定平台
-    static func share(log: DrinkLog, to platform: Platform) {
+    /// 分享日記 (文字)
+    static func share(log: DrinkLog) {
         let message = generateShareMessage(for: log)
-        let encodedMessage = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        
-        var urlString: String
-        
-        switch platform {
-        case .messenger:
-            // Facebook Messenger 分享
-            urlString = "fb-messenger://share?link=\(Constants.AppStore.downloadURL)&quote=\(encodedMessage)"
-            
-        case .line:
-            // LINE 分享
-            urlString = "line://msg/text/\(encodedMessage)"
-            
-        case .slack:
-            // Slack 無法直接透過 URL Scheme 分享文字，使用系統分享
-            shareViaSystem(message: message)
-            return
-        }
-        
-        guard let url = URL(string: urlString) else {
-            // 若 URL 無效，使用系統分享
-            shareViaSystem(message: message)
-            return
-        }
-        
-        // 檢查是否安裝了該 App
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-            HapticManager.shared.success()
-        } else {
-            // 未安裝該 App，使用系統分享
-            shareViaSystem(message: message)
-        }
+        shareViaSystem(items: [message])
     }
     
+    // MARK: - Helper
+    
     /// 使用系統分享面板
-    static func shareViaSystem(message: String) {
+    private static func shareViaSystem(items: [Any]) {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootVC = windowScene.windows.first?.rootViewController else { return }
+        
         let activityVC = UIActivityViewController(
-            activityItems: [message],
+            activityItems: items,
             applicationActivities: nil
         )
         
-        // 取得最上層的 ViewController
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let rootVC = windowScene.windows.first?.rootViewController {
-            
-            // 處理 iPad 的 popover
-            if let popover = activityVC.popoverPresentationController {
-                popover.sourceView = rootVC.view
-                popover.sourceRect = CGRect(x: rootVC.view.bounds.midX, y: rootVC.view.bounds.midY, width: 0, height: 0)
-                popover.permittedArrowDirections = []
-            }
-            
-            rootVC.present(activityVC, animated: true)
-            HapticManager.shared.light()
+        // 處理 iPad 的 popover
+        if let popover = activityVC.popoverPresentationController {
+            popover.sourceView = rootVC.view
+            popover.sourceRect = CGRect(x: rootVC.view.bounds.midX, y: rootVC.view.bounds.midY, width: 0, height: 0)
+            popover.permittedArrowDirections = []
         }
+        
+        rootVC.present(activityVC, animated: true)
+        HapticManager.shared.light()
+    }
+}
+
+// MARK: - Views
+
+/// App 推廣小卡 (用於生成圖片)
+struct AppPromoCard: View {
+    var body: some View {
+        ZStack {
+            Color.milkCream
+            
+            VStack(spacing: 20) {
+                // Icon
+                ZStack {
+                    Circle()
+                        .fill(Color.teaBrown)
+                        .frame(width: 120, height: 120)
+                    
+                    Image(systemName: "cup.and.saucer.fill")
+                        .font(.system(size: 60))
+                        .foregroundColor(.white)
+                }
+                .shadow(color: .black.opacity(0.1), radius: 10, y: 5)
+                
+                VStack(spacing: 8) {
+                    Text("飲料日記")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(.teaBrown)
+                    
+                    Text("ShakeHealth")
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundColor(.teaBrown.opacity(0.8))
+                }
+                
+                Text("記錄每一杯\n療癒時刻")
+                    .font(.system(size: 24))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.secondary)
+                    .padding(.top, 10)
+                
+                // Bottom
+                HStack(spacing: 6) {
+                    Image(systemName: "arrow.down.circle.fill")
+                    Text("App Store 下載")
+                }
+                .font(.system(size: 14, weight: .bold))
+                .foregroundColor(.white)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(Color.teaBrown)
+                .clipShape(Capsule())
+                .padding(.top, 20)
+            }
+            .padding(40)
+        }
+        .frame(width: 400, height: 500)
     }
 }

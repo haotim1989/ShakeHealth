@@ -12,7 +12,6 @@ struct SettingsView: View {
     @State private var showPaywall = false
     @State private var showExportSheet = false
     @State private var showImportPicker = false
-    @State private var showShareSheet = false
     @State private var showImportSuccess = false
     @State private var showImportError = false
     @State private var importedCount = 0
@@ -42,9 +41,6 @@ struct SettingsView: View {
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
                     .environmentObject(userManager)
-            }
-            .sheet(isPresented: $showShareSheet) {
-                shareSheet
             }
             .fileImporter(
                 isPresented: $showImportPicker,
@@ -172,7 +168,7 @@ struct SettingsView: View {
         Section {
             // 分享給朋友
             Button {
-                showShareSheet = true
+                ShareService.shareApp()
             } label: {
                 Label("分享給朋友", systemImage: "square.and.arrow.up")
                     .foregroundColor(.primary)
@@ -181,7 +177,9 @@ struct SettingsView: View {
             
             // 撰寫評論
             Button {
-                requestReview()
+                if let url = URL(string: "https://apps.apple.com/app/\(Constants.AppStore.appId)?action=write-review") {
+                    UIApplication.shared.open(url)
+                }
             } label: {
                 Label("撰寫評論", systemImage: "star.fill")
                     .foregroundColor(.primary)
@@ -207,34 +205,7 @@ struct SettingsView: View {
         }
     }
     
-    // MARK: - 分享 Sheet
-    
-    private var shareSheet: some View {
-        let shareText = """
-        🧋 飲料日記 - 記錄你的飲料生活
-        
-        追蹤每日飲料攝取、熱量與咖啡因，讓你喝得更健康！
-        
-        📲 立即下載：https://apps.apple.com/app/id123456789
-        """
-        
-        return ShareLink(item: shareText) {
-            VStack(spacing: 20) {
-                Image(systemName: "cup.and.saucer.fill")
-                    .font(.system(size: 60))
-                    .foregroundColor(.teaBrown)
-                
-                Text("分享給朋友")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                
-                Text("邀請朋友一起記錄飲料生活！")
-                    .foregroundColor(.secondary)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.backgroundPrimary)
-        }
-    }
+
     
     // MARK: - Actions
     
