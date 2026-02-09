@@ -119,6 +119,7 @@ struct PaywallView: View {
             FeatureRow(icon: "hand.thumbsdown.fill", title: "避雷模式", description: "自動排除低評價飲料")
             FeatureRow(icon: "square.and.pencil", title: "自訂飲料", description: "新增圖鑑沒有的飲料")
             FeatureRow(icon: "doc.text.magnifyingglass", title: "月報表", description: "完整健康數據分析")
+            FeatureRow(icon: "arrow.up.arrow.down.circle.fill", title: "資料備份", description: "匯出匯入 CSV 檔案")
             FeatureRow(icon: "xmark.circle.fill", title: "無廣告", description: "純淨使用體驗")
         }
         .padding()

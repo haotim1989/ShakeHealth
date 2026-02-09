@@ -33,6 +33,12 @@ struct ContentView: View {
                 Label("我的日記", systemImage: "book.fill")
             }
             .tag(AppState.Tab.diary)
+            
+            SettingsView()
+                .tabItem {
+                    Label("設定", systemImage: "gearshape.fill")
+                }
+                .tag(AppState.Tab.settings)
         }
         .tint(.teaBrown)
     }

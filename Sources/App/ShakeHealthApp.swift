@@ -81,6 +81,7 @@ final class AppState: ObservableObject {
         case randomPicker
         case encyclopedia
         case diary
+        case settings
     }
     
     init() {
