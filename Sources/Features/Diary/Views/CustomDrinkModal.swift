@@ -30,7 +30,6 @@ struct CustomDrinkModal: View {
     
     // Paywall
     @State private var showPaywall = false
-    @State private var showDailyLimitAlert = false
     
     // 可選的糖度與冰塊
     private let allSugarLevels: [SugarLevel] = [.sugar0, .sugar30, .sugar50, .sugar70, .sugar100]
@@ -93,14 +92,6 @@ struct CustomDrinkModal: View {
                 PaywallView()
                     .environmentObject(userManager)
             }
-            .alert("今日額度已達上限", isPresented: $showDailyLimitAlert) {
-                Button("升級 Premium") {
-                    showPaywall = true
-                }
-                Button("取消", role: .cancel) {}
-            } message: {
-                Text("免費版每日僅能記錄 1 杯飲料。升級 Premium 解鎖無限記錄！")
-            }
         }
     }
     
@@ -115,24 +106,10 @@ struct CustomDrinkModal: View {
                     .font(.headline)
                 
                 Spacer()
-                
-                if !userManager.isProUser {
-                    HStack(spacing: 4) {
-                        Image(systemName: "lock.fill")
-                            .font(.caption2)
-                        Text("Premium")
-                            .font(.caption)
-                    }
-                    .foregroundColor(.secondary)
-                }
             }
             
             Button {
-                if userManager.isProUser {
-                    showDatePicker.toggle()
-                } else {
-                    showPaywall = true
-                }
+                showDatePicker.toggle()
             } label: {
                 HStack {
                     Text(selectedDate, style: .date)
@@ -160,7 +137,7 @@ struct CustomDrinkModal: View {
             }
             .buttonStyle(.plain)
             
-            if showDatePicker && userManager.isProUser {
+            if showDatePicker {
                 DatePicker(
                     "選擇日期",
                     selection: $selectedDate,
@@ -360,12 +337,6 @@ struct CustomDrinkModal: View {
     // MARK: - Actions
     
     private func attemptSave() {
-        // 檢查今日額度 (免費版限制)
-        if !userManager.isProUser && !userManager.canAddDiaryEntry() {
-            showDailyLimitAlert = true
-            return
-        }
-        
         saveLog()
     }
     
@@ -397,11 +368,6 @@ struct CustomDrinkModal: View {
         
         do {
             try modelContext.save()
-            
-            // 記錄今日額度
-            if Calendar.current.isDateInToday(selectedDate) {
-                userManager.recordDiaryEntry()
-            }
             
             HapticManager.shared.success()
             onSave()
