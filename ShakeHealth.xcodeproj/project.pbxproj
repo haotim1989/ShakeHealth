@@ -50,6 +50,8 @@
 		SPM002 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD02 /* GoogleMobileAds */; };
 		SVC007 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC037 /* AdManager.swift */; };
 		SVC008 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC038 /* SubscriptionService.swift */; };
+		SVC009 /* CSVExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC039 /* CSVExportService.swift */; };
+		SET001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC040 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		SRC036 /* CustomDrinkModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrinkModal.swift; sourceTree = "<group>"; };
 		SRC037 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		SRC038 /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
+		SRC039 /* CSVExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportService.swift; sourceTree = "<group>"; };
+		SRC040 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -144,6 +148,7 @@
 				GRP012 /* Encyclopedia */,
 				GRP013 /* Diary */,
 				GRP020 /* Subscription */,
+				GRP022 /* Settings */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				SRC031 /* UserManager.swift */,
 				SRC037 /* AdManager.swift */,
 				SRC038 /* SubscriptionService.swift */,
+				SRC039 /* CSVExportService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -302,6 +308,22 @@
 			isa = PBXGroup;
 			children = (
 				SRC034 /* PaywallView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		GRP022 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				GRP023 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		GRP023 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				SRC040 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +466,8 @@
 				DRY005 /* CustomDrinkModal.swift in Sources */,
 				SVC007 /* AdManager.swift in Sources */,
 				SVC008 /* SubscriptionService.swift in Sources */,
+				SVC009 /* CSVExportService.swift in Sources */,
+				SET001 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
