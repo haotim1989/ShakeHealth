@@ -119,22 +119,8 @@ struct DiaryDetailView: View {
     }
     
     private var shareButton: some View {
-        Menu {
-            ForEach(ShareService.Platform.allCases) { platform in
-                Button {
-                    ShareService.share(log: log, to: platform)
-                } label: {
-                    Label(platform.rawValue, systemImage: platform.iconName)
-                }
-            }
-            
-            Divider()
-            
-            Button {
-                ShareService.shareViaSystem(message: ShareService.generateShareMessage(for: log))
-            } label: {
-                Label("其他方式...", systemImage: "ellipsis.circle")
-            }
+        Button {
+            ShareService.share(log: log)
         } label: {
             HStack {
                 Image(systemName: "square.and.arrow.up")
