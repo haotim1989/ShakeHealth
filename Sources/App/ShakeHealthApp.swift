@@ -75,6 +75,7 @@ struct ShakeHealthApp: App {
 final class AppState: ObservableObject {
     @Published var selectedTab: Tab = .randomPicker
     @Published var userId: String = UUID().uuidString // 匿名用戶 ID
+    @Published var scrollToTopTrigger: Tab? = nil  // 觸發置頂的 Tab
     
     enum Tab: Hashable {
         case randomPicker

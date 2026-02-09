@@ -207,35 +207,47 @@ struct DiaryView: View {
     }
     
     private var diaryList: some View {
-        List {
-            // 統計區
-            statisticsSection
-            
-            // 日記列表
-            Section {
-                ForEach(Array(logs.enumerated()), id: \.element.id) { index, log in
-                    // 每 5 筆日記插入一則 Native 廣告
-                    if index > 0 && index % 5 == 0 {
-                        NativeAdCardView()
-                            .environmentObject(userManager)
+        ScrollViewReader { proxy in
+            List {
+                // 統計區
+                statisticsSection
+                    .id("diaryStatistics")
+                
+                // 日記列表
+                Section {
+                    ForEach(Array(logs.enumerated()), id: \.element.id) { index, log in
+                        // 每 5 筆日記插入一則 Native 廣告
+                        if index > 0 && index % 5 == 0 {
+                            NativeAdCardView()
+                                .environmentObject(userManager)
+                        }
+                        
+                        NavigationLink(destination: DiaryDetailView(log: log)) {
+                            DiaryEntryRow(log: log)
+                        }
                     }
-                    
-                    NavigationLink(destination: DiaryDetailView(log: log)) {
-                        DiaryEntryRow(log: log)
+                    .onDelete(perform: deleteLogs)
+                } header: {
+                    HStack {
+                        Text("紀錄列表")
+                            .font(.headline)
+                        Spacer()
+                        reportButton
                     }
                 }
-                .onDelete(perform: deleteLogs)
-            } header: {
-                HStack {
-                    Text("紀錄列表")
-                        .font(.headline)
-                    Spacer()
-                    reportButton
+            }
+            .listStyle(.insetGrouped)
+            .scrollContentBackground(.hidden)
+            .onChange(of: appState.scrollToTopTrigger) { _, newValue in
+                if newValue == .diary {
+                    // 滾動到統計區
+                    withAnimation {
+                        proxy.scrollTo("diaryStatistics", anchor: .top)
+                    }
+                    appState.scrollToTopTrigger = nil
                 }
             }
         }
-        .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
     }
     
     private var statisticsSection: some View {

@@ -5,7 +5,7 @@ struct ContentView: View {
     @EnvironmentObject var userManager: UserManager
     
     var body: some View {
-        TabView(selection: $appState.selectedTab) {
+        TabView(selection: tabBinding) {
             VStack(spacing: 0) {
                 RandomPickerView()
                 BannerAdView()
@@ -35,6 +35,22 @@ struct ContentView: View {
             .tag(AppState.Tab.diary)
         }
         .tint(.teaBrown)
+    }
+    
+    /// 自訂 Tab Binding：偵測重複點擊觸發置頂
+    private var tabBinding: Binding<AppState.Tab> {
+        Binding(
+            get: { appState.selectedTab },
+            set: { newTab in
+                if newTab == appState.selectedTab {
+                    // 重複點擊當前 Tab：觸發置頂
+                    appState.scrollToTopTrigger = newTab
+                } else {
+                    // 切換到不同 Tab
+                    appState.selectedTab = newTab
+                }
+            }
+        )
     }
 }
 

@@ -50,34 +50,47 @@ struct EncyclopediaView: View {
     }
     
     private var drinkList: some View {
-        List {
-            ForEach(Array(viewModel.drinksGroupedByBrand.enumerated()), id: \.element.brand.id) { index, group in
-                // 每個品牌之間插入一則 Native 廣告
-                if index > 0 {
-                    NativeAdCardView()
-                        .listRowBackground(Color.clear)
-                }
-                
-                Section {
-                    ForEach(Array(group.drinks.enumerated()), id: \.element.id) { drinkIndex, drink in
-                        // 每 10 個品項插入一則 Native 廣告
-                        if drinkIndex > 0 && drinkIndex % 10 == 0 {
-                            NativeAdCardView()
-                                .listRowBackground(Color.clear)
-                        }
-                        
-                        DrinkListRow(
-                            drink: drink,
-                            onAddToLog: { viewModel.prepareAddLog(for: drink) }
-                        )
+        ScrollViewReader { proxy in
+            List {
+                ForEach(Array(viewModel.drinksGroupedByBrand.enumerated()), id: \.element.brand.id) { index, group in
+                    // 每個品牌之間插入一則 Native 廣告
+                    if index > 0 {
+                        NativeAdCardView()
+                            .listRowBackground(Color.clear)
                     }
-                } header: {
-                    brandHeader(group.brand)
+                    
+                    Section {
+                        ForEach(Array(group.drinks.enumerated()), id: \.element.id) { drinkIndex, drink in
+                            // 每 10 個品項插入一則 Native 廣告
+                            if drinkIndex > 0 && drinkIndex % 10 == 0 {
+                                NativeAdCardView()
+                                    .listRowBackground(Color.clear)
+                            }
+                            
+                            DrinkListRow(
+                                drink: drink,
+                                onAddToLog: { viewModel.prepareAddLog(for: drink) }
+                            )
+                        }
+                    } header: {
+                        brandHeader(group.brand)
+                    }
+                }
+            }
+            .listStyle(.insetGrouped)
+            .scrollContentBackground(.hidden)
+            .onChange(of: appState.scrollToTopTrigger) { _, newValue in
+                if newValue == .encyclopedia {
+                    // 滾動到第一個品牌
+                    if let firstBrand = viewModel.drinksGroupedByBrand.first {
+                        withAnimation {
+                            proxy.scrollTo(firstBrand.brand.id, anchor: .top)
+                        }
+                    }
+                    appState.scrollToTopTrigger = nil
                 }
             }
         }
-        .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
     }
 
 
