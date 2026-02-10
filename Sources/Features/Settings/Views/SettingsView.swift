@@ -64,51 +64,61 @@ struct SettingsView: View {
     
     // MARK: - 訂閱區塊
     
+    // MARK: - 訂閱區塊
+    
     private var subscriptionSection: some View {
         Section {
-            Button {
-                showPaywall = true
-            } label: {
-                HStack(spacing: 16) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(LinearGradient(
-                                colors: [.yellow, .orange],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ))
-                            .frame(width: 44, height: 44)
-                        
-                        Image(systemName: "crown.fill")
-                            .font(.title2)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(userManager.isProUser ? "Premium 會員" : "升級 Premium")
-                            .font(.headline)
-                            .foregroundColor(.primary)
-                        
-                        Text(userManager.isProUser ? "感謝您的支持！" : "解鎖所有進階功能")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
-                    
-                    Spacer()
-                    
-                    if !userManager.isProUser {
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
+            if userManager.isProUser {
+                subscriptionCardContent
+            } else {
+                Button {
+                    showPaywall = true
+                } label: {
+                    subscriptionCardContent
                 }
-                .padding(.vertical, 4)
-                .contentShape(Rectangle())
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.plain)
         } header: {
             Text("訂閱")
         }
+    }
+    
+    private var subscriptionCardContent: some View {
+        HStack(spacing: 16) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(LinearGradient(
+                        colors: [.yellow, .orange],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+                    .frame(width: 44, height: 44)
+                
+                Image(systemName: "crown.fill")
+                    .font(.title2)
+                    .foregroundColor(.white)
+            }
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(userManager.isProUser ? "Premium 會員" : "升級 Premium")
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                
+                Text(userManager.isProUser ? "感謝您的支持！" : "解鎖所有進階功能")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+            
+            if !userManager.isProUser {
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding(.vertical, 4)
+        .contentShape(Rectangle())
     }
     
     // MARK: - 資料備份

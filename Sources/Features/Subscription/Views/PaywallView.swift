@@ -115,8 +115,7 @@ struct PaywallView: View {
             Text("包含功能")
                 .font(.headline)
             
-            FeatureRow(icon: "sparkles", title: "智慧推薦", description: "優先顯示你喜歡的飲料")
-            FeatureRow(icon: "hand.thumbsdown.fill", title: "避雷模式", description: "自動排除低評價飲料")
+            FeatureRow(icon: "sparkles", title: "智慧推薦", description: "優先顯示你喜歡的，並排除低評價飲料")
             FeatureRow(icon: "square.and.pencil", title: "自訂飲料", description: "新增圖鑑沒有的飲料")
             FeatureRow(icon: "doc.text.magnifyingglass", title: "月報表", description: "完整健康數據分析")
             FeatureRow(icon: "arrow.up.arrow.down.circle.fill", title: "資料備份", description: "匯出匯入 CSV 檔案")
@@ -129,14 +128,17 @@ struct PaywallView: View {
     
     // MARK: - Packages Section (RevenueCat)
     
+    // MARK: - Packages Section (RevenueCat)
+    
     private func packagesSection(packages: [Package]) -> some View {
-        VStack(spacing: 12) {
+        HStack(spacing: 16) {
             ForEach(packages, id: \.identifier) { package in
                 RevenueCatPackageCard(
                     package: package,
                     isSelected: selectedPackage?.identifier == package.identifier,
                     onTap: { selectedPackage = package }
                 )
+                .frame(maxWidth: .infinity)
             }
         }
     }
@@ -178,13 +180,14 @@ struct PaywallView: View {
     @State private var selectedLocalPackage: SubscriptionPackage = .yearly
     
     private var fallbackPackagesSection: some View {
-        VStack(spacing: 12) {
+        HStack(spacing: 16) {
             ForEach(SubscriptionPackage.allCases) { package in
                 PackageCard(
                     package: package,
                     isSelected: selectedLocalPackage == package,
                     onTap: { selectedLocalPackage = package }
                 )
+                .frame(maxWidth: .infinity)
             }
         }
     }
@@ -295,24 +298,24 @@ private struct FeatureRow: View {
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: icon)
-                .font(.title3)
-                .foregroundColor(.teaBrown)
-                .frame(width: 30)
+            .font(.title3)
+            .foregroundColor(.teaBrown)
+            .frame(width: 30)
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+                .font(.subheadline)
+                .fontWeight(.medium)
                 
                 Text(description)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                .font(.caption)
+                .foregroundColor(.secondary)
             }
             
             Spacer()
             
             Image(systemName: "checkmark")
-                .foregroundColor(.green)
+            .foregroundColor(.green)
         }
     }
 }
@@ -330,50 +333,72 @@ private struct RevenueCatPackageCard: View {
     
     var body: some View {
         Button(action: onTap) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack {
+            ZStack(alignment: .topTrailing) {
+                // 內容
+                HStack(alignment: .top, spacing: 0) {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text(package.storeProduct.localizedTitle)
                             .font(.headline)
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
                         
-                        if isYearly {
-                            Text("最超值")
-                                .font(.caption)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 2)
-                                .background(Color.green.opacity(0.2))
-                                .foregroundColor(.green)
-                                .clipShape(Capsule())
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text(package.localizedPriceString)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            
+                            if isYearly, let monthlyPrice = calculateMonthlyPrice() {
+                                Text("\(monthlyPrice)/月")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            } else if !isYearly {
+                                Text("每月扣款")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
                     
-                    Text(package.storeProduct.localizedDescription)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                        .lineLimit(2)
-                }
-                
-                Spacer()
-                
-                VStack(alignment: .trailing) {
-                    Text(package.localizedPriceString)
-                        .font(.title3)
-                        .fontWeight(.bold)
+                    Spacer(minLength: 4)
                     
-                    if isYearly, let monthlyPrice = calculateMonthlyPrice() {
-                        Text("\(monthlyPrice)/月")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                    // 勾選圈圈
+                    ZStack {
+                        Circle()
+                            .stroke(isSelected ? Color.teaBrown : Color.gray.opacity(0.3), lineWidth: 2)
+                            .background(isSelected ? Circle().fill(Color.teaBrown) : Circle().fill(Color.clear))
+                            .frame(width: 24, height: 24)
+                        
+                        if isSelected {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundColor(.white)
+                        }
                     }
+                    .padding(.top, 4)
                 }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
             }
-            .padding()
-            .background(isSelected ? Color.teaBrown.opacity(0.1) : Color.gray.opacity(0.05))
+            .background(isSelected ? Color.teaBrown.opacity(0.1) : Color.white)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(isSelected ? Color.teaBrown : Color.gray.opacity(0.3), lineWidth: isSelected ? 2 : 1)
             )
             .clipShape(RoundedRectangle(cornerRadius: 12))
+            .overlay(alignment: .top) {
+                if isYearly {
+                    Text("超值優惠")
+                        .font(.custom("PingFangTC-Semibold", size: 10))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .offset(y: -10)
+                        .shadow(color: .black.opacity(0.1), radius: 2, y: 1)
+                }
+            }
         }
         .buttonStyle(.plain)
     }
@@ -399,47 +424,66 @@ private struct PackageCard: View {
     
     var body: some View {
         Button(action: onTap) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack {
+            ZStack(alignment: .topTrailing) {
+                // 內容
+                HStack(alignment: .top, spacing: 0) {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text(package.rawValue)
                             .font(.headline)
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
                         
-                        if let savings = package.savings {
-                            Text(savings)
-                                .font(.caption)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 2)
-                                .background(Color.green.opacity(0.2))
-                                .foregroundColor(.green)
-                                .clipShape(Capsule())
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text(package.price)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            
+                            Text(package.pricePerMonth)
+                                .font(.caption2)
+                                .foregroundColor(.secondary)
                         }
                     }
                     
-                    Text(package.description)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
-                
-                Spacer()
-                
-                VStack(alignment: .trailing) {
-                    Text(package.price)
-                        .font(.title3)
-                        .fontWeight(.bold)
+                    Spacer(minLength: 4)
                     
-                    Text(package.pricePerMonth)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    // 勾選圈圈
+                    ZStack {
+                        Circle()
+                            .stroke(isSelected ? Color.teaBrown : Color.gray.opacity(0.3), lineWidth: 2)
+                            .background(isSelected ? Circle().fill(Color.teaBrown) : Circle().fill(Color.clear))
+                            .frame(width: 24, height: 24)
+                        
+                        if isSelected {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .padding(.top, 4)
                 }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
             }
-            .padding()
-            .background(isSelected ? Color.teaBrown.opacity(0.1) : Color.gray.opacity(0.05))
+            .background(isSelected ? Color.teaBrown.opacity(0.1) : Color.white)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(isSelected ? Color.teaBrown : Color.gray.opacity(0.3), lineWidth: isSelected ? 2 : 1)
             )
             .clipShape(RoundedRectangle(cornerRadius: 12))
+            .overlay(alignment: .top) {
+                if let savings = package.savings {
+                    Text(savings)
+                        .font(.custom("PingFangTC-Semibold", size: 10))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .offset(y: -10)
+                        .shadow(color: .black.opacity(0.1), radius: 2, y: 1)
+                }
+            }
         }
         .buttonStyle(.plain)
     }

@@ -44,6 +44,7 @@ struct ContentView: View {
             .tag(AppState.Tab.settings)
         }
         .tint(.teaBrown)
+        .preferredColorScheme(.light)
     }
     
     /// 自訂 Tab Binding：偵測重複點擊觸發置頂
