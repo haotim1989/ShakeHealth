@@ -36,6 +36,9 @@
 		RND001 /* RandomPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC021 /* RandomPickerViewModel.swift */; };
 		RND002 /* RandomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC022 /* RandomPickerView.swift */; };
 		RND003 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC023 /* FilterSheet.swift */; };
+		SET001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC040 /* SettingsView.swift */; };
+		SPM001 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD01 /* RevenueCat */; };
+		SPM002 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD02 /* GoogleMobileAds */; };
 		SUB001 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC034 /* PaywallView.swift */; };
 		SVC001 /* DrinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC008 /* DrinkService.swift */; };
 		SVC002 /* RandomPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC009 /* RandomPickerService.swift */; };
@@ -43,15 +46,12 @@
 		SVC004 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC011 /* MapService.swift */; };
 		SVC005 /* SecretsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC030 /* SecretsManager.swift */; };
 		SVC006 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC031 /* UserManager.swift */; };
-		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* Color+Theme.swift */; };
-		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* HapticManager.swift */; };
-		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* Constants.swift */; };
-		SPM001 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD01 /* RevenueCat */; };
-		SPM002 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD02 /* GoogleMobileAds */; };
 		SVC007 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC037 /* AdManager.swift */; };
 		SVC008 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC038 /* SubscriptionService.swift */; };
 		SVC009 /* CSVExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC039 /* CSVExportService.swift */; };
-		SET001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC040 /* SettingsView.swift */; };
+		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* Color+Theme.swift */; };
+		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* HapticManager.swift */; };
+		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +100,18 @@
 		SRC039 /* CSVExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportService.swift; sourceTree = "<group>"; };
 		SRC040 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		PHS003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				SPM001 /* RevenueCat in Frameworks */,
+				SPM002 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		GRP001 /* Sources */ = {
@@ -337,18 +349,6 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		PHS003 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				SPM001 /* RevenueCat in Frameworks */,
-				SPM002 /* GoogleMobileAds in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		TGT001 /* ShakeHealth */ = {
@@ -596,6 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = UDY7T62478;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShakeHealth/Info.plist;
@@ -627,6 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = UDY7T62478;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShakeHealth/Info.plist;

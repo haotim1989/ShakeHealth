@@ -103,6 +103,7 @@ struct SettingsView: View {
                     }
                 }
                 .padding(.vertical, 4)
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         } header: {
@@ -132,6 +133,7 @@ struct SettingsView: View {
                         ProBadge()
                     }
                 }
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             
@@ -153,6 +155,7 @@ struct SettingsView: View {
                         ProBadge()
                     }
                 }
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         } header: {
@@ -170,8 +173,12 @@ struct SettingsView: View {
             Button {
                 ShareService.shareApp()
             } label: {
-                Label("分享給朋友", systemImage: "square.and.arrow.up")
-                    .foregroundColor(.primary)
+                HStack {
+                    Label("分享給朋友", systemImage: "square.and.arrow.up")
+                        .foregroundColor(.primary)
+                    Spacer()
+                }
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             
@@ -181,8 +188,12 @@ struct SettingsView: View {
                     UIApplication.shared.open(url)
                 }
             } label: {
-                Label("撰寫評論", systemImage: "star.fill")
-                    .foregroundColor(.primary)
+                HStack {
+                    Label("撰寫評論", systemImage: "star.fill")
+                        .foregroundColor(.primary)
+                    Spacer()
+                }
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         } header: {

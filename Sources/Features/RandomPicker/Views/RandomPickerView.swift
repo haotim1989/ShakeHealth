@@ -201,15 +201,7 @@ struct RandomPickerView: View {
             }
             
             // 統計資訊
-            if viewModel.hasActiveFilters {
-                Text("符合條件：\(viewModel.filteredCount) 款飲料")
-                    .font(.caption)
-                    .foregroundColor(.teaBrown)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
-                    .background(Color.teaBrown.opacity(0.1))
-                    .clipShape(Capsule())
-            }
+
         }
         .padding()
     }
