@@ -20,47 +20,52 @@ struct RandomPickerView: View {
                 Color.backgroundPrimary
                     .ignoresSafeArea()
                 
-                VStack(spacing: 0) {
-                    // 篩選條件區
-                    filterSection
-                    
-                    Spacer()
-                    
-                    // 主要內容區
-                    if let drink = viewModel.pickedDrink {
-                        // 結果卡片
-                        DrinkResultCard(
-                            drink: drink,
-                            criteria: viewModel.criteria,
-                            onFindStore: { viewModel.openInMaps() },
-                            onPickAgain: {
-                                Task { await viewModel.pickAgain() }
+                GeometryReader { geometry in
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            // 篩選條件區
+                            filterSection
+                            
+                            Spacer()
+                            
+                            // 主要內容區
+                            if let drink = viewModel.pickedDrink {
+                                // 結果卡片
+                                DrinkResultCard(
+                                    drink: drink,
+                                    criteria: viewModel.criteria,
+                                    onFindStore: { viewModel.openInMaps() },
+                                    onPickAgain: {
+                                        Task { await viewModel.pickAgain() }
+                                    }
+                                )
+                                .padding(.horizontal, 24)
+                                .transition(.asymmetric(
+                                    insertion: .scale.combined(with: .opacity),
+                                    removal: .opacity
+                                ))
+                            } else if viewModel.isShaking {
+                                // 搖動動畫
+                                ShakeAnimationView(isShaking: $viewModel.isShaking)
+                                    .transition(.opacity)
+                            } else {
+                                // 初始狀態
+                                initialStateView
+                                    .transition(.opacity)
                             }
-                        )
-                        .padding(.horizontal, 24)
-                        .transition(.asymmetric(
-                            insertion: .scale.combined(with: .opacity),
-                            removal: .opacity
-                        ))
-                    } else if viewModel.isShaking {
-                        // 搖動動畫
-                        ShakeAnimationView(isShaking: $viewModel.isShaking)
-                            .transition(.opacity)
-                    } else {
-                        // 初始狀態
-                        initialStateView
-                            .transition(.opacity)
-                    }
-                    
-                    Spacer()
-                    
-                    // 底部按鈕
-                    if viewModel.pickedDrink == nil && !viewModel.isShaking {
-                        ShakeButton(isLoading: viewModel.isLoading) {
-                            Task { await viewModel.pickRandom() }
+                            
+                            Spacer()
+                            
+                            // 底部按鈕
+                            if viewModel.pickedDrink == nil && !viewModel.isShaking {
+                                ShakeButton(isLoading: viewModel.isLoading) {
+                                    Task { await viewModel.pickRandom() }
+                                }
+                                .padding(.horizontal, 24)
+                                .padding(.bottom, 24)
+                            }
                         }
-                        .padding(.horizontal, 24)
-                        .padding(.bottom, 24)
+                        .frame(minHeight: geometry.size.height)
                     }
                 }
             }
@@ -95,6 +100,7 @@ struct RandomPickerView: View {
             }
             .onAppear {
                 viewModel.userLogs = userLogs
+                viewModel.isProUser = userManager.isProUser
             }
         }
     }
@@ -102,42 +108,30 @@ struct RandomPickerView: View {
     // MARK: - Subviews
     
     private var filterSection: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
+        Button {
+            viewModel.showFilterSheet = true
+        } label: {
             HStack(spacing: 8) {
-                // 篩選按鈕 (移到最左邊)
-                Button {
-                    viewModel.showFilterSheet = true
-                } label: {
-                    HStack(spacing: 4) {
-                        Image(systemName: "slider.horizontal.3")
-                        Text("篩選")
-                        if viewModel.hasActiveFilters {
-                            Text("(\(viewModel.criteria.activeFilterCount))")
-                        }
-                    }
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
-                    .background(viewModel.hasActiveFilters ? Color.teaBrown : Color.teaBrown.opacity(0.2))
-                    .foregroundColor(viewModel.hasActiveFilters ? .white : .teaBrown)
-                    .clipShape(Capsule())
-                }
+                Image(systemName: "slider.horizontal.3")
+                    .font(.title3)
                 
-                // 快速篩選 chips
-                ForEach(DrinkCategory.allCases) { category in
-                    FilterChip(
-                        title: category.rawValue,
-                        isSelected: viewModel.criteria.selectedCategories.contains(category)
-                    ) {
-                        viewModel.toggleCategory(category)
-                    }
-                }
+                Text(viewModel.hasActiveFilters ? "篩選條件 (\(viewModel.criteria.activeFilterCount))" : "設定篩選條件")
+                    .font(.headline)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background(viewModel.hasActiveFilters ? Color.teaBrown : Color.white)
+            .foregroundColor(viewModel.hasActiveFilters ? .white : .teaBrown)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.teaBrown, lineWidth: viewModel.hasActiveFilters ? 0 : 2)
+            )
+            .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
         }
-        .background(Color.white.opacity(0.8))
+        .padding(.horizontal, 24)
+        .padding(.top, 16)
+        .padding(.bottom, 8)
     }
     
     private var activeFiltersBadge: some View {

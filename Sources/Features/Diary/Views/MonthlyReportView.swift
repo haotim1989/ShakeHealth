@@ -11,6 +11,7 @@ struct MonthlyReportView: View {
     // 月份選擇
     @State private var selectedMonthOffset: Int = 0  // 0 = 當月, -1 = 上個月, etc.
     @State private var showHealthInfo = false  // 顯示衛福部建議提示
+    @State private var showCaffeineInfo = false // 顯示咖啡因建議提示
     
     /// 計算有資料的月份 (用於限制切換範圍)
     private var monthsWithData: Set<Int> {
@@ -125,6 +126,33 @@ struct MonthlyReportView: View {
         return totalSugar
     }
     
+    // MARK: - Caffeine Calculation
+    
+    private func calculateTotalCaffeine() -> Double {
+        var totalCaffeine: Double = 0
+        
+        for log in monthlyLogs {
+            // 嘗試從 Service 取得飲品原始資料
+            if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+                // 如果有咖啡因含量數據
+                if let content = drink.caffeineContent, content >= 0 {
+                    totalCaffeine += Double(content)
+                } else if drink.hasCaffeine {
+                    // 若標示含咖啡因但無數據，使用預設估算值 (約一杯中杯拿鐵/奶茶)
+                    totalCaffeine += 150.0
+                }
+            } else {
+                // 若找不到飲品資料，依據快照判斷
+                if log.hasCaffeineSnapshot {
+                    totalCaffeine += 150.0
+                }
+            }
+        }
+        
+        return totalCaffeine
+    }
+    
+    // MARK: - Health Status Enum (Sugar)
     enum HealthStatus {
         case green, yellow, red
         
@@ -152,6 +180,50 @@ struct MonthlyReportView: View {
             }
         }
     }
+
+    // 咖啡因紅綠燈 (參考歐盟建議: 成人每日 < 300-400mg)
+    // 🟢 適量：日均 < 200mg
+    // 🟡 注意：日均 200mg ~ 300mg
+    // 🔴 過量：日均 > 300mg
+    private var caffeineHealthStatus: CaffeineHealthStatus {
+        let dailyAverage = daysInMonth > 0 ? calculateTotalCaffeine() / Double(daysInMonth) : 0
+        
+        if dailyAverage < 200 {
+            return .green
+        } else if dailyAverage <= 300 {
+            return .yellow
+        } else {
+            return .red
+        }
+    }
+    
+    enum CaffeineHealthStatus {
+        case green, yellow, red
+        
+        var color: Color {
+            switch self {
+            case .green: return .greenTea
+            case .yellow: return .caloriesMedium
+            case .red: return .caloriesHigh
+            }
+        }
+        
+        var message: String {
+            switch self {
+            case .green: return "咖啡因攝取適量 🍵"
+            case .yellow: return "注意！日均咖啡因稍高 ⚠️"
+            case .red: return "警告！日均咖啡因過量 ☕️"
+            }
+        }
+        
+        var icon: String {
+            switch self {
+            case .green: return "cup.and.saucer.fill"
+            case .yellow: return "exclamationmark.triangle.fill"
+            case .red: return "xmark.octagon.fill"
+            }
+        }
+    }
     
     var body: some View {
         NavigationStack {
@@ -160,8 +232,8 @@ struct MonthlyReportView: View {
                     // 月份選擇器
                     monthSelector
                     
-                    // 健康紅綠燈
-                    healthStatusCard
+                    // 健康分析卡片 (糖分 & 咖啡因)
+                    healthStatusCards
                     
                     // 統計卡片
                     statisticsSection
@@ -191,6 +263,7 @@ struct MonthlyReportView: View {
         }
     }
     
+    // ... (Month Selector logic remains same) ...
     // MARK: - Month Selector
     
     private var monthSelector: some View {
@@ -269,56 +342,101 @@ struct MonthlyReportView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
     
-    // MARK: - Health Status Card
+    // MARK: - Health Status Cards
     
-    private var healthStatusCard: some View {
-        VStack(spacing: 16) {
-            // 可點擊的圖示
-            Button {
-                showHealthInfo = true
-            } label: {
-                Image(systemName: healthStatus.icon)
-                    .font(.system(size: 50))
-                    .foregroundColor(healthStatus.color)
-            }
+    private var healthStatusCards: some View {
+        HStack(spacing: 14) {
+            // 糖分卡片
+            healthCard(
+                title: "日均糖量",
+                value: String(format: "%.1f", daysInMonth > 0 ? calculateTotalSugar() / Double(daysInMonth) : 0),
+                unit: "g",
+                statusMessage: healthStatus.message,
+                statusColor: healthStatus.color,
+                icon: healthStatus.icon,
+                action: { showHealthInfo = true }
+            )
             
-            Text(healthStatus.message)
-                .font(.headline)
-                .multilineTextAlignment(.center)
-            
-            // 日均糖量顯示
-            let dailyAvg = daysInMonth > 0 ? calculateTotalSugar() / Double(daysInMonth) : 0
-            Text("日均糖量：\(String(format: "%.1f", dailyAvg))g")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            
-            // 紅綠燈指示器
-            HStack(spacing: 12) {
-                trafficLight(.green, isActive: healthStatus == .green)
-                trafficLight(.yellow, isActive: healthStatus == .yellow)
-                trafficLight(.red, isActive: healthStatus == .red)
-            }
+            // 咖啡因卡片
+            healthCard(
+                title: "日均咖啡因",
+                value: String(format: "%.0f", daysInMonth > 0 ? calculateTotalCaffeine() / Double(daysInMonth) : 0),
+                unit: "mg",
+                statusMessage: caffeineHealthStatus.message,
+                statusColor: caffeineHealthStatus.color,
+                icon: caffeineHealthStatus.icon,
+                action: { showCaffeineInfo = true }
+            )
         }
-        .padding(24)
-        .frame(maxWidth: .infinity)
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.05), radius: 5, y: 2)
         .alert("衛福部建議", isPresented: $showHealthInfo) {
             Button("我知道了", role: .cancel) { }
         } message: {
             Text("每日攝取糖量不超過 50g\n（約一杯全糖手搖飲料）")
         }
+        .alert("歐盟食品安全局建議", isPresented: $showCaffeineInfo) {
+            Button("我知道了", role: .cancel) { }
+        } message: {
+            Text("成人每日咖啡因攝取量不建議超過 300mg\n（約 2-3 杯咖啡或茶）\n過量可能導致心悸、失眠等症狀。")
+        }
+    }
+    
+    private func healthCard(title: String, value: String, unit: String, statusMessage: String, statusColor: Color, icon: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .top) {
+                    Image(systemName: icon)
+                        .font(.title2)
+                        .foregroundColor(statusColor)
+                        .frame(width: 32, height: 32)
+                        .background(statusColor.opacity(0.15))
+                        .clipShape(Circle())
+                    
+                    Spacer()
+                    
+                    Text("詳細")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(Color.secondary.opacity(0.1))
+                        .clipShape(Capsule())
+                }
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    HStack(alignment: .firstTextBaseline, spacing: 2) {
+                        Text(value)
+                            .font(.system(.title2, design: .rounded))
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                        
+                        Text(unit)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                
+                Text(statusMessage)
+                    .font(.system(size: 11))
+                    .foregroundColor(statusColor)
+                    .lineLimit(1)
+                    .padding(.top, 4)
+            }
+            .padding(16)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: .black.opacity(0.03), radius: 8, x: 0, y: 4)
+        }
+        .buttonStyle(PlainButtonStyle())
     }
     
     private func trafficLight(_ color: Color, isActive: Bool) -> some View {
         Circle()
             .fill(isActive ? color : color.opacity(0.2))
-            .frame(width: 24, height: 24)
-            .overlay(
-                Circle()
-                    .stroke(color.opacity(0.5), lineWidth: 2)
-            )
+            .frame(width: 8, height: 8)
     }
     
     // MARK: - Statistics Section
@@ -328,6 +446,32 @@ struct MonthlyReportView: View {
             Text(displayMonth + " 統計")
                 .font(.headline)
             
+            // 重點數據：日均杯數
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("日均杯數")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(String(format: "%.1f", daysInMonth > 0 ? Double(totalDrinks) / Double(daysInMonth) : 0))
+                            .font(.system(size: 32, weight: .bold, design: .rounded))
+                            .foregroundColor(.teaBrown)
+                        
+                        Text("杯 / 天")
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                Spacer()
+                Image(systemName: "checklist")
+                    .font(.system(size: 40))
+                    .foregroundColor(.teaBrown.opacity(0.2))
+            }
+            .padding()
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            
             HStack(spacing: 16) {
                 statCard(title: "總杯數", value: "\(totalDrinks)", unit: "杯", icon: "cup.and.saucer.fill", color: .teaBrown)
                 statCard(title: "總熱量", value: "\(totalCalories)", unit: "kcal", icon: "flame.fill", color: .orange)
@@ -335,12 +479,7 @@ struct MonthlyReportView: View {
             
             HStack(spacing: 16) {
                 statCard(title: "總糖量", value: String(format: "%.0f", calculateTotalSugar()), unit: "g", icon: "cube.fill", color: .pink)
-                statCard(title: "平均評分", value: String(format: "%.1f", averageRating), unit: "星", icon: "star.fill", color: .yellow)
-            }
-            
-            HStack(spacing: 16) {
-                statCard(title: "日均杯數", value: String(format: "%.1f", daysInMonth > 0 ? Double(totalDrinks) / Double(daysInMonth) : 0), unit: "杯", icon: "calendar", color: .blue)
-                statCard(title: "日均糖量", value: String(format: "%.0f", daysInMonth > 0 ? calculateTotalSugar() / Double(daysInMonth) : 0), unit: "g", icon: "chart.bar.fill", color: .purple)
+                statCard(title: "總咖啡因", value: String(format: "%.0f", calculateTotalCaffeine()), unit: "mg", icon: "drop.fill", color: .coffeeBrown)
             }
         }
     }

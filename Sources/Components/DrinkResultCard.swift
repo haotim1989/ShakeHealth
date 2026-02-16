@@ -45,7 +45,7 @@ struct DrinkResultCard: View {
                     // 品牌標籤
                     if let brand = drink.brand {
                         Text(brand.name)
-                            .font(.caption)
+                            .font(.headline)
                             .fontWeight(.medium)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 4)

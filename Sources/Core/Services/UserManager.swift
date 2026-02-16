@@ -161,8 +161,8 @@ enum SubscriptionPackage: String, CaseIterable, Identifiable {
     
     var description: String {
         switch self {
-        case .monthly: return "一杯飲料，換你整月健康，可隨時取消"
-        case .yearly: return "每天$1.3，解鎖你的專屬熱量圖鑑與無限日記"
+        case .monthly: return "免費試用 7 天，一杯飲料換你整月健康"
+        case .yearly: return "免費試用 7 天，每天$1.3 解鎖全部功能"
         }
     }
 }

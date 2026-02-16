@@ -16,6 +16,10 @@ struct DiaryView: View {
     @State private var showCustomDrinkModal = false
     @State private var showAddOptions = false
     
+    // 篩選狀態
+    @State private var showFilterPanel = false
+    @State private var filterRatings: Set<Int> = []
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -101,6 +105,7 @@ struct DiaryView: View {
     private var addButton: some View {
         Button {
             appState.selectedTab = .encyclopedia
+            appState.scrollToTopTrigger = .encyclopedia
         } label: {
             Image(systemName: "plus.circle.fill")
                 .font(.title2)
@@ -112,6 +117,7 @@ struct DiaryView: View {
         Menu {
             Button {
                 appState.selectedTab = .encyclopedia
+            appState.scrollToTopTrigger = .encyclopedia
             } label: {
                 Label("從圖鑑新增", systemImage: "book")
             }
@@ -164,6 +170,7 @@ struct DiaryView: View {
                 // 從圖鑑新增
                 Button {
                     appState.selectedTab = .encyclopedia
+            appState.scrollToTopTrigger = .encyclopedia
                 } label: {
                     HStack {
                         Image(systemName: "book")
@@ -213,25 +220,59 @@ struct DiaryView: View {
                 statisticsSection
                     .id("diaryStatistics")
                 
+                // 篩選面板
+                if showFilterPanel {
+                    filterPanelSection
+                        .transition(.opacity.combined(with: .move(edge: .top)))
+                }
+                
                 // 日記列表
                 Section {
-                    ForEach(Array(logs.enumerated()), id: \.element.id) { index, log in
-                        // 每 5 筆日記插入一則 Native 廣告
-                        if index > 0 && index % 5 == 0 {
-                            NativeAdCardView()
-                                .environmentObject(userManager)
+                    if filteredLogs.isEmpty {
+                        VStack(spacing: 8) {
+                            Image(systemName: "magnifyingglass")
+                                .font(.title2)
+                                .foregroundColor(.secondary)
+                            Text("沒有符合條件的紀錄")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
                         }
-                        
-                        NavigationLink(destination: DiaryDetailView(log: log)) {
-                            DiaryEntryRow(log: log)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 24)
+                        .listRowBackground(Color.clear)
+                    } else {
+                        ForEach(Array(filteredLogs.enumerated()), id: \.element.id) { index, log in
+                            // 每 5 筆日記插入一則 Native 廣告
+                            if index > 0 && index % 5 == 0 {
+                                NativeAdCardView()
+                                    .environmentObject(userManager)
+                            }
+                            
+                            NavigationLink(destination: DiaryDetailView(log: log)) {
+                                DiaryEntryRow(log: log)
+                            }
                         }
+                        .onDelete(perform: deleteFilteredLogs)
                     }
-                    .onDelete(perform: deleteLogs)
                 } header: {
                     HStack {
                         Text("紀錄列表")
                             .font(.headline)
+                        
+                        if hasActiveFilters {
+                            Text("\(filteredLogs.count)")
+                                .font(.caption2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 2)
+                                .background(Color.teaBrown)
+                                .clipShape(Capsule())
+                        }
+                        
                         Spacer()
+                        
+                        filterButton
                         reportButton
                     }
                 }
@@ -240,7 +281,6 @@ struct DiaryView: View {
             .scrollContentBackground(.hidden)
             .onChange(of: appState.scrollToTopTrigger) { _, newValue in
                 if newValue == .diary {
-                    // 滾動到統計區
                     withAnimation {
                         proxy.scrollTo("diaryStatistics", anchor: .top)
                     }
@@ -248,6 +288,108 @@ struct DiaryView: View {
                 }
             }
         }
+    }
+    
+    // MARK: - Filter UI
+    
+    private var filterButton: some View {
+        Button {
+            withAnimation(.spring(duration: 0.3)) {
+                showFilterPanel.toggle()
+            }
+        } label: {
+            HStack(spacing: 4) {
+                Image(systemName: hasActiveFilters
+                    ? "line.3.horizontal.decrease.circle.fill"
+                    : "line.3.horizontal.decrease.circle")
+                    .font(.subheadline)
+                Text("篩選")
+                    .font(.caption)
+                    .fontWeight(.medium)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 5)
+            .background(hasActiveFilters ? Color.teaBrown : Color.teaBrown.opacity(0.1))
+            .foregroundColor(hasActiveFilters ? .white : .teaBrown)
+            .clipShape(Capsule())
+        }
+        .buttonStyle(.plain)
+    }
+    
+    private var filterPanelSection: some View {
+        Section {
+            VStack(alignment: .leading, spacing: 12) {
+                // 星級篩選
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("依評分篩選（可複選）")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.secondary)
+                    
+                    HStack(spacing: 8) {
+                        ForEach(1...5, id: \.self) { star in
+                            let isSelected = filterRatings.contains(star)
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    if isSelected {
+                                        filterRatings.remove(star)
+                                    } else {
+                                        filterRatings.insert(star)
+                                    }
+                                }
+                            } label: {
+                                HStack(spacing: 3) {
+                                    Image(systemName: "star.fill")
+                                        .font(.caption2)
+                                    Text("\(star)")
+                                        .font(.subheadline)
+                                        .fontWeight(.medium)
+                                }
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 6)
+                                .background(isSelected ? Color.teaBrown : Color.gray.opacity(0.1))
+                                .foregroundColor(isSelected ? .white : .primary)
+                                .clipShape(Capsule())
+                                .overlay(
+                                    Capsule()
+                                        .stroke(isSelected ? Color.clear : Color.gray.opacity(0.2), lineWidth: 1)
+                                )
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+                
+                // 重置按鈕
+                if hasActiveFilters {
+                    Button {
+                        withAnimation(.spring(duration: 0.3)) {
+                            filterRatings.removeAll()
+                        }
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.counterclockwise")
+                                .font(.caption)
+                            Text("重置篩選")
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                        }
+                        .foregroundColor(.red.opacity(0.8))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .background(Color.red.opacity(0.05))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.vertical, 4)
+        }
+        .listRowBackground(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.white)
+                .shadow(color: .black.opacity(0.03), radius: 4, y: 2)
+        )
     }
     
     private var statisticsSection: some View {
@@ -312,6 +454,17 @@ struct DiaryView: View {
         .shadow(color: .black.opacity(0.03), radius: 5, y: 2)
     }
     
+    // MARK: - Filter Logic
+    
+    private var hasActiveFilters: Bool {
+        !filterRatings.isEmpty
+    }
+    
+    private var filteredLogs: [DrinkLog] {
+        guard hasActiveFilters else { return logs }
+        return logs.filter { filterRatings.contains($0.rating) }
+    }
+    
     // MARK: - Computed Properties
     
     private var thisWeekCount: Int {
@@ -331,6 +484,13 @@ struct DiaryView: View {
     private func deleteLogs(at offsets: IndexSet) {
         for index in offsets {
             modelContext.delete(logs[index])
+        }
+    }
+    
+    private func deleteFilteredLogs(at offsets: IndexSet) {
+        let filtered = filteredLogs
+        for index in offsets {
+            modelContext.delete(filtered[index])
         }
     }
 }

@@ -159,7 +159,23 @@ struct DrinkListRow: View {
                 }
                 
                 // 咖啡因
-                if drink.hasCaffeine {
+                
+                // 咖啡因資訊
+                if let mg = drink.caffeineContent, mg == -1 {
+                    // 1. 資料不足
+                    HStack(spacing: 4) {
+                        Image(systemName: "cup.and.saucer")
+                            .font(.caption)
+                        Text("咖啡因資料不足")
+                            .font(.caption2)
+                    }
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.gray.opacity(0.1))
+                    .clipShape(Capsule())
+                } else if drink.hasCaffeine {
+                    // 2. 含咖啡因
                     HStack(spacing: 4) {
                         CaffeineIcon(hasCaffeine: true, showLabel: true)
                         if let mg = drink.caffeineContent, mg > 0 {
@@ -168,6 +184,9 @@ struct DrinkListRow: View {
                                 .foregroundColor(.brown.opacity(0.8))
                         }
                     }
+                } else {
+                    // 3. 無咖啡因
+                    CaffeineIcon(hasCaffeine: false, showLabel: true)
                 }
             }
             

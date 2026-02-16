@@ -36,7 +36,7 @@ final class DrinkService: DrinkServiceProtocol {
             let sampleData = try decoder.decode(SampleDataContainer.self, from: data)
             
             // 將 Brand 資料轉換並快取
-            cachedBrands = sampleData.brands.map { brandData in
+            let brands = sampleData.brands.map { brandData in
                 Brand(
                     id: brandData.brand_id,
                     name: brandData.brand_name,
@@ -44,6 +44,10 @@ final class DrinkService: DrinkServiceProtocol {
                     isActive: brandData.is_active
                 )
             }
+            
+            
+            // 排序邏輯：數字 -> 英文 -> 中文 (筆畫)
+            cachedBrands = Brand.sorted(brands)
             
             // 將 Drink 資料轉換並快取
             cachedDrinks = sampleData.drinks.map { drinkData in
@@ -68,7 +72,7 @@ final class DrinkService: DrinkServiceProtocol {
         } catch {
             print("❌ 解析 SampleData.json 失敗: \(error)")
             cachedDrinks = Drink.sampleDrinks
-            cachedBrands = Brand.sampleBrands
+            cachedBrands = Brand.sorted(Brand.sampleBrands)
         }
     }
     
@@ -111,7 +115,7 @@ final class DrinkService: DrinkServiceProtocol {
     }
     
     func fetchAllBrands() async throws -> [Brand] {
-        return cachedBrands ?? Brand.sampleBrands
+        return cachedBrands ?? Brand.sorted(Brand.sampleBrands)
     }
     
     /// 同步取得快取的品牌資料 (供 Brand.find 使用)

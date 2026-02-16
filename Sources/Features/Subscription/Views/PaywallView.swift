@@ -101,7 +101,7 @@ struct PaywallView: View {
                 .font(.title)
                 .fontWeight(.bold)
             
-            Text("解鎖所有進階功能")
+            Text("解鎖所有進階功能，免費試用 7 天")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
@@ -155,7 +155,7 @@ struct PaywallView: View {
                         ProgressView()
                             .tint(.white)
                     } else {
-                        Text("繼續")
+                        Text(trialButtonText)
                             .fontWeight(.semibold)
                     }
                 }
@@ -204,7 +204,7 @@ struct PaywallView: View {
                         ProgressView()
                             .tint(.white)
                     } else {
-                        Text("繼續 (測試模式)")
+                        Text("免費試用 7 天 (測試模式)")
                             .fontWeight(.semibold)
                     }
                 }
@@ -227,15 +227,33 @@ struct PaywallView: View {
     private var legalSection: some View {
         VStack(spacing: 8) {
             if let package = selectedPackage {
-                Text("訂閱將自動續訂，可隨時在設定中取消。訂閱後將收取 \(package.localizedPriceString)。")
+                if let intro = package.storeProduct.introductoryDiscount,
+                   intro.paymentMode == .freeTrial {
+                    let days = intro.subscriptionPeriod.value
+                    Text("免費試用 \(days) 天後，將自動以 \(package.localizedPriceString) 續訂。可隨時在設定中取消。")
+                } else {
+                    Text("訂閱將自動續訂，可隨時在設定中取消。訂閱後將收取 \(package.localizedPriceString)。")
+                }
             } else {
-                Text("訂閱將自動續訂，可隨時在設定中取消。")
+                Text("免費試用 7 天後自動續訂，可隨時在設定中取消。")
             }
         }
         .font(.caption2)
         .foregroundColor(.secondary)
         .multilineTextAlignment(.center)
         .padding(.horizontal)
+    }
+    
+    // MARK: - Computed Properties
+    
+    /// 購買按鈕文字（根據試用期動態調整）
+    private var trialButtonText: String {
+        if let package = selectedPackage,
+           let intro = package.storeProduct.introductoryDiscount,
+           intro.paymentMode == .freeTrial {
+            return "免費試用 \(intro.subscriptionPeriod.value) 天"
+        }
+        return "免費試用 7 天"
     }
     
     // MARK: - Actions

@@ -20,9 +20,13 @@ final class RandomPickerViewModel: ObservableObject {
     private let pickerService: RandomPickerServiceProtocol
     private let drinkService: DrinkServiceProtocol
     private let hapticManager = HapticManager.shared
+    let interstitialAdManager = InterstitialAdManager()
     
     // 用戶日記記錄 (由外部注入)
     var userLogs: [DrinkLog] = []
+    
+    // Pro 用戶狀態 (由外部設定)
+    var isProUser: Bool = false
     
     // MARK: - Computed Properties
     var filteredCount: Int {
@@ -76,20 +80,44 @@ final class RandomPickerViewModel: ObservableObject {
             let drinks = try await pickerService.getFilteredDrinks(criteria: criteria, userLogs: userLogs)
             
             if let drink = drinks.randomElement() {
-                withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
-                    pickedDrink = drink
+                // 更新每日抽獎計數
+                let pickCount = incrementDailyPickCount()
+                
+                // 檢查是否需要展示插頁廣告 (非 Pro 用戶，每日第 N 次)
+                let shouldShowAd = !isProUser
+                    && Constants.FeatureFlags.interstitialAdsEnabled
+                    && pickCount >= Constants.FeatureFlags.interstitialPickThreshold
+                
+                if shouldShowAd {
+                    // 展示廣告，廣告結束後才顯示飲料
+                    isShaking = false
+                    await withCheckedContinuation { continuation in
+                        interstitialAdManager.showAd {
+                            continuation.resume()
+                        }
+                    }
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                        pickedDrink = drink
+                    }
+                    hapticManager.success()
+                } else {
+                    // 直接顯示飲料
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                        pickedDrink = drink
+                    }
+                    hapticManager.success()
+                    isShaking = false
                 }
-                hapticManager.success()
             } else {
                 showNoResultAlert = true
                 hapticManager.error()
+                isShaking = false
             }
         } catch {
             errorMessage = error.localizedDescription
             hapticManager.error()
+            isShaking = false
         }
-        
-        isShaking = false
     }
     
     /// 再抽一次
@@ -160,5 +188,27 @@ final class RandomPickerViewModel: ObservableObject {
     func setAntiThunder(_ enabled: Bool) {
         criteria.antiThunder = enabled
         hapticManager.selection()
+    }
+    
+    // MARK: - Private Helpers
+    
+    /// 增加每日抽獎計數並回傳更新後的次數
+    private func incrementDailyPickCount() -> Int {
+        let defaults = UserDefaults.standard
+        let today = Calendar.current.startOfDay(for: Date())
+        
+        // 檢查是否同一天
+        if let savedDate = defaults.object(forKey: Constants.StorageKeys.dailyPickDate) as? Date,
+           Calendar.current.isDate(savedDate, inSameDayAs: today) {
+            // 同一天，累加計數
+            let count = defaults.integer(forKey: Constants.StorageKeys.dailyPickCount) + 1
+            defaults.set(count, forKey: Constants.StorageKeys.dailyPickCount)
+            return count
+        } else {
+            // 新的一天，重置計數
+            defaults.set(today, forKey: Constants.StorageKeys.dailyPickDate)
+            defaults.set(1, forKey: Constants.StorageKeys.dailyPickCount)
+            return 1
+        }
     }
 }

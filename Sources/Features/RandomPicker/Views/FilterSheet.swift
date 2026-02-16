@@ -6,6 +6,7 @@ struct FilterSheet: View {
     @EnvironmentObject var userManager: UserManager
     @Environment(\.dismiss) private var dismiss
     @State private var showPaywall = false
+    @State private var isBrandExpanded = false
     
     var body: some View {
         NavigationStack {
@@ -18,15 +19,52 @@ struct FilterSheet: View {
                     
                     // 品牌篩選
                     filterSection(title: "品牌", icon: "building.2") {
-                        FlowLayout(spacing: 8) {
-                            ForEach(viewModel.allBrands) { brand in
-                                FilterChip(
-                                    title: brand.name,
-                                    isSelected: viewModel.criteria.selectedBrands.contains(brand.id)
-                                ) {
-                                    viewModel.toggleBrand(brand.id)
+                        VStack(spacing: 0) {
+                            FlowLayout(spacing: 8) {
+                                ForEach(viewModel.allBrands) { brand in
+                                    FilterChip(
+                                        title: brand.name,
+                                        isSelected: viewModel.criteria.selectedBrands.contains(brand.id)
+                                    ) {
+                                        viewModel.toggleBrand(brand.id)
+                                    }
                                 }
                             }
+                            .frame(maxHeight: isBrandExpanded ? .infinity : 190, alignment: .top)
+                            .clipped()
+                            .overlay(alignment: .bottom) {
+                                if !isBrandExpanded {
+                                    LinearGradient(
+                                        colors: [.clear, .backgroundPrimary.opacity(0.8), .backgroundPrimary],
+                                        startPoint: .top,
+                                        endPoint: .bottom
+                                    )
+                                    .frame(height: 40)
+                                }
+                            }
+                            
+                            // 展開/收起按鈕
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    isBrandExpanded.toggle()
+                                }
+                            } label: {
+                                HStack(spacing: 4) {
+                                    Text(isBrandExpanded ? "收起" : "顯示全部")
+                                        .font(.subheadline)
+                                        .fontWeight(.medium)
+                                    Image(systemName: isBrandExpanded ? "chevron.up" : "chevron.down")
+                                        .font(.caption)
+                                }
+                                .foregroundColor(.teaBrown)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 12)
+                                .background(Color.teaBrown.opacity(0.1))
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .padding(.top, 8)
                         }
                     }
                     

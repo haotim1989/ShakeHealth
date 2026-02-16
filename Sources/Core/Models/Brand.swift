@@ -65,5 +65,36 @@ extension Brand {
         // 備用：使用 sampleBrands
         return sampleBrands.first { $0.id == id }
     }
+    
+    /// 統一品牌排序邏輯：數字 -> 英文 -> 中文 (筆畫)
+    static func sorted(_ brands: [Brand]) -> [Brand] {
+        return brands.sorted { b1, b2 in
+            func brandType(_ name: String) -> Int {
+                guard let first = name.first else { return 3 }
+                if first.isASCII && first.isNumber { return 0 }
+                if first.isASCII && first.isLetter { return 1 }
+                return 2
+            }
+            
+            let t1 = brandType(b1.name)
+            let t2 = brandType(b2.name)
+            
+            if t1 != t2 {
+                return t1 < t2
+            }
+            
+            switch t1 {
+            case 0:
+                // 數字開頭：依照字串順序 (例如 "50" < "7")
+                return b1.name < b2.name
+            case 1:
+                // 英文開頭：不區分大小寫
+                return b1.name.localizedCaseInsensitiveCompare(b2.name) == .orderedAscending
+            default:
+                // 中文/及其它：依照筆畫 (zh_TW locale)
+                return b1.name.compare(b2.name, locale: Locale(identifier: "zh_TW")) == .orderedAscending
+            }
+        }
+    }
 }
 

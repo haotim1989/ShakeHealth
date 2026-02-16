@@ -264,6 +264,96 @@ struct NativeAdViewRepresentable: UIViewRepresentable {
     }
 }
 
+// MARK: - Interstitial Ad Manager
+
+/// 插頁廣告管理器
+/// 用於隨機喝功能，每日第 N 次抽獎時展示
+@MainActor
+final class InterstitialAdManager: NSObject, ObservableObject {
+    @Published private(set) var isAdReady = false
+    @Published private(set) var isShowingAd = false
+    
+    private var interstitialAd: InterstitialAd?
+    private var onDismissCompletion: (() -> Void)?
+    
+    override init() {
+        super.init()
+        Task {
+            await loadAd()
+        }
+    }
+    
+    /// 預先載入插頁廣告
+    func loadAd() async {
+        guard Constants.FeatureFlags.interstitialAdsEnabled else { return }
+        
+        do {
+            interstitialAd = try await InterstitialAd.load(
+                with: AdManager.shared.interstitialAdUnitID,
+                request: Request()
+            )
+            interstitialAd?.fullScreenContentDelegate = self
+            isAdReady = true
+            print("✅ Interstitial 廣告載入成功")
+        } catch {
+            print("❌ Interstitial 廣告載入失敗: \(error.localizedDescription)")
+            isAdReady = false
+        }
+    }
+    
+    /// 展示插頁廣告
+    /// - Parameter completion: 廣告關閉後的回呼
+    func showAd(completion: @escaping () -> Void) {
+        guard let ad = interstitialAd else {
+            // 廣告未就緒，直接執行 completion
+            print("⚠️ Interstitial 廣告未就緒，跳過")
+            completion()
+            return
+        }
+        
+        onDismissCompletion = completion
+        isShowingAd = true
+        ad.present(from: nil)
+    }
+}
+
+extension InterstitialAdManager: FullScreenContentDelegate {
+    nonisolated func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
+        Task { @MainActor in
+            print("✅ Interstitial 廣告已關閉")
+            self.isShowingAd = false
+            self.interstitialAd = nil
+            self.isAdReady = false
+            
+            // 執行回呼
+            self.onDismissCompletion?()
+            self.onDismissCompletion = nil
+            
+            // 預載下一次廣告
+            await self.loadAd()
+        }
+    }
+    
+    nonisolated func ad(_ ad: FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        Task { @MainActor in
+            print("❌ Interstitial 廣告展示失敗: \(error.localizedDescription)")
+            self.isShowingAd = false
+            self.interstitialAd = nil
+            self.isAdReady = false
+            
+            // 廣告失敗也要執行回呼
+            self.onDismissCompletion?()
+            self.onDismissCompletion = nil
+            
+            await self.loadAd()
+        }
+    }
+    
+    nonisolated func adWillPresentFullScreenContent(_ ad: FullScreenPresentingAd) {
+        print("📱 Interstitial 廣告即將展示")
+    }
+}
+
 // MARK: - Backward Compatibility Alias
 // 保持舊名稱的相容性
 typealias NativeAdView = NativeAdCardView

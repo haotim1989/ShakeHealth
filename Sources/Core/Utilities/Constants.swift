@@ -11,7 +11,10 @@ enum Constants {
         static let adsEnabled = true
         
         /// 是否啟用 Interstitial 廣告
-        static let interstitialAdsEnabled = false
+        static let interstitialAdsEnabled = true
+        
+        /// 插頁廣告觸發閾值 (每日第 N 次抽獎)
+        static let interstitialPickThreshold = 3
         
         /// 免費用戶每日日記筆數限制
         static let freeDailyDiaryLimit = 1
@@ -32,6 +35,8 @@ enum Constants {
         static let anonymousUserId = "anonymousUserId"
         static let lastFilterCriteria = "lastFilterCriteria"
         static let onboardingCompleted = "onboardingCompleted"
+        static let dailyPickCount = "dailyPickCount"
+        static let dailyPickDate = "dailyPickDate"
     }
     
     /// Google Maps
