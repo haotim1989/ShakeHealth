@@ -12,7 +12,7 @@ struct Drink: Identifiable, Codable, Hashable {
     let baseCalories: Int                     // 基礎熱量 (正常糖)
     let caloriesBySugar: [String: Int]?       // 各甜度對應熱量 (String key for Codable)
     let sugarGrams: Double?                   // 總糖量 (克)
-    let hasCaffeine: Bool
+    let hasCaffeine: Bool? // 改為可選，nil 代表未知/資料不足
     let caffeineContent: Int?                 // mg (可選)
     
     // 可選配置
@@ -28,7 +28,7 @@ struct Drink: Identifiable, Codable, Hashable {
         baseCalories: Int,
         caloriesBySugar: [SugarLevel: Int]? = nil,
         sugarGrams: Double? = nil,
-        hasCaffeine: Bool,
+        hasCaffeine: Bool?, // Update init parameter
         caffeineContent: Int? = nil,
         availableSugarLevels: [SugarLevel] = SugarLevel.allCases,
         availableIceLevels: [IceLevel] = IceLevel.allCases

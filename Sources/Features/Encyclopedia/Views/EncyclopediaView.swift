@@ -174,19 +174,34 @@ struct DrinkListRow: View {
                     .padding(.vertical, 4)
                     .background(Color.gray.opacity(0.1))
                     .clipShape(Capsule())
-                } else if drink.hasCaffeine {
-                    // 2. 含咖啡因
-                    HStack(spacing: 4) {
-                        CaffeineIcon(hasCaffeine: true, showLabel: true)
-                        if let mg = drink.caffeineContent, mg > 0 {
-                            Text("(\(mg)mg)")
-                                .font(.caption2)
-                                .foregroundColor(.brown.opacity(0.8))
+                } else if let hasCaffeine = drink.hasCaffeine {
+                    if hasCaffeine {
+                        // 2. 含咖啡因
+                        HStack(spacing: 4) {
+                            CaffeineIcon(hasCaffeine: true, showLabel: true)
+                            if let mg = drink.caffeineContent, mg > 0 {
+                                Text("(\(mg)mg)")
+                                    .font(.caption2)
+                                    .foregroundColor(.brown.opacity(0.8))
+                            }
                         }
+                    } else {
+                        // 3. 無咖啡因
+                        CaffeineIcon(hasCaffeine: false, showLabel: true)
                     }
                 } else {
-                    // 3. 無咖啡因
-                    CaffeineIcon(hasCaffeine: false, showLabel: true)
+                    // 4. hasCaffeine 為 nil (也是資料不足)
+                    HStack(spacing: 4) {
+                        Image(systemName: "cup.and.saucer")
+                            .font(.caption)
+                        Text("資料不足")
+                            .font(.caption2)
+                    }
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.gray.opacity(0.1))
+                    .clipShape(Capsule())
                 }
             }
             

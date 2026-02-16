@@ -166,7 +166,7 @@ struct AddToLogModal: View {
                 }
                 
                 // 咖啡因標示
-                if drink.hasCaffeine {
+                if let hasCaffeine = drink.hasCaffeine, hasCaffeine {
                     CaffeineIcon(hasCaffeine: true, showLabel: true)
                 }
             }
@@ -316,7 +316,7 @@ struct AddToLogModal: View {
             drinkName: drink.name,
             brandName: drink.brand?.name ?? "",
             caloriesSnapshot: estimatedCalories,
-            hasCaffeineSnapshot: drink.hasCaffeine,
+            hasCaffeineSnapshot: drink.hasCaffeine ?? false,
             createdAt: selectedDate  // 使用選擇的日期
         )
         

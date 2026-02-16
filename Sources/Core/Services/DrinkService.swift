@@ -151,7 +151,7 @@ private struct DrinkData: Decodable {
     let image_url: String?
     let base_calories: Int
     let sugar_grams: Double?
-    let has_caffeine: Bool
+    let has_caffeine: Bool?
     let caffeine_content: Int?
     let available_sugar_levels: [String]?
     let available_ice_levels: [String]?

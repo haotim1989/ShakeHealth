@@ -60,8 +60,15 @@ struct FilterCriteria: Equatable {
         }
         
         // 咖啡因篩選
-        if let caffeine = hasCaffeine, drink.hasCaffeine != caffeine {
-            return false
+        if let caffeineCondition = hasCaffeine {
+            // 如果飲料的 hasCaffeine 為 nil (未知)，則不符合任何明確的篩選條件 (無論是查有或查無)
+            guard let drinkHasCaffeine = drink.hasCaffeine else {
+                return false
+            }
+            
+            if drinkHasCaffeine != caffeineCondition {
+                return false
+            }
         }
         
         return true

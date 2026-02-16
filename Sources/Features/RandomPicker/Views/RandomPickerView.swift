@@ -23,8 +23,11 @@ struct RandomPickerView: View {
                 GeometryReader { geometry in
                     ScrollView {
                         VStack(spacing: 0) {
-                            // 篩選條件區
-                            filterSection
+                            // 篩選條件區 (只在未抽到結果時顯示)
+                            if viewModel.pickedDrink == nil {
+                                filterSection
+                                    .transition(.move(edge: .top).combined(with: .opacity))
+                            }
                             
                             Spacer()
                             
@@ -37,6 +40,9 @@ struct RandomPickerView: View {
                                     onFindStore: { viewModel.openInMaps() },
                                     onPickAgain: {
                                         Task { await viewModel.pickAgain() }
+                                    },
+                                    onShowFilter: {
+                                        viewModel.showFilterSheet = true
                                     }
                                 )
                                 .padding(.horizontal, 24)

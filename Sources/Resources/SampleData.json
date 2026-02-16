@@ -4792,7 +4792,7 @@
       "image_url": null,
       "base_calories": 141,
       "sugar_grams": 33.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -5680,7 +5680,7 @@
       "image_url": null,
       "base_calories": 412,
       "sugar_grams": 90.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -5704,7 +5704,7 @@
       "image_url": null,
       "base_calories": 722,
       "sugar_grams": 161.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6568,7 +6568,7 @@
       "image_url": null,
       "base_calories": 265,
       "sugar_grams": 60.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6592,7 +6592,7 @@
       "image_url": null,
       "base_calories": 334,
       "sugar_grams": 52.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6616,7 +6616,7 @@
       "image_url": null,
       "base_calories": 466,
       "sugar_grams": 53.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6640,7 +6640,7 @@
       "image_url": null,
       "base_calories": 469,
       "sugar_grams": 49.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6664,7 +6664,7 @@
       "image_url": null,
       "base_calories": 480,
       "sugar_grams": 49.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6688,7 +6688,7 @@
       "image_url": null,
       "base_calories": 332,
       "sugar_grams": 47.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6712,7 +6712,7 @@
       "image_url": null,
       "base_calories": 202,
       "sugar_grams": 42.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6736,7 +6736,7 @@
       "image_url": null,
       "base_calories": 480,
       "sugar_grams": 49.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6760,7 +6760,7 @@
       "image_url": null,
       "base_calories": 304,
       "sugar_grams": 62.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6784,7 +6784,7 @@
       "image_url": null,
       "base_calories": 326,
       "sugar_grams": 66.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6808,7 +6808,7 @@
       "image_url": null,
       "base_calories": 640,
       "sugar_grams": 66.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6832,7 +6832,7 @@
       "image_url": null,
       "base_calories": 364,
       "sugar_grams": 55.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6856,7 +6856,7 @@
       "image_url": null,
       "base_calories": 152,
       "sugar_grams": 32.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6880,7 +6880,7 @@
       "image_url": null,
       "base_calories": 202,
       "sugar_grams": 42.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6904,7 +6904,7 @@
       "image_url": null,
       "base_calories": 202,
       "sugar_grams": 42.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6928,7 +6928,7 @@
       "image_url": null,
       "base_calories": 202,
       "sugar_grams": 42.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6952,7 +6952,7 @@
       "image_url": null,
       "base_calories": 202,
       "sugar_grams": 42.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -6976,7 +6976,7 @@
       "image_url": null,
       "base_calories": 586,
       "sugar_grams": 51.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7000,7 +7000,7 @@
       "image_url": null,
       "base_calories": 480,
       "sugar_grams": 49.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7024,7 +7024,7 @@
       "image_url": null,
       "base_calories": 502,
       "sugar_grams": 56.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7048,7 +7048,7 @@
       "image_url": null,
       "base_calories": 334,
       "sugar_grams": 52.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7072,7 +7072,7 @@
       "image_url": null,
       "base_calories": 334,
       "sugar_grams": 52.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7096,7 +7096,7 @@
       "image_url": null,
       "base_calories": 420,
       "sugar_grams": 53.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7120,7 +7120,7 @@
       "image_url": null,
       "base_calories": 334,
       "sugar_grams": 52.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7144,7 +7144,7 @@
       "image_url": null,
       "base_calories": 383,
       "sugar_grams": 61.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7168,7 +7168,7 @@
       "image_url": null,
       "base_calories": 305,
       "sugar_grams": 72.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7192,7 +7192,7 @@
       "image_url": null,
       "base_calories": 262,
       "sugar_grams": 63.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7216,7 +7216,7 @@
       "image_url": null,
       "base_calories": 370,
       "sugar_grams": 78.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7240,7 +7240,7 @@
       "image_url": null,
       "base_calories": 353,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7264,7 +7264,7 @@
       "image_url": null,
       "base_calories": 412,
       "sugar_grams": 67.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7288,7 +7288,7 @@
       "image_url": null,
       "base_calories": 298,
       "sugar_grams": 60.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7312,7 +7312,7 @@
       "image_url": null,
       "base_calories": 354,
       "sugar_grams": 80.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7336,7 +7336,7 @@
       "image_url": null,
       "base_calories": 403,
       "sugar_grams": 93.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7360,7 +7360,7 @@
       "image_url": null,
       "base_calories": 261,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7384,7 +7384,7 @@
       "image_url": null,
       "base_calories": 558,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7408,7 +7408,7 @@
       "image_url": null,
       "base_calories": 464,
       "sugar_grams": 83.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7432,7 +7432,7 @@
       "image_url": null,
       "base_calories": 385,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7456,7 +7456,7 @@
       "image_url": null,
       "base_calories": 200,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -7480,7 +7480,7 @@
       "image_url": null,
       "base_calories": 156,
       "sugar_grams": 38.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -11200,7 +11200,7 @@
       "image_url": null,
       "base_calories": 3336,
       "sugar_grams": 3336.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12112,7 +12112,7 @@
       "image_url": null,
       "base_calories": 329,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12136,7 +12136,7 @@
       "image_url": null,
       "base_calories": 324,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12160,7 +12160,7 @@
       "image_url": null,
       "base_calories": 331,
       "sugar_grams": 78.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12256,7 +12256,7 @@
       "image_url": null,
       "base_calories": 342,
       "sugar_grams": 82.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12280,7 +12280,7 @@
       "image_url": null,
       "base_calories": 590,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12328,7 +12328,7 @@
       "image_url": null,
       "base_calories": 233,
       "sugar_grams": 52.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12352,7 +12352,7 @@
       "image_url": null,
       "base_calories": 198,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12376,7 +12376,7 @@
       "image_url": null,
       "base_calories": 381,
       "sugar_grams": 96.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12400,7 +12400,7 @@
       "image_url": null,
       "base_calories": 293,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12424,7 +12424,7 @@
       "image_url": null,
       "base_calories": 217,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12448,7 +12448,7 @@
       "image_url": null,
       "base_calories": 296,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12472,7 +12472,7 @@
       "image_url": null,
       "base_calories": 287,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12712,7 +12712,7 @@
       "image_url": null,
       "base_calories": 328,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12736,7 +12736,7 @@
       "image_url": null,
       "base_calories": 446,
       "sugar_grams": 95.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12760,7 +12760,7 @@
       "image_url": null,
       "base_calories": 337,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12784,7 +12784,7 @@
       "image_url": null,
       "base_calories": 446,
       "sugar_grams": 95.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12808,7 +12808,7 @@
       "image_url": null,
       "base_calories": 373,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12832,7 +12832,7 @@
       "image_url": null,
       "base_calories": 424,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12856,7 +12856,7 @@
       "image_url": null,
       "base_calories": 342,
       "sugar_grams": 77.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12880,7 +12880,7 @@
       "image_url": null,
       "base_calories": 431,
       "sugar_grams": 96.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12904,7 +12904,7 @@
       "image_url": null,
       "base_calories": 669,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12928,7 +12928,7 @@
       "image_url": null,
       "base_calories": 880,
       "sugar_grams": 66.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12952,7 +12952,7 @@
       "image_url": null,
       "base_calories": 389,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -12976,7 +12976,7 @@
       "image_url": null,
       "base_calories": 468,
       "sugar_grams": 83.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13000,7 +13000,7 @@
       "image_url": null,
       "base_calories": 431,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13024,7 +13024,7 @@
       "image_url": null,
       "base_calories": 519,
       "sugar_grams": 79.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13048,7 +13048,7 @@
       "image_url": null,
       "base_calories": 360,
       "sugar_grams": 82.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13072,7 +13072,7 @@
       "image_url": null,
       "base_calories": 147,
       "sugar_grams": 34.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13096,7 +13096,7 @@
       "image_url": null,
       "base_calories": 193,
       "sugar_grams": 45.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13120,7 +13120,7 @@
       "image_url": null,
       "base_calories": 271,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13144,7 +13144,7 @@
       "image_url": null,
       "base_calories": 328,
       "sugar_grams": 78.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13168,7 +13168,7 @@
       "image_url": null,
       "base_calories": 315,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13192,7 +13192,7 @@
       "image_url": null,
       "base_calories": 413,
       "sugar_grams": 92.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13216,7 +13216,7 @@
       "image_url": null,
       "base_calories": 271,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13240,7 +13240,7 @@
       "image_url": null,
       "base_calories": 328,
       "sugar_grams": 78.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13264,7 +13264,7 @@
       "image_url": null,
       "base_calories": 459,
       "sugar_grams": 68.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13288,7 +13288,7 @@
       "image_url": null,
       "base_calories": 281,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13312,7 +13312,7 @@
       "image_url": null,
       "base_calories": 296,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13336,7 +13336,7 @@
       "image_url": null,
       "base_calories": 437,
       "sugar_grams": 38.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13360,7 +13360,7 @@
       "image_url": null,
       "base_calories": 503,
       "sugar_grams": 42.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13384,7 +13384,7 @@
       "image_url": null,
       "base_calories": 536,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13408,7 +13408,7 @@
       "image_url": null,
       "base_calories": 602,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13432,7 +13432,7 @@
       "image_url": null,
       "base_calories": 334,
       "sugar_grams": 35.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13456,7 +13456,7 @@
       "image_url": null,
       "base_calories": 401,
       "sugar_grams": 40.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13480,7 +13480,7 @@
       "image_url": null,
       "base_calories": 290,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13504,7 +13504,7 @@
       "image_url": null,
       "base_calories": 356,
       "sugar_grams": 41.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13528,7 +13528,7 @@
       "image_url": null,
       "base_calories": 367,
       "sugar_grams": 77.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13552,7 +13552,7 @@
       "image_url": null,
       "base_calories": 458,
       "sugar_grams": 96.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13576,7 +13576,7 @@
       "image_url": null,
       "base_calories": 184,
       "sugar_grams": 43.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13600,7 +13600,7 @@
       "image_url": null,
       "base_calories": 230,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13624,7 +13624,7 @@
       "image_url": null,
       "base_calories": 147,
       "sugar_grams": 35.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13648,7 +13648,7 @@
       "image_url": null,
       "base_calories": 193,
       "sugar_grams": 46.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13720,7 +13720,7 @@
       "image_url": null,
       "base_calories": 228,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13744,7 +13744,7 @@
       "image_url": null,
       "base_calories": 335,
       "sugar_grams": 37.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13768,7 +13768,7 @@
       "image_url": null,
       "base_calories": 501,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13792,7 +13792,7 @@
       "image_url": null,
       "base_calories": 670,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13816,7 +13816,7 @@
       "image_url": null,
       "base_calories": 335,
       "sugar_grams": 37.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13840,7 +13840,7 @@
       "image_url": null,
       "base_calories": 425,
       "sugar_grams": 97.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13864,7 +13864,7 @@
       "image_url": null,
       "base_calories": 531,
       "sugar_grams": 120.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13888,7 +13888,7 @@
       "image_url": null,
       "base_calories": 510,
       "sugar_grams": 84.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13912,7 +13912,7 @@
       "image_url": null,
       "base_calories": 767,
       "sugar_grams": 120.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13936,7 +13936,7 @@
       "image_url": null,
       "base_calories": 362,
       "sugar_grams": 82.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13960,7 +13960,7 @@
       "image_url": null,
       "base_calories": 343,
       "sugar_grams": 66.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -13984,7 +13984,7 @@
       "image_url": null,
       "base_calories": 415,
       "sugar_grams": 80.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14008,7 +14008,7 @@
       "image_url": null,
       "base_calories": 513,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14032,7 +14032,7 @@
       "image_url": null,
       "base_calories": 724,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14056,7 +14056,7 @@
       "image_url": null,
       "base_calories": 513,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14080,7 +14080,7 @@
       "image_url": null,
       "base_calories": 724,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14104,7 +14104,7 @@
       "image_url": null,
       "base_calories": 581,
       "sugar_grams": 77.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14128,7 +14128,7 @@
       "image_url": null,
       "base_calories": 738,
       "sugar_grams": 87.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14152,7 +14152,7 @@
       "image_url": null,
       "base_calories": 520,
       "sugar_grams": 60.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14176,7 +14176,7 @@
       "image_url": null,
       "base_calories": 566,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14200,7 +14200,7 @@
       "image_url": null,
       "base_calories": 708,
       "sugar_grams": 84.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14224,7 +14224,7 @@
       "image_url": null,
       "base_calories": 345,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14248,7 +14248,7 @@
       "image_url": null,
       "base_calories": 424,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14272,7 +14272,7 @@
       "image_url": null,
       "base_calories": 373,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14296,7 +14296,7 @@
       "image_url": null,
       "base_calories": 602,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14320,7 +14320,7 @@
       "image_url": null,
       "base_calories": 508,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14344,7 +14344,7 @@
       "image_url": null,
       "base_calories": 628,
       "sugar_grams": 87.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14368,7 +14368,7 @@
       "image_url": null,
       "base_calories": 427,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14392,7 +14392,7 @@
       "image_url": null,
       "base_calories": 540,
       "sugar_grams": 92.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14440,7 +14440,7 @@
       "image_url": null,
       "base_calories": 254,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14488,7 +14488,7 @@
       "image_url": null,
       "base_calories": 254,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14512,7 +14512,7 @@
       "image_url": null,
       "base_calories": 291,
       "sugar_grams": 66.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14536,7 +14536,7 @@
       "image_url": null,
       "base_calories": 221,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14560,7 +14560,7 @@
       "image_url": null,
       "base_calories": 271,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14632,7 +14632,7 @@
       "image_url": null,
       "base_calories": 298,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14704,7 +14704,7 @@
       "image_url": null,
       "base_calories": 205,
       "sugar_grams": 42.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14728,7 +14728,7 @@
       "image_url": null,
       "base_calories": 254,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14752,7 +14752,7 @@
       "image_url": null,
       "base_calories": 360,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14776,7 +14776,7 @@
       "image_url": null,
       "base_calories": 192,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14800,7 +14800,7 @@
       "image_url": null,
       "base_calories": 457,
       "sugar_grams": 52.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14824,7 +14824,7 @@
       "image_url": null,
       "base_calories": 405,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14848,7 +14848,7 @@
       "image_url": null,
       "base_calories": 287,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14896,7 +14896,7 @@
       "image_url": null,
       "base_calories": 208,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14944,7 +14944,7 @@
       "image_url": null,
       "base_calories": 313,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -14968,7 +14968,7 @@
       "image_url": null,
       "base_calories": 242,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15016,7 +15016,7 @@
       "image_url": null,
       "base_calories": 224,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15040,7 +15040,7 @@
       "image_url": null,
       "base_calories": 229,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15064,7 +15064,7 @@
       "image_url": null,
       "base_calories": 251,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15088,7 +15088,7 @@
       "image_url": null,
       "base_calories": 250,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15112,7 +15112,7 @@
       "image_url": null,
       "base_calories": 242,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15136,7 +15136,7 @@
       "image_url": null,
       "base_calories": 299,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15184,7 +15184,7 @@
       "image_url": null,
       "base_calories": 199,
       "sugar_grams": 52.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15208,7 +15208,7 @@
       "image_url": null,
       "base_calories": 282,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15280,7 +15280,7 @@
       "image_url": null,
       "base_calories": 390,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15304,7 +15304,7 @@
       "image_url": null,
       "base_calories": 297,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15328,7 +15328,7 @@
       "image_url": null,
       "base_calories": 487,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15352,7 +15352,7 @@
       "image_url": null,
       "base_calories": 581,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15376,7 +15376,7 @@
       "image_url": null,
       "base_calories": 334,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15400,7 +15400,7 @@
       "image_url": null,
       "base_calories": 275,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15424,7 +15424,7 @@
       "image_url": null,
       "base_calories": 245,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15448,7 +15448,7 @@
       "image_url": null,
       "base_calories": 286,
       "sugar_grams": 45.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15472,7 +15472,7 @@
       "image_url": null,
       "base_calories": 374,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15496,7 +15496,7 @@
       "image_url": null,
       "base_calories": 284,
       "sugar_grams": 45.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15520,7 +15520,7 @@
       "image_url": null,
       "base_calories": 370,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15544,7 +15544,7 @@
       "image_url": null,
       "base_calories": 721,
       "sugar_grams": 74.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15568,7 +15568,7 @@
       "image_url": null,
       "base_calories": 109,
       "sugar_grams": 25.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15592,7 +15592,7 @@
       "image_url": null,
       "base_calories": 109,
       "sugar_grams": 25.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15616,7 +15616,7 @@
       "image_url": null,
       "base_calories": 151,
       "sugar_grams": 68.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15640,7 +15640,7 @@
       "image_url": null,
       "base_calories": 797,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15664,7 +15664,7 @@
       "image_url": null,
       "base_calories": 322,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15688,7 +15688,7 @@
       "image_url": null,
       "base_calories": 493,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15712,7 +15712,7 @@
       "image_url": null,
       "base_calories": 108,
       "sugar_grams": 25.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15736,7 +15736,7 @@
       "image_url": null,
       "base_calories": 91,
       "sugar_grams": 21.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15760,7 +15760,7 @@
       "image_url": null,
       "base_calories": 91,
       "sugar_grams": 21.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15784,7 +15784,7 @@
       "image_url": null,
       "base_calories": 182,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15808,7 +15808,7 @@
       "image_url": null,
       "base_calories": 301,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15832,7 +15832,7 @@
       "image_url": null,
       "base_calories": 489,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15856,7 +15856,7 @@
       "image_url": null,
       "base_calories": 157,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15880,7 +15880,7 @@
       "image_url": null,
       "base_calories": 342,
       "sugar_grams": 43.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15904,7 +15904,7 @@
       "image_url": null,
       "base_calories": 364,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15928,7 +15928,7 @@
       "image_url": null,
       "base_calories": 178,
       "sugar_grams": 41.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15952,7 +15952,7 @@
       "image_url": null,
       "base_calories": 581,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -15976,7 +15976,7 @@
       "image_url": null,
       "base_calories": 283,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16000,7 +16000,7 @@
       "image_url": null,
       "base_calories": 463,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16024,7 +16024,7 @@
       "image_url": null,
       "base_calories": 315,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16048,7 +16048,7 @@
       "image_url": null,
       "base_calories": 488,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16072,7 +16072,7 @@
       "image_url": null,
       "base_calories": 359,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16096,7 +16096,7 @@
       "image_url": null,
       "base_calories": 352,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16120,7 +16120,7 @@
       "image_url": null,
       "base_calories": 492,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16144,7 +16144,7 @@
       "image_url": null,
       "base_calories": 195,
       "sugar_grams": 45.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16168,7 +16168,7 @@
       "image_url": null,
       "base_calories": 361,
       "sugar_grams": 45.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16192,7 +16192,7 @@
       "image_url": null,
       "base_calories": 793,
       "sugar_grams": 43.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16216,7 +16216,7 @@
       "image_url": null,
       "base_calories": 615,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16240,7 +16240,7 @@
       "image_url": null,
       "base_calories": 535,
       "sugar_grams": 43.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16264,7 +16264,7 @@
       "image_url": null,
       "base_calories": 308,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16288,7 +16288,7 @@
       "image_url": null,
       "base_calories": 333,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16312,7 +16312,7 @@
       "image_url": null,
       "base_calories": 523,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16336,7 +16336,7 @@
       "image_url": null,
       "base_calories": 746,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16360,7 +16360,7 @@
       "image_url": null,
       "base_calories": 294,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16384,7 +16384,7 @@
       "image_url": null,
       "base_calories": 484,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16408,7 +16408,7 @@
       "image_url": null,
       "base_calories": 295,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16432,7 +16432,7 @@
       "image_url": null,
       "base_calories": 486,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16456,7 +16456,7 @@
       "image_url": null,
       "base_calories": 686,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16480,7 +16480,7 @@
       "image_url": null,
       "base_calories": 182,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16504,7 +16504,7 @@
       "image_url": null,
       "base_calories": 177,
       "sugar_grams": 41.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16528,7 +16528,7 @@
       "image_url": null,
       "base_calories": 363,
       "sugar_grams": 43.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16552,7 +16552,7 @@
       "image_url": null,
       "base_calories": 716,
       "sugar_grams": 42.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16576,7 +16576,7 @@
       "image_url": null,
       "base_calories": 579,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16600,7 +16600,7 @@
       "image_url": null,
       "base_calories": 487,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16624,7 +16624,7 @@
       "image_url": null,
       "base_calories": 204,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16648,7 +16648,7 @@
       "image_url": null,
       "base_calories": 336,
       "sugar_grams": 78.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16672,7 +16672,7 @@
       "image_url": null,
       "base_calories": 335,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16696,7 +16696,7 @@
       "image_url": null,
       "base_calories": 248,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16720,7 +16720,7 @@
       "image_url": null,
       "base_calories": 157,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16744,7 +16744,7 @@
       "image_url": null,
       "base_calories": 157,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16768,7 +16768,7 @@
       "image_url": null,
       "base_calories": 157,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16792,7 +16792,7 @@
       "image_url": null,
       "base_calories": 489,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16816,7 +16816,7 @@
       "image_url": null,
       "base_calories": 595,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16840,7 +16840,7 @@
       "image_url": null,
       "base_calories": 739,
       "sugar_grams": 43.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16864,7 +16864,7 @@
       "image_url": null,
       "base_calories": 583,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16888,7 +16888,7 @@
       "image_url": null,
       "base_calories": 269,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16912,7 +16912,7 @@
       "image_url": null,
       "base_calories": 312,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -16936,7 +16936,7 @@
       "image_url": null,
       "base_calories": 358,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -17272,7 +17272,7 @@
       "image_url": null,
       "base_calories": 282,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -17440,7 +17440,7 @@
       "image_url": null,
       "base_calories": 233,
       "sugar_grams": 52.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -18904,7 +18904,7 @@
       "image_url": null,
       "base_calories": 408,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -18928,7 +18928,7 @@
       "image_url": null,
       "base_calories": 192,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -18952,7 +18952,7 @@
       "image_url": null,
       "base_calories": 230,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -19888,7 +19888,7 @@
       "image_url": null,
       "base_calories": 688,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -20008,7 +20008,7 @@
       "image_url": null,
       "base_calories": 320,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -20032,7 +20032,7 @@
       "image_url": null,
       "base_calories": 380,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -20728,7 +20728,7 @@
       "image_url": null,
       "base_calories": 710,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -20968,7 +20968,7 @@
       "image_url": null,
       "base_calories": 332,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -23224,7 +23224,7 @@
       "image_url": null,
       "base_calories": 366,
       "sugar_grams": 88.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -24688,7 +24688,7 @@
       "image_url": null,
       "base_calories": 228,
       "sugar_grams": 52.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -24712,7 +24712,7 @@
       "image_url": null,
       "base_calories": 306,
       "sugar_grams": 69.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -24736,7 +24736,7 @@
       "image_url": null,
       "base_calories": 182,
       "sugar_grams": 40.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -24760,7 +24760,7 @@
       "image_url": null,
       "base_calories": 394,
       "sugar_grams": 80.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -24784,7 +24784,7 @@
       "image_url": null,
       "base_calories": 332,
       "sugar_grams": 71.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -24832,7 +24832,7 @@
       "image_url": null,
       "base_calories": 210,
       "sugar_grams": 46.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -24856,7 +24856,7 @@
       "image_url": null,
       "base_calories": 284,
       "sugar_grams": 63.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -25216,7 +25216,7 @@
       "image_url": null,
       "base_calories": 312,
       "sugar_grams": 60.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -25264,7 +25264,7 @@
       "image_url": null,
       "base_calories": 284,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26488,7 +26488,7 @@
       "image_url": null,
       "base_calories": 313,
       "sugar_grams": 72.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26512,7 +26512,7 @@
       "image_url": null,
       "base_calories": 647,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26536,7 +26536,7 @@
       "image_url": null,
       "base_calories": 647,
       "sugar_grams": 80.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26560,7 +26560,7 @@
       "image_url": null,
       "base_calories": 567,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26584,7 +26584,7 @@
       "image_url": null,
       "base_calories": 538,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26608,7 +26608,7 @@
       "image_url": null,
       "base_calories": 313,
       "sugar_grams": 68.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26632,7 +26632,7 @@
       "image_url": null,
       "base_calories": 170,
       "sugar_grams": 41.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26656,7 +26656,7 @@
       "image_url": null,
       "base_calories": 501,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26680,7 +26680,7 @@
       "image_url": null,
       "base_calories": 267,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26704,7 +26704,7 @@
       "image_url": null,
       "base_calories": 348,
       "sugar_grams": 84.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26728,7 +26728,7 @@
       "image_url": null,
       "base_calories": 348,
       "sugar_grams": 74.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26752,7 +26752,7 @@
       "image_url": null,
       "base_calories": 301,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26776,7 +26776,7 @@
       "image_url": null,
       "base_calories": 246,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26800,7 +26800,7 @@
       "image_url": null,
       "base_calories": 277,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26824,7 +26824,7 @@
       "image_url": null,
       "base_calories": 287,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26848,7 +26848,7 @@
       "image_url": null,
       "base_calories": 218,
       "sugar_grams": 46.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26872,7 +26872,7 @@
       "image_url": null,
       "base_calories": 210,
       "sugar_grams": 41.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26896,7 +26896,7 @@
       "image_url": null,
       "base_calories": 286,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26920,7 +26920,7 @@
       "image_url": null,
       "base_calories": 285,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26944,7 +26944,7 @@
       "image_url": null,
       "base_calories": 304,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26968,7 +26968,7 @@
       "image_url": null,
       "base_calories": 287,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -26992,7 +26992,7 @@
       "image_url": null,
       "base_calories": 311,
       "sugar_grams": 84.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27016,7 +27016,7 @@
       "image_url": null,
       "base_calories": 188,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27040,7 +27040,7 @@
       "image_url": null,
       "base_calories": 188,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27064,7 +27064,7 @@
       "image_url": null,
       "base_calories": 206,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27088,7 +27088,7 @@
       "image_url": null,
       "base_calories": 206,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27112,7 +27112,7 @@
       "image_url": null,
       "base_calories": 206,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27136,7 +27136,7 @@
       "image_url": null,
       "base_calories": 206,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27160,7 +27160,7 @@
       "image_url": null,
       "base_calories": 188,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27184,7 +27184,7 @@
       "image_url": null,
       "base_calories": 447,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27208,7 +27208,7 @@
       "image_url": null,
       "base_calories": 600,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27232,7 +27232,7 @@
       "image_url": null,
       "base_calories": 408,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27256,7 +27256,7 @@
       "image_url": null,
       "base_calories": 408,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27280,7 +27280,7 @@
       "image_url": null,
       "base_calories": 408,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27304,7 +27304,7 @@
       "image_url": null,
       "base_calories": 481,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27328,7 +27328,7 @@
       "image_url": null,
       "base_calories": 481,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27352,7 +27352,7 @@
       "image_url": null,
       "base_calories": 447,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27376,7 +27376,7 @@
       "image_url": null,
       "base_calories": 599,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27400,7 +27400,7 @@
       "image_url": null,
       "base_calories": 599,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27424,7 +27424,7 @@
       "image_url": null,
       "base_calories": 277,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27448,7 +27448,7 @@
       "image_url": null,
       "base_calories": 276,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27472,7 +27472,7 @@
       "image_url": null,
       "base_calories": 301,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27496,7 +27496,7 @@
       "image_url": null,
       "base_calories": 301,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27520,7 +27520,7 @@
       "image_url": null,
       "base_calories": 201,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27544,7 +27544,7 @@
       "image_url": null,
       "base_calories": 201,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27568,7 +27568,7 @@
       "image_url": null,
       "base_calories": 322,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27592,7 +27592,7 @@
       "image_url": null,
       "base_calories": 310,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27616,7 +27616,7 @@
       "image_url": null,
       "base_calories": 289,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27640,7 +27640,7 @@
       "image_url": null,
       "base_calories": 185,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27664,7 +27664,7 @@
       "image_url": null,
       "base_calories": 185,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27688,7 +27688,7 @@
       "image_url": null,
       "base_calories": 571,
       "sugar_grams": 88.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27904,7 +27904,7 @@
       "image_url": null,
       "base_calories": 333,
       "sugar_grams": 83.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27928,7 +27928,7 @@
       "image_url": null,
       "base_calories": 212,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -27952,7 +27952,7 @@
       "image_url": null,
       "base_calories": 261,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29416,7 +29416,7 @@
       "image_url": null,
       "base_calories": 613,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29440,7 +29440,7 @@
       "image_url": null,
       "base_calories": 386,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29464,7 +29464,7 @@
       "image_url": null,
       "base_calories": 415,
       "sugar_grams": 95.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29488,7 +29488,7 @@
       "image_url": null,
       "base_calories": 359,
       "sugar_grams": 81.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29512,7 +29512,7 @@
       "image_url": null,
       "base_calories": 386,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29536,7 +29536,7 @@
       "image_url": null,
       "base_calories": 252,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29560,7 +29560,7 @@
       "image_url": null,
       "base_calories": 252,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29584,7 +29584,7 @@
       "image_url": null,
       "base_calories": 252,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29608,7 +29608,7 @@
       "image_url": null,
       "base_calories": 252,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29632,7 +29632,7 @@
       "image_url": null,
       "base_calories": 252,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29656,7 +29656,7 @@
       "image_url": null,
       "base_calories": 252,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29680,7 +29680,7 @@
       "image_url": null,
       "base_calories": 374,
       "sugar_grams": 46.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29704,7 +29704,7 @@
       "image_url": null,
       "base_calories": 374,
       "sugar_grams": 46.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29728,7 +29728,7 @@
       "image_url": null,
       "base_calories": 438,
       "sugar_grams": 103.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29752,7 +29752,7 @@
       "image_url": null,
       "base_calories": 438,
       "sugar_grams": 103.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29776,7 +29776,7 @@
       "image_url": null,
       "base_calories": 492,
       "sugar_grams": 106.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29800,7 +29800,7 @@
       "image_url": null,
       "base_calories": 478,
       "sugar_grams": 105.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29824,7 +29824,7 @@
       "image_url": null,
       "base_calories": 209,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29848,7 +29848,7 @@
       "image_url": null,
       "base_calories": 377,
       "sugar_grams": 86.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29872,7 +29872,7 @@
       "image_url": null,
       "base_calories": 422,
       "sugar_grams": 95.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29896,7 +29896,7 @@
       "image_url": null,
       "base_calories": 505,
       "sugar_grams": 105.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29920,7 +29920,7 @@
       "image_url": null,
       "base_calories": 503,
       "sugar_grams": 98.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29944,7 +29944,7 @@
       "image_url": null,
       "base_calories": 508,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29968,7 +29968,7 @@
       "image_url": null,
       "base_calories": 386,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -29992,7 +29992,7 @@
       "image_url": null,
       "base_calories": 590,
       "sugar_grams": 77.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30016,7 +30016,7 @@
       "image_url": null,
       "base_calories": 397,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30040,7 +30040,7 @@
       "image_url": null,
       "base_calories": 386,
       "sugar_grams": 66.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30064,7 +30064,7 @@
       "image_url": null,
       "base_calories": 628,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30088,7 +30088,7 @@
       "image_url": null,
       "base_calories": 628,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30112,7 +30112,7 @@
       "image_url": null,
       "base_calories": 729,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30136,7 +30136,7 @@
       "image_url": null,
       "base_calories": 514,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30160,7 +30160,7 @@
       "image_url": null,
       "base_calories": 706,
       "sugar_grams": 72.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30184,7 +30184,7 @@
       "image_url": null,
       "base_calories": 489,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30280,7 +30280,7 @@
       "image_url": null,
       "base_calories": 276,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30304,7 +30304,7 @@
       "image_url": null,
       "base_calories": 411,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30328,7 +30328,7 @@
       "image_url": null,
       "base_calories": 319,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30352,7 +30352,7 @@
       "image_url": null,
       "base_calories": 456,
       "sugar_grams": 68.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30832,7 +30832,7 @@
       "image_url": null,
       "base_calories": 380,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -30952,7 +30952,7 @@
       "image_url": null,
       "base_calories": 256,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -31312,7 +31312,7 @@
       "image_url": null,
       "base_calories": 339,
       "sugar_grams": 84.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -31432,7 +31432,7 @@
       "image_url": null,
       "base_calories": 405,
       "sugar_grams": 72.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -31888,7 +31888,7 @@
       "image_url": null,
       "base_calories": 374,
       "sugar_grams": 42.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -32104,7 +32104,7 @@
       "image_url": null,
       "base_calories": 396,
       "sugar_grams": 83.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35584,7 +35584,7 @@
       "image_url": null,
       "base_calories": 196,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35608,7 +35608,7 @@
       "image_url": null,
       "base_calories": 196,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35632,7 +35632,7 @@
       "image_url": null,
       "base_calories": 263,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35656,7 +35656,7 @@
       "image_url": null,
       "base_calories": 287,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35680,7 +35680,7 @@
       "image_url": null,
       "base_calories": 280,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35704,7 +35704,7 @@
       "image_url": null,
       "base_calories": 257,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35728,7 +35728,7 @@
       "image_url": null,
       "base_calories": 196,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35752,7 +35752,7 @@
       "image_url": null,
       "base_calories": 151,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35776,7 +35776,7 @@
       "image_url": null,
       "base_calories": 175,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35800,7 +35800,7 @@
       "image_url": null,
       "base_calories": 276,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35824,7 +35824,7 @@
       "image_url": null,
       "base_calories": 256,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35848,7 +35848,7 @@
       "image_url": null,
       "base_calories": 284,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -35872,7 +35872,7 @@
       "image_url": null,
       "base_calories": 412,
       "sugar_grams": 85.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -40120,7 +40120,7 @@
       "image_url": null,
       "base_calories": 841,
       "sugar_grams": 45.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -40360,7 +40360,7 @@
       "image_url": null,
       "base_calories": 149,
       "sugar_grams": 30.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -40408,7 +40408,7 @@
       "image_url": null,
       "base_calories": 134,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -40888,7 +40888,7 @@
       "image_url": null,
       "base_calories": 587,
       "sugar_grams": 89.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -40960,7 +40960,7 @@
       "image_url": null,
       "base_calories": 334,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -40984,7 +40984,7 @@
       "image_url": null,
       "base_calories": 267,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -41176,7 +41176,7 @@
       "image_url": null,
       "base_calories": 475,
       "sugar_grams": 24.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45328,7 +45328,7 @@
       "image_url": null,
       "base_calories": 367,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45352,7 +45352,7 @@
       "image_url": null,
       "base_calories": 367,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45400,7 +45400,7 @@
       "image_url": null,
       "base_calories": 402,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45424,7 +45424,7 @@
       "image_url": null,
       "base_calories": 370,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45520,7 +45520,7 @@
       "image_url": null,
       "base_calories": 251,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45544,7 +45544,7 @@
       "image_url": null,
       "base_calories": 221,
       "sugar_grams": 44.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45592,7 +45592,7 @@
       "image_url": null,
       "base_calories": 383,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45616,7 +45616,7 @@
       "image_url": null,
       "base_calories": 348,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45640,7 +45640,7 @@
       "image_url": null,
       "base_calories": 215,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45664,7 +45664,7 @@
       "image_url": null,
       "base_calories": 322,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45808,7 +45808,7 @@
       "image_url": null,
       "base_calories": 182,
       "sugar_grams": 26.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45832,7 +45832,7 @@
       "image_url": null,
       "base_calories": 163,
       "sugar_grams": 21.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -45880,7 +45880,7 @@
       "image_url": null,
       "base_calories": 287,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46096,7 +46096,7 @@
       "image_url": null,
       "base_calories": 231,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46120,7 +46120,7 @@
       "image_url": null,
       "base_calories": 237,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46168,7 +46168,7 @@
       "image_url": null,
       "base_calories": 291,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46192,7 +46192,7 @@
       "image_url": null,
       "base_calories": 468,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46216,7 +46216,7 @@
       "image_url": null,
       "base_calories": 269,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46240,7 +46240,7 @@
       "image_url": null,
       "base_calories": 528,
       "sugar_grams": 72.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46288,7 +46288,7 @@
       "image_url": null,
       "base_calories": 376,
       "sugar_grams": 37.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -46312,7 +46312,7 @@
       "image_url": null,
       "base_calories": 376,
       "sugar_grams": 37.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47728,7 +47728,7 @@
       "image_url": null,
       "base_calories": 359,
       "sugar_grams": 17.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47752,7 +47752,7 @@
       "image_url": null,
       "base_calories": 737,
       "sugar_grams": 36.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47776,7 +47776,7 @@
       "image_url": null,
       "base_calories": 424,
       "sugar_grams": 21.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47800,7 +47800,7 @@
       "image_url": null,
       "base_calories": 498,
       "sugar_grams": 24.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47824,7 +47824,7 @@
       "image_url": null,
       "base_calories": 501,
       "sugar_grams": 25.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47848,7 +47848,7 @@
       "image_url": null,
       "base_calories": 496,
       "sugar_grams": 24.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47872,7 +47872,7 @@
       "image_url": null,
       "base_calories": 171,
       "sugar_grams": 8.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47896,7 +47896,7 @@
       "image_url": null,
       "base_calories": 171,
       "sugar_grams": 8.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47920,7 +47920,7 @@
       "image_url": null,
       "base_calories": 171,
       "sugar_grams": 8.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47944,7 +47944,7 @@
       "image_url": null,
       "base_calories": 279,
       "sugar_grams": 13.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47968,7 +47968,7 @@
       "image_url": null,
       "base_calories": 283,
       "sugar_grams": 14.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -47992,7 +47992,7 @@
       "image_url": null,
       "base_calories": 178,
       "sugar_grams": 8.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48016,7 +48016,7 @@
       "image_url": null,
       "base_calories": 311,
       "sugar_grams": 15.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48040,7 +48040,7 @@
       "image_url": null,
       "base_calories": 406,
       "sugar_grams": 20.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48064,7 +48064,7 @@
       "image_url": null,
       "base_calories": 439,
       "sugar_grams": 21.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48088,7 +48088,7 @@
       "image_url": null,
       "base_calories": 648,
       "sugar_grams": 32.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48112,7 +48112,7 @@
       "image_url": null,
       "base_calories": 171,
       "sugar_grams": 8.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48136,7 +48136,7 @@
       "image_url": null,
       "base_calories": 177,
       "sugar_grams": 8.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48160,7 +48160,7 @@
       "image_url": null,
       "base_calories": 275,
       "sugar_grams": 13.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48184,7 +48184,7 @@
       "image_url": null,
       "base_calories": 287,
       "sugar_grams": 14.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48208,7 +48208,7 @@
       "image_url": null,
       "base_calories": 569,
       "sugar_grams": 28.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48232,7 +48232,7 @@
       "image_url": null,
       "base_calories": 569,
       "sugar_grams": 28.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48256,7 +48256,7 @@
       "image_url": null,
       "base_calories": 737,
       "sugar_grams": 36.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48280,7 +48280,7 @@
       "image_url": null,
       "base_calories": 737,
       "sugar_grams": 36.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48304,7 +48304,7 @@
       "image_url": null,
       "base_calories": 645,
       "sugar_grams": 32.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48328,7 +48328,7 @@
       "image_url": null,
       "base_calories": 679,
       "sugar_grams": 33.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48352,7 +48352,7 @@
       "image_url": null,
       "base_calories": 601,
       "sugar_grams": 30.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48376,7 +48376,7 @@
       "image_url": null,
       "base_calories": 627,
       "sugar_grams": 31.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48400,7 +48400,7 @@
       "image_url": null,
       "base_calories": 630,
       "sugar_grams": 31.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48424,7 +48424,7 @@
       "image_url": null,
       "base_calories": 404,
       "sugar_grams": 20.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48448,7 +48448,7 @@
       "image_url": null,
       "base_calories": 245,
       "sugar_grams": 12.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48472,7 +48472,7 @@
       "image_url": null,
       "base_calories": 225,
       "sugar_grams": 11.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48496,7 +48496,7 @@
       "image_url": null,
       "base_calories": 432,
       "sugar_grams": 21.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48520,7 +48520,7 @@
       "image_url": null,
       "base_calories": 451,
       "sugar_grams": 22.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48544,7 +48544,7 @@
       "image_url": null,
       "base_calories": 451,
       "sugar_grams": 22.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48568,7 +48568,7 @@
       "image_url": null,
       "base_calories": 462,
       "sugar_grams": 23.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48592,7 +48592,7 @@
       "image_url": null,
       "base_calories": 451,
       "sugar_grams": 22.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48616,7 +48616,7 @@
       "image_url": null,
       "base_calories": 423,
       "sugar_grams": 21.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48640,7 +48640,7 @@
       "image_url": null,
       "base_calories": 213,
       "sugar_grams": 10.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48664,7 +48664,7 @@
       "image_url": null,
       "base_calories": 328,
       "sugar_grams": 16.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48688,7 +48688,7 @@
       "image_url": null,
       "base_calories": 264,
       "sugar_grams": 13.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48712,7 +48712,7 @@
       "image_url": null,
       "base_calories": 267,
       "sugar_grams": 13.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48736,7 +48736,7 @@
       "image_url": null,
       "base_calories": 517,
       "sugar_grams": 25.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48760,7 +48760,7 @@
       "image_url": null,
       "base_calories": 330,
       "sugar_grams": 16.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48784,7 +48784,7 @@
       "image_url": null,
       "base_calories": 403,
       "sugar_grams": 20.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48808,7 +48808,7 @@
       "image_url": null,
       "base_calories": 591,
       "sugar_grams": 29.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48832,7 +48832,7 @@
       "image_url": null,
       "base_calories": 553,
       "sugar_grams": 27.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48856,7 +48856,7 @@
       "image_url": null,
       "base_calories": 553,
       "sugar_grams": 27.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48880,7 +48880,7 @@
       "image_url": null,
       "base_calories": 514,
       "sugar_grams": 25.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48904,7 +48904,7 @@
       "image_url": null,
       "base_calories": 514,
       "sugar_grams": 25.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48928,7 +48928,7 @@
       "image_url": null,
       "base_calories": 557,
       "sugar_grams": 27.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48952,7 +48952,7 @@
       "image_url": null,
       "base_calories": 530,
       "sugar_grams": 26.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -48976,7 +48976,7 @@
       "image_url": null,
       "base_calories": 603,
       "sugar_grams": 30.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49000,7 +49000,7 @@
       "image_url": null,
       "base_calories": 603,
       "sugar_grams": 30.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49024,7 +49024,7 @@
       "image_url": null,
       "base_calories": 469,
       "sugar_grams": 23.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49048,7 +49048,7 @@
       "image_url": null,
       "base_calories": 404,
       "sugar_grams": 20.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49072,7 +49072,7 @@
       "image_url": null,
       "base_calories": 359,
       "sugar_grams": 17.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49096,7 +49096,7 @@
       "image_url": null,
       "base_calories": 360,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49120,7 +49120,7 @@
       "image_url": null,
       "base_calories": 524,
       "sugar_grams": 26.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49144,7 +49144,7 @@
       "image_url": null,
       "base_calories": 444,
       "sugar_grams": 22.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49168,7 +49168,7 @@
       "image_url": null,
       "base_calories": 398,
       "sugar_grams": 19.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49192,7 +49192,7 @@
       "image_url": null,
       "base_calories": 234,
       "sugar_grams": 11.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49672,7 +49672,7 @@
       "image_url": null,
       "base_calories": 160,
       "sugar_grams": 40.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49696,7 +49696,7 @@
       "image_url": null,
       "base_calories": 240,
       "sugar_grams": 60.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49720,7 +49720,7 @@
       "image_url": null,
       "base_calories": 342,
       "sugar_grams": 77.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49744,7 +49744,7 @@
       "image_url": null,
       "base_calories": 356,
       "sugar_grams": 80.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49768,7 +49768,7 @@
       "image_url": null,
       "base_calories": 356,
       "sugar_grams": 80.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49792,7 +49792,7 @@
       "image_url": null,
       "base_calories": 320,
       "sugar_grams": 78.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49816,7 +49816,7 @@
       "image_url": null,
       "base_calories": 320,
       "sugar_grams": 78.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49840,7 +49840,7 @@
       "image_url": null,
       "base_calories": 163,
       "sugar_grams": 38.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49864,7 +49864,7 @@
       "image_url": null,
       "base_calories": 356,
       "sugar_grams": 43.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49888,7 +49888,7 @@
       "image_url": null,
       "base_calories": 234,
       "sugar_grams": 43.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49912,7 +49912,7 @@
       "image_url": null,
       "base_calories": 258,
       "sugar_grams": 46.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49936,7 +49936,7 @@
       "image_url": null,
       "base_calories": 167,
       "sugar_grams": 40.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49960,7 +49960,7 @@
       "image_url": null,
       "base_calories": 358,
       "sugar_grams": 44.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -49984,7 +49984,7 @@
       "image_url": null,
       "base_calories": 164,
       "sugar_grams": 40.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -50008,7 +50008,7 @@
       "image_url": null,
       "base_calories": 357,
       "sugar_grams": 44.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -50032,7 +50032,7 @@
       "image_url": null,
       "base_calories": 236,
       "sugar_grams": 45.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -50056,7 +50056,7 @@
       "image_url": null,
       "base_calories": 343,
       "sugar_grams": 75.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -50080,7 +50080,7 @@
       "image_url": null,
       "base_calories": 483,
       "sugar_grams": 66.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -50104,7 +50104,7 @@
       "image_url": null,
       "base_calories": 496,
       "sugar_grams": 67.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -52792,7 +52792,7 @@
       "image_url": null,
       "base_calories": 382,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -54304,7 +54304,7 @@
       "image_url": null,
       "base_calories": 282,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -54472,7 +54472,7 @@
       "image_url": null,
       "base_calories": 233,
       "sugar_grams": 52.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55384,7 +55384,7 @@
       "image_url": null,
       "base_calories": 721,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55408,7 +55408,7 @@
       "image_url": null,
       "base_calories": 227,
       "sugar_grams": 52.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55432,7 +55432,7 @@
       "image_url": null,
       "base_calories": 264,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55456,7 +55456,7 @@
       "image_url": null,
       "base_calories": 208,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55480,7 +55480,7 @@
       "image_url": null,
       "base_calories": 264,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55504,7 +55504,7 @@
       "image_url": null,
       "base_calories": 318,
       "sugar_grams": 74.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55528,7 +55528,7 @@
       "image_url": null,
       "base_calories": 346,
       "sugar_grams": 78.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55552,7 +55552,7 @@
       "image_url": null,
       "base_calories": 298,
       "sugar_grams": 65.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55576,7 +55576,7 @@
       "image_url": null,
       "base_calories": 232,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55600,7 +55600,7 @@
       "image_url": null,
       "base_calories": 347,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55624,7 +55624,7 @@
       "image_url": null,
       "base_calories": 359,
       "sugar_grams": 80.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55648,7 +55648,7 @@
       "image_url": null,
       "base_calories": 265,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55672,7 +55672,7 @@
       "image_url": null,
       "base_calories": 341,
       "sugar_grams": 75.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55696,7 +55696,7 @@
       "image_url": null,
       "base_calories": 312,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55720,7 +55720,7 @@
       "image_url": null,
       "base_calories": 92,
       "sugar_grams": 22.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55744,7 +55744,7 @@
       "image_url": null,
       "base_calories": 160,
       "sugar_grams": 37.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55768,7 +55768,7 @@
       "image_url": null,
       "base_calories": 369,
       "sugar_grams": 40.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55792,7 +55792,7 @@
       "image_url": null,
       "base_calories": 304,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55840,7 +55840,7 @@
       "image_url": null,
       "base_calories": 408,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55864,7 +55864,7 @@
       "image_url": null,
       "base_calories": 192,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55888,7 +55888,7 @@
       "image_url": null,
       "base_calories": 230,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55912,7 +55912,7 @@
       "image_url": null,
       "base_calories": 570,
       "sugar_grams": 28.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55936,7 +55936,7 @@
       "image_url": null,
       "base_calories": 271,
       "sugar_grams": 13.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55960,7 +55960,7 @@
       "image_url": null,
       "base_calories": 318,
       "sugar_grams": 15.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -55984,7 +55984,7 @@
       "image_url": null,
       "base_calories": 302,
       "sugar_grams": 15.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56008,7 +56008,7 @@
       "image_url": null,
       "base_calories": 250,
       "sugar_grams": 12.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56032,7 +56032,7 @@
       "image_url": null,
       "base_calories": 238,
       "sugar_grams": 11.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56056,7 +56056,7 @@
       "image_url": null,
       "base_calories": 129,
       "sugar_grams": 6.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56080,7 +56080,7 @@
       "image_url": null,
       "base_calories": 172,
       "sugar_grams": 8.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56104,7 +56104,7 @@
       "image_url": null,
       "base_calories": 172,
       "sugar_grams": 8.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56128,7 +56128,7 @@
       "image_url": null,
       "base_calories": 172,
       "sugar_grams": 8.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56152,7 +56152,7 @@
       "image_url": null,
       "base_calories": 172,
       "sugar_grams": 8.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56176,7 +56176,7 @@
       "image_url": null,
       "base_calories": 315,
       "sugar_grams": 15.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56200,7 +56200,7 @@
       "image_url": null,
       "base_calories": 346,
       "sugar_grams": 17.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56224,7 +56224,7 @@
       "image_url": null,
       "base_calories": 191,
       "sugar_grams": 9.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56248,7 +56248,7 @@
       "image_url": null,
       "base_calories": 269,
       "sugar_grams": 13.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56272,7 +56272,7 @@
       "image_url": null,
       "base_calories": 140,
       "sugar_grams": 7.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56296,7 +56296,7 @@
       "image_url": null,
       "base_calories": 280,
       "sugar_grams": 14.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56320,7 +56320,7 @@
       "image_url": null,
       "base_calories": 301,
       "sugar_grams": 15.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56344,7 +56344,7 @@
       "image_url": null,
       "base_calories": 291,
       "sugar_grams": 14.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56368,7 +56368,7 @@
       "image_url": null,
       "base_calories": 317,
       "sugar_grams": 15.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56392,7 +56392,7 @@
       "image_url": null,
       "base_calories": 317,
       "sugar_grams": 15.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56416,7 +56416,7 @@
       "image_url": null,
       "base_calories": 391,
       "sugar_grams": 19.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56440,7 +56440,7 @@
       "image_url": null,
       "base_calories": 645,
       "sugar_grams": 32.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56464,7 +56464,7 @@
       "image_url": null,
       "base_calories": 389,
       "sugar_grams": 19.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56488,7 +56488,7 @@
       "image_url": null,
       "base_calories": 172,
       "sugar_grams": 8.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56512,7 +56512,7 @@
       "image_url": null,
       "base_calories": 381,
       "sugar_grams": 19.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56536,7 +56536,7 @@
       "image_url": null,
       "base_calories": 390,
       "sugar_grams": 19.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56560,7 +56560,7 @@
       "image_url": null,
       "base_calories": 353,
       "sugar_grams": 17.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56584,7 +56584,7 @@
       "image_url": null,
       "base_calories": 429,
       "sugar_grams": 21.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56608,7 +56608,7 @@
       "image_url": null,
       "base_calories": 570,
       "sugar_grams": 28.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56632,7 +56632,7 @@
       "image_url": null,
       "base_calories": 570,
       "sugar_grams": 28.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56656,7 +56656,7 @@
       "image_url": null,
       "base_calories": 570,
       "sugar_grams": 28.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56680,7 +56680,7 @@
       "image_url": null,
       "base_calories": 570,
       "sugar_grams": 28.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56704,7 +56704,7 @@
       "image_url": null,
       "base_calories": 518,
       "sugar_grams": 25.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56728,7 +56728,7 @@
       "image_url": null,
       "base_calories": 466,
       "sugar_grams": 23.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56752,7 +56752,7 @@
       "image_url": null,
       "base_calories": 386,
       "sugar_grams": 19.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56776,7 +56776,7 @@
       "image_url": null,
       "base_calories": 487,
       "sugar_grams": 24.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56800,7 +56800,7 @@
       "image_url": null,
       "base_calories": 451,
       "sugar_grams": 22.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56824,7 +56824,7 @@
       "image_url": null,
       "base_calories": 608,
       "sugar_grams": 30.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56848,7 +56848,7 @@
       "image_url": null,
       "base_calories": 619,
       "sugar_grams": 30.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56872,7 +56872,7 @@
       "image_url": null,
       "base_calories": 417,
       "sugar_grams": 20.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56896,7 +56896,7 @@
       "image_url": null,
       "base_calories": 726,
       "sugar_grams": 36.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56920,7 +56920,7 @@
       "image_url": null,
       "base_calories": 263,
       "sugar_grams": 13.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56944,7 +56944,7 @@
       "image_url": null,
       "base_calories": 263,
       "sugar_grams": 13.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56968,7 +56968,7 @@
       "image_url": null,
       "base_calories": 271,
       "sugar_grams": 13.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -56992,7 +56992,7 @@
       "image_url": null,
       "base_calories": 346,
       "sugar_grams": 17.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57016,7 +57016,7 @@
       "image_url": null,
       "base_calories": 360,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57040,7 +57040,7 @@
       "image_url": null,
       "base_calories": 284,
       "sugar_grams": 14.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57064,7 +57064,7 @@
       "image_url": null,
       "base_calories": 452,
       "sugar_grams": 22.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57088,7 +57088,7 @@
       "image_url": null,
       "base_calories": 400,
       "sugar_grams": 20.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57112,7 +57112,7 @@
       "image_url": null,
       "base_calories": 368,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57136,7 +57136,7 @@
       "image_url": null,
       "base_calories": 405,
       "sugar_grams": 20.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57160,7 +57160,7 @@
       "image_url": null,
       "base_calories": 643,
       "sugar_grams": 32.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57184,7 +57184,7 @@
       "image_url": null,
       "base_calories": 175,
       "sugar_grams": 8.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57208,7 +57208,7 @@
       "image_url": null,
       "base_calories": 292,
       "sugar_grams": 14.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57232,7 +57232,7 @@
       "image_url": null,
       "base_calories": 238,
       "sugar_grams": 11.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57256,7 +57256,7 @@
       "image_url": null,
       "base_calories": 234,
       "sugar_grams": 11.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57280,7 +57280,7 @@
       "image_url": null,
       "base_calories": 220,
       "sugar_grams": 11.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57304,7 +57304,7 @@
       "image_url": null,
       "base_calories": 262,
       "sugar_grams": 13.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57328,7 +57328,7 @@
       "image_url": null,
       "base_calories": 271,
       "sugar_grams": 13.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57352,7 +57352,7 @@
       "image_url": null,
       "base_calories": 215,
       "sugar_grams": 10.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57376,7 +57376,7 @@
       "image_url": null,
       "base_calories": 360,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57400,7 +57400,7 @@
       "image_url": null,
       "base_calories": 372,
       "sugar_grams": 18.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57424,7 +57424,7 @@
       "image_url": null,
       "base_calories": 250,
       "sugar_grams": 9.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57448,7 +57448,7 @@
       "image_url": null,
       "base_calories": 278,
       "sugar_grams": 8.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57472,7 +57472,7 @@
       "image_url": null,
       "base_calories": 281,
       "sugar_grams": 14.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57496,7 +57496,7 @@
       "image_url": null,
       "base_calories": 312,
       "sugar_grams": 15.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57520,7 +57520,7 @@
       "image_url": null,
       "base_calories": 329,
       "sugar_grams": 16.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57544,7 +57544,7 @@
       "image_url": null,
       "base_calories": 231,
       "sugar_grams": 11.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57568,7 +57568,7 @@
       "image_url": null,
       "base_calories": 284,
       "sugar_grams": 14.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57592,7 +57592,7 @@
       "image_url": null,
       "base_calories": 309,
       "sugar_grams": 15.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57616,7 +57616,7 @@
       "image_url": null,
       "base_calories": 569,
       "sugar_grams": 74.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57640,7 +57640,7 @@
       "image_url": null,
       "base_calories": 315,
       "sugar_grams": 68.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57664,7 +57664,7 @@
       "image_url": null,
       "base_calories": 452,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57688,7 +57688,7 @@
       "image_url": null,
       "base_calories": 534,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57712,7 +57712,7 @@
       "image_url": null,
       "base_calories": 493,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57736,7 +57736,7 @@
       "image_url": null,
       "base_calories": 365,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57760,7 +57760,7 @@
       "image_url": null,
       "base_calories": 437,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57784,7 +57784,7 @@
       "image_url": null,
       "base_calories": 468,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57808,7 +57808,7 @@
       "image_url": null,
       "base_calories": 527,
       "sugar_grams": 84.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57832,7 +57832,7 @@
       "image_url": null,
       "base_calories": 454,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57856,7 +57856,7 @@
       "image_url": null,
       "base_calories": 635,
       "sugar_grams": 54.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57880,7 +57880,7 @@
       "image_url": null,
       "base_calories": 617,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57904,7 +57904,7 @@
       "image_url": null,
       "base_calories": 593,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57928,7 +57928,7 @@
       "image_url": null,
       "base_calories": 602,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57952,7 +57952,7 @@
       "image_url": null,
       "base_calories": 443,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -57976,7 +57976,7 @@
       "image_url": null,
       "base_calories": 611,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58000,7 +58000,7 @@
       "image_url": null,
       "base_calories": 581,
       "sugar_grams": 84.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58024,7 +58024,7 @@
       "image_url": null,
       "base_calories": 467,
       "sugar_grams": 66.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58048,7 +58048,7 @@
       "image_url": null,
       "base_calories": 602,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58072,7 +58072,7 @@
       "image_url": null,
       "base_calories": 504,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58096,7 +58096,7 @@
       "image_url": null,
       "base_calories": 479,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58120,7 +58120,7 @@
       "image_url": null,
       "base_calories": 225,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58144,7 +58144,7 @@
       "image_url": null,
       "base_calories": 209,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58168,7 +58168,7 @@
       "image_url": null,
       "base_calories": 180,
       "sugar_grams": 41.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58192,7 +58192,7 @@
       "image_url": null,
       "base_calories": 210,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58216,7 +58216,7 @@
       "image_url": null,
       "base_calories": 311,
       "sugar_grams": 72.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58240,7 +58240,7 @@
       "image_url": null,
       "base_calories": 204,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58264,7 +58264,7 @@
       "image_url": null,
       "base_calories": 201,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58288,7 +58288,7 @@
       "image_url": null,
       "base_calories": 273,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58312,7 +58312,7 @@
       "image_url": null,
       "base_calories": 315,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58336,7 +58336,7 @@
       "image_url": null,
       "base_calories": 339,
       "sugar_grams": 81.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58360,7 +58360,7 @@
       "image_url": null,
       "base_calories": 351,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58384,7 +58384,7 @@
       "image_url": null,
       "base_calories": 318,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58408,7 +58408,7 @@
       "image_url": null,
       "base_calories": 357,
       "sugar_grams": 79.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58432,7 +58432,7 @@
       "image_url": null,
       "base_calories": 255,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58456,7 +58456,7 @@
       "image_url": null,
       "base_calories": 263,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58480,7 +58480,7 @@
       "image_url": null,
       "base_calories": 375,
       "sugar_grams": 87.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58504,7 +58504,7 @@
       "image_url": null,
       "base_calories": 288,
       "sugar_grams": 72.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58528,7 +58528,7 @@
       "image_url": null,
       "base_calories": 479,
       "sugar_grams": 88.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58552,7 +58552,7 @@
       "image_url": null,
       "base_calories": 309,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58576,7 +58576,7 @@
       "image_url": null,
       "base_calories": 366,
       "sugar_grams": 85.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58600,7 +58600,7 @@
       "image_url": null,
       "base_calories": 411,
       "sugar_grams": 97.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58624,7 +58624,7 @@
       "image_url": null,
       "base_calories": 333,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58648,7 +58648,7 @@
       "image_url": null,
       "base_calories": 299,
       "sugar_grams": 58.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58672,7 +58672,7 @@
       "image_url": null,
       "base_calories": 307,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58696,7 +58696,7 @@
       "image_url": null,
       "base_calories": 503,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58720,7 +58720,7 @@
       "image_url": null,
       "base_calories": 477,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58744,7 +58744,7 @@
       "image_url": null,
       "base_calories": 356,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58768,7 +58768,7 @@
       "image_url": null,
       "base_calories": 456,
       "sugar_grams": 87.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58792,7 +58792,7 @@
       "image_url": null,
       "base_calories": 291,
       "sugar_grams": 68.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58816,7 +58816,7 @@
       "image_url": null,
       "base_calories": 348,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58840,7 +58840,7 @@
       "image_url": null,
       "base_calories": 400,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58864,7 +58864,7 @@
       "image_url": null,
       "base_calories": 285,
       "sugar_grams": 62.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58888,7 +58888,7 @@
       "image_url": null,
       "base_calories": 273,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58912,7 +58912,7 @@
       "image_url": null,
       "base_calories": 270,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58936,7 +58936,7 @@
       "image_url": null,
       "base_calories": 160,
       "sugar_grams": 32.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58960,7 +58960,7 @@
       "image_url": null,
       "base_calories": 400,
       "sugar_grams": 80.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -58984,7 +58984,7 @@
       "image_url": null,
       "base_calories": 320,
       "sugar_grams": 64.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59008,7 +59008,7 @@
       "image_url": null,
       "base_calories": 430,
       "sugar_grams": 86.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59032,7 +59032,7 @@
       "image_url": null,
       "base_calories": 280,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59056,7 +59056,7 @@
       "image_url": null,
       "base_calories": 410,
       "sugar_grams": 82.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59080,7 +59080,7 @@
       "image_url": null,
       "base_calories": 380,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59104,7 +59104,7 @@
       "image_url": null,
       "base_calories": 490,
       "sugar_grams": 98.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59128,7 +59128,7 @@
       "image_url": null,
       "base_calories": 400,
       "sugar_grams": 80.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59152,7 +59152,7 @@
       "image_url": null,
       "base_calories": 400,
       "sugar_grams": 80.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59176,7 +59176,7 @@
       "image_url": null,
       "base_calories": 410,
       "sugar_grams": 82.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59200,7 +59200,7 @@
       "image_url": null,
       "base_calories": 410,
       "sugar_grams": 82.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59224,7 +59224,7 @@
       "image_url": null,
       "base_calories": 430,
       "sugar_grams": 86.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59248,7 +59248,7 @@
       "image_url": null,
       "base_calories": 370,
       "sugar_grams": 74.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59272,7 +59272,7 @@
       "image_url": null,
       "base_calories": 470,
       "sugar_grams": 94.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59296,7 +59296,7 @@
       "image_url": null,
       "base_calories": 400,
       "sugar_grams": 80.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59320,7 +59320,7 @@
       "image_url": null,
       "base_calories": 520,
       "sugar_grams": 104.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59344,7 +59344,7 @@
       "image_url": null,
       "base_calories": 620,
       "sugar_grams": 124.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59368,7 +59368,7 @@
       "image_url": null,
       "base_calories": 520,
       "sugar_grams": 104.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59392,7 +59392,7 @@
       "image_url": null,
       "base_calories": 500,
       "sugar_grams": 100.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59416,7 +59416,7 @@
       "image_url": null,
       "base_calories": 530,
       "sugar_grams": 106.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59440,7 +59440,7 @@
       "image_url": null,
       "base_calories": 530,
       "sugar_grams": 106.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59464,7 +59464,7 @@
       "image_url": null,
       "base_calories": 490,
       "sugar_grams": 98.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59488,7 +59488,7 @@
       "image_url": null,
       "base_calories": 520,
       "sugar_grams": 104.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59512,7 +59512,7 @@
       "image_url": null,
       "base_calories": 590,
       "sugar_grams": 118.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59536,7 +59536,7 @@
       "image_url": null,
       "base_calories": 240,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59560,7 +59560,7 @@
       "image_url": null,
       "base_calories": 240,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59584,7 +59584,7 @@
       "image_url": null,
       "base_calories": 240,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59608,7 +59608,7 @@
       "image_url": null,
       "base_calories": 280,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59632,7 +59632,7 @@
       "image_url": null,
       "base_calories": 280,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59656,7 +59656,7 @@
       "image_url": null,
       "base_calories": 280,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59680,7 +59680,7 @@
       "image_url": null,
       "base_calories": 440,
       "sugar_grams": 88.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59704,7 +59704,7 @@
       "image_url": null,
       "base_calories": 450,
       "sugar_grams": 90.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59728,7 +59728,7 @@
       "image_url": null,
       "base_calories": 470,
       "sugar_grams": 94.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59752,7 +59752,7 @@
       "image_url": null,
       "base_calories": 520,
       "sugar_grams": 104.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59800,7 +59800,7 @@
       "image_url": null,
       "base_calories": 727,
       "sugar_grams": 58.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -59944,7 +59944,7 @@
       "image_url": null,
       "base_calories": 261,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60112,7 +60112,7 @@
       "image_url": null,
       "base_calories": 261,
       "sugar_grams": 59.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60400,7 +60400,7 @@
       "image_url": null,
       "base_calories": 518,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60472,7 +60472,7 @@
       "image_url": null,
       "base_calories": 322,
       "sugar_grams": 56.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60568,7 +60568,7 @@
       "image_url": null,
       "base_calories": 732,
       "sugar_grams": 73.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60664,7 +60664,7 @@
       "image_url": null,
       "base_calories": 255,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60736,7 +60736,7 @@
       "image_url": null,
       "base_calories": 258,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60760,7 +60760,7 @@
       "image_url": null,
       "base_calories": 211,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60808,7 +60808,7 @@
       "image_url": null,
       "base_calories": 205,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60832,7 +60832,7 @@
       "image_url": null,
       "base_calories": 351,
       "sugar_grams": 79.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60880,7 +60880,7 @@
       "image_url": null,
       "base_calories": 439,
       "sugar_grams": 100.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60928,7 +60928,7 @@
       "image_url": null,
       "base_calories": 374,
       "sugar_grams": 86.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -60976,7 +60976,7 @@
       "image_url": null,
       "base_calories": 356,
       "sugar_grams": 82.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61000,7 +61000,7 @@
       "image_url": null,
       "base_calories": 481,
       "sugar_grams": 111.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61024,7 +61024,7 @@
       "image_url": null,
       "base_calories": 493,
       "sugar_grams": 109.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61048,7 +61048,7 @@
       "image_url": null,
       "base_calories": 411,
       "sugar_grams": 96.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61120,7 +61120,7 @@
       "image_url": null,
       "base_calories": 158,
       "sugar_grams": 20.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61144,7 +61144,7 @@
       "image_url": null,
       "base_calories": 123,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61168,7 +61168,7 @@
       "image_url": null,
       "base_calories": 242,
       "sugar_grams": 26.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61192,7 +61192,7 @@
       "image_url": null,
       "base_calories": 619,
       "sugar_grams": 70.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61216,7 +61216,7 @@
       "image_url": null,
       "base_calories": 424,
       "sugar_grams": 71.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61240,7 +61240,7 @@
       "image_url": null,
       "base_calories": 653,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61264,7 +61264,7 @@
       "image_url": null,
       "base_calories": 626,
       "sugar_grams": 63.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61288,7 +61288,7 @@
       "image_url": null,
       "base_calories": 364,
       "sugar_grams": 42.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61312,7 +61312,7 @@
       "image_url": null,
       "base_calories": 604,
       "sugar_grams": 57.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61432,7 +61432,7 @@
       "image_url": null,
       "base_calories": 404,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61456,7 +61456,7 @@
       "image_url": null,
       "base_calories": 205,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61480,7 +61480,7 @@
       "image_url": null,
       "base_calories": 236,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61504,7 +61504,7 @@
       "image_url": null,
       "base_calories": 257,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61528,7 +61528,7 @@
       "image_url": null,
       "base_calories": 246,
       "sugar_grams": 55.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61552,7 +61552,7 @@
       "image_url": null,
       "base_calories": 250,
       "sugar_grams": 49.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61576,7 +61576,7 @@
       "image_url": null,
       "base_calories": 141,
       "sugar_grams": 32.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61600,7 +61600,7 @@
       "image_url": null,
       "base_calories": 222,
       "sugar_grams": 48.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61648,7 +61648,7 @@
       "image_url": null,
       "base_calories": 522,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61672,7 +61672,7 @@
       "image_url": null,
       "base_calories": 738,
       "sugar_grams": 76.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61696,7 +61696,7 @@
       "image_url": null,
       "base_calories": 336,
       "sugar_grams": 41.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61720,7 +61720,7 @@
       "image_url": null,
       "base_calories": 326,
       "sugar_grams": 61.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61744,7 +61744,7 @@
       "image_url": null,
       "base_calories": 311,
       "sugar_grams": 53.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61768,7 +61768,7 @@
       "image_url": null,
       "base_calories": 553,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61792,7 +61792,7 @@
       "image_url": null,
       "base_calories": 611,
       "sugar_grams": 40.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61816,7 +61816,7 @@
       "image_url": null,
       "base_calories": 389,
       "sugar_grams": 30.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61840,7 +61840,7 @@
       "image_url": null,
       "base_calories": 275,
       "sugar_grams": 47.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61864,7 +61864,7 @@
       "image_url": null,
       "base_calories": 283,
       "sugar_grams": 38.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61888,7 +61888,7 @@
       "image_url": null,
       "base_calories": 311,
       "sugar_grams": 38.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61912,7 +61912,7 @@
       "image_url": null,
       "base_calories": 391,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61936,7 +61936,7 @@
       "image_url": null,
       "base_calories": 367,
       "sugar_grams": 67.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61960,7 +61960,7 @@
       "image_url": null,
       "base_calories": 156,
       "sugar_grams": 38.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -61984,7 +61984,7 @@
       "image_url": null,
       "base_calories": 157,
       "sugar_grams": 38.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62008,7 +62008,7 @@
       "image_url": null,
       "base_calories": 423,
       "sugar_grams": 60.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62032,7 +62032,7 @@
       "image_url": null,
       "base_calories": 281,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62056,7 +62056,7 @@
       "image_url": null,
       "base_calories": 245,
       "sugar_grams": 29.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62080,7 +62080,7 @@
       "image_url": null,
       "base_calories": 218,
       "sugar_grams": 50.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62104,7 +62104,7 @@
       "image_url": null,
       "base_calories": 177,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62128,7 +62128,7 @@
       "image_url": null,
       "base_calories": 254,
       "sugar_grams": 51.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62152,7 +62152,7 @@
       "image_url": null,
       "base_calories": 352,
       "sugar_grams": 22.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62176,7 +62176,7 @@
       "image_url": null,
       "base_calories": 352,
       "sugar_grams": 22.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62200,7 +62200,7 @@
       "image_url": null,
       "base_calories": 340,
       "sugar_grams": 39.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62224,7 +62224,7 @@
       "image_url": null,
       "base_calories": 201,
       "sugar_grams": 26.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62248,7 +62248,7 @@
       "image_url": null,
       "base_calories": 162,
       "sugar_grams": 22.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62272,7 +62272,7 @@
       "image_url": null,
       "base_calories": 162,
       "sugar_grams": 22.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62296,7 +62296,7 @@
       "image_url": null,
       "base_calories": 264,
       "sugar_grams": 33.1,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62320,7 +62320,7 @@
       "image_url": null,
       "base_calories": 205,
       "sugar_grams": 16.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62344,7 +62344,7 @@
       "image_url": null,
       "base_calories": 205,
       "sugar_grams": 16.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62368,7 +62368,7 @@
       "image_url": null,
       "base_calories": 145,
       "sugar_grams": 29.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62392,7 +62392,7 @@
       "image_url": null,
       "base_calories": 155,
       "sugar_grams": 24.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62416,7 +62416,7 @@
       "image_url": null,
       "base_calories": 174,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62440,7 +62440,7 @@
       "image_url": null,
       "base_calories": 165,
       "sugar_grams": 26.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62464,7 +62464,7 @@
       "image_url": null,
       "base_calories": 154,
       "sugar_grams": 37.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62488,7 +62488,7 @@
       "image_url": null,
       "base_calories": 78,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62512,7 +62512,7 @@
       "image_url": null,
       "base_calories": 78,
       "sugar_grams": 18.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62536,7 +62536,7 @@
       "image_url": null,
       "base_calories": 12,
       "sugar_grams": 0.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62560,7 +62560,7 @@
       "image_url": null,
       "base_calories": 371,
       "sugar_grams": 32.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62584,7 +62584,7 @@
       "image_url": null,
       "base_calories": 330,
       "sugar_grams": 77.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62608,7 +62608,7 @@
       "image_url": null,
       "base_calories": 326,
       "sugar_grams": 66.3,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62632,7 +62632,7 @@
       "image_url": null,
       "base_calories": 298,
       "sugar_grams": 42.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62656,7 +62656,7 @@
       "image_url": null,
       "base_calories": 148,
       "sugar_grams": 10.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62680,7 +62680,7 @@
       "image_url": null,
       "base_calories": 25,
       "sugar_grams": 0.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62704,7 +62704,7 @@
       "image_url": null,
       "base_calories": 18,
       "sugar_grams": 0.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62728,7 +62728,7 @@
       "image_url": null,
       "base_calories": 227,
       "sugar_grams": 13.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62752,7 +62752,7 @@
       "image_url": null,
       "base_calories": 29,
       "sugar_grams": 0.2,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62776,7 +62776,7 @@
       "image_url": null,
       "base_calories": 370,
       "sugar_grams": 54.5,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62800,7 +62800,7 @@
       "image_url": null,
       "base_calories": 349,
       "sugar_grams": 47.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62824,7 +62824,7 @@
       "image_url": null,
       "base_calories": 257,
       "sugar_grams": 36.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62848,7 +62848,7 @@
       "image_url": null,
       "base_calories": 226,
       "sugar_grams": 9.4,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62872,7 +62872,7 @@
       "image_url": null,
       "base_calories": 490,
       "sugar_grams": 99.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62896,7 +62896,7 @@
       "image_url": null,
       "base_calories": 457,
       "sugar_grams": 69.0,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62920,7 +62920,7 @@
       "image_url": null,
       "base_calories": 321,
       "sugar_grams": 79.9,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62944,7 +62944,7 @@
       "image_url": null,
       "base_calories": 307,
       "sugar_grams": 38.6,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62968,7 +62968,7 @@
       "image_url": null,
       "base_calories": 250,
       "sugar_grams": 59.7,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -62992,7 +62992,7 @@
       "image_url": null,
       "base_calories": 200,
       "sugar_grams": 49.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",
@@ -63016,7 +63016,7 @@
       "image_url": null,
       "base_calories": 200,
       "sugar_grams": 49.8,
-      "has_caffeine": true,
+      "has_caffeine": null,
       "caffeine_content": -1,
       "available_sugar_levels": [
         "正常糖",

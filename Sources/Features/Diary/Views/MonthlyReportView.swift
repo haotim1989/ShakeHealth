@@ -137,7 +137,7 @@ struct MonthlyReportView: View {
                 // 如果有咖啡因含量數據
                 if let content = drink.caffeineContent, content >= 0 {
                     totalCaffeine += Double(content)
-                } else if drink.hasCaffeine {
+                } else if let hasCaffeine = drink.hasCaffeine, hasCaffeine {
                     // 若標示含咖啡因但無數據，使用預設估算值 (約一杯中杯拿鐵/奶茶)
                     totalCaffeine += 150.0
                 }
