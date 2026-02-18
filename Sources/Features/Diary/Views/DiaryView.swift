@@ -20,31 +20,37 @@ struct DiaryView: View {
     @State private var showFilterPanel = false
     @State private var filterRatings: Set<Int> = []
     
+    @State private var showInfoAlert = false
+    
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color.backgroundPrimary
-                    .ignoresSafeArea()
+            VStack(spacing: 0) {
+                // 自訂標題
+                customHeader
                 
-                if logs.isEmpty {
-                    emptyStateView
-                } else {
-                    diaryList
+                ZStack {
+                    Color.backgroundPrimary
+                        .ignoresSafeArea()
                     
-                    // 懸浮 + 按鈕 (只在有日記時顯示)
-                    VStack {
-                        Spacer()
-                        HStack {
+                    if logs.isEmpty {
+                        emptyStateView
+                    } else {
+                        diaryList
+                        
+                        // 懸浮 + 按鈕 (只在有日記時顯示)
+                        VStack {
                             Spacer()
-                            floatingAddButton
+                            HStack {
+                                Spacer()
+                                floatingAddButton
+                            }
+                            .padding(.trailing, 24)
+                            .padding(.bottom, 90)
                         }
-                        .padding(.trailing, 24)
-                        .padding(.bottom, 90)
                     }
                 }
             }
-            .navigationTitle("我的日記")
-            .navigationBarTitleDisplayMode(.large)
+            .toolbar(.hidden, for: .navigationBar)
             .alert("確認刪除", isPresented: $viewModel.showDeleteConfirmation) {
                 Button("取消", role: .cancel) {}
                 Button("刪除", role: .destructive) {
@@ -69,10 +75,38 @@ struct DiaryView: View {
                 .environmentObject(appState)
                 .environmentObject(userManager)
             }
+            .alert("關於統計數據", isPresented: $showInfoAlert) {
+                Button("了解", role: .cancel) { }
+            } message: {
+                Text("日均數據為「當月累計總量 / 當月已過天數」。\n綠燈表示攝取適量，橘燈需注意，紅燈則表示攝取過量。")
+            }
         }
     }
     
     // MARK: - Subviews
+    
+    private var customHeader: some View {
+        HStack(spacing: 8) {
+            Text("我的日記")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.teaBrown)
+            
+            Button {
+                showInfoAlert = true
+            } label: {
+                Image(systemName: "info.circle")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+        }
+        .padding(.horizontal, 24)
+        .padding(.top, 16)
+        .padding(.bottom, 8)
+        .background(Color.backgroundPrimary)
+    }
     
     private var reportButton: some View {
         Button {
@@ -89,6 +123,7 @@ struct DiaryView: View {
                 Text("月報表")
                     .font(.subheadline)
                     .fontWeight(.medium)
+                    .fixedSize()
                 if !userManager.isProUser {
                     Image(systemName: "lock.fill")
                         .font(.caption)
@@ -123,13 +158,9 @@ struct DiaryView: View {
             }
             
             Button {
-                if userManager.isProUser {
-                    showCustomDrinkModal = true
-                } else {
-                    showPaywall = true
-                }
+                showCustomDrinkModal = true
             } label: {
-                Label(userManager.isProUser ? "自訂飲料" : "自訂飲料 (Premium)", systemImage: "square.and.pencil")
+                Label("自訂飲料", systemImage: "square.and.pencil")
             }
         } label: {
             Image(systemName: "plus")
@@ -184,21 +215,13 @@ struct DiaryView: View {
                     .clipShape(Capsule())
                 }
                 
-                // 自訂飲料 (Premium)
+                // 自訂飲料
                 Button {
-                    if userManager.isProUser {
-                        showCustomDrinkModal = true
-                    } else {
-                        showPaywall = true
-                    }
+                    showCustomDrinkModal = true
                 } label: {
                     HStack {
                         Image(systemName: "square.and.pencil")
                         Text("自訂飲料")
-                        if !userManager.isProUser {
-                            Image(systemName: "lock.fill")
-                                .font(.caption)
-                        }
                     }
                     .font(.headline)
                     .foregroundColor(.teaBrown)
@@ -226,9 +249,9 @@ struct DiaryView: View {
                         .transition(.opacity.combined(with: .move(edge: .top)))
                 }
                 
-                // 日記列表
-                Section {
-                    if filteredLogs.isEmpty {
+                // 日記列表 (按年份分組)
+                if filteredLogs.isEmpty {
+                    Section {
                         VStack(spacing: 8) {
                             Image(systemName: "magnifyingglass")
                                 .font(.title2)
@@ -240,40 +263,48 @@ struct DiaryView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 24)
                         .listRowBackground(Color.clear)
-                    } else {
-                        ForEach(Array(filteredLogs.enumerated()), id: \.element.id) { index, log in
-                            // 每 5 筆日記插入一則 Native 廣告
-                            if index > 0 && index % 5 == 0 {
-                                NativeAdCardView()
-                                    .environmentObject(userManager)
-                            }
-                            
-                            NavigationLink(destination: DiaryDetailView(log: log)) {
-                                DiaryEntryRow(log: log)
-                            }
-                        }
-                        .onDelete(perform: deleteFilteredLogs)
-                    }
-                } header: {
-                    HStack {
+                    } header: {
                         Text("紀錄列表")
                             .font(.headline)
-                        
-                        if hasActiveFilters {
-                            Text("\(filteredLogs.count)")
-                                .font(.caption2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 6)
-                                .padding(.vertical, 2)
-                                .background(Color.teaBrown)
-                                .clipShape(Capsule())
+                    }
+                } else {
+                    ForEach(groupedLogs, id: \.year) { group in
+                        Section {
+                            ForEach(Array(group.logs.enumerated()), id: \.element.id) { index, log in
+                                // 每 5 筆日記插入一則 Native 廣告 (全域索引或局部索引？這裡簡化為局部)
+                                // 若要全域計數稍微複雜，這裡先保留在該年份內的邏輯
+                                if index > 0 && index % 10 == 0 {
+                                     NativeAdCardView()
+                                         .environmentObject(userManager)
+                                }
+                                
+                                NavigationLink(destination: DiaryDetailView(log: log)) {
+                                    DiaryEntryRow(log: log)
+                                }
+                            }
+                            .onDelete { offsets in
+                                deleteLog(in: group, at: offsets)
+                            }
+                        } header: {
+                            HStack {
+                                Text(String(group.year))
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.teaBrown)
+                                
+                                Text("年")
+                                    .font(.subheadline)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.secondary)
+                                
+                                Spacer()
+                                
+                                if group.year == groupedLogs.first?.year {
+                                    filterButton
+                                    reportButton
+                                }
+                            }
                         }
-                        
-                        Spacer()
-                        
-                        filterButton
-                        reportButton
                     }
                 }
             }
@@ -465,6 +496,15 @@ struct DiaryView: View {
         return logs.filter { filterRatings.contains($0.rating) }
     }
     
+    // 按年份分組的日誌
+    private var groupedLogs: [(year: Int, logs: [DrinkLog])] {
+        let grouped = Dictionary(grouping: filteredLogs) { log in
+            Calendar.current.component(.year, from: log.createdAt)
+        }
+        return grouped.sorted { $0.key > $1.key }
+            .map { (year: $0.key, logs: $0.value.sorted { $0.createdAt > $1.createdAt }) }
+    }
+    
     // MARK: - Computed Properties
     
     private var thisWeekCount: Int {
@@ -487,10 +527,10 @@ struct DiaryView: View {
         }
     }
     
-    private func deleteFilteredLogs(at offsets: IndexSet) {
-        let filtered = filteredLogs
+    private func deleteLog(in group: (year: Int, logs: [DrinkLog]), at offsets: IndexSet) {
         for index in offsets {
-            modelContext.delete(filtered[index])
+            let logToDelete = group.logs[index]
+            modelContext.delete(logToDelete)
         }
     }
 }

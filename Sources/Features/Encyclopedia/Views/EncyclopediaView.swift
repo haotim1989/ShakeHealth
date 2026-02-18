@@ -6,24 +6,28 @@ struct EncyclopediaView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var userManager: UserManager
     
+    @State private var showInfoAlert = false
+
+    
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color.backgroundPrimary
-                    .ignoresSafeArea()
+            VStack(spacing: 0) {
+                // 自訂標題與搜尋列
+                customHeader
+                customSearchBar
                 
-                if viewModel.isLoading {
-                    ProgressView("載入中...")
-                } else {
-                    drinkList
+                ZStack {
+                    Color.backgroundPrimary
+                        .ignoresSafeArea()
+                    
+                    if viewModel.isLoading {
+                        ProgressView("載入中...")
+                    } else {
+                        drinkList
+                    }
                 }
             }
-            .navigationTitle("找熱量")
-            .navigationBarTitleDisplayMode(.large)
-            .searchable(
-                text: $viewModel.searchText,
-                prompt: "搜尋飲料或品牌..."
-            )
+            .toolbar(.hidden, for: .navigationBar)
             .onChange(of: viewModel.searchText) { _, _ in
                 viewModel.filterDrinks()
             }
@@ -43,6 +47,11 @@ struct EncyclopediaView: View {
                     .environmentObject(userManager)
                     .presentationDetents([.medium])
                 }
+            }
+            .alert("關於找熱量", isPresented: $showInfoAlert) {
+                Button("了解", role: .cancel) { }
+            } message: {
+                Text("本圖鑑之熱量與糖分數據僅供參考，實際數值可能因店家配方調整、冰塊甜度選擇而有差異。\n若有醫療需求，請諮詢專業醫師。")
             }
             .task {
                 if viewModel.drinks.isEmpty {
@@ -97,6 +106,56 @@ struct EncyclopediaView: View {
     }
 
 
+    
+
+    
+    private var customHeader: some View {
+        HStack(spacing: 8) {
+            Text("找熱量")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.teaBrown)
+            
+            Button {
+                showInfoAlert = true
+            } label: {
+                Image(systemName: "info.circle")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+        }
+        .padding(.horizontal, 24)
+        .padding(.top, 16)
+        .padding(.bottom, 8)
+        .background(Color.backgroundPrimary)
+    }
+    
+    private var customSearchBar: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.secondary)
+            
+            TextField("搜尋飲料或品牌...", text: $viewModel.searchText)
+                .textFieldStyle(.plain)
+            
+            if !viewModel.searchText.isEmpty {
+                Button {
+                    viewModel.searchText = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.secondary)
+                }
+            }
+        }
+        .padding(10)
+        .background(Color.gray.opacity(0.1))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding(.horizontal, 24)
+        .padding(.bottom, 12)
+        .background(Color.backgroundPrimary)
+    }
     
     private func brandHeader(_ brand: Brand) -> some View {
         HStack(spacing: 8) {

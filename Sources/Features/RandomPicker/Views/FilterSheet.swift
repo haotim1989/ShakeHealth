@@ -184,7 +184,7 @@ struct FilterSheet: View {
             // 優先推薦
             proFeatureToggle(
                 title: "智慧推薦",
-                description: "優先顯示你評分 ≥ 4 星的飲料",
+                description: "優先顯示你的日記 ≥ 4 星的飲料",
                 icon: "sparkles",
                 isOn: Binding(
                     get: { viewModel.criteria.smartPriority },
@@ -201,7 +201,7 @@ struct FilterSheet: View {
             // 避雷模式
             proFeatureToggle(
                 title: "避雷模式",
-                description: "自動排除評分 ≤ 2 星的飲料",
+                description: "自動排除你的日記 ≤ 2 星的飲料",
                 icon: "hand.thumbsdown.fill",
                 isOn: Binding(
                     get: { viewModel.criteria.antiThunder },

@@ -14,7 +14,8 @@ struct CustomDrinkModal: View {
     @State private var drinkName: String = ""
     @State private var brandName: String = ""
     @State private var estimatedCalories: String = ""
-    @State private var hasCaffeine: Bool = false
+    @State private var estimatedSugar: String = ""
+    @State private var estimatedCaffeine: String = ""
     
     // 規格選擇
     @State private var selectedSugar: SugarLevel = .sugar50
@@ -38,7 +39,10 @@ struct CustomDrinkModal: View {
     private var isValidForm: Bool {
         !drinkName.trimmingCharacters(in: .whitespaces).isEmpty &&
         rating >= 1 && rating <= 5 &&
-        comment.count <= Constants.maxCommentLength
+        comment.count <= Constants.maxCommentLength &&
+        (Int(estimatedCalories) ?? 0) <= 9999 &&
+        (Double(estimatedSugar) ?? 0) <= 9999 &&
+        (Int(estimatedCaffeine) ?? 0) <= 9999
     }
     
     private var caloriesInt: Int {
@@ -190,47 +194,78 @@ struct CustomDrinkModal: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             
-            // 熱量與咖啡因
-            HStack(spacing: 16) {
-                // 熱量
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("熱量 (選填)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    
-                    HStack {
-                        TextField("0", text: $estimatedCalories)
-                            .keyboardType(.numberPad)
-                            .textFieldStyle(.plain)
-                            .frame(width: 60)
-                            .multilineTextAlignment(.trailing)
-                        
-                        Text("kcal")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    .padding(12)
-                    .background(Color.gray.opacity(0.05))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
+            // 營養標示
+            VStack(alignment: .leading, spacing: 12) {
+                Text("營養標示 (選填)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 
-                Spacer()
-                
-                // 咖啡因
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("含咖啡因")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                HStack(alignment: .top, spacing: 12) {
+                    // 熱量
+                    nutritionInput(
+                        title: "熱量",
+                        unit: "kcal",
+                        text: $estimatedCalories,
+                        isValid: (Int(estimatedCalories) ?? 0) <= 9999
+                    )
                     
-                    Toggle("", isOn: $hasCaffeine)
-                        .labelsHidden()
-                        .tint(.teaBrown)
+                    // 糖分
+                    nutritionInput(
+                        title: "總糖量",
+                        unit: "g",
+                        text: $estimatedSugar,
+                        isValid: (Double(estimatedSugar) ?? 0) <= 9999
+                    )
+                    
+                    // 咖啡因
+                    nutritionInput(
+                        title: "咖啡因",
+                        unit: "mg",
+                        text: $estimatedCaffeine,
+                        isValid: (Int(estimatedCaffeine) ?? 0) <= 9999
+                    )
                 }
             }
         }
         .padding(16)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+    
+    private func nutritionInput(title: String, unit: String, text: Binding<String>, isValid: Bool) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(title)
+                .font(.caption)
+                .foregroundColor(.secondary)
+            
+            VStack(spacing: 4) {
+                HStack(spacing: 4) {
+                    TextField("0", text: text)
+                        .keyboardType(.numberPad) // 糖分如果是小數可能需要 decimalPad，這裡先用 numberPad
+                        .textFieldStyle(.plain)
+                        .multilineTextAlignment(.trailing)
+                    
+                    Text(unit)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .padding(10)
+                .background(isValid ? Color.gray.opacity(0.05) : Color.red.opacity(0.05))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(isValid ? Color.clear : Color.red, lineWidth: 1)
+                )
+                
+                if !isValid {
+                    Text("上限 9999")
+                        .font(.caption2)
+                        .foregroundColor(.red)
+                        .transition(.opacity)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .top)
     }
     
     // MARK: - Specification Section
@@ -360,7 +395,9 @@ struct CustomDrinkModal: View {
             drinkName: trimmedName,
             brandName: trimmedBrand.isEmpty ? "自訂" : trimmedBrand,
             caloriesSnapshot: caloriesInt,
-            hasCaffeineSnapshot: hasCaffeine,
+            hasCaffeineSnapshot: (Int(estimatedCaffeine) ?? 0) > 0,
+            sugarSnapshot: Double(estimatedSugar),
+            caffeineSnapshot: Int(estimatedCaffeine),
             createdAt: selectedDate
         )
         

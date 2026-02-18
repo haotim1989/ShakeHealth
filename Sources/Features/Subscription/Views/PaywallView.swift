@@ -115,9 +115,9 @@ struct PaywallView: View {
             Text("包含功能")
                 .font(.headline)
             
-            FeatureRow(icon: "sparkles", title: "智慧推薦", description: "優先顯示你喜歡的，並排除低評價飲料")
-            FeatureRow(icon: "square.and.pencil", title: "自訂飲料", description: "新增圖鑑沒有的飲料")
-            FeatureRow(icon: "doc.text.magnifyingglass", title: "月報表", description: "完整健康數據分析")
+            FeatureRow(icon: "sparkles", title: "智慧推薦", description: "隨機喝優先顯示日記 ≥ 4 星的飲料")
+            FeatureRow(icon: "hand.thumbsdown.fill", title: "避雷功能", description: "隨機喝排除日記 ≤ 2 星的飲料")
+            FeatureRow(icon: "doc.text.magnifyingglass", title: "月報表", description: "輕鬆掌握全月糖分與咖啡因攝取")
             FeatureRow(icon: "arrow.up.arrow.down.circle.fill", title: "資料備份", description: "匯出匯入 CSV 檔案")
             FeatureRow(icon: "xmark.circle.fill", title: "無廣告", description: "純淨使用體驗")
         }
@@ -225,18 +225,39 @@ struct PaywallView: View {
     // MARK: - Legal Section
     
     private var legalSection: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 12) {
+            // 自動續訂說明
             if let package = selectedPackage {
                 if let intro = package.storeProduct.introductoryDiscount,
                    intro.paymentMode == .freeTrial {
                     let days = intro.subscriptionPeriod.value
-                    Text("免費試用 \(days) 天後，將自動以 \(package.localizedPriceString) 續訂。可隨時在設定中取消。")
+                    Text("免費試用 \(days) 天後，將自動以 \(package.localizedPriceString) 續訂。訂閱將自動續訂，可隨時在 Apple ID 設定中取消。付款將在確認購買後向您的 Apple ID 帳號收取。")
                 } else {
-                    Text("訂閱將自動續訂，可隨時在設定中取消。訂閱後將收取 \(package.localizedPriceString)。")
+                    Text("訂閱將自動續訂，可隨時在 Apple ID 設定中取消。付款將在確認購買後向您的 Apple ID 帳號收取 \(package.localizedPriceString)。")
                 }
             } else {
-                Text("免費試用 7 天後自動續訂，可隨時在設定中取消。")
+                Text("免費試用 7 天後自動續訂，可隨時在 Apple ID 設定中取消。")
             }
+            
+            // 隱私權政策 與 服務條款連結
+            HStack(spacing: 16) {
+                Button("隱私權政策") {
+                    if let url = URL(string: Constants.Legal.privacyPolicyURL) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                
+                Text("·")
+                    .foregroundColor(.secondary)
+                
+                Button("服務條款") {
+                    if let url = URL(string: Constants.Legal.termsOfServiceURL) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+            .font(.caption2)
+            .foregroundColor(.teaBrown)
         }
         .font(.caption2)
         .foregroundColor(.secondary)

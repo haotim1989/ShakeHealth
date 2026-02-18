@@ -16,12 +16,30 @@ struct SettingsView: View {
     @State private var showImportError = false
     @State private var importedCount = 0
     @State private var errorMessage = ""
+    @State private var isRestoring = false
+    @State private var showRestoreSuccess = false
+    @State private var showRestoreError = false
     
     @Query private var logs: [DrinkLog]
     
     var body: some View {
         NavigationStack {
-            List {
+            VStack(spacing: 0) {
+                // 自訂標題
+                HStack(spacing: 8) {
+                    Text("設定")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.teaBrown)
+                    
+                    Spacer()
+                }
+                .padding(.horizontal, 24)
+                .padding(.top, 16)
+                .padding(.bottom, 8)
+                .background(Color.backgroundPrimary)
+                
+                List {
                 // MARK: - 訂閱區塊
                 subscriptionSection
                 
@@ -31,13 +49,20 @@ struct SettingsView: View {
                 // MARK: - 支持我們
                 supportSection
                 
+                // MARK: - 訂閱管理
+                subscriptionManagementSection
+                
                 // MARK: - 關於
                 aboutSection
+                
+                // MARK: - 法律資訊
+                legalInfoSection
             }
             .listStyle(.insetGrouped)
             .background(Color.backgroundPrimary)
             .scrollContentBackground(.hidden)
-            .navigationTitle("設定")
+            .toolbar(.hidden, for: .navigationBar)
+            }
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
                     .environmentObject(userManager)
@@ -55,6 +80,16 @@ struct SettingsView: View {
                 Text("已成功匯入 \(importedCount) 筆日記紀錄")
             }
             .alert("匯入失敗", isPresented: $showImportError) {
+                Button("確定", role: .cancel) {}
+            } message: {
+                Text(errorMessage)
+            }
+            .alert("恢復成功", isPresented: $showRestoreSuccess) {
+                Button("確定", role: .cancel) {}
+            } message: {
+                Text("已成功恢復您的購買紀錄。")
+            }
+            .alert("恢復失敗", isPresented: $showRestoreError) {
                 Button("確定", role: .cancel) {}
             } message: {
                 Text(errorMessage)
@@ -226,6 +261,94 @@ struct SettingsView: View {
         }
     }
     
+    // MARK: - 訂閱管理
+    
+    private var subscriptionManagementSection: some View {
+        Section {
+            // 恢復購買
+            Button {
+                Task { await restorePurchases() }
+            } label: {
+                HStack {
+                    Label("恢復購買", systemImage: "arrow.clockwise")
+                        .foregroundColor(.primary)
+                    Spacer()
+                    if isRestoring {
+                        ProgressView()
+                            .controlSize(.small)
+                    }
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .disabled(isRestoring)
+            
+            // 管理訂閱
+            Button {
+                if let url = URL(string: Constants.AppStore.manageSubscriptionURL) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                HStack {
+                    Label("管理訂閱", systemImage: "creditcard")
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: "arrow.up.right.square")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+        } header: {
+            Text("訂閱管理")
+        }
+    }
+    
+    // MARK: - 法律資訊
+    
+    private var legalInfoSection: some View {
+        Section {
+            // 隱私權政策
+            Button {
+                if let url = URL(string: Constants.Legal.privacyPolicyURL) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                HStack {
+                    Label("隱私權政策", systemImage: "hand.raised.fill")
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: "arrow.up.right.square")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            
+            // 服務條款
+            Button {
+                if let url = URL(string: Constants.Legal.termsOfServiceURL) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                HStack {
+                    Label("服務條款", systemImage: "doc.text")
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: "arrow.up.right.square")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+        } header: {
+            Text("法律資訊")
+        }
+    }
+    
 
     
     // MARK: - Actions
@@ -272,6 +395,21 @@ struct SettingsView: View {
         case .failure(let error):
             errorMessage = error.localizedDescription
             showImportError = true
+        }
+    }
+    
+    private func restorePurchases() async {
+        isRestoring = true
+        defer { isRestoring = false }
+        
+        do {
+            _ = try await SubscriptionService.shared.restorePurchases()
+            HapticManager.shared.success()
+            showRestoreSuccess = true
+        } catch {
+            errorMessage = error.localizedDescription
+            HapticManager.shared.error()
+            showRestoreError = true
         }
     }
 }

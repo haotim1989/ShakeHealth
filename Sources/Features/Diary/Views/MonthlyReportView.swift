@@ -109,8 +109,11 @@ struct MonthlyReportView: View {
         var totalSugar: Double = 0
         
         for log in monthlyLogs {
-            // 嘗試從 Service 取得飲品原始資料
-            if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+            // 優先使用快照資料 (自訂飲料或有紀錄的數據)
+            if let sugarSnapshot = log.sugarSnapshot {
+                totalSugar += sugarSnapshot
+            } else if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+                // 嘗試從 Service 取得飲品原始資料
                 // 基礎糖量 (若無數據則預設 50g)
                 let baseSugar = drink.sugarGrams ?? 50.0
                 // 根據甜度比例計算
@@ -132,8 +135,11 @@ struct MonthlyReportView: View {
         var totalCaffeine: Double = 0
         
         for log in monthlyLogs {
-            // 嘗試從 Service 取得飲品原始資料
-            if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+            // 優先使用快照資料
+            if let caffeineSnapshot = log.caffeineSnapshot {
+                totalCaffeine += Double(caffeineSnapshot)
+            } else if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+                // 嘗試從 Service 取得飲品原始資料
                 // 如果有咖啡因含量數據
                 if let content = drink.caffeineContent, content >= 0 {
                     totalCaffeine += Double(content)
@@ -159,16 +165,16 @@ struct MonthlyReportView: View {
         var color: Color {
             switch self {
             case .green: return .green
-            case .yellow: return .yellow
+            case .yellow: return .caloriesMedium // 修改為橘色 (參考咖啡因)
             case .red: return .red
             }
         }
         
         var message: String {
             switch self {
-            case .green: return "太棒了！日均糖分攝取適中 🎉"
-            case .yellow: return "注意！日均糖分已超過 40g ⚠️"
-            case .red: return "警告！日均糖分超過 60g，請注意健康 🚨"
+            case .green: return "日均糖分攝取適中 🎉"
+            case .yellow: return "日均糖分已超過 40g ⚠️"
+            case .red: return "日均糖分超過 60g 🚨"
             }
         }
         
@@ -202,7 +208,7 @@ struct MonthlyReportView: View {
         
         var color: Color {
             switch self {
-            case .green: return .greenTea
+            case .green: return .green // 修改為綠色 (參考糖分)
             case .yellow: return .caloriesMedium
             case .red: return .caloriesHigh
             }
@@ -210,15 +216,15 @@ struct MonthlyReportView: View {
         
         var message: String {
             switch self {
-            case .green: return "咖啡因攝取適量 🍵"
-            case .yellow: return "注意！日均咖啡因稍高 ⚠️"
-            case .red: return "警告！日均咖啡因過量 ☕️"
+            case .green: return "咖啡因攝取適量 🎉"
+            case .yellow: return "日均咖啡因稍高 ⚠️"
+            case .red: return "日均咖啡因過量 🚨"
             }
         }
         
         var icon: String {
             switch self {
-            case .green: return "cup.and.saucer.fill"
+            case .green: return "checkmark.circle.fill" // 修改為打勾 (參考糖分)
             case .yellow: return "exclamationmark.triangle.fill"
             case .red: return "xmark.octagon.fill"
             }

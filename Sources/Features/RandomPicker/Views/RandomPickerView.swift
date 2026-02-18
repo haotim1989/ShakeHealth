@@ -8,6 +8,8 @@ struct RandomPickerView: View {
     @EnvironmentObject var userManager: UserManager
     @Query private var allLogs: [DrinkLog]
     
+    @State private var showInfoAlert = false
+    
     /// 當前用戶的日記記錄
     private var userLogs: [DrinkLog] {
         allLogs.filter { $0.userId == appState.userId }
@@ -20,9 +22,15 @@ struct RandomPickerView: View {
                 Color.backgroundPrimary
                     .ignoresSafeArea()
                 
-                GeometryReader { geometry in
-                    ScrollView {
-                        VStack(spacing: 0) {
+                VStack(spacing: 0) {
+                    // 自訂標題 (固定在頂部，避免被轉場動畫遮擋)
+                    customHeader
+                        .zIndex(100)
+                    
+                    GeometryReader { geometry in
+                        ScrollView {
+                            VStack(spacing: 0) {
+                            
                             // 篩選條件區 (只在未抽到結果時顯示)
                             if viewModel.pickedDrink == nil {
                                 filterSection
@@ -74,9 +82,9 @@ struct RandomPickerView: View {
                         .frame(minHeight: geometry.size.height)
                     }
                 }
+                }
             }
-            .navigationTitle("隨機喝")
-            .navigationBarTitleDisplayMode(.large)
+            .toolbar(.hidden, for: .navigationBar)
             .sheet(isPresented: $viewModel.showFilterSheet) {
                 FilterSheet(viewModel: viewModel)
                     .presentationDetents([.medium, .large])
@@ -96,6 +104,11 @@ struct RandomPickerView: View {
             } message: {
                 Text("累積更多評分後，推薦會更準確喔！\n目前紀錄較少，將使用普通隨機模式。")
             }
+            .alert("關於隨機喝", isPresented: $showInfoAlert) {
+                Button("了解", role: .cancel) { }
+            } message: {
+                Text("我們會根據您的篩選條件，從圖鑑中隨機挑選一杯飲料。\n若您有特定偏好（如：不要咖啡因、熱量限制），請先設定篩選條件。")
+            }
             .task {
                 if viewModel.allDrinks.isEmpty {
                     await viewModel.loadData()
@@ -108,10 +121,33 @@ struct RandomPickerView: View {
                 viewModel.userLogs = userLogs
                 viewModel.isProUser = userManager.isProUser
             }
+
         }
     }
     
     // MARK: - Subviews
+    
+    private var customHeader: some View {
+        HStack(spacing: 8) {
+            Text("隨機喝")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.teaBrown)
+            
+            Button {
+                showInfoAlert = true
+            } label: {
+                Image(systemName: "info.circle")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+        }
+        .padding(.horizontal, 24)
+        .padding(.top, 16)
+        .padding(.bottom, 8)
+    }
     
     private var filterSection: some View {
         Button {
@@ -136,7 +172,7 @@ struct RandomPickerView: View {
             .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
         }
         .padding(.horizontal, 24)
-        .padding(.top, 16)
+        .padding(.top, 8)
         .padding(.bottom, 8)
     }
     

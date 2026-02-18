@@ -204,15 +204,15 @@ struct InfoPill: View {
     let color: Color
     
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: 6) {
             Image(systemName: icon)
-                .font(.caption2)
+                .font(.subheadline)
             Text(text)
-                .font(.caption)
+                .font(.headline)
                 .fontWeight(.medium)
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 6)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 8)
         .background(color.opacity(0.1))
         .foregroundColor(color)
         .clipShape(Capsule())

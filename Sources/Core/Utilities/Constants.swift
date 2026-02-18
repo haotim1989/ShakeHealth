@@ -49,5 +49,14 @@ enum Constants {
     enum AppStore {
         static let appId = "id000000000"  // TODO: 替換為實際的 App ID
         static let downloadURL = "https://apps.apple.com/app/\(appId)"
+        /// 管理訂閱 (iOS 設定頁面)
+        static let manageSubscriptionURL = "https://apps.apple.com/account/subscriptions"
+    }
+    
+    /// 法律相關連結
+    enum Legal {
+        // TODO: 替換為實際的隱私權政策與服務條款網址
+        static let privacyPolicyURL = "https://example.com/privacy-policy"
+        static let termsOfServiceURL = "https://example.com/terms-of-service"
     }
 }

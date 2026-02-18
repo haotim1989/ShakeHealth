@@ -22,6 +22,8 @@ final class DrinkLog {
     var brandName: String
     var caloriesSnapshot: Int
     var hasCaffeineSnapshot: Bool
+    var sugarSnapshot: Double?   // 新增：糖分快照 (克)
+    var caffeineSnapshot: Int?   // 新增：咖啡因快照 (毫克)
     
     var createdAt: Date
     var updatedAt: Date
@@ -53,6 +55,8 @@ final class DrinkLog {
         brandName: String,
         caloriesSnapshot: Int,
         hasCaffeineSnapshot: Bool = false,
+        sugarSnapshot: Double? = nil,
+        caffeineSnapshot: Int? = nil,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -68,6 +72,8 @@ final class DrinkLog {
         self.brandName = brandName
         self.caloriesSnapshot = caloriesSnapshot
         self.hasCaffeineSnapshot = hasCaffeineSnapshot
+        self.sugarSnapshot = sugarSnapshot
+        self.caffeineSnapshot = caffeineSnapshot
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
@@ -101,6 +107,9 @@ extension DrinkLog {
             "drink_name_snapshot": drinkName,
             "brand_name_snapshot": brandName,
             "calories_snapshot": caloriesSnapshot,
+            "has_caffeine_snapshot": hasCaffeineSnapshot,
+            "sugar_snapshot": sugarSnapshot ?? NSNull(),
+            "caffeine_snapshot": caffeineSnapshot ?? NSNull(),
             "created_at": createdAt,
             "updated_at": updatedAt
         ]
