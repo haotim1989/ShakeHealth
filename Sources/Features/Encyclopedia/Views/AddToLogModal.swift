@@ -153,12 +153,10 @@ struct AddToLogModal: View {
             // 圖示
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.milkCream)
+                    .fill(drink.category.themeColor.opacity(0.12))
                     .frame(width: 60, height: 60)
                 
-                Image(systemName: "cup.and.saucer.fill")
-                    .font(.title2)
-                    .foregroundColor(.teaBrown)
+                CategoryIconView(category: drink.category, size: 30)
             }
             
             VStack(alignment: .leading, spacing: 4) {

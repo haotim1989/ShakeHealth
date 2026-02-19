@@ -4,6 +4,8 @@ struct ContentView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var userManager: UserManager
     
+    @State private var showOnboarding = !UserDefaults.standard.bool(forKey: Constants.StorageKeys.onboardingCompleted)
+    
     var body: some View {
         TabView(selection: tabBinding) {
             VStack(spacing: 0) {
@@ -45,6 +47,9 @@ struct ContentView: View {
         }
         .tint(.teaBrown)
         .preferredColorScheme(.light)
+        .fullScreenCover(isPresented: $showOnboarding) {
+            OnboardingView(isPresented: $showOnboarding)
+        }
     }
     
     /// 自訂 Tab Binding：偵測重複點擊觸發置頂

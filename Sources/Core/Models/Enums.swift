@@ -65,6 +65,7 @@ enum DrinkCategory: String, Codable, CaseIterable, Identifiable {
     case coffee = "咖啡類"
     case fresh = "鮮奶系列"
     case special = "特調類"
+    case custom = "自訂飲品"
     
     var id: String { rawValue }
     
@@ -77,6 +78,7 @@ enum DrinkCategory: String, Codable, CaseIterable, Identifiable {
         case .coffee: return "mug.fill"
         case .fresh: return "drop.circle.fill"
         case .special: return "sparkles"
+        case .custom: return "pencil.circle.fill"
         }
     }
     
@@ -89,6 +91,7 @@ enum DrinkCategory: String, Codable, CaseIterable, Identifiable {
         case .coffee: return "coffeeBrown"
         case .fresh: return "coffeeBrown"
         case .special: return "specialBlue"
+        case .custom: return "gray"
         }
     }
     
@@ -101,6 +104,7 @@ enum DrinkCategory: String, Codable, CaseIterable, Identifiable {
         case .coffee: return .coffeeBrown
         case .fresh: return .coffeeBrown
         case .special: return .specialBlue
+        case .custom: return .gray // 自訂飲料使用灰色
         }
     }
 }

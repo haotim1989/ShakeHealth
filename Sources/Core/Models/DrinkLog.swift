@@ -40,6 +40,14 @@ final class DrinkLog {
         set { selectedIceRaw = newValue.rawValue }
     }
     
+    /// 取得飲料分類 (如果找不到原始飲料資料，則回傳 .custom)
+    var category: DrinkCategory {
+        if let drink = DrinkService.shared.getDrink(byId: drinkId) {
+            return drink.category
+        }
+        return .custom
+    }
+    
     // MARK: - Initializer
     
     init(

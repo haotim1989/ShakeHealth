@@ -41,6 +41,8 @@ struct CategoryIconView: View {
             drawCowHead(context: context, size: size)
         case .special:
             drawSpecialMix(context: context, size: size)
+        case .custom:
+            drawCustomDrink(context: context, size: size)
         }
     }
     
@@ -367,6 +369,66 @@ struct CategoryIconView: View {
         } else {
             context.stroke(path, with: .color(color), lineWidth: radius * 0.15)
         }
+    }
+    
+    // MARK: - 7. 自訂飲品 — 鉛筆 + 杯子
+    
+    private func drawCustomDrink(context: GraphicsContext, size: CGFloat) {
+        let color: Color = useThemeColor ? .gray : .primary
+        
+        // 簡化杯身
+        var cupPath = Path()
+        let cupTop: CGFloat = size * 0.35
+        let cupBottom: CGFloat = size * 0.88
+        let topLeft: CGFloat = size * 0.25
+        let topRight: CGFloat = size * 0.75
+        let bottomLeft: CGFloat = size * 0.32
+        let bottomRight: CGFloat = size * 0.68
+        
+        cupPath.move(to: CGPoint(x: topLeft, y: cupTop))
+        cupPath.addLine(to: CGPoint(x: topRight, y: cupTop))
+        cupPath.addLine(to: CGPoint(x: bottomRight, y: cupBottom))
+        cupPath.addLine(to: CGPoint(x: bottomLeft, y: cupBottom))
+        cupPath.closeSubpath()
+        context.fill(cupPath, with: .color(color.opacity(0.15)))
+        context.stroke(cupPath, with: .color(color), lineWidth: size * 0.035)
+        
+        // 鉛筆（斜放在杯子上方）
+        let pencilColor = useThemeColor ? Color.teaBrown : Color.primary
+        var pencilPath = Path()
+        let px1 = CGPoint(x: size * 0.55, y: size * 0.08)
+        let px2 = CGPoint(x: size * 0.75, y: size * 0.28)
+        let penWidth: CGFloat = size * 0.08
+        
+        // 鉛筆形狀（長方形旋轉）
+        let angle = atan2(px2.y - px1.y, px2.x - px1.x)
+        let dx = penWidth / 2 * CGFloat(sin(angle))
+        let dy = penWidth / 2 * CGFloat(cos(angle))
+        
+        pencilPath.move(to: CGPoint(x: px1.x - dx, y: px1.y + dy))
+        pencilPath.addLine(to: CGPoint(x: px2.x - dx, y: px2.y + dy))
+        pencilPath.addLine(to: CGPoint(x: px2.x + dx, y: px2.y - dy))
+        pencilPath.addLine(to: CGPoint(x: px1.x + dx, y: px1.y - dy))
+        pencilPath.closeSubpath()
+        context.fill(pencilPath, with: .color(pencilColor.opacity(0.4)))
+        context.stroke(pencilPath, with: .color(pencilColor), lineWidth: size * 0.025)
+        
+        // 鉛筆尖
+        var tipPath = Path()
+        tipPath.move(to: CGPoint(x: px1.x - dx, y: px1.y + dy))
+        tipPath.addLine(to: CGPoint(x: px1.x - dx * 2.5, y: px1.y + dy * 2.5))
+        tipPath.addLine(to: CGPoint(x: px1.x + dx, y: px1.y - dy))
+        tipPath.closeSubpath()
+        context.fill(tipPath, with: .color(pencilColor))
+        
+        // 問號（在杯中）
+        let qColor = color.opacity(0.5)
+        let qx = size * 0.50
+        let qy = size * 0.60
+        context.draw(
+            Text("?").font(.system(size: size * 0.22, weight: .bold)).foregroundColor(qColor),
+            at: CGPoint(x: qx, y: qy)
+        )
     }
 }
 

@@ -19,6 +19,7 @@
 		CMP007 /* ProFeatureLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC032 /* ProFeatureLock.swift */; };
 		CMP008 /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC033 /* AdViews.swift */; };
 		CMP009 /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC041 /* CategoryIconView.swift */; };
+		OBD001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC042 /* OnboardingView.swift */; };
 		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027 /* DiaryViewModel.swift */; };
 		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028 /* DiaryView.swift */; };
 		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029 /* DiaryDetailView.swift */; };
@@ -101,6 +102,7 @@
 		SRC039 /* CSVExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportService.swift; sourceTree = "<group>"; };
 		SRC040 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		SRC041 /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
+		SRC042 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				GRP013 /* Diary */,
 				GRP020 /* Subscription */,
 				GRP022 /* Settings */,
+				GRP024 /* Onboarding */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -343,6 +346,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		GRP024 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				GRP025 /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		GRP025 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				SRC042 /* OnboardingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ROOT = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +491,7 @@
 				SVC008 /* SubscriptionService.swift in Sources */,
 				SVC009 /* CSVExportService.swift in Sources */,
 				SET001 /* SettingsView.swift in Sources */,
+				OBD001 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

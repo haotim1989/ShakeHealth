@@ -121,6 +121,9 @@ struct RandomPickerView: View {
                 viewModel.userLogs = userLogs
                 viewModel.isProUser = userManager.isProUser
             }
+            .onChange(of: userManager.isProUser) { _, newValue in
+                viewModel.isProUser = newValue
+            }
 
         }
     }
@@ -213,16 +216,8 @@ struct RandomPickerView: View {
     
     private var initialStateView: some View {
         VStack(spacing: 24) {
-            // 搖搖杯圖示
-            ZStack {
-                Circle()
-                    .fill(Color.milkCream)
-                    .frame(width: 160, height: 160)
-                
-                Image(systemName: "cup.and.saucer.fill")
-                    .font(.system(size: 70))
-                    .foregroundColor(.teaBrown)
-            }
+            // 扭蛋機風格 — 分類圖示動態展示
+            GashaponIconsView()
             
             VStack(spacing: 8) {
                 Text("今天喝什麼？")
@@ -240,6 +235,88 @@ struct RandomPickerView: View {
 
         }
         .padding()
+    }
+}
+
+// MARK: - 扭蛋機動態圖示
+
+/// 扭蛋機風格的分類圖示動畫
+struct GashaponIconsView: View {
+    /// 六個飲品分類（排除 .custom）
+    private let categories: [DrinkCategory] = DrinkCategory.allCases.filter { $0 != .custom }
+    
+    @State private var isAnimating = false
+    @State private var orbitAngle: Double = 0
+    @State private var pulseScale: CGFloat = 1.0
+    
+    // 中央圓的大小
+    private let centerSize: CGFloat = 60
+    // 軌道半徑
+    private let orbitRadius: CGFloat = 110
+    // 圖示大小
+    private let iconSize: CGFloat = 80
+    
+    var body: some View {
+        ZStack {
+            // 中央底座
+            Circle()
+                .fill(
+                    RadialGradient(
+                        colors: [Color.milkCream, Color.milkCream.opacity(0.5)],
+                        center: .center,
+                        startRadius: 0,
+                        endRadius: centerSize / 2
+                    )
+                )
+                .frame(width: centerSize, height: centerSize)
+                .shadow(color: .teaBrown.opacity(0.1), radius: 12, y: 4)
+                .scaleEffect(pulseScale)
+            
+            // 中央問號
+            Text("?")
+                .font(.system(size: 36, weight: .bold, design: .rounded))
+                .foregroundColor(.teaBrown.opacity(0.6))
+                .scaleEffect(pulseScale)
+            
+            // 6 個分類圖示繞軌道排列
+            ForEach(Array(categories.enumerated()), id: \.element.id) { index, category in
+                let baseAngle = Double(index) * (360.0 / Double(categories.count))
+                let currentAngle = baseAngle + orbitAngle
+                let radian = currentAngle * .pi / 180
+                
+                let x = orbitRadius * CGFloat(cos(radian))
+                let y = orbitRadius * CGFloat(sin(radian))
+                
+                ZStack {
+                    Circle()
+                        .fill(category.themeColor.opacity(0.15))
+                        .frame(width: iconSize, height: iconSize)
+                    
+                    CategoryIconView(category: category, size: iconSize * 0.6)
+                }
+                .offset(x: x, y: y)
+            }
+        }
+        .frame(width: (orbitRadius + iconSize / 2) * 2, height: (orbitRadius + iconSize / 2) * 2)
+        .onAppear {
+            // 緩慢持續旋轉
+            withAnimation(
+                .linear(duration: 12)
+                .repeatForever(autoreverses: false)
+            ) {
+                orbitAngle = 360
+            }
+            
+            // 中央脈衝
+            withAnimation(
+                .easeInOut(duration: 2.0)
+                .repeatForever(autoreverses: true)
+            ) {
+                pulseScale = 1.08
+            }
+            
+            isAnimating = true
+        }
     }
 }
 

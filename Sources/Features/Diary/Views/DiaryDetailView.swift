@@ -126,12 +126,10 @@ struct DiaryDetailView: View {
             // 飲料圖示
             ZStack {
                 Circle()
-                    .fill(Color.milkCream)
+                    .fill(log.category.themeColor.opacity(0.1))
                     .frame(width: 80, height: 80)
                 
-                Image(systemName: "cup.and.saucer.fill")
-                    .font(.system(size: 35))
-                    .foregroundColor(.teaBrown)
+                CategoryIconView(category: log.category, size: 40)
             }
             
             VStack(spacing: 4) {

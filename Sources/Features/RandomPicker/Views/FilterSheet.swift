@@ -73,7 +73,7 @@ struct FilterSheet: View {
                     // 分類篩選
                     filterSection(title: "飲品分類", icon: "square.grid.2x2") {
                         FlowLayout(spacing: 8) {
-                            ForEach(DrinkCategory.allCases) { category in
+                            ForEach(DrinkCategory.allCases.filter { $0 != .custom }) { category in
                                 FilterChip(
                                     title: category.rawValue,
                                     isSelected: viewModel.criteria.selectedCategories.contains(category)

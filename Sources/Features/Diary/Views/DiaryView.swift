@@ -540,37 +540,51 @@ struct DiaryEntryRow: View {
     let log: DrinkLog
     
     var body: some View {
-        HStack(spacing: 12) {
-            // 日期
-            VStack(spacing: 2) {
+        HStack(spacing: 10) {
+            // 日期（緊湊版）
+            VStack(spacing: 1) {
                 Text(log.createdAt.formatted(.dateTime.day()))
-                    .font(.title2)
+                    .font(.callout)
                     .fontWeight(.bold)
                     .foregroundColor(.teaBrown)
                 Text(log.createdAt.formatted(.dateTime.month(.abbreviated)))
-                    .font(.caption)
+                    .font(.caption2)
                     .foregroundColor(.secondary)
             }
-            .frame(width: 44)
+            .frame(width: 32)
             
             Divider()
                 .frame(height: 40)
             
+            // 飲料圖示
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(log.category.themeColor.opacity(0.12))
+                    .frame(width: 40, height: 40)
+                
+                CategoryIconView(category: log.category, size: 22)
+            }
+            
             // 飲料資訊
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 3) {
                 Text(log.drinkName)
                     .font(.body)
                     .fontWeight(.medium)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 Text(log.brandName)
                     .font(.caption)
                     .foregroundColor(.secondary)
+                    .lineLimit(1)
             }
+            .layoutPriority(1)
             
-            Spacer()
+            Spacer(minLength: 8)
             
-            // 評分
+            // 評分 — 固定寬度靠右
             StarRatingDisplay(rating: log.rating, starSize: 12)
+                .fixedSize()
         }
         .padding(.vertical, 4)
     }

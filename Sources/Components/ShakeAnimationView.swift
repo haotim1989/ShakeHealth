@@ -4,13 +4,14 @@ import SwiftUI
 struct ShakeAnimationView: View {
     @Binding var isShaking: Bool
     
+    private let categories: [DrinkCategory] = DrinkCategory.allCases.filter { $0 != .custom }
+    @State private var spinAngle: Double = 0
     @State private var rotation: Double = 0
     @State private var yOffset: CGFloat = 0
-    @State private var shadowRadius: CGFloat = 8
     
     var body: some View {
         VStack(spacing: 32) {
-            // 飲料杯圖示
+            // 快速旋轉的分類圖示
             ZStack {
                 // 柔和陰影底座
                 Ellipse()
@@ -20,13 +21,41 @@ struct ShakeAnimationView: View {
                     .blur(radius: isShaking ? 6 : 4)
                     .scaleEffect(isShaking ? 0.9 : 1.0)
                 
-                // 飲料杯
-                Image(systemName: "cup.and.saucer.fill")
-                    .font(.system(size: 72, weight: .regular))
-                    .foregroundColor(.teaBrown)
+                // 中央底座
+                ZStack {
+                    Circle()
+                        .fill(Color.milkCream.opacity(0.6))
+                        .frame(width: 60, height: 60)
+                    
+                    Text("?")
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .foregroundColor(.teaBrown.opacity(0.6))
+                }
+                .rotationEffect(.degrees(rotation))
+                .offset(y: yOffset)
+                
+                // 6 個分類圖示快速旋轉
+                ForEach(Array(categories.enumerated()), id: \.element.id) { index, category in
+                    let baseAngle = Double(index) * (360.0 / Double(categories.count))
+                    let currentAngle = baseAngle + spinAngle
+                    let radian = currentAngle * .pi / 180
+                    let orbitR: CGFloat = 50
+                    
+                    let x = orbitR * CGFloat(cos(radian))
+                    let y = orbitR * CGFloat(sin(radian))
+                    
+                    ZStack {
+                        Circle()
+                            .fill(category.themeColor.opacity(0.2))
+                            .frame(width: 32, height: 32)
+                        
+                        CategoryIconView(category: category, size: 18)
+                    }
+                    .offset(x: x, y: y)
                     .rotationEffect(.degrees(rotation))
                     .offset(y: yOffset)
-                    .shadow(color: .teaBrown.opacity(0.2), radius: shadowRadius, y: 4)
+                    .zIndex(Double(sin(radian)))
+                }
             }
             .frame(height: 140)
             
@@ -87,12 +116,12 @@ struct ShakeAnimationView: View {
             yOffset = -12
         }
         
-        // 陰影脈動
+        // 圖示快速旋轉（扭蛋翻滾感）
         withAnimation(
-            .easeInOut(duration: 0.25)
-            .repeatForever(autoreverses: true)
+            .linear(duration: 1.0)
+            .repeatForever(autoreverses: false)
         ) {
-            shadowRadius = 16
+            spinAngle = 360
         }
     }
     
@@ -100,7 +129,6 @@ struct ShakeAnimationView: View {
         withAnimation(.spring(response: 0.5, dampingFraction: 0.6)) {
             rotation = 0
             yOffset = 0
-            shadowRadius = 8
         }
     }
 }
