@@ -53,6 +53,9 @@ struct EncyclopediaView: View {
             } message: {
                 Text("本圖鑑之熱量與糖分數據僅供參考，實際數值可能因店家配方調整、冰塊甜度選擇而有差異。\n若有醫療需求，請諮詢專業醫師。")
             }
+            .onTapGesture {
+                hideKeyboard()
+            }
             .task {
                 if viewModel.drinks.isEmpty {
                     await viewModel.loadData()
@@ -90,6 +93,7 @@ struct EncyclopediaView: View {
                 }
             }
             .listStyle(.insetGrouped)
+            .scrollDismissesKeyboard(.immediately)
             .scrollContentBackground(.hidden)
             .onChange(of: appState.scrollToTopTrigger) { _, newValue in
                 if newValue == .encyclopedia {
@@ -175,6 +179,10 @@ struct EncyclopediaView: View {
                 .foregroundColor(.teaBrown)
         }
         .padding(.vertical, 4)
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

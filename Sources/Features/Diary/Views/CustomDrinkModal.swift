@@ -25,6 +25,18 @@ struct CustomDrinkModal: View {
     @State private var rating: Int = 3
     @State private var comment: String = ""
     
+    // Focus State
+    enum Field: Hashable {
+        case drinkName
+        case brandName
+        case calories
+        case sugar
+        case caffeine
+        // comment 因為是封裝的 component，可能需要另外處理或忽略
+    }
+    
+    @FocusState private var focusedField: Field?
+    
     // 日期選擇 (Pro 功能)
     @State private var selectedDate: Date = Date()
     @State private var showDatePicker = false
@@ -74,7 +86,8 @@ struct CustomDrinkModal: View {
                 }
                 .padding(20)
             }
-            .background(Color.backgroundPrimary)
+            .scrollDismissesKeyboard(.immediately)
+            .background(Color.backgroundPrimary) // 移除 onTapGesture
             .navigationTitle("自訂飲料")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -90,6 +103,16 @@ struct CustomDrinkModal: View {
                     }
                     .fontWeight(.semibold)
                     .disabled(!isValidForm)
+                }
+                
+                // 鍵盤工具列
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("完成") {
+                        focusedField = nil
+                        // 對於 CharacterCountTextField 這種內部封裝的，可能需要額外處理
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
                 }
             }
             .sheet(isPresented: $showPaywall) {
@@ -175,6 +198,7 @@ struct CustomDrinkModal: View {
                     .foregroundColor(.secondary)
                 
                 TextField("例如：珍珠奶茶", text: $drinkName)
+                    .focused($focusedField, equals: .drinkName)
                     .textFieldStyle(.plain)
                     .padding(12)
                     .background(Color.gray.opacity(0.05))
@@ -188,6 +212,7 @@ struct CustomDrinkModal: View {
                     .foregroundColor(.secondary)
                 
                 TextField("例如：50 嵐", text: $brandName)
+                    .focused($focusedField, equals: .brandName)
                     .textFieldStyle(.plain)
                     .padding(12)
                     .background(Color.gray.opacity(0.05))
@@ -206,6 +231,7 @@ struct CustomDrinkModal: View {
                         title: "熱量",
                         unit: "kcal",
                         text: $estimatedCalories,
+                        field: .calories,
                         isValid: (Int(estimatedCalories) ?? 0) <= 9999
                     )
                     
@@ -214,6 +240,7 @@ struct CustomDrinkModal: View {
                         title: "總糖量",
                         unit: "g",
                         text: $estimatedSugar,
+                        field: .sugar,
                         isValid: (Double(estimatedSugar) ?? 0) <= 9999
                     )
                     
@@ -222,6 +249,7 @@ struct CustomDrinkModal: View {
                         title: "咖啡因",
                         unit: "mg",
                         text: $estimatedCaffeine,
+                        field: .caffeine,
                         isValid: (Int(estimatedCaffeine) ?? 0) <= 9999
                     )
                 }
@@ -232,7 +260,7 @@ struct CustomDrinkModal: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
     
-    private func nutritionInput(title: String, unit: String, text: Binding<String>, isValid: Bool) -> some View {
+    private func nutritionInput(title: String, unit: String, text: Binding<String>, field: Field, isValid: Bool) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(title)
                 .font(.caption)
@@ -241,7 +269,8 @@ struct CustomDrinkModal: View {
             VStack(spacing: 4) {
                 HStack(spacing: 4) {
                     TextField("0", text: text)
-                        .keyboardType(.numberPad) // 糖分如果是小數可能需要 decimalPad，這裡先用 numberPad
+                        .focused($focusedField, equals: field)
+                        .keyboardType(.numberPad)
                         .textFieldStyle(.plain)
                         .multilineTextAlignment(.trailing)
                     
@@ -259,9 +288,9 @@ struct CustomDrinkModal: View {
                 
                 if !isValid {
                     Text("上限 9999")
-                        .font(.caption2)
-                        .foregroundColor(.red)
-                        .transition(.opacity)
+                    .font(.caption2)
+                    .foregroundColor(.red)
+                    .transition(.opacity)
                 }
             }
         }

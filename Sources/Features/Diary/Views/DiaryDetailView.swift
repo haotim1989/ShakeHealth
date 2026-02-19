@@ -110,6 +110,13 @@ struct DiaryDetailView: View {
         } message: {
             Text("確定要刪除這筆日記嗎？此操作無法復原。")
         }
+        .scrollDismissesKeyboard(.immediately)
+        .background(
+            Color.backgroundPrimary
+                .onTapGesture {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+        )
     }
     
     // MARK: - Subviews

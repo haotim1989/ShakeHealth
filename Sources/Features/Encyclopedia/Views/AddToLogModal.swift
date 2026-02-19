@@ -57,7 +57,13 @@ struct AddToLogModal: View {
                 }
                 .padding(20)
             }
-            .background(Color.backgroundPrimary)
+            .scrollDismissesKeyboard(.immediately)
+            .background(
+                Color.backgroundPrimary
+                    .onTapGesture {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
+            )
             .navigationTitle("新增紀錄")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
