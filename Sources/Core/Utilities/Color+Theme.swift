@@ -13,6 +13,7 @@ extension Color {
     static let coffeeBrown = Color(hex: "#6F4E37")
     static let milkWhite = Color(hex: "#FDFCFB")
     static let specialPurple = Color(hex: "#9B59B6")
+    static let specialBlue = Color(hex: "#5B9BD5")
     
     // 熱量警示色
     static let caloriesLow = Color(hex: "#4CAF50")    // 綠色 < 200

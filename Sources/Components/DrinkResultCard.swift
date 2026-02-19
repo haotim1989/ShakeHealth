@@ -43,15 +43,7 @@ struct DrinkResultCard: View {
                         .fill(Color.white)
                         .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 5)
                     
-                    Image(systemName: categoryIcon)
-                        .font(.system(size: 64))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [.teaBrown, .teaBrown.opacity(0.7)],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
+                    CategoryIconView(category: drink.category, size: 64)
                 }
                 .frame(width: 120, height: 120)
             }
@@ -181,17 +173,6 @@ struct DrinkResultCard: View {
             withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
                 appeared = true
             }
-        }
-    }
-    
-    private var categoryIcon: String {
-        switch drink.category {
-        case .milkTea: return "cup.and.saucer.fill"
-        case .pureTea: return "leaf.fill"
-        case .fruitTea: return "🍊".isEmpty ? "leaf" : "drop.fill" // Fallback
-        case .coffee: return "mug.fill"
-        case .fresh: return "drop.fill"
-        case .special: return "sparkles"
         }
     }
 }

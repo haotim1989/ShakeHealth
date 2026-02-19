@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /// 甜度等級
 enum SugarLevel: String, Codable, CaseIterable, Identifiable {
@@ -72,9 +73,9 @@ enum DrinkCategory: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .milkTea: return "cup.and.saucer.fill"
         case .pureTea: return "leaf.fill"
-        case .fruitTea: return "🍊"
+        case .fruitTea: return "drop.fill"
         case .coffee: return "mug.fill"
-        case .fresh: return "drop.fill"
+        case .fresh: return "drop.circle.fill"
         case .special: return "sparkles"
         }
     }
@@ -86,8 +87,20 @@ enum DrinkCategory: String, Codable, CaseIterable, Identifiable {
         case .pureTea: return "greenTea"
         case .fruitTea: return "fruitOrange"
         case .coffee: return "coffeeBrown"
-        case .fresh: return "milkWhite"
-        case .special: return "specialPurple"
+        case .fresh: return "coffeeBrown"
+        case .special: return "specialBlue"
+        }
+    }
+    
+    /// 分類主題色（SwiftUI Color）
+    var themeColor: Color {
+        switch self {
+        case .milkTea: return .teaBrown
+        case .pureTea: return .greenTea
+        case .fruitTea: return .fruitOrange
+        case .coffee: return .coffeeBrown
+        case .fresh: return .coffeeBrown
+        case .special: return .specialBlue
         }
     }
 }

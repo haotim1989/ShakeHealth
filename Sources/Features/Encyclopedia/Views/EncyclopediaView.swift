@@ -188,12 +188,10 @@ struct DrinkListRow: View {
             // 飲料圖示
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.milkCream)
+                    .fill(drink.category.themeColor.opacity(0.12))
                     .frame(width: 50, height: 50)
                 
-                Image(systemName: categoryIcon)
-                    .font(.title3)
-                    .foregroundColor(.teaBrown)
+                CategoryIconView(category: drink.category, size: 30)
             }
             
             // 資訊
@@ -275,17 +273,6 @@ struct DrinkListRow: View {
             .buttonStyle(.plain)
         }
         .padding(.vertical, 4)
-    }
-    
-    private var categoryIcon: String {
-        switch drink.category {
-        case .milkTea: return "cup.and.saucer.fill"
-        case .pureTea: return "leaf.fill"
-        case .fruitTea: return "drop.fill"
-        case .coffee: return "mug.fill"
-        case .fresh: return "drop.fill"
-        case .special: return "sparkles"
-        }
     }
 }
 

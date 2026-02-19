@@ -18,6 +18,7 @@
 		CMP006 /* DrinkResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC020 /* DrinkResultCard.swift */; };
 		CMP007 /* ProFeatureLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC032 /* ProFeatureLock.swift */; };
 		CMP008 /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC033 /* AdViews.swift */; };
+		CMP009 /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC041 /* CategoryIconView.swift */; };
 		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027 /* DiaryViewModel.swift */; };
 		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028 /* DiaryView.swift */; };
 		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029 /* DiaryDetailView.swift */; };
@@ -99,6 +100,7 @@
 		SRC038 /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
 		SRC039 /* CSVExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportService.swift; sourceTree = "<group>"; };
 		SRC040 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		SRC041 /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				SRC020 /* DrinkResultCard.swift */,
 				SRC032 /* ProFeatureLock.swift */,
 				SRC033 /* AdViews.swift */,
+				SRC041 /* CategoryIconView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				SVC006 /* UserManager.swift in Sources */,
 				CMP007 /* ProFeatureLock.swift in Sources */,
 				CMP008 /* AdViews.swift in Sources */,
+				CMP009 /* CategoryIconView.swift in Sources */,
 				SUB001 /* PaywallView.swift in Sources */,
 				DRY004 /* MonthlyReportView.swift in Sources */,
 				DRY005 /* CustomDrinkModal.swift in Sources */,
