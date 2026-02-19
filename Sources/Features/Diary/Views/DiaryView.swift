@@ -309,6 +309,7 @@ struct DiaryView: View {
                 }
             }
             .listStyle(.insetGrouped)
+            .scrollDismissesKeyboard(.immediately)
             .scrollContentBackground(.hidden)
             .onChange(of: appState.scrollToTopTrigger) { _, newValue in
                 if newValue == .diary {

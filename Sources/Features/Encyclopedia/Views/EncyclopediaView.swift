@@ -58,6 +58,9 @@ struct EncyclopediaView: View {
                     await viewModel.loadData()
                 }
             }
+            .onTapGesture {
+                hideKeyboard()
+            }
         }
     }
     
@@ -90,6 +93,7 @@ struct EncyclopediaView: View {
                 }
             }
             .listStyle(.insetGrouped)
+            .scrollDismissesKeyboard(.immediately)
             .scrollContentBackground(.hidden)
             .onChange(of: appState.scrollToTopTrigger) { _, newValue in
                 if newValue == .encyclopedia {
@@ -175,6 +179,10 @@ struct EncyclopediaView: View {
                 .foregroundColor(.teaBrown)
         }
         .padding(.vertical, 4)
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

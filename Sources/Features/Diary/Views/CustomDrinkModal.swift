@@ -74,6 +74,10 @@ struct CustomDrinkModal: View {
                 }
                 .padding(20)
             }
+            .scrollDismissesKeyboard(.immediately)
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
             .background(Color.backgroundPrimary)
             .navigationTitle("自訂飲料")
             .navigationBarTitleDisplayMode(.inline)

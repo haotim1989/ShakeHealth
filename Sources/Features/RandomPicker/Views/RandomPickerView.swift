@@ -80,6 +80,7 @@ struct RandomPickerView: View {
                             }
                         }
                         .frame(minHeight: geometry.size.height)
+                        .scrollDismissesKeyboard(.immediately)
                     }
                 }
                 }
@@ -120,6 +121,9 @@ struct RandomPickerView: View {
             .onAppear {
                 viewModel.userLogs = userLogs
                 viewModel.isProUser = userManager.isProUser
+            }
+            .onChange(of: userManager.isProUser) { _, newValue in
+                viewModel.isProUser = newValue
             }
 
         }
