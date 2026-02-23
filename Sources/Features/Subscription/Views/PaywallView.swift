@@ -118,7 +118,8 @@ struct PaywallView: View {
             FeatureRow(icon: "sparkles", title: "智慧推薦", description: "隨機喝優先顯示日記 ≥ 4 星的飲料")
             FeatureRow(icon: "hand.thumbsdown.fill", title: "避雷功能", description: "隨機喝排除日記 ≤ 2 星的飲料")
             FeatureRow(icon: "doc.text.magnifyingglass", title: "月報表", description: "輕鬆掌握全月糖分與咖啡因攝取")
-            FeatureRow(icon: "arrow.up.arrow.down.circle.fill", title: "資料備份", description: "匯出匯入 CSV 檔案")
+            FeatureRow(icon: "cloud.fill", title: "iCloud 自動同步", description: "您的日記將安全地跨裝置無縫同步")
+            FeatureRow(icon: "arrow.up.arrow.down.circle.fill", title: "極致備份", description: "支援匯出匯入 CSV 試算表格式")
             FeatureRow(icon: "xmark.circle.fill", title: "無廣告", description: "純淨使用體驗")
         }
         .padding()

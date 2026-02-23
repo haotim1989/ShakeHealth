@@ -4,29 +4,29 @@ import SwiftData
 /// 飲料日記紀錄 (本地儲存使用 SwiftData)
 @Model
 final class DrinkLog {
-    var id: String
-    var drinkId: String
-    var brandId: String
-    var userId: String
+    var id: String = UUID().uuidString
+    var drinkId: String = ""
+    var brandId: String = ""
+    var userId: String = ""
     
     // 選擇的規格
-    var selectedSugarRaw: String
-    var selectedIceRaw: String
+    var selectedSugarRaw: String = ""
+    var selectedIceRaw: String = ""
     
     // 評價
-    var rating: Int      // 1-5
-    var comment: String  // 限制 20 字
+    var rating: Int = 0      // 1-5
+    var comment: String = "" // 限制 20 字
     
     // 快照資料 (記錄當下的飲料資訊)
-    var drinkName: String
-    var brandName: String
-    var caloriesSnapshot: Int
-    var hasCaffeineSnapshot: Bool
+    var drinkName: String = ""
+    var brandName: String = ""
+    var caloriesSnapshot: Int = 0
+    var hasCaffeineSnapshot: Bool = false
     var sugarSnapshot: Double?   // 新增：糖分快照 (克)
     var caffeineSnapshot: Int?   // 新增：咖啡因快照 (毫克)
     
-    var createdAt: Date
-    var updatedAt: Date
+    var createdAt: Date = Date()
+    var updatedAt: Date = Date()
     
     // MARK: - Computed Properties
     

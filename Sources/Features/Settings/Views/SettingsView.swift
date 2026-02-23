@@ -160,6 +160,28 @@ struct SettingsView: View {
     
     private var dataBackupSection: some View {
         Section {
+            // iCloud 同步狀態 (僅展示，由無感觸發)
+            HStack {
+                Label("iCloud 自動同步", systemImage: "cloud.fill")
+                    .foregroundColor(.primary)
+                
+                Spacer()
+                
+                if userManager.isProUser {
+                    Text("已啟用")
+                        .font(.caption)
+                        .foregroundColor(.green)
+                } else {
+                    ProBadge()
+                }
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                if !userManager.isProUser {
+                    showPaywall = true
+                }
+            }
+            
             // 匯出 CSV
             Button {
                 if userManager.isProUser {
@@ -169,7 +191,7 @@ struct SettingsView: View {
                 }
             } label: {
                 HStack {
-                    Label("匯出日記", systemImage: "square.and.arrow.up")
+                    Label("匯出試算表 (CSV)", systemImage: "square.and.arrow.up")
                         .foregroundColor(.primary)
                     
                     Spacer()
@@ -191,7 +213,7 @@ struct SettingsView: View {
                 }
             } label: {
                 HStack {
-                    Label("匯入日記", systemImage: "square.and.arrow.down")
+                    Label("匯入還原 (CSV)", systemImage: "square.and.arrow.down")
                         .foregroundColor(.primary)
                     
                     Spacer()
@@ -204,9 +226,13 @@ struct SettingsView: View {
             }
             .buttonStyle(.plain)
         } header: {
-            Text("資料備份")
+            Text("資料備份與還原")
         } footer: {
-            Text("匯出 CSV 檔案以備份您的日記紀錄，可隨時匯入還原。")
+            if userManager.isProUser {
+                Text("您的日記將自動透過 iCloud 同步至您的所有設備。您也可以隨時使用 CSV 格式手動匯出及匯入資料。")
+            } else {
+                Text("升級 Premium 以啟用 iCloud 自動跨裝置無縫同步，以及 CSV 資料匯出功能。")
+            }
         }
     }
     

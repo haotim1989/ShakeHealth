@@ -6,12 +6,18 @@ struct ShakeHealthApp: App {
     @StateObject private var appState = AppState()
     @StateObject private var userManager = UserManager.shared
     
-    // 建立 ModelContainer (處理 schema 遷移)
+    // 建立 ModelContainer (處理 schema 遷移與 iCloud 同步)
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([DrinkLog.self])
+        
+        // 透過 UserManager 檢查是否為 Pro，因為 ModelContainer 會在初始階段被建立
+        // (若為更進階的動態切換，需要在登入後動態重建 Container，這邊以啟動時狀態為準)
+        let isProUser = UserManager.shared.isProUser
+        
         let modelConfiguration = ModelConfiguration(
             schema: schema,
-            isStoredInMemoryOnly: false
+            isStoredInMemoryOnly: false,
+            cloudKitDatabase: isProUser ? .automatic : .none
         )
         
         do {

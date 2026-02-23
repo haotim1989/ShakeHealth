@@ -25,11 +25,11 @@ enum ShareService {
     /// 分享 App (包含圖片與文字)
     static func shareApp() {
         let text = """
-        🧋 飲料日記 - 記錄你的飲料生活
+        🧋 飲料日記：紀錄你的每一杯幸福
         
-        追蹤每日飲料攝取、熱量與咖啡因，讓你喝得更健康！
+        追蹤每日飲料攝取、熱量與咖啡因，讓你喝得更健康！上千種手搖飲料供你選，還有專屬的熱量月報表，幫助你建立無負擔的療癒飲品生活。
         
-        📲 立即下載：\(Constants.AppStore.downloadURL)
+        📲 立即下載，陪你紀錄每一口甜蜜：\(Constants.AppStore.downloadURL)
         """
         
         // 生成推廣圖片
@@ -76,8 +76,8 @@ enum ShareService {
         
         
         ---
-        📱 用「搖搖健康飲」記錄你的飲料生活！
-        👉 下載連結：\(Constants.AppStore.downloadURL)
+        📱 用「飲料日記」紀錄你的每一杯幸福！
+        👉 免費下載：\(Constants.AppStore.downloadURL)
         """
         
         return message

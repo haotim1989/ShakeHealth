@@ -19,7 +19,6 @@
 		CMP007 /* ProFeatureLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC032 /* ProFeatureLock.swift */; };
 		CMP008 /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC033 /* AdViews.swift */; };
 		CMP009 /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC041 /* CategoryIconView.swift */; };
-		OBD001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC042 /* OnboardingView.swift */; };
 		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027 /* DiaryViewModel.swift */; };
 		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028 /* DiaryView.swift */; };
 		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029 /* DiaryDetailView.swift */; };
@@ -34,6 +33,7 @@
 		MOD003 /* DrinkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC005 /* DrinkLog.swift */; };
 		MOD004 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC006 /* Enums.swift */; };
 		MOD005 /* FilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC007 /* FilterCriteria.swift */; };
+		OBD001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC042 /* OnboardingView.swift */; };
 		RES002 /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = DAT001 /* SampleData.json */; };
 		RND001 /* RandomPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC021 /* RandomPickerViewModel.swift */; };
 		RND002 /* RandomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC022 /* RandomPickerView.swift */; };
@@ -58,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		DAT001 /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
+		EE28EC402F4C839900010618 /* ShakeHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ShakeHealth.entitlements; path = ShakeHealth/ShakeHealth.entitlements; sourceTree = "<group>"; };
 		EEFB60122F2DD17C000D7169 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		PROD01 /* ShakeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		RES001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -365,6 +366,7 @@
 		ROOT = {
 			isa = PBXGroup;
 			children = (
+				EE28EC402F4C839900010618 /* ShakeHealth.entitlements */,
 				GRP001 /* Sources */,
 				GRP002 /* Products */,
 			);
@@ -617,6 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShakeHealth/ShakeHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -649,6 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShakeHealth/ShakeHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
