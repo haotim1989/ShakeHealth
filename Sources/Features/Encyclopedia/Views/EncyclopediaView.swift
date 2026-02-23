@@ -51,7 +51,7 @@ struct EncyclopediaView: View {
             .alert("關於找熱量", isPresented: $showInfoAlert) {
                 Button("了解", role: .cancel) { }
             } message: {
-                Text("本圖鑑之熱量與糖分數據僅供參考，實際數值可能因店家配方調整、冰塊甜度選擇而有差異。\n若有醫療需求，請諮詢專業醫師。")
+                Text("本圖鑑之熱量、糖分與咖啡因數據僅供參考，實際數值可能因店家配方調整、冰塊甜度選擇而有差異。\n若有醫療需求，請諮詢專業醫師。")
             }
             .onTapGesture {
                 hideKeyboard()
@@ -277,6 +277,8 @@ struct DrinkListRow: View {
                 Image(systemName: "plus.circle.fill")
                     .font(.title2)
                     .foregroundColor(.teaBrown)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         }

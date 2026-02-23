@@ -76,7 +76,7 @@ struct DrinkResultCard: View {
                 }
                 
                 // 資訊膠囊列
-                HStack(spacing: 12) {
+                HStack(spacing: 8) {
                     // 熱量
                     InfoPill(icon: "flame.fill", text: "\(displayCalories) kcal", color: .orange)
                     
@@ -185,15 +185,15 @@ struct InfoPill: View {
     let color: Color
     
     var body: some View {
-        HStack(spacing: 6) {
+        HStack(spacing: 4) {
             Image(systemName: icon)
-                .font(.subheadline)
+                .font(.caption)
             Text(text)
-                .font(.headline)
+                .font(.subheadline)
                 .fontWeight(.medium)
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 8)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 6)
         .background(color.opacity(0.1))
         .foregroundColor(color)
         .clipShape(Capsule())

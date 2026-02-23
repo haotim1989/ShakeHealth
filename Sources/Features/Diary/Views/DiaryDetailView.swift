@@ -189,11 +189,32 @@ struct DiaryDetailView: View {
                 HStack(spacing: 12) {
                     CalorieIndicator(calories: currentDisplayCalories, style: .detailed)
                     
-                    if log.hasCaffeineSnapshot || isCustomDrink { // 自訂飲料也可能顯示
+                    if !isCustomDrink,
+                       let drink = DrinkService.shared.getDrink(byId: log.drinkId),
+                       drink.hasCaffeine == nil {
+                        // 資料不足 (樣式沿用 EncyclopediaView)
+                        HStack(spacing: 4) {
+                            Image(systemName: "cup.and.saucer")
+                                .font(.caption)
+                            Text("資料不足")
+                                .font(.caption2)
+                        }
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color.gray.opacity(0.1))
+                        .clipShape(Capsule())
+                    } else if log.hasCaffeineSnapshot || isCustomDrink { 
                         let caffeine = log.caffeineSnapshot ?? (log.hasCaffeineSnapshot ? -1 : 0)
                         if caffeine > 0 || log.hasCaffeineSnapshot {
                             CaffeineIcon(hasCaffeine: true, showLabel: true)
+                        } else {
+                             // 顯示無咖啡因
+                             CaffeineIcon(hasCaffeine: false, showLabel: true)
                         }
+                    } else {
+                        // 如果是圖鑑飲料且無咖啡因快照，也顯示無咖啡因
+                         CaffeineIcon(hasCaffeine: false, showLabel: true)
                     }
                 }
             }

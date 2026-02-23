@@ -75,10 +75,10 @@ struct DiaryView: View {
                 .environmentObject(appState)
                 .environmentObject(userManager)
             }
-            .alert("關於統計數據", isPresented: $showInfoAlert) {
+            .alert("我的日記功能", isPresented: $showInfoAlert) {
                 Button("了解", role: .cancel) { }
             } message: {
-                Text("日均數據為「當月累計總量 / 當月已過天數」。\n綠燈表示攝取適量，橘燈需注意，紅燈則表示攝取過量。")
+                Text("在這裡你可以記錄每一杯喝過的飲料，以及熱量、糖分與咖啡因攝取量。\n\n累積紀錄後，不僅能回顧自己的飲用習慣，還可以透過「月報表」查看詳細的統計分析，幫助你喝得更健康！")
             }
         }
     }

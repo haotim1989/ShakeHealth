@@ -73,7 +73,7 @@ struct ShakeHealthApp: App {
 /// 全域應用程式狀態
 @MainActor
 final class AppState: ObservableObject {
-    @Published var selectedTab: Tab = .randomPicker
+    @Published var selectedTab: Tab = .diary
     @Published var userId: String = UUID().uuidString // 匿名用戶 ID
     @Published var scrollToTopTrigger: Tab? = nil  // 觸發置頂的 Tab
     

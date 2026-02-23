@@ -55,7 +55,7 @@ final class DrinkService: DrinkServiceProtocol {
                     id: drinkData.drink_id,
                     brandId: drinkData.brand_id,
                     name: drinkData.name,
-                    category: Self.mapCategory(drinkData.category),
+                    category: Self.refineCategory(name: drinkData.name, originalCategory: Self.mapCategory(drinkData.category)),
                     imageURL: drinkData.image_url,
                     baseCalories: drinkData.base_calories,
                     caloriesBySugar: nil,
@@ -89,6 +89,35 @@ final class DrinkService: DrinkServiceProtocol {
         case "special": return .special
         default: return .special
         }
+    }
+    
+    /// 根據飲料名稱關鍵字微調分類 (根據用戶優先度規則)
+    static func refineCategory(name: String, originalCategory: DrinkCategory) -> DrinkCategory {
+        // Priority 0: 咖啡 (優先歸類)
+        let coffeeKeywords = ["拿鐵", "拿提", "拿堤", "咖啡", "瑪奇朵", "那提", "那堤"]
+        if coffeeKeywords.contains(where: { name.contains($0) }) {
+            return .coffee
+        }
+        
+        // Priority 1.1: 特調
+        let specialKeywords = ["星冰樂", "冰沙", "養樂多", "多多", "多", "冰淇淋", "阿華田"]
+        if specialKeywords.contains(where: { name.contains($0) }) {
+            return .special
+        }
+        
+        // Priority 1.3: 原茶
+        let pureTeaKeywords = ["觀音", "包種", "東方美人"]
+        if pureTeaKeywords.contains(where: { name.contains($0) }) {
+            return .pureTea
+        }
+        
+        // Priority 1.4: 奶茶
+        let milkTeaKeywords = ["乳茶"]
+        if milkTeaKeywords.contains(where: { name.contains($0) }) {
+            return .milkTea
+        }
+        
+        return originalCategory
     }
     
     // MARK: - Protocol Methods

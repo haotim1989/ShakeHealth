@@ -330,6 +330,23 @@ struct AddToLogModal: View {
             try modelContext.save()
             
             HapticManager.shared.success()
+            
+            // 檢查是否需要顯示廣告 (非 Pro 且當天第 3 筆以上)
+            if !userManager.isProUser {
+                let calendar = Calendar.current
+                let descriptor = FetchDescriptor<DrinkLog>()
+                if let allLogs = try? modelContext.fetch(descriptor) {
+                    let todayLogsCount = allLogs.filter { calendar.isDateInToday($0.createdAt) }.count
+                    
+                    if todayLogsCount >= 3 {
+                        InterstitialAdManager.shared.showAd {
+                            onSave(selectedSugar, selectedIce, rating, comment)
+                        }
+                        return
+                    }
+                }
+            }
+            
             onSave(selectedSugar, selectedIce, rating, comment)
         } catch {
             HapticManager.shared.error()

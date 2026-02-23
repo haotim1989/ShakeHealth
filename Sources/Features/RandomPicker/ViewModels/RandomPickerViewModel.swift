@@ -20,7 +20,7 @@ final class RandomPickerViewModel: ObservableObject {
     private let pickerService: RandomPickerServiceProtocol
     private let drinkService: DrinkServiceProtocol
     private let hapticManager = HapticManager.shared
-    let interstitialAdManager = InterstitialAdManager()
+    let interstitialAdManager = InterstitialAdManager.shared
     
     // 用戶日記記錄 (由外部注入)
     var userLogs: [DrinkLog] = []

@@ -162,7 +162,7 @@ struct OnboardingPageView: View {
             .animation(.spring(response: 0.6, dampingFraction: 0.7), value: isAppeared)
             
             // 文字區
-            VStack(spacing: 12) {
+            VStack(spacing: 24) {
                 Text(page.title)
                     .font(.largeTitle)
                     .fontWeight(.bold)

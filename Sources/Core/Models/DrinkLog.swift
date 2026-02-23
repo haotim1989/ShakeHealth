@@ -45,7 +45,7 @@ final class DrinkLog {
         if let drink = DrinkService.shared.getDrink(byId: drinkId) {
             return drink.category
         }
-        return .custom
+        return DrinkService.refineCategory(name: drinkName, originalCategory: .custom)
     }
     
     // MARK: - Initializer

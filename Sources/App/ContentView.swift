@@ -9,6 +9,15 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: tabBinding) {
             VStack(spacing: 0) {
+                DiaryView()
+                BannerAdView()
+            }
+            .tabItem {
+                Label("我的日記", systemImage: "book.fill")
+            }
+            .tag(AppState.Tab.diary)
+            
+            VStack(spacing: 0) {
                 RandomPickerView()
                 BannerAdView()
             }
@@ -26,15 +35,6 @@ struct ContentView: View {
                 Label("找熱量", systemImage: "magnifyingglass")
             }
             .tag(AppState.Tab.encyclopedia)
-            
-            VStack(spacing: 0) {
-                DiaryView()
-                BannerAdView()
-            }
-            .tabItem {
-                Label("我的日記", systemImage: "book.fill")
-            }
-            .tag(AppState.Tab.diary)
             
             VStack(spacing: 0) {
                 SettingsView()

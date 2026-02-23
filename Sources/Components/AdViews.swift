@@ -116,7 +116,7 @@ struct NativeAdCardView: View {
         if !userManager.isProUser {
             if adLoader.nativeAd != nil {
                 NativeAdViewRepresentable(nativeAd: adLoader.nativeAd!)
-                    .frame(height: 80)
+                    .frame(height: 280)
             } else {
                 // 廣告載入中或失敗，顯示佔位
                 nativeAdPlaceholder
@@ -222,36 +222,99 @@ struct NativeAdViewRepresentable: UIViewRepresentable {
     func makeUIView(context: Context) -> GoogleMobileAds.NativeAdView {
         let nativeAdView = GoogleMobileAds.NativeAdView()
         
-        // 建立並配置子視圖
-        let headlineLabel = UILabel()
-        headlineLabel.font = .systemFont(ofSize: 14, weight: .medium)
-        headlineLabel.text = nativeAd.headline
-        nativeAdView.headlineView = headlineLabel
-        nativeAdView.addSubview(headlineLabel)
+        // --- 創建 UI 元素 ---
         
+        // 1. Icon View
+        let iconView = UIImageView()
+        iconView.layer.cornerRadius = 4
+        iconView.clipsToBounds = true
+        iconView.contentMode = .scaleAspectFill
+        nativeAdView.addSubview(iconView)
+        nativeAdView.iconView = iconView
+        
+        // 2. Headline
+        let headlineLabel = UILabel()
+        headlineLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        headlineLabel.numberOfLines = 1
+        nativeAdView.addSubview(headlineLabel)
+        nativeAdView.headlineView = headlineLabel
+        
+        // 3. Body
         let bodyLabel = UILabel()
         bodyLabel.font = .systemFont(ofSize: 12)
         bodyLabel.textColor = .secondaryLabel
-        bodyLabel.text = nativeAd.body
         bodyLabel.numberOfLines = 2
-        nativeAdView.bodyView = bodyLabel
         nativeAdView.addSubview(bodyLabel)
+        nativeAdView.bodyView = bodyLabel
         
-        // 設定原生廣告
-        nativeAdView.nativeAd = nativeAd
+        // 4. Media View (AdMob policy requirement)
+        let mediaView = GoogleMobileAds.MediaView()
+        nativeAdView.addSubview(mediaView)
+        nativeAdView.mediaView = mediaView
         
-        // 簡易佈局
+        // 5. Call To Action Button
+        let callToActionButton = UIButton(type: .system)
+        callToActionButton.backgroundColor = .systemBlue
+        callToActionButton.setTitleColor(.white, for: .normal)
+        callToActionButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        callToActionButton.layer.cornerRadius = 8
+        nativeAdView.addSubview(callToActionButton)
+        nativeAdView.callToActionView = callToActionButton
+        
+        // 6. Ad Attribtion label
+        let adLabel = UILabel()
+        adLabel.text = "Ad"
+        adLabel.font = .systemFont(ofSize: 10, weight: .bold)
+        adLabel.textColor = .white
+        adLabel.backgroundColor = .systemOrange
+        adLabel.layer.cornerRadius = 3
+        adLabel.clipsToBounds = true
+        adLabel.textAlignment = .center
+        nativeAdView.addSubview(adLabel)
+        
+        // --- 設定約束 (Auto Layout) ---
+        iconView.translatesAutoresizingMaskIntoConstraints = false
         headlineLabel.translatesAutoresizingMaskIntoConstraints = false
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
+        mediaView.translatesAutoresizingMaskIntoConstraints = false
+        callToActionButton.translatesAutoresizingMaskIntoConstraints = false
+        adLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            headlineLabel.topAnchor.constraint(equalTo: nativeAdView.topAnchor, constant: 8),
-            headlineLabel.leadingAnchor.constraint(equalTo: nativeAdView.leadingAnchor, constant: 16),
-            headlineLabel.trailingAnchor.constraint(equalTo: nativeAdView.trailingAnchor, constant: -16),
+            // Ad Label (Top Left corner of icon)
+            adLabel.topAnchor.constraint(equalTo: nativeAdView.topAnchor, constant: 8),
+            adLabel.leadingAnchor.constraint(equalTo: nativeAdView.leadingAnchor, constant: 8),
+            adLabel.widthAnchor.constraint(equalToConstant: 20),
+            adLabel.heightAnchor.constraint(equalToConstant: 14),
             
+            // Icon
+            iconView.topAnchor.constraint(equalTo: nativeAdView.topAnchor, constant: 12),
+            iconView.leadingAnchor.constraint(equalTo: nativeAdView.leadingAnchor, constant: 12),
+            iconView.widthAnchor.constraint(equalToConstant: 40),
+            iconView.heightAnchor.constraint(equalToConstant: 40),
+            
+            // Headline
+            headlineLabel.topAnchor.constraint(equalTo: iconView.topAnchor),
+            headlineLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 8),
+            headlineLabel.trailingAnchor.constraint(equalTo: nativeAdView.trailingAnchor, constant: -12),
+            
+            // Body
             bodyLabel.topAnchor.constraint(equalTo: headlineLabel.bottomAnchor, constant: 4),
-            bodyLabel.leadingAnchor.constraint(equalTo: nativeAdView.leadingAnchor, constant: 16),
-            bodyLabel.trailingAnchor.constraint(equalTo: nativeAdView.trailingAnchor, constant: -16),
+            bodyLabel.leadingAnchor.constraint(equalTo: headlineLabel.leadingAnchor),
+            bodyLabel.trailingAnchor.constraint(equalTo: headlineLabel.trailingAnchor),
+            
+            // Media View (Below the top row)
+            mediaView.topAnchor.constraint(equalTo: iconView.bottomAnchor, constant: 12),
+            mediaView.leadingAnchor.constraint(equalTo: nativeAdView.leadingAnchor, constant: 12),
+            mediaView.trailingAnchor.constraint(equalTo: nativeAdView.trailingAnchor, constant: -12),
+            mediaView.heightAnchor.constraint(equalToConstant: 150), // Fixed height for media
+            
+            // Call To Action
+            callToActionButton.topAnchor.constraint(equalTo: mediaView.bottomAnchor, constant: 12),
+            callToActionButton.trailingAnchor.constraint(equalTo: nativeAdView.trailingAnchor, constant: -12),
+            callToActionButton.bottomAnchor.constraint(equalTo: nativeAdView.bottomAnchor, constant: -12),
+            callToActionButton.heightAnchor.constraint(equalToConstant: 36),
+            callToActionButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
         ])
         
         return nativeAdView
@@ -259,8 +322,27 @@ struct NativeAdViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: GoogleMobileAds.NativeAdView, context: Context) {
         uiView.nativeAd = nativeAd
+        
+        // 填入資料
         (uiView.headlineView as? UILabel)?.text = nativeAd.headline
         (uiView.bodyView as? UILabel)?.text = nativeAd.body
+        (uiView.callToActionView as? UIButton)?.setTitle(nativeAd.callToAction, for: .normal)
+        
+        // Icon
+        if let icon = nativeAd.icon?.image {
+            (uiView.iconView as? UIImageView)?.image = icon
+            uiView.iconView?.isHidden = false
+        } else {
+            uiView.iconView?.isHidden = true
+        }
+        
+        // Media (AdMob handles this via nativeAd injection, but we make sure it's presented)
+        if nativeAd.mediaContent.hasVideoContent {
+             uiView.mediaView?.mediaContent = nativeAd.mediaContent
+        }
+        
+        // CTA Visibility
+        uiView.callToActionView?.isHidden = nativeAd.callToAction == nil
     }
 }
 
@@ -270,13 +352,15 @@ struct NativeAdViewRepresentable: UIViewRepresentable {
 /// 用於隨機喝功能，每日第 N 次抽獎時展示
 @MainActor
 final class InterstitialAdManager: NSObject, ObservableObject {
+    static let shared = InterstitialAdManager()
+    
     @Published private(set) var isAdReady = false
     @Published private(set) var isShowingAd = false
     
     private var interstitialAd: InterstitialAd?
     private var onDismissCompletion: (() -> Void)?
     
-    override init() {
+    private override init() {
         super.init()
         Task {
             await loadAd()
@@ -313,7 +397,20 @@ final class InterstitialAdManager: NSObject, ObservableObject {
         
         onDismissCompletion = completion
         isShowingAd = true
-        ad.present(from: nil)
+        
+        // 更安全地在 SwiftUI 中尋找 Top ViewController
+        if let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene,
+           let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
+            
+            var topController = rootVC
+            while let presented = topController.presentedViewController {
+                topController = presented
+            }
+            ad.present(from: topController)
+        } else {
+            // 備用方案
+            ad.present(from: nil)
+        }
     }
 }
 
