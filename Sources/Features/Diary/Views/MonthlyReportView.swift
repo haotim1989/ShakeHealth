@@ -109,21 +109,14 @@ struct MonthlyReportView: View {
         var totalSugar: Double = 0
         
         for log in monthlyLogs {
-            // 優先使用快照資料 (自訂飲料或有紀錄的數據)
+            // 優先使用快照資料 (自訂飲料或是有修改過數據的紀錄)
             if let sugarSnapshot = log.sugarSnapshot {
                 totalSugar += sugarSnapshot
-            } else if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
-                // 嘗試從 Service 取得飲品原始資料
-                // 基礎糖量 (若無數據則預設 50g)
-                let baseSugar = drink.sugarGrams ?? 50.0
-                // 根據甜度比例計算
+            } else if let drink = DrinkService.shared.getDrink(byId: log.drinkId), let baseSugar = drink.sugarGrams {
+                // 若為圖鑑內的飲料且有基礎糖量，根據甜度比例計算
                 totalSugar += baseSugar * log.selectedSugar.sugarPercentage
-            } else {
-                // 若找不到飲品資料，使用備援估算
-                // 純茶/果茶類通常糖分較低 (約 35-45g)，奶茶類較高 (約 45-55g)
-                // 這裡簡單使用 40g * 甜度比例 作為估算
-                totalSugar += 40.0 * log.selectedSugar.sugarPercentage
             }
+            // 若為自訂飲料且未填寫糖分，或是圖鑑飲料無糖分數據，皆視為 0 不做推測估算
         }
         
         return totalSugar

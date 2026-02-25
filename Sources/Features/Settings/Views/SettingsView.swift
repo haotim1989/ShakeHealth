@@ -19,6 +19,7 @@ struct SettingsView: View {
     @State private var isRestoring = false
     @State private var showRestoreSuccess = false
     @State private var showRestoreError = false
+    @State private var showCopiedAlert = false
     
     @Query private var logs: [DrinkLog]
     
@@ -93,6 +94,11 @@ struct SettingsView: View {
                 Button("確定", role: .cancel) {}
             } message: {
                 Text(errorMessage)
+            }
+            .alert("已複製信箱", isPresented: $showCopiedAlert) {
+                Button("確定", role: .cancel) {}
+            } message: {
+                Text("此設備似乎未設定郵件 App，我們已將客服信箱 ( \(Constants.Legal.supportEmail) ) 複製到您的剪貼簿中。")
             }
         }
     }
@@ -246,6 +252,26 @@ struct SettingsView: View {
             } label: {
                 HStack {
                     Label("分享給朋友", systemImage: "square.and.arrow.up")
+                        .foregroundColor(.primary)
+                    Spacer()
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            
+            // 聯絡我們
+            Button {
+                let email = Constants.Legal.supportEmail
+                if let url = URL(string: "mailto:\(email)"), UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                } else {
+                    // 如果無法開啟郵件 App (例如在模擬器或未設定信箱的設備)，則複製到剪貼簿
+                    UIPasteboard.general.string = email
+                    showCopiedAlert = true
+                }
+            } label: {
+                HStack {
+                    Label("聯絡我們", systemImage: "envelope.fill")
                         .foregroundColor(.primary)
                     Spacer()
                 }
@@ -427,6 +453,20 @@ struct SettingsView: View {
     private func restorePurchases() async {
         isRestoring = true
         defer { isRestoring = false }
+        
+        // 測試模式防呆處理 (若未連接 RevenueCat 金鑰)
+        if !SubscriptionService.shared.isConfigured {
+            let success = await SubscriptionService.shared.simulatePurchaseForTesting()
+            if success {
+                HapticManager.shared.success()
+                showRestoreSuccess = true
+            } else {
+                errorMessage = "模擬恢復失敗"
+                HapticManager.shared.error()
+                showRestoreError = true
+            }
+            return
+        }
         
         do {
             _ = try await SubscriptionService.shared.restorePurchases()

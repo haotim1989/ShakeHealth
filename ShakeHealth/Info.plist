@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh-Hant</string>
 	<key>CFBundleDisplayName</key>
-	<string>搖搖健康飲</string>
+	<string>飲料日記</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

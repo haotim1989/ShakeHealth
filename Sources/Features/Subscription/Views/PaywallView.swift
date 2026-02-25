@@ -12,6 +12,7 @@ struct PaywallView: View {
     @State private var isPurchasing = false
     @State private var showError = false
     @State private var errorMessage = ""
+    @State private var showRestoreSuccess = false
     
     var body: some View {
         NavigationView {
@@ -63,6 +64,11 @@ struct PaywallView: View {
             Button("確定", role: .cancel) { }
         } message: {
             Text(errorMessage)
+        }
+        .alert("恢復成功", isPresented: $showRestoreSuccess) {
+            Button("確定", role: .cancel) { dismiss() }
+        } message: {
+            Text("已成功恢復您的購買紀錄。")
         }
         .task {
             // 載入 Offerings
@@ -217,6 +223,12 @@ struct PaywallView: View {
             }
             .disabled(isPurchasing)
             
+            Button("恢復購買") {
+                Task { await fallbackRestore() }
+            }
+            .font(.footnote)
+            .foregroundColor(.secondary)
+            
             Text("⚠️ 測試模式：RevenueCat 未連接")
                 .font(.caption)
                 .foregroundColor(.orange)
@@ -305,7 +317,7 @@ struct PaywallView: View {
         do {
             _ = try await subscriptionService.restorePurchases()
             HapticManager.shared.success()
-            dismiss()
+            showRestoreSuccess = true
         } catch {
             errorMessage = error.localizedDescription
             showError = true
@@ -323,6 +335,21 @@ struct PaywallView: View {
             dismiss()
         } else {
             errorMessage = "模擬購買失敗"
+            showError = true
+        }
+    }
+    
+    private func fallbackRestore() async {
+        isPurchasing = true
+        defer { isPurchasing = false }
+        
+        let success = await subscriptionService.simulatePurchaseForTesting()
+        
+        if success {
+            HapticManager.shared.success()
+            showRestoreSuccess = true
+        } else {
+            errorMessage = "模擬恢復失敗"
             showError = true
         }
     }
