@@ -54,6 +54,13 @@
 		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* Color+Theme.swift */; };
 		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* HapticManager.swift */; };
 		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* Constants.swift */; };
+		MOD006 /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC043 /* Topping.swift */; };
+		CMP010 /* ToppingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC044 /* ToppingsSection.swift */; };
+		SVC010 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC045 /* AnalyticsService.swift */; };
+		MOD007 /* TasteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC046 /* TasteProfile.swift */; };
+		CMP011 /* TasteProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC047 /* TasteProfileSection.swift */; };
+		SPM003 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD03 /* FirebaseAnalytics */; };
+		SPM004 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = SPMPROD04 /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +111,11 @@
 		SRC040 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		SRC041 /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
 		SRC042 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		SRC043 /* Topping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topping.swift; sourceTree = "<group>"; };
+		SRC044 /* ToppingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppingsSection.swift; sourceTree = "<group>"; };
+		SRC045 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		SRC046 /* TasteProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteProfile.swift; sourceTree = "<group>"; };
+		SRC047 /* TasteProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteProfileSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,8 @@
 			files = (
 				SPM001 /* RevenueCat in Frameworks */,
 				SPM002 /* GoogleMobileAds in Frameworks */,
+				SPM003 /* FirebaseAnalytics in Frameworks */,
+				SPM004 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +197,8 @@
 				SRC032 /* ProFeatureLock.swift */,
 				SRC033 /* AdViews.swift */,
 				SRC041 /* CategoryIconView.swift */,
+				SRC044 /* ToppingsSection.swift */,
+				SRC047 /* TasteProfileSection.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -204,6 +220,8 @@
 				SRC005 /* DrinkLog.swift */,
 				SRC006 /* Enums.swift */,
 				SRC007 /* FilterCriteria.swift */,
+				SRC043 /* Topping.swift */,
+				SRC046 /* TasteProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +239,7 @@
 				SRC037 /* AdManager.swift */,
 				SRC038 /* SubscriptionService.swift */,
 				SRC039 /* CSVExportService.swift */,
+				SRC045 /* AnalyticsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -391,6 +410,8 @@
 			packageProductDependencies = (
 				SPMPROD01 /* RevenueCat */,
 				SPMPROD02 /* GoogleMobileAds */,
+				SPMPROD03 /* FirebaseAnalytics */,
+				SPMPROD04 /* FirebaseCrashlytics */,
 			);
 			productName = ShakeHealth;
 			productReference = PROD01 /* ShakeHealth.app */;
@@ -424,6 +445,7 @@
 			packageReferences = (
 				EE9EBFD02F3844BB006E8951 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 				EE9EBFD12F384521006E8951 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				FBPKG001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = GRP002 /* Products */;
 			projectDirPath = "";
@@ -494,6 +516,11 @@
 				SVC009 /* CSVExportService.swift in Sources */,
 				SET001 /* SettingsView.swift in Sources */,
 				OBD001 /* OnboardingView.swift in Sources */,
+				MOD006 /* Topping.swift in Sources */,
+				CMP010 /* ToppingsSection.swift in Sources */,
+				SVC010 /* AnalyticsService.swift in Sources */,
+				MOD007 /* TasteProfile.swift in Sources */,
+				CMP011 /* TasteProfileSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +747,14 @@
 				minimumVersion = 13.0.0;
 			};
 		};
+		FBPKG001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -732,6 +767,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE9EBFD12F384521006E8951 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		SPMPROD03 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBPKG001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		SPMPROD04 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBPKG001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -20,6 +20,15 @@ struct DiaryDetailView: View {
     @State private var editedSugarSnapshot: String
     @State private var editedCaffeineSnapshot: String
     
+    // 配料 & 風味評鑑
+    @State private var editedToppings: Set<Topping>
+    @State private var editedTasteTexture: String
+    @State private var editedTasteTea: String
+    @State private var editedTasteMilk: String
+    @State private var editedTasteSweetness: String
+    @State private var editedTasteIce: String
+    @State private var editedTasteSmoothness: String
+    
     @State private var showDeleteConfirmation = false
     
     init(log: DrinkLog) {
@@ -32,9 +41,18 @@ struct DiaryDetailView: View {
         // 初始化自訂欄位
         self._editedName = State(initialValue: log.drinkName)
         self._editedBrand = State(initialValue: log.brandName)
-        self._editedCalories = State(initialValue: String(log.caloriesSnapshot))
+        self._editedCalories = State(initialValue: String(log.caloriesSnapshot - log.toppingsCalories))
         self._editedSugarSnapshot = State(initialValue: log.sugarSnapshot.map { String(format: "%.0f", $0) } ?? "")
         self._editedCaffeineSnapshot = State(initialValue: log.caffeineSnapshot.map { String($0) } ?? "")
+        
+        // 配料 & 風味
+        self._editedToppings = State(initialValue: log.selectedToppings)
+        self._editedTasteTexture = State(initialValue: log.tasteTexture)
+        self._editedTasteTea = State(initialValue: log.tasteTea)
+        self._editedTasteMilk = State(initialValue: log.tasteMilk)
+        self._editedTasteSweetness = State(initialValue: log.tasteSweetness)
+        self._editedTasteIce = State(initialValue: log.tasteIce)
+        self._editedTasteSmoothness = State(initialValue: log.tasteSmoothness)
     }
     
     private var isCustomDrink: Bool {
@@ -55,16 +73,18 @@ struct DiaryDetailView: View {
         return isCommentValid
     }
     
-    /// 目前顯示的熱量 (編輯模式下會即時計算)
+    /// 目前顯示的熱量 (編輯模式下會即時計算，含配料熱量)
     private var currentDisplayCalories: Int {
         if isEditing {
-            // 嘗試取得原始飲料資料來計算新的熱量
-            if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
-                return drink.calories(for: editedSugar)
+            let baseCalories: Int
+            if isCustomDrink {
+                baseCalories = Int(editedCalories) ?? 0
+            } else if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+                baseCalories = drink.calories(for: editedSugar)
+            } else {
+                baseCalories = log.caloriesSnapshot - log.toppingsCalories
             }
-            // 如果找不到原始資料 (可能是自訂飲料)，則回傳原本的快照
-            // 注意：自訂飲料目前無法根據甜度調整熱量，除非我們在 DrinkLog 存了更多資訊
-            return log.caloriesSnapshot
+            return baseCalories + Topping.totalCalories(editedToppings)
         } else {
             return log.caloriesSnapshot
         }
@@ -78,6 +98,12 @@ struct DiaryDetailView: View {
                 
                 // 規格資訊
                 specificationCard
+                
+                // 配料資訊
+                toppingsCard
+                
+                // 風味評鑑
+                tasteProfileCard
                 
                 // 評價資訊
                 ratingCard
@@ -396,6 +422,132 @@ struct DiaryDetailView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
     
+    // MARK: - Toppings Card
+    
+    private var toppingsCard: some View {
+        Group {
+            if isEditing {
+                ToppingsSection(selectedToppings: $editedToppings)
+            } else if !log.selectedToppings.isEmpty {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundColor(.teaBrown)
+                        Text("加料")
+                            .font(.headline)
+                        Spacer()
+                        Text("+\(log.toppingsCalories) kcal")
+                            .font(.caption)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(Color.caloriesHigh.opacity(0.15))
+                            .foregroundColor(.caloriesHigh)
+                            .clipShape(Capsule())
+                    }
+                    
+                    FlowLayout(spacing: 8) {
+                        ForEach(Array(log.selectedToppings).sorted(by: { $0.rawValue < $1.rawValue })) { topping in
+                            HStack(spacing: 4) {
+                                Text(topping.displayName)
+                                    .font(.subheadline)
+                                Text("\(topping.calories)")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 8)
+                            .background(Color.gray.opacity(0.08))
+                            .clipShape(Capsule())
+                        }
+                    }
+                }
+                .padding(20)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
+        }
+    }
+    
+    // MARK: - Taste Profile Card
+    
+    private var tasteProfileCard: some View {
+        let tasteEntries = tasteDisplayEntries(for: log)
+        
+        return Group {
+            if isEditing {
+                TasteProfileSection(
+                    tasteTexture: $editedTasteTexture,
+                    tasteTea: $editedTasteTea,
+                    tasteMilk: $editedTasteMilk,
+                    tasteSweetness: $editedTasteSweetness,
+                    tasteIce: $editedTasteIce,
+                    tasteSmoothness: $editedTasteSmoothness
+                )
+            } else if !tasteEntries.isEmpty {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "chart.bar.fill")
+                            .foregroundColor(.teaBrown)
+                        Text("風味評鑑")
+                            .font(.headline)
+                    }
+                    
+                    ForEach(tasteEntries, id: \.title) { entry in
+                        HStack {
+                            HStack(spacing: 6) {
+                                Image(systemName: entry.icon)
+                                    .font(.caption)
+                                    .foregroundColor(.teaBrown)
+                                    .frame(width: 16)
+                                Text(entry.title)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            Text(entry.value)
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(Color.teaBrown.opacity(0.1))
+                                .clipShape(Capsule())
+                        }
+                    }
+                }
+                .padding(20)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
+        }
+    }
+    
+    private struct TasteEntry {
+        let title: String
+        let icon: String
+        let value: String
+    }
+    
+    private func tasteDisplayEntries(for log: DrinkLog) -> [TasteEntry] {
+        var entries: [TasteEntry] = []
+        for dim in TasteProfile.allDimensions {
+            let raw: String
+            switch dim.title {
+            case "配料口感": raw = log.tasteTexture
+            case "茶味":     raw = log.tasteTea
+            case "奶味":     raw = log.tasteMilk
+            case "甜度感受": raw = log.tasteSweetness
+            case "冰塊感受": raw = log.tasteIce
+            case "順口度":   raw = log.tasteSmoothness
+            default:        raw = ""
+            }
+            guard !raw.isEmpty else { continue }
+            if let label = dim.options.first(where: { $0.value == raw })?.label {
+                entries.append(TasteEntry(title: dim.title, icon: dim.icon, value: label))
+            }
+        }
+        return entries
+    }
+    
     private var deleteButton: some View {
         Button(role: .destructive) {
             showDeleteConfirmation = true
@@ -420,7 +572,7 @@ struct DiaryDetailView: View {
             // 自訂飲料：直接更新快照資料
             log.drinkName = editedName
             log.brandName = editedBrand
-            log.caloriesSnapshot = Int(editedCalories) ?? 0
+            log.caloriesSnapshot = (Int(editedCalories) ?? 0) + Topping.totalCalories(editedToppings)
             
             if let sugar = Double(editedSugarSnapshot) {
                 log.sugarSnapshot = sugar
@@ -440,11 +592,14 @@ struct DiaryDetailView: View {
             }
             
         } else {
-            // 圖鑑飲料：如果甜度改變，使用原始飲料資料重新計算熱量
-            if editedSugar != log.selectedSugar {
-                if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
-                    log.caloriesSnapshot = drink.calories(for: editedSugar)
-                }
+            // 圖鑑飲料：重新計算熱量（含配料）
+            if let drink = DrinkService.shared.getDrink(byId: log.drinkId) {
+                log.caloriesSnapshot = drink.calories(for: editedSugar) + Topping.totalCalories(editedToppings)
+            } else if editedToppings != log.selectedToppings {
+                // 找不到原始飲料但配料有變，只更新配料差異
+                let oldToppingCal = log.toppingsCalories
+                let newToppingCal = Topping.totalCalories(editedToppings)
+                log.caloriesSnapshot = log.caloriesSnapshot - oldToppingCal + newToppingCal
             }
         }
         
@@ -452,6 +607,13 @@ struct DiaryDetailView: View {
         log.comment = editedComment
         log.selectedSugar = editedSugar
         log.selectedIce = editedIce
+        log.toppingsSnapshot = Topping.serialize(editedToppings)
+        log.tasteTexture = editedTasteTexture
+        log.tasteTea = editedTasteTea
+        log.tasteMilk = editedTasteMilk
+        log.tasteSweetness = editedTasteSweetness
+        log.tasteIce = editedTasteIce
+        log.tasteSmoothness = editedTasteSmoothness
         log.updatedAt = Date()
         
         do {

@@ -24,6 +24,15 @@ struct CustomDrinkModal: View {
     // 評分與感想
     @State private var rating: Int = 3
     @State private var comment: String = ""
+    @State private var selectedToppings: Set<Topping> = []
+    
+    // 口感風味評鑑
+    @State private var tasteTexture: String = ""
+    @State private var tasteTea: String = ""
+    @State private var tasteMilk: String = ""
+    @State private var tasteSweetness: String = ""
+    @State private var tasteIce: String = ""
+    @State private var tasteSmoothness: String = ""
     
     // Focus State
     enum Field: Hashable {
@@ -58,7 +67,7 @@ struct CustomDrinkModal: View {
     }
     
     private var caloriesInt: Int {
-        Int(estimatedCalories) ?? 0
+        (Int(estimatedCalories) ?? 0) + Topping.totalCalories(selectedToppings)
     }
     
     private var isBackdating: Bool {
@@ -78,6 +87,19 @@ struct CustomDrinkModal: View {
                     // 規格選擇
                     specificationSection
                     
+                    // 配料選填
+                    ToppingsSection(selectedToppings: $selectedToppings)
+                    
+                    // 口感風味評鑑
+                    TasteProfileSection(
+                        tasteTexture: $tasteTexture,
+                        tasteTea: $tasteTea,
+                        tasteMilk: $tasteMilk,
+                        tasteSweetness: $tasteSweetness,
+                        tasteIce: $tasteIce,
+                        tasteSmoothness: $tasteSmoothness
+                    )
+                    
                     // 評分
                     ratingSection
                     
@@ -93,6 +115,9 @@ struct CustomDrinkModal: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("取消") {
+                        AnalyticsService.shared.logEvent(.diarySaveCancel, parameters: [
+                            AnalyticsService.ParamKey.step: "custom_drink_modal"
+                        ])
                         onDismiss()
                     }
                 }
@@ -427,6 +452,13 @@ struct CustomDrinkModal: View {
             hasCaffeineSnapshot: (Int(estimatedCaffeine) ?? 0) > 0,
             sugarSnapshot: Double(estimatedSugar),
             caffeineSnapshot: Int(estimatedCaffeine),
+            toppingsSnapshot: Topping.serialize(selectedToppings),
+            tasteTexture: tasteTexture,
+            tasteTea: tasteTea,
+            tasteMilk: tasteMilk,
+            tasteSweetness: tasteSweetness,
+            tasteIce: tasteIce,
+            tasteSmoothness: tasteSmoothness,
             createdAt: selectedDate
         )
         
@@ -434,6 +466,12 @@ struct CustomDrinkModal: View {
         
         do {
             try modelContext.save()
+            
+            AnalyticsService.shared.logEvent(.diarySaveSuccess, parameters: [
+                AnalyticsService.ParamKey.isCustom: true,
+                AnalyticsService.ParamKey.hasComment: !comment.isEmpty,
+                AnalyticsService.ParamKey.rating: rating
+            ])
             
             HapticManager.shared.success()
             

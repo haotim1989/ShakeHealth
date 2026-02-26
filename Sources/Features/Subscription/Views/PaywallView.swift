@@ -82,6 +82,11 @@ struct PaywallView: View {
                 selectedPackage = firstPackage
             }
         }
+        .onAppear {
+            AnalyticsService.shared.logEvent(.paywallView, parameters: [
+                AnalyticsService.ParamKey.source: "unknown" // 可以之後擴展傳入
+            ])
+        }
     }
     
     // MARK: - Loading View
@@ -143,7 +148,12 @@ struct PaywallView: View {
                 RevenueCatPackageCard(
                     package: package,
                     isSelected: selectedPackage?.identifier == package.identifier,
-                    onTap: { selectedPackage = package }
+                    onTap: { 
+                        selectedPackage = package
+                        AnalyticsService.shared.logEvent(.paywallPackageSelect, parameters: [
+                            AnalyticsService.ParamKey.packageType: package.identifier
+                        ])
+                    }
                 )
                 .frame(maxWidth: .infinity)
             }
@@ -155,6 +165,10 @@ struct PaywallView: View {
     private var purchaseButton: some View {
         VStack(spacing: 12) {
             Button {
+                let packageId = selectedPackage?.identifier ?? "unknown"
+                AnalyticsService.shared.logEvent(.paywallPurchaseStart, parameters: [
+                    AnalyticsService.ParamKey.packageType: packageId
+                ])
                 Task { await purchase() }
             } label: {
                 HStack {
@@ -175,6 +189,9 @@ struct PaywallView: View {
             .disabled(isPurchasing || selectedPackage == nil)
             
             Button("恢復購買") {
+                AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
+                    AnalyticsService.ParamKey.source: "paywall"
+                ])
                 Task { await restore() }
             }
             .font(.footnote)
@@ -192,7 +209,12 @@ struct PaywallView: View {
                 PackageCard(
                     package: package,
                     isSelected: selectedLocalPackage == package,
-                    onTap: { selectedLocalPackage = package }
+                    onTap: { 
+                        selectedLocalPackage = package
+                        AnalyticsService.shared.logEvent(.paywallPackageSelect, parameters: [
+                            AnalyticsService.ParamKey.packageType: package.id
+                        ])
+                    }
                 )
                 .frame(maxWidth: .infinity)
             }
@@ -204,6 +226,9 @@ struct PaywallView: View {
     private var fallbackPurchaseButton: some View {
         VStack(spacing: 12) {
             Button {
+                AnalyticsService.shared.logEvent(.paywallPurchaseStart, parameters: [
+                    AnalyticsService.ParamKey.packageType: selectedLocalPackage.id
+                ])
                 Task { await fallbackPurchase() }
             } label: {
                 HStack {
@@ -224,6 +249,9 @@ struct PaywallView: View {
             .disabled(isPurchasing)
             
             Button("恢復購買") {
+                AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
+                    AnalyticsService.ParamKey.source: "paywall"
+                ])
                 Task { await fallbackRestore() }
             }
             .font(.footnote)

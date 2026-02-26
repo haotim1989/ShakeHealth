@@ -41,6 +41,9 @@ enum ShareService {
             items.append(image)
         }
         
+        AnalyticsService.shared.logEvent(.appShareClick, parameters: [
+            AnalyticsService.ParamKey.shareType: "app_link"
+        ])
         shareViaSystem(items: items)
     }
     
@@ -86,6 +89,9 @@ enum ShareService {
     /// 分享日記 (文字)
     static func share(log: DrinkLog) {
         let message = generateShareMessage(for: log)
+        AnalyticsService.shared.logEvent(.appShareClick, parameters: [
+            AnalyticsService.ParamKey.shareType: "diary_entry"
+        ])
         shareViaSystem(items: [message])
     }
     

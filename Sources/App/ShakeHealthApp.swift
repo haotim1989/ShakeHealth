@@ -1,5 +1,8 @@
 import SwiftUI
 import SwiftData
+#if canImport(FirebaseCore)
+import FirebaseCore
+#endif
 
 @main
 struct ShakeHealthApp: App {
@@ -48,6 +51,16 @@ struct ShakeHealthApp: App {
     }
     
     private func setupSDKs() {
+        #if canImport(FirebaseCore)
+        // 注意：若無 GoogleService-Info.plist 會閃退，這裡做個防呆
+        if Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil {
+            FirebaseApp.configure()
+            print("🔥 Firebase 已初始化")
+        } else {
+            print("⚠️ 未找到 GoogleService-Info.plist，Firebase 略過初始化")
+        }
+        #endif
+        
         // 1. RevenueCat 訂閱服務
         SubscriptionService.shared.configure()
         

@@ -13,7 +13,7 @@ final class CSVExportService {
     
     /// 將日記紀錄匯出為 CSV 字串
     func exportToCSV(logs: [DrinkLog]) -> String {
-        var csv = "id,日期,飲料名稱,品牌,甜度,冰塊,熱量,含咖啡因,評分,感想\n"
+        var csv = "id,日期,飲料名稱,品牌,甜度,冰塊,熱量,含咖啡因,評分,感想,配料,配料口感,茶味,奶味,甜度感受,冰塊感受,順口度\n"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -29,7 +29,14 @@ final class CSVExportService {
                 String(log.caloriesSnapshot),
                 log.hasCaffeineSnapshot ? "是" : "否",
                 String(log.rating),
-                escapeCSV(log.comment)
+                escapeCSV(log.comment),
+                escapeCSV(log.selectedToppings.map(\.displayName).sorted().joined(separator: "/")),
+                escapeCSV(log.tasteTexture),
+                escapeCSV(log.tasteTea),
+                escapeCSV(log.tasteMilk),
+                escapeCSV(log.tasteSweetness),
+                escapeCSV(log.tasteIce),
+                escapeCSV(log.tasteSmoothness)
             ].joined(separator: ",")
             csv += row + "\n"
         }
@@ -90,6 +97,17 @@ final class CSVExportService {
                 continue
             }
             
+            // 解析配料（第 11 欄，可能不存在）
+            let toppingsString: String
+            if columns.count > 10, !columns[10].isEmpty {
+                // 將顯示名稱轉回 rawValue
+                let names = columns[10].split(separator: "/").map(String.init)
+                let matched = Topping.allCases.filter { names.contains($0.displayName) }
+                toppingsString = Topping.serialize(Set(matched))
+            } else {
+                toppingsString = ""
+            }
+            
             let log = DrinkLog(
                 id: logId,
                 drinkId: "imported_\(logId)",
@@ -103,6 +121,13 @@ final class CSVExportService {
                 brandName: brandName,
                 caloriesSnapshot: calories,
                 hasCaffeineSnapshot: hasCaffeine,
+                toppingsSnapshot: toppingsString,
+                tasteTexture: columns.count > 11 ? columns[11] : "",
+                tasteTea: columns.count > 12 ? columns[12] : "",
+                tasteMilk: columns.count > 13 ? columns[13] : "",
+                tasteSweetness: columns.count > 14 ? columns[14] : "",
+                tasteIce: columns.count > 15 ? columns[15] : "",
+                tasteSmoothness: columns.count > 16 ? columns[16] : "",
                 createdAt: createdAt
             )
             

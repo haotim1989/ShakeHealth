@@ -16,6 +16,15 @@ struct AddToLogModal: View {
     @State private var rating: Int = 3
     @State private var comment: String = ""
     @State private var showCalorieWarning = false
+    @State private var selectedToppings: Set<Topping> = []
+    
+    // 口感風味評鑑
+    @State private var tasteTexture: String = ""
+    @State private var tasteTea: String = ""
+    @State private var tasteMilk: String = ""
+    @State private var tasteSweetness: String = ""
+    @State private var tasteIce: String = ""
+    @State private var tasteSmoothness: String = ""
     
     // 日期選擇 (Pro 功能)
     @State private var selectedDate: Date = Date()
@@ -29,7 +38,7 @@ struct AddToLogModal: View {
     }
     
     private var estimatedCalories: Int {
-        drink.calories(for: selectedSugar)
+        drink.calories(for: selectedSugar) + Topping.totalCalories(selectedToppings)
     }
     
     private var isBackdating: Bool {
@@ -48,6 +57,19 @@ struct AddToLogModal: View {
                     
                     // 規格選擇
                     specificationSection
+                    
+                    // 配料選填
+                    ToppingsSection(selectedToppings: $selectedToppings)
+                    
+                    // 口感風味評鑑
+                    TasteProfileSection(
+                        tasteTexture: $tasteTexture,
+                        tasteTea: $tasteTea,
+                        tasteMilk: $tasteMilk,
+                        tasteSweetness: $tasteSweetness,
+                        tasteIce: $tasteIce,
+                        tasteSmoothness: $tasteSmoothness
+                    )
                     
                     // 評分
                     ratingSection
@@ -69,6 +91,9 @@ struct AddToLogModal: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("取消") {
+                        AnalyticsService.shared.logEvent(.diarySaveCancel, parameters: [
+                            AnalyticsService.ParamKey.step: "add_to_log_modal"
+                        ])
                         onDismiss()
                     }
                 }
@@ -321,6 +346,13 @@ struct AddToLogModal: View {
             brandName: drink.brand?.name ?? "",
             caloriesSnapshot: estimatedCalories,
             hasCaffeineSnapshot: drink.hasCaffeine ?? false,
+            toppingsSnapshot: Topping.serialize(selectedToppings),
+            tasteTexture: tasteTexture,
+            tasteTea: tasteTea,
+            tasteMilk: tasteMilk,
+            tasteSweetness: tasteSweetness,
+            tasteIce: tasteIce,
+            tasteSmoothness: tasteSmoothness,
             createdAt: selectedDate  // 使用選擇的日期
         )
         
@@ -328,6 +360,12 @@ struct AddToLogModal: View {
         
         do {
             try modelContext.save()
+            
+            AnalyticsService.shared.logEvent(.diarySaveSuccess, parameters: [
+                AnalyticsService.ParamKey.isCustom: false,
+                AnalyticsService.ParamKey.hasComment: !comment.isEmpty,
+                AnalyticsService.ParamKey.rating: rating
+            ])
             
             HapticManager.shared.success()
             

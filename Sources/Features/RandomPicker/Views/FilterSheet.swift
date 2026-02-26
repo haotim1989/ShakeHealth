@@ -30,8 +30,9 @@ struct FilterSheet: View {
                                     }
                                 }
                             }
-                            .frame(maxHeight: isBrandExpanded ? .infinity : 190, alignment: .top)
+                            .frame(maxHeight: isBrandExpanded ? nil : 190, alignment: .top)
                             .clipped()
+                            .animation(.easeInOut(duration: 0.3), value: isBrandExpanded)
                             .overlay(alignment: .bottom) {
                                 if !isBrandExpanded {
                                     LinearGradient(
@@ -147,6 +148,11 @@ struct FilterSheet: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("完成") {
+                        AnalyticsService.shared.logEvent(.randomPickerFilterApply, parameters: [
+                            AnalyticsService.ParamKey.hasBrandFilter: !viewModel.criteria.selectedBrands.isEmpty,
+                            AnalyticsService.ParamKey.hasCategoryFilter: !viewModel.criteria.selectedCategories.isEmpty,
+                            AnalyticsService.ParamKey.smartRecommendOn: viewModel.criteria.smartPriority
+                        ])
                         dismiss()
                     }
                     .fontWeight(.semibold)

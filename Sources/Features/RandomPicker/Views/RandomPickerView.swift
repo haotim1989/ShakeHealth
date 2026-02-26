@@ -45,8 +45,12 @@ struct RandomPickerView: View {
                                 DrinkResultCard(
                                     drink: drink,
                                     criteria: viewModel.criteria,
-                                    onFindStore: { viewModel.openInMaps() },
+                                    onFindStore: {
+                                        AnalyticsService.shared.logEvent(.randomPickerResultAction, parameters: [AnalyticsService.ParamKey.action: "find_store"])
+                                        viewModel.openInMaps()
+                                    },
                                     onPickAgain: {
+                                        AnalyticsService.shared.logEvent(.randomPickerResultAction, parameters: [AnalyticsService.ParamKey.action: "pick_again"])
                                         Task { await viewModel.pickAgain() }
                                     },
                                     onShowFilter: {
@@ -73,6 +77,7 @@ struct RandomPickerView: View {
                             // 底部按鈕
                             if viewModel.pickedDrink == nil && !viewModel.isShaking {
                                 ShakeButton(isLoading: viewModel.isLoading) {
+                                    AnalyticsService.shared.logEvent(.randomPickerRoll, parameters: [AnalyticsService.ParamKey.triggerType: "button"])
                                     Task { await viewModel.pickRandom() }
                                 }
                                 .padding(.horizontal, 24)
@@ -118,6 +123,7 @@ struct RandomPickerView: View {
                 viewModel.userLogs = newLogs
             }
             .onAppear {
+                AnalyticsService.shared.logEvent(.randomPickerView)
                 viewModel.userLogs = userLogs
                 viewModel.isProUser = userManager.isProUser
             }

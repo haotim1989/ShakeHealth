@@ -108,6 +108,9 @@ final class AdManager: ObservableObject {
     
     /// Interstitial 廣告單元 ID
     var interstitialAdUnitID: String {
+        if let customID = SecretsManager.shared.adMobInterstitialUnitID, !customID.isEmpty {
+            return customID
+        }
         // Google 官方測試 Interstitial ID
         return "ca-app-pub-3940256099942544/4411468910"
     }

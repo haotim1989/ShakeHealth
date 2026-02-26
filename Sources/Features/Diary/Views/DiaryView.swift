@@ -159,6 +159,9 @@ struct DiaryView: View {
             
             Button {
                 showCustomDrinkModal = true
+                AnalyticsService.shared.logEvent(.diaryAddClick, parameters: [
+                    AnalyticsService.ParamKey.source: "diary_tab_floating"
+                ])
             } label: {
                 Label("自訂飲料", systemImage: "square.and.pencil")
             }
@@ -218,6 +221,9 @@ struct DiaryView: View {
                 // 自訂飲料
                 Button {
                     showCustomDrinkModal = true
+                    AnalyticsService.shared.logEvent(.diaryAddClick, parameters: [
+                        AnalyticsService.ParamKey.source: "diary_tab_empty"
+                    ])
                 } label: {
                     HStack {
                         Image(systemName: "square.and.pencil")

@@ -406,6 +406,10 @@ struct SettingsView: View {
     // MARK: - Actions
     
     private func exportData() {
+        AnalyticsService.shared.logEvent(.dataExportCSV, parameters: [
+            AnalyticsService.ParamKey.logCount: logs.count
+        ])
+        
         guard let url = CSVExportService.shared.getExportFileURL(logs: logs) else {
             return
         }
@@ -451,6 +455,10 @@ struct SettingsView: View {
     }
     
     private func restorePurchases() async {
+        AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
+            AnalyticsService.ParamKey.source: "settings"
+        ])
+        
         isRestoring = true
         defer { isRestoring = false }
         

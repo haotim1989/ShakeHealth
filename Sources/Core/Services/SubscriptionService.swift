@@ -173,6 +173,12 @@ final class SubscriptionService: NSObject, ObservableObject {
         
         if wasProUser != isProUser {
             print("🔄 Pro 狀態更新: \(isProUser ? "啟用" : "停用")")
+            
+            // 追蹤用戶屬性
+            AnalyticsService.shared.setUserProperty(
+                value: isProUser ? "true" : "false",
+                forName: .isPremium
+            )
         }
     }
 }

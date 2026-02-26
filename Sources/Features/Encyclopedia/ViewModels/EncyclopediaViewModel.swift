@@ -76,6 +76,10 @@ final class EncyclopediaViewModel: ObservableObject {
         selectedDrinkForLog = drink
         showAddLogModal = true
         HapticManager.shared.light()
+        
+        AnalyticsService.shared.logEvent(.diaryAddClick, parameters: [
+            AnalyticsService.ParamKey.source: "encyclopedia"
+        ])
     }
     
     /// 關閉新增日記 Modal

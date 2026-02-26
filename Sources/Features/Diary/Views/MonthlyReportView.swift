@@ -248,6 +248,11 @@ struct MonthlyReportView: View {
                     }
                 }
                 .padding()
+                .onAppear {
+                    AnalyticsService.shared.logEvent(.monthlyReportView, parameters: [
+                        AnalyticsService.ParamKey.totalSugar: Int(calculateTotalSugar())
+                    ])
+                }
             }
             .background(Color.backgroundPrimary)
             .navigationTitle("月報表")

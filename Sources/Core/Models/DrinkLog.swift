@@ -24,6 +24,15 @@ final class DrinkLog {
     var hasCaffeineSnapshot: Bool = false
     var sugarSnapshot: Double?   // 新增：糖分快照 (克)
     var caffeineSnapshot: Int?   // 新增：咖啡因快照 (毫克)
+    var toppingsSnapshot: String = ""  // 配料快照（逗號分隔 rawValue）
+    
+    // 口感風味評鑑（選填）
+    var tasteTexture: String = ""     // 配料口感
+    var tasteTea: String = ""         // 茶味
+    var tasteMilk: String = ""        // 奶味
+    var tasteSweetness: String = ""   // 甜度感受
+    var tasteIce: String = ""         // 冰塊感受
+    var tasteSmoothness: String = ""  // 順口度
     
     var createdAt: Date = Date()
     var updatedAt: Date = Date()
@@ -48,6 +57,16 @@ final class DrinkLog {
         return DrinkService.refineCategory(name: drinkName, originalCategory: .custom)
     }
     
+    /// 已選配料
+    var selectedToppings: Set<Topping> {
+        Topping.deserialize(toppingsSnapshot)
+    }
+    
+    /// 配料總熱量
+    var toppingsCalories: Int {
+        Topping.totalCalories(selectedToppings)
+    }
+    
     // MARK: - Initializer
     
     init(
@@ -65,6 +84,13 @@ final class DrinkLog {
         hasCaffeineSnapshot: Bool = false,
         sugarSnapshot: Double? = nil,
         caffeineSnapshot: Int? = nil,
+        toppingsSnapshot: String = "",
+        tasteTexture: String = "",
+        tasteTea: String = "",
+        tasteMilk: String = "",
+        tasteSweetness: String = "",
+        tasteIce: String = "",
+        tasteSmoothness: String = "",
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -82,6 +108,13 @@ final class DrinkLog {
         self.hasCaffeineSnapshot = hasCaffeineSnapshot
         self.sugarSnapshot = sugarSnapshot
         self.caffeineSnapshot = caffeineSnapshot
+        self.toppingsSnapshot = toppingsSnapshot
+        self.tasteTexture = tasteTexture
+        self.tasteTea = tasteTea
+        self.tasteMilk = tasteMilk
+        self.tasteSweetness = tasteSweetness
+        self.tasteIce = tasteIce
+        self.tasteSmoothness = tasteSmoothness
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
@@ -118,6 +151,13 @@ extension DrinkLog {
             "has_caffeine_snapshot": hasCaffeineSnapshot,
             "sugar_snapshot": sugarSnapshot ?? NSNull(),
             "caffeine_snapshot": caffeineSnapshot ?? NSNull(),
+            "toppings_snapshot": toppingsSnapshot,
+            "taste_texture": tasteTexture,
+            "taste_tea": tasteTea,
+            "taste_milk": tasteMilk,
+            "taste_sweetness": tasteSweetness,
+            "taste_ice": tasteIce,
+            "taste_smoothness": tasteSmoothness,
             "created_at": createdAt,
             "updated_at": updatedAt
         ]

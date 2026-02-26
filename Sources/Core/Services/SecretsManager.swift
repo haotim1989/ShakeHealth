@@ -49,4 +49,9 @@ final class SecretsManager {
     var adMobNativeUnitID: String? {
         secrets["ADMOB_NATIVE_UNIT_ID"] as? String
     }
+    
+    /// AdMob Interstitial Ad Unit ID
+    var adMobInterstitialUnitID: String? {
+        secrets["ADMOB_INTERSTITIAL_UNIT_ID"] as? String
+    }
 }
