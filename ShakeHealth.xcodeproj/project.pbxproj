@@ -21,7 +21,6 @@
 		CMP009 /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC041 /* CategoryIconView.swift */; };
 		CMP010 /* ToppingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC044 /* ToppingsSection.swift */; };
 		CMP011 /* TasteProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC047 /* TasteProfileSection.swift */; };
-		MOD008 /* ConsumerExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC048 /* ConsumerExperience.swift */; };
 		CMP012 /* ConsumerExperienceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC049 /* ConsumerExperienceSection.swift */; };
 		DRY001 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC027 /* DiaryViewModel.swift */; };
 		DRY002 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC028 /* DiaryView.swift */; };
@@ -39,6 +38,7 @@
 		MOD005 /* FilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC007 /* FilterCriteria.swift */; };
 		MOD006 /* Topping.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC043 /* Topping.swift */; };
 		MOD007 /* TasteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC046 /* TasteProfile.swift */; };
+		MOD008 /* ConsumerExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC048 /* ConsumerExperience.swift */; };
 		OBD001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC042 /* OnboardingView.swift */; };
 		RES002 /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = DAT001 /* SampleData.json */; };
 		RND001 /* RandomPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC021 /* RandomPickerViewModel.swift */; };

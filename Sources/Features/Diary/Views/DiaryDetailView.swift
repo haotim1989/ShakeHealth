@@ -8,6 +8,7 @@ struct DiaryDetailView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var isEditing = false
+    @State private var editedDate: Date
     @State private var editedRating: Int
     @State private var editedComment: String
     @State private var editedSugar: SugarLevel
@@ -67,6 +68,8 @@ struct DiaryDetailView: View {
         self._editedExpRepurchase = State(initialValue: log.expRepurchase)
         self._editedExpPortion = State(initialValue: log.expPortion)
         self._editedExpWaitTime = State(initialValue: log.expWaitTime)
+        
+        self._editedDate = State(initialValue: log.createdAt)
     }
     
     private var isCustomDrink: Bool {
@@ -107,6 +110,29 @@ struct DiaryDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
+                // 日期選擇器 / 顯示
+                if isEditing {
+                    DatePicker(
+                        "記錄時間",
+                        selection: $editedDate,
+                        in: ...Date(),
+                        displayedComponents: [.date, .hourAndMinute]
+                    )
+                    .padding()
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                } else {
+                    HStack {
+                        Image(systemName: "calendar")
+                            .foregroundColor(.teaBrown)
+                        Text(formatDate(log.createdAt))
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                }
+                
                 // 飲料資訊卡片
                 drinkInfoCard
                 
@@ -710,6 +736,7 @@ struct DiaryDetailView: View {
         log.expRepurchase = editedExpRepurchase
         log.expPortion = editedExpPortion
         log.expWaitTime = editedExpWaitTime
+        log.createdAt = editedDate
         log.updatedAt = Date()
         
         do {
@@ -754,6 +781,12 @@ struct DiaryDetailView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .top)
+    }
+    
+    private func formatDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy 年 M 月 d 日 HH:mm"
+        return formatter.string(from: date)
     }
 }
 
