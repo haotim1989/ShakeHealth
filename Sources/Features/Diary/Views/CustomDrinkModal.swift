@@ -33,6 +33,14 @@ struct CustomDrinkModal: View {
     @State private var tasteSweetness: String = ""
     @State private var tasteIce: String = ""
     @State private var tasteSmoothness: String = ""
+    @State private var tasteAroma: String = ""
+    
+    // 消費體驗
+    @State private var expCostPerformance: String = ""
+    @State private var expOccasion: String = ""
+    @State private var expRepurchase: String = ""
+    @State private var expPortion: String = ""
+    @State private var expWaitTime: String = ""
     
     // Focus State
     enum Field: Hashable {
@@ -97,7 +105,17 @@ struct CustomDrinkModal: View {
                         tasteMilk: $tasteMilk,
                         tasteSweetness: $tasteSweetness,
                         tasteIce: $tasteIce,
-                        tasteSmoothness: $tasteSmoothness
+                        tasteSmoothness: $tasteSmoothness,
+                        tasteAroma: $tasteAroma
+                    )
+                    
+                    // 消費體驗
+                    ConsumerExperienceSection(
+                        expCostPerformance: $expCostPerformance,
+                        expOccasion: $expOccasion,
+                        expRepurchase: $expRepurchase,
+                        expPortion: $expPortion,
+                        expWaitTime: $expWaitTime
                     )
                     
                     // 評分
@@ -459,6 +477,12 @@ struct CustomDrinkModal: View {
             tasteSweetness: tasteSweetness,
             tasteIce: tasteIce,
             tasteSmoothness: tasteSmoothness,
+            tasteAroma: tasteAroma,
+            expCostPerformance: expCostPerformance,
+            expOccasion: expOccasion,
+            expRepurchase: expRepurchase,
+            expPortion: expPortion,
+            expWaitTime: expWaitTime,
             createdAt: selectedDate
         )
         

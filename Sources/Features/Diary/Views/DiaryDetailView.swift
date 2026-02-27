@@ -28,6 +28,14 @@ struct DiaryDetailView: View {
     @State private var editedTasteSweetness: String
     @State private var editedTasteIce: String
     @State private var editedTasteSmoothness: String
+    @State private var editedTasteAroma: String
+    
+    // 消費體驗
+    @State private var editedExpCostPerformance: String
+    @State private var editedExpOccasion: String
+    @State private var editedExpRepurchase: String
+    @State private var editedExpPortion: String
+    @State private var editedExpWaitTime: String
     
     @State private var showDeleteConfirmation = false
     
@@ -53,6 +61,12 @@ struct DiaryDetailView: View {
         self._editedTasteSweetness = State(initialValue: log.tasteSweetness)
         self._editedTasteIce = State(initialValue: log.tasteIce)
         self._editedTasteSmoothness = State(initialValue: log.tasteSmoothness)
+        self._editedTasteAroma = State(initialValue: log.tasteAroma)
+        self._editedExpCostPerformance = State(initialValue: log.expCostPerformance)
+        self._editedExpOccasion = State(initialValue: log.expOccasion)
+        self._editedExpRepurchase = State(initialValue: log.expRepurchase)
+        self._editedExpPortion = State(initialValue: log.expPortion)
+        self._editedExpWaitTime = State(initialValue: log.expWaitTime)
     }
     
     private var isCustomDrink: Bool {
@@ -104,6 +118,9 @@ struct DiaryDetailView: View {
                 
                 // 風味評鑑
                 tasteProfileCard
+                
+                // 消費體驗
+                consumerExperienceCard
                 
                 // 評價資訊
                 ratingCard
@@ -481,7 +498,8 @@ struct DiaryDetailView: View {
                     tasteMilk: $editedTasteMilk,
                     tasteSweetness: $editedTasteSweetness,
                     tasteIce: $editedTasteIce,
-                    tasteSmoothness: $editedTasteSmoothness
+                    tasteSmoothness: $editedTasteSmoothness,
+                    tasteAroma: $editedTasteAroma
                 )
             } else if !tasteEntries.isEmpty {
                 VStack(alignment: .leading, spacing: 12) {
@@ -538,11 +556,83 @@ struct DiaryDetailView: View {
             case "甜度感受": raw = log.tasteSweetness
             case "冰塊感受": raw = log.tasteIce
             case "順口度":   raw = log.tasteSmoothness
+            case "香氣":     raw = log.tasteAroma
             default:        raw = ""
             }
             guard !raw.isEmpty else { continue }
             if let label = dim.options.first(where: { $0.value == raw })?.label {
                 entries.append(TasteEntry(title: dim.title, icon: dim.icon, value: label))
+            }
+        }
+        return entries
+    }
+    
+    // MARK: - Consumer Experience Card
+    
+    private var consumerExperienceCard: some View {
+        let expEntries = expDisplayEntries(for: log)
+        
+        return Group {
+            if isEditing {
+                ConsumerExperienceSection(
+                    expCostPerformance: $editedExpCostPerformance,
+                    expOccasion: $editedExpOccasion,
+                    expRepurchase: $editedExpRepurchase,
+                    expPortion: $editedExpPortion,
+                    expWaitTime: $editedExpWaitTime
+                )
+            } else if !expEntries.isEmpty {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "bag.fill")
+                            .foregroundColor(.teaBrown)
+                        Text("消費體驗")
+                            .font(.headline)
+                    }
+                    
+                    ForEach(expEntries, id: \.title) { entry in
+                        HStack {
+                            HStack(spacing: 6) {
+                                Image(systemName: entry.icon)
+                                    .font(.caption)
+                                    .foregroundColor(.teaBrown)
+                                    .frame(width: 16)
+                                Text(entry.title)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            Text(entry.value)
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(Color.teaBrown.opacity(0.1))
+                                .clipShape(Capsule())
+                        }
+                    }
+                }
+                .padding(20)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
+        }
+    }
+    
+    private func expDisplayEntries(for log: DrinkLog) -> [TasteEntry] {
+        var entries: [TasteEntry] = []
+        let fields: [(String, String, String)] = [
+            ("CP 值", "dollarsign.circle", log.expCostPerformance),
+            ("飲用情境", "location.fill", log.expOccasion),
+            ("再回購？", "arrow.counterclockwise", log.expRepurchase),
+            ("份量", "cup.and.saucer.fill", log.expPortion),
+            ("等待時長", "clock", log.expWaitTime),
+        ]
+        for (title, icon, raw) in fields {
+            guard !raw.isEmpty else { continue }
+            if let dim = ConsumerExperience.allDimensions.first(where: { $0.title == title }),
+               let label = dim.options.first(where: { $0.value == raw })?.label {
+                entries.append(TasteEntry(title: title, icon: icon, value: label))
             }
         }
         return entries
@@ -614,6 +704,12 @@ struct DiaryDetailView: View {
         log.tasteSweetness = editedTasteSweetness
         log.tasteIce = editedTasteIce
         log.tasteSmoothness = editedTasteSmoothness
+        log.tasteAroma = editedTasteAroma
+        log.expCostPerformance = editedExpCostPerformance
+        log.expOccasion = editedExpOccasion
+        log.expRepurchase = editedExpRepurchase
+        log.expPortion = editedExpPortion
+        log.expWaitTime = editedExpWaitTime
         log.updatedAt = Date()
         
         do {

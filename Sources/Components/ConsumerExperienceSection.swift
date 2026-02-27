@@ -1,40 +1,38 @@
 import SwiftUI
 
-/// 口感風味評鑑區（共用元件）
-/// 7 個維度各一行，每行可選擇一個級距
-struct TasteProfileSection: View {
-    @Binding var tasteTexture: String
-    @Binding var tasteTea: String
-    @Binding var tasteMilk: String
-    @Binding var tasteSweetness: String
-    @Binding var tasteIce: String
-    @Binding var tasteSmoothness: String
-    @Binding var tasteAroma: String
+/// 消費體驗區（共用元件）
+/// 5 個維度各一行，每行可選擇一個級距
+struct ConsumerExperienceSection: View {
+    @Binding var expCostPerformance: String
+    @Binding var expOccasion: String
+    @Binding var expRepurchase: String
+    @Binding var expPortion: String
+    @Binding var expWaitTime: String
     
     @State private var isExpanded = false
     
     /// 已填寫的維度數量
     private var filledCount: Int {
-        [tasteTexture, tasteTea, tasteMilk, tasteSweetness, tasteIce, tasteSmoothness, tasteAroma]
+        [expCostPerformance, expOccasion, expRepurchase, expPortion, expWaitTime]
             .filter { !$0.isEmpty }.count
     }
     
     private var bindings: [Binding<String>] {
-        [$tasteTexture, $tasteTea, $tasteMilk, $tasteSweetness, $tasteIce, $tasteSmoothness, $tasteAroma]
+        [$expCostPerformance, $expOccasion, $expRepurchase, $expPortion, $expWaitTime]
     }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // 標題列（可展開/摺疊）
+            // 標題列（整條可點擊）
             Button {
                 withAnimation(.easeInOut(duration: 0.25)) {
                     isExpanded.toggle()
                 }
             } label: {
                 HStack(spacing: 8) {
-                    Image(systemName: "chart.bar.fill")
+                    Image(systemName: "bag.fill")
                         .foregroundColor(.teaBrown)
-                    Text("風味評鑑（選填）")
+                    Text("消費體驗（選填）")
                         .font(.headline)
                         .foregroundColor(.primary)
                     
@@ -61,7 +59,7 @@ struct TasteProfileSection: View {
             // 展開的維度列表
             if isExpanded {
                 VStack(spacing: 16) {
-                    ForEach(Array(TasteProfile.allDimensions.enumerated()), id: \.offset) { index, dimension in
+                    ForEach(Array(ConsumerExperience.allDimensions.enumerated()), id: \.offset) { index, dimension in
                         dimensionRow(dimension: dimension, selection: bindings[index])
                     }
                 }
@@ -74,9 +72,8 @@ struct TasteProfileSection: View {
     
     // MARK: - Dimension Row
     
-    private func dimensionRow(dimension: TasteProfile.Dimension, selection: Binding<String>) -> some View {
+    private func dimensionRow(dimension: ConsumerExperience.Dimension, selection: Binding<String>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            // 維度標題
             HStack(spacing: 6) {
                 Image(systemName: dimension.icon)
                     .font(.caption)
@@ -88,7 +85,6 @@ struct TasteProfileSection: View {
                     .fontWeight(.medium)
             }
             
-            // 橫向滑動 Chip
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 6) {
                     ForEach(dimension.options, id: \.value) { option in
@@ -111,7 +107,7 @@ struct TasteProfileSection: View {
         return Button {
             withAnimation(.easeInOut(duration: 0.15)) {
                 if isSelected {
-                    selection.wrappedValue = ""  // 取消選擇
+                    selection.wrappedValue = ""
                 } else {
                     selection.wrappedValue = value
                 }
@@ -136,14 +132,12 @@ struct TasteProfileSection: View {
 }
 
 #Preview {
-    TasteProfileSection(
-        tasteTexture: .constant(""),
-        tasteTea: .constant("tea_rich"),
-        tasteMilk: .constant(""),
-        tasteSweetness: .constant("sweet_sweet"),
-        tasteIce: .constant(""),
-        tasteSmoothness: .constant(""),
-        tasteAroma: .constant("")
+    ConsumerExperienceSection(
+        expCostPerformance: .constant("cp_worth_it"),
+        expOccasion: .constant(""),
+        expRepurchase: .constant(""),
+        expPortion: .constant(""),
+        expWaitTime: .constant("")
     )
     .padding()
     .background(Color.backgroundPrimary)

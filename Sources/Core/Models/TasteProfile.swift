@@ -1,7 +1,7 @@
 import Foundation
 
 /// 口感風味評鑑命名空間
-/// 包含 6 個主觀感受維度，每個維度 4~5 個級距
+/// 包含 7 個主觀感受維度，每個維度 4~5 個級距
 enum TasteProfile {
     
     // MARK: - 1. 配料口感
@@ -107,6 +107,7 @@ enum TasteProfile {
         case justRight = "ice_just_right"
         case less     = "ice_less"
         case almostNone = "ice_almost_none"
+        case noIce      = "ice_none"
         
         var id: String { rawValue }
         
@@ -116,6 +117,7 @@ enum TasteProfile {
             case .justRight:  return "冰塊剛好"
             case .less:       return "偏少"
             case .almostNone: return "幾乎沒冰"
+            case .noIce:      return "完全沒冰"
             }
         }
         
@@ -187,5 +189,34 @@ enum TasteProfile {
             icon: "waveform.path",
             options: Smoothness.allCases.map { ($0.rawValue, $0.displayName) }
         ),
+        Dimension(
+            title: "香氣",
+            icon: "wind",
+            options: Aroma.allCases.map { ($0.rawValue, $0.displayName) }
+        ),
     ]
+    
+    // MARK: - 7. 香氣
+    
+    enum Aroma: String, CaseIterable, Identifiable {
+        case veryFragrant = "aroma_very"
+        case fragrant     = "aroma_fragrant"
+        case normal       = "aroma_normal"
+        case light        = "aroma_light"
+        case none         = "aroma_none"
+        
+        var id: String { rawValue }
+        
+        var displayName: String {
+            switch self {
+            case .veryFragrant: return "非常香"
+            case .fragrant:     return "有香氣"
+            case .normal:       return "普通"
+            case .light:        return "偏淡"
+            case .none:         return "無香氣"
+            }
+        }
+        
+        var icon: String { "wind" }
+    }
 }

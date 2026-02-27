@@ -13,7 +13,7 @@ final class CSVExportService {
     
     /// 將日記紀錄匯出為 CSV 字串
     func exportToCSV(logs: [DrinkLog]) -> String {
-        var csv = "id,日期,飲料名稱,品牌,甜度,冰塊,熱量,含咖啡因,評分,感想,配料,配料口感,茶味,奶味,甜度感受,冰塊感受,順口度\n"
+        var csv = "id,日期,飲料名稱,品牌,甜度,冰塊,熱量,含咖啡因,評分,感想,配料,配料口感,茶味,奶味,甜度感受,冰塊感受,順口度,香氣,CP值,飲用情境,再回購,份量,等待時長\n"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -36,7 +36,13 @@ final class CSVExportService {
                 escapeCSV(log.tasteMilk),
                 escapeCSV(log.tasteSweetness),
                 escapeCSV(log.tasteIce),
-                escapeCSV(log.tasteSmoothness)
+                escapeCSV(log.tasteSmoothness),
+                escapeCSV(log.tasteAroma),
+                escapeCSV(log.expCostPerformance),
+                escapeCSV(log.expOccasion),
+                escapeCSV(log.expRepurchase),
+                escapeCSV(log.expPortion),
+                escapeCSV(log.expWaitTime)
             ].joined(separator: ",")
             csv += row + "\n"
         }
@@ -128,6 +134,12 @@ final class CSVExportService {
                 tasteSweetness: columns.count > 14 ? columns[14] : "",
                 tasteIce: columns.count > 15 ? columns[15] : "",
                 tasteSmoothness: columns.count > 16 ? columns[16] : "",
+                tasteAroma: columns.count > 17 ? columns[17] : "",
+                expCostPerformance: columns.count > 18 ? columns[18] : "",
+                expOccasion: columns.count > 19 ? columns[19] : "",
+                expRepurchase: columns.count > 20 ? columns[20] : "",
+                expPortion: columns.count > 21 ? columns[21] : "",
+                expWaitTime: columns.count > 22 ? columns[22] : "",
                 createdAt: createdAt
             )
             

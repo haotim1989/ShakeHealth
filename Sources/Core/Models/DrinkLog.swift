@@ -33,6 +33,14 @@ final class DrinkLog {
     var tasteSweetness: String = ""   // 甜度感受
     var tasteIce: String = ""         // 冰塊感受
     var tasteSmoothness: String = ""  // 順口度
+    var tasteAroma: String = ""       // 香氣
+    
+    // 消費體驗（選填）
+    var expCostPerformance: String = ""  // CP 值
+    var expOccasion: String = ""          // 飲用情境
+    var expRepurchase: String = ""        // 再回購
+    var expPortion: String = ""           // 份量
+    var expWaitTime: String = ""          // 等待時長
     
     var createdAt: Date = Date()
     var updatedAt: Date = Date()
@@ -91,6 +99,12 @@ final class DrinkLog {
         tasteSweetness: String = "",
         tasteIce: String = "",
         tasteSmoothness: String = "",
+        tasteAroma: String = "",
+        expCostPerformance: String = "",
+        expOccasion: String = "",
+        expRepurchase: String = "",
+        expPortion: String = "",
+        expWaitTime: String = "",
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -115,6 +129,12 @@ final class DrinkLog {
         self.tasteSweetness = tasteSweetness
         self.tasteIce = tasteIce
         self.tasteSmoothness = tasteSmoothness
+        self.tasteAroma = tasteAroma
+        self.expCostPerformance = expCostPerformance
+        self.expOccasion = expOccasion
+        self.expRepurchase = expRepurchase
+        self.expPortion = expPortion
+        self.expWaitTime = expWaitTime
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
@@ -158,6 +178,12 @@ extension DrinkLog {
             "taste_sweetness": tasteSweetness,
             "taste_ice": tasteIce,
             "taste_smoothness": tasteSmoothness,
+            "taste_aroma": tasteAroma,
+            "exp_cost_performance": expCostPerformance,
+            "exp_occasion": expOccasion,
+            "exp_repurchase": expRepurchase,
+            "exp_portion": expPortion,
+            "exp_wait_time": expWaitTime,
             "created_at": createdAt,
             "updated_at": updatedAt
         ]
