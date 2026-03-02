@@ -140,29 +140,29 @@ enum SubscriptionPackage: String, CaseIterable, Identifiable {
     
     var price: String {
         switch self {
-        case .monthly: return "NT$ 59"
-        case .yearly: return "NT$ 499"
+        case .monthly: return "NT$ 50"
+        case .yearly: return "NT$ 399"
         }
     }
     
     var pricePerMonth: String {
         switch self {
-        case .monthly: return "NT$ 59/月"
-        case .yearly: return "NT$ 42/月"
+        case .monthly: return "NT$ 50/月"
+        case .yearly: return "NT$ 33/月"
         }
     }
     
     var savings: String? {
         switch self {
         case .monthly: return nil
-        case .yearly: return "七折優惠！"
+        case .yearly: return "六五折優惠！"
         }
     }
     
     var description: String {
         switch self {
         case .monthly: return "免費試用 7 天，一杯飲料換你整月健康"
-        case .yearly: return "免費試用 7 天，每天$1.3 解鎖全部功能"
+        case .yearly: return "免費試用 7 天，每天不到 $1.1 解鎖全部功能"
         }
     }
 }
