@@ -112,7 +112,7 @@ struct PaywallView: View {
                 .font(.title)
                 .fontWeight(.bold)
             
-            Text("解鎖所有進階功能，免費試用 7 天")
+            Text("每月一杯飲料錢，打造你的手搖圖鑑")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
