@@ -141,7 +141,7 @@ enum SubscriptionPackage: String, CaseIterable, Identifiable {
     var price: String {
         switch self {
         case .monthly: return "NT$ 50"
-        case .yearly: return "NT$ 399"
+        case .yearly: return "NT$ 390"
         }
     }
     
