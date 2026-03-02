@@ -27,7 +27,7 @@ final class SubscriptionService: NSObject, ObservableObject {
     // MARK: - Entitlement ID
     
     /// Pro 權限 ID (需與 RevenueCat 後台設定一致)
-    private let proEntitlementID = "pro"
+    private let proEntitlementID = "premium_access"
     
     // MARK: - Initialization
     
