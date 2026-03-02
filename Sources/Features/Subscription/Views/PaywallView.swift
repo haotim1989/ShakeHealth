@@ -427,31 +427,28 @@ private struct RevenueCatPackageCard: View {
     }
     
     var body: some View {
-        Button(action: onTap) {
+        // 將 RevenueCat package 對應到我們本地的 SubscriptionPackage 來取得固定文案
+        let customPackage: SubscriptionPackage = isYearly ? .yearly : .monthly
+        
+        return Button(action: onTap) {
             ZStack(alignment: .topTrailing) {
                 // 內容
                 HStack(alignment: .top, spacing: 0) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(package.storeProduct.localizedTitle)
+                        Text(customPackage.rawValue) // "月訂閱" 或 "年訂閱"
                             .font(.headline)
                             .fontWeight(.bold)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
                         
                         VStack(alignment: .leading, spacing: 0) {
-                            Text(package.localizedPriceString)
+                            Text(customPackage.price) // "NT$ 50" 或 "NT$ 399"
                                 .font(.headline)
                                 .fontWeight(.bold)
                             
-                            if isYearly, let monthlyPrice = calculateMonthlyPrice() {
-                                Text("\(monthlyPrice)/月")
-                                    .font(.caption2)
-                                    .foregroundColor(.secondary)
-                            } else if !isYearly {
-                                Text("每月扣款")
-                                    .font(.caption2)
-                                    .foregroundColor(.secondary)
-                            }
+                            Text(customPackage.pricePerMonth) // "NT$ 50/月" 或 "NT$ 33/月"
+                                .font(.caption2)
+                                .foregroundColor(.secondary)
                         }
                     }
                     
@@ -482,8 +479,8 @@ private struct RevenueCatPackageCard: View {
             )
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .overlay(alignment: .top) {
-                if isYearly {
-                    Text("超值優惠")
+                if let savings = customPackage.savings {
+                    Text(savings) // "六五折優惠！" 等
                         .font(.custom("PingFangTC-Semibold", size: 10))
                         .padding(.horizontal, 8)
                         .padding(.vertical, 3)
@@ -498,16 +495,6 @@ private struct RevenueCatPackageCard: View {
         .buttonStyle(.plain)
     }
     
-    private func calculateMonthlyPrice() -> String? {
-        let price = package.storeProduct.price as Decimal
-        let monthlyPrice = price / 12
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = Locale.current
-        
-        return formatter.string(from: monthlyPrice as NSDecimalNumber)
-    }
 }
 
 // MARK: - Local Package Card (Fallback)

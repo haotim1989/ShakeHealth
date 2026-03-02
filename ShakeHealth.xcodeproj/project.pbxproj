@@ -27,6 +27,7 @@
 		DRY003 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC029 /* DiaryDetailView.swift */; };
 		DRY004 /* MonthlyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC035 /* MonthlyReportView.swift */; };
 		DRY005 /* CustomDrinkModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC036 /* CustomDrinkModal.swift */; };
+		EE2609232F554CA400E0EFC4 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE2609222F554CA300E0EFC4 /* Secrets.plist */; };
 		EEFB60132F2DD17C000D7169 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB60122F2DD17C000D7169 /* ShareService.swift */; };
 		ENC001 /* EncyclopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC024 /* EncyclopediaViewModel.swift */; };
 		ENC002 /* EncyclopediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC025 /* EncyclopediaView.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		DAT001 /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
+		EE2609222F554CA300E0EFC4 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		EE28EC402F4C839900010618 /* ShakeHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ShakeHealth.entitlements; path = ShakeHealth/ShakeHealth.entitlements; sourceTree = "<group>"; };
 		EEFB60122F2DD17C000D7169 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		PROD01 /* ShakeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				EE28EC402F4C839900010618 /* ShakeHealth.entitlements */,
+				EE2609222F554CA300E0EFC4 /* Secrets.plist */,
 				GRP001 /* Sources */,
 				GRP002 /* Products */,
 			);
@@ -468,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AST001 /* Assets.xcassets in Resources */,
+				EE2609232F554CA400E0EFC4 /* Secrets.plist in Resources */,
 				RES002 /* SampleData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
