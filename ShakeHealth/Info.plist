@@ -59,7 +59,7 @@
 	</array>
 	<!-- Google AdMob App ID -->
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-9214660630309478~7911792644</string>
 	<!-- SKAdNetwork 確保 iOS 14.5+ 廣告收益 -->
 	<key>SKAdNetworkItems</key>
 	<array>
