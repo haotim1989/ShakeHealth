@@ -3,7 +3,7 @@ import Foundation
 /// 飲料配料（依據營養師熱量表分為紅黃綠三燈區）
 /// 熱量為飲料店 2 大湯匙（約 60g）之估算值，飲品大杯 700ml 正常冰估算
 enum Topping: String, CaseIterable, Identifiable, Hashable, Codable {
-    // 🔴 紅燈區 (144~203 kcal)
+    // 🔴 紅燈區 (150~230 kcal)
     case creamCap       = "cream_cap"       // 奶蓋
     case grassJelly2    = "grass_cake"       // 草仔粿
     case sago           = "sago"            // 西米露
@@ -13,13 +13,13 @@ enum Topping: String, CaseIterable, Identifiable, Hashable, Codable {
     case sweetPotato    = "sweet_potato"    // 蜜地瓜/芋頭
     case yakult         = "yakult"          // 多多
     
-    // 🟡 黃燈區 (110~131 kcal)
+    // 🟡 黃燈區 (110~145 kcal)
     case noodle         = "noodle"          // 粉條
     case taroball       = "taro_ball"       // 芋圓
     case oreo           = "oreo"            // Oreo脆片
     case pudding        = "pudding"         // 布丁
     
-    // 🟢 綠燈區 (31~76 kcal)
+    // 🟢 綠燈區 (30~85 kcal)
     case coconutJelly   = "coconut_jelly"   // 椰果
     case konjac         = "konjac"          // 蒟蒻
     case grassJelly     = "grass_jelly"     // 仙草
@@ -57,24 +57,24 @@ enum Topping: String, CaseIterable, Identifiable, Hashable, Codable {
     /// 配料熱量 (kcal)
     var calories: Int {
         switch self {
-        case .creamCap:     return 203
-        case .grassJelly2:  return 168
-        case .sago:         return 165
-        case .riceCake:     return 165
+        case .creamCap:     return 230
+        case .grassJelly2:  return 210
+        case .bobaPearl:    return 190
+        case .riceCake:     return 185
+        case .sago:         return 175
         case .iceCream:     return 160
-        case .bobaPearl:    return 156
         case .sweetPotato:  return 150
-        case .yakult:       return 144
-        case .noodle:       return 131
-        case .taroball:     return 128
-        case .oreo:         return 116
-        case .pudding:      return 110
-        case .coconutJelly: return 76
-        case .konjac:       return 71
-        case .grassJelly:   return 57
-        case .aiyu:         return 45
-        case .kantens:      return 42
-        case .aloeVera:     return 31
+        case .yakult:       return 150
+        case .noodle:       return 145
+        case .taroball:     return 135
+        case .pudding:      return 115
+        case .oreo:         return 110
+        case .coconutJelly: return 85
+        case .konjac:       return 50
+        case .kantens:      return 50
+        case .grassJelly:   return 35
+        case .aiyu:         return 35
+        case .aloeVera:     return 30
         }
     }
     
@@ -93,9 +93,9 @@ enum Topping: String, CaseIterable, Identifiable, Hashable, Codable {
         
         var calorieRange: String {
             switch self {
-            case .red:    return "144~203 kcal"
-            case .yellow: return "110~131 kcal"
-            case .green:  return "31~76 kcal"
+            case .red:    return "150~230 kcal"
+            case .yellow: return "110~145 kcal"
+            case .green:  return "30~85 kcal"
             }
         }
     }
