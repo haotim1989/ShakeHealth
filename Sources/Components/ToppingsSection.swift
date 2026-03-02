@@ -26,6 +26,10 @@ struct ToppingsSection: View {
                         .font(.headline)
                         .foregroundColor(.primary)
                     
+                    Text("熱量僅供參考")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                    
                     Spacer()
                     
                     if !selectedToppings.isEmpty && !isExpanded {
