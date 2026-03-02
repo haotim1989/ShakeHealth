@@ -187,15 +187,6 @@ struct PaywallView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
             }
             .disabled(isPurchasing || selectedPackage == nil)
-            
-            Button("恢復購買") {
-                AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
-                    AnalyticsService.ParamKey.source: "paywall"
-                ])
-                Task { await restore() }
-            }
-            .font(.footnote)
-            .foregroundColor(.secondary)
         }
     }
     
@@ -248,15 +239,6 @@ struct PaywallView: View {
             }
             .disabled(isPurchasing)
             
-            Button("恢復購買") {
-                AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
-                    AnalyticsService.ParamKey.source: "paywall"
-                ])
-                Task { await fallbackRestore() }
-            }
-            .font(.footnote)
-            .foregroundColor(.secondary)
-            
             Text("⚠️ 測試模式：RevenueCat 未連接")
                 .font(.caption)
                 .foregroundColor(.orange)
@@ -282,6 +264,16 @@ struct PaywallView: View {
             
             // 隱私權政策 與 服務條款連結
             HStack(spacing: 16) {
+                Button("恢復購買") {
+                    AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
+                        AnalyticsService.ParamKey.source: "paywall"
+                    ])
+                    Task { await handleRestore() }
+                }
+                
+                Text("·")
+                    .foregroundColor(.secondary)
+                
                 Button("隱私權政策") {
                     if let url = URL(string: Constants.Legal.privacyPolicyURL) {
                         UIApplication.shared.open(url)
@@ -349,6 +341,14 @@ struct PaywallView: View {
         } catch {
             errorMessage = error.localizedDescription
             showError = true
+        }
+    }
+    
+    private func handleRestore() async {
+        if subscriptionService.isConfigured {
+            await restore()
+        } else {
+            await fallbackRestore()
         }
     }
     
