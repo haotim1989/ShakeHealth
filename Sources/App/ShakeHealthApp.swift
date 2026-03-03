@@ -96,6 +96,9 @@ final class AppState: ObservableObject {
     @Published var userId: String = UUID().uuidString // 匿名用戶 ID
     @Published var scrollToTopTrigger: Tab? = nil  // 觸發置頂的 Tab
     
+    // 控制啟動載入畫面的狀態
+    @Published var isDataLoaded: Bool = false
+    
     enum Tab: Hashable {
         case randomPicker
         case encyclopedia

@@ -16,64 +16,69 @@ final class DrinkService: DrinkServiceProtocol {
     private var cachedDrinks: [Drink]?
     private var cachedBrands: [Brand]?
     
+    private var isLoaded = false
+    
     private init() {
-        loadDataFromJSON()
+        // 移除同步載入，改由 App 啟動時主動呼叫非同步的 loadDataAsync()
     }
     
-    // MARK: - JSON 載入
+    // MARK: - Async Data Loading
     
-    private func loadDataFromJSON() {
-        guard let url = Bundle.main.url(forResource: "SampleData", withExtension: "json") else {
-            print("⚠️ 找不到 SampleData.json，使用備用資料")
-            cachedDrinks = Drink.sampleDrinks
-            cachedBrands = Brand.sampleBrands
-            return
-        }
+    /// 非同步載入大量 JSON 資料（用於啟動載入畫面 Splash Screen）
+    func loadDataAsync() async {
+        guard !isLoaded else { return }
         
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let sampleData = try decoder.decode(SampleDataContainer.self, from: data)
-            
-            // 將 Brand 資料轉換並快取
-            let brands = sampleData.brands.map { brandData in
-                Brand(
-                    id: brandData.brand_id,
-                    name: brandData.brand_name,
-                    logoURL: brandData.logo_url,
-                    isActive: brandData.is_active
-                )
+        let result = await Task.detached(priority: .userInitiated) { () -> ([Drink]?, [Brand]?) in
+            guard let url = Bundle.main.url(forResource: "SampleData", withExtension: "json") else {
+                print("⚠️ 找不到 SampleData.json，使用備用資料")
+                return (Drink.sampleDrinks, Brand.sampleBrands)
             }
             
-            
-            // 排序邏輯：數字 -> 英文 -> 中文 (筆畫)
-            cachedBrands = Brand.sorted(brands)
-            
-            // 將 Drink 資料轉換並快取
-            cachedDrinks = sampleData.drinks.map { drinkData in
-                Drink(
-                    id: drinkData.drink_id,
-                    brandId: drinkData.brand_id,
-                    name: drinkData.name,
-                    category: Self.refineCategory(name: drinkData.name, originalCategory: Self.mapCategory(drinkData.category)),
-                    imageURL: drinkData.image_url,
-                    baseCalories: drinkData.base_calories,
-                    caloriesBySugar: nil,
-                    sugarGrams: drinkData.sugar_grams,
-                    hasCaffeine: drinkData.has_caffeine,
-                    caffeineContent: drinkData.caffeine_content,
-                    availableSugarLevels: SugarLevel.allCases,
-                    availableIceLevels: IceLevel.allCases
-                )
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let sampleData = try decoder.decode(SampleDataContainer.self, from: data)
+                
+                let brands = sampleData.brands.map { brandData in
+                    Brand(
+                        id: brandData.brand_id,
+                        name: brandData.brand_name,
+                        logoURL: brandData.logo_url,
+                        isActive: brandData.is_active
+                    )
+                }
+                
+                let sortedBrands = Brand.sorted(brands)
+                
+                let drinks = sampleData.drinks.map { drinkData in
+                    Drink(
+                        id: drinkData.drink_id,
+                        brandId: drinkData.brand_id,
+                        name: drinkData.name,
+                        category: Self.refineCategory(name: drinkData.name, originalCategory: Self.mapCategory(drinkData.category)),
+                        imageURL: drinkData.image_url,
+                        baseCalories: drinkData.base_calories,
+                        caloriesBySugar: nil,
+                        sugarGrams: drinkData.sugar_grams,
+                        hasCaffeine: drinkData.has_caffeine,
+                        caffeineContent: drinkData.caffeine_content,
+                        availableSugarLevels: SugarLevel.allCases,
+                        availableIceLevels: IceLevel.allCases
+                    )
+                }
+                
+                return (drinks, sortedBrands)
+            } catch {
+                print("❌ 解析 SampleData.json 失敗: \(error)")
+                return (Drink.sampleDrinks, Brand.sorted(Brand.sampleBrands))
             }
-            
-            print("✅ 成功載入 SampleData.json: \(cachedBrands?.count ?? 0) 品牌, \(cachedDrinks?.count ?? 0) 飲料")
-            
-        } catch {
-            print("❌ 解析 SampleData.json 失敗: \(error)")
-            cachedDrinks = Drink.sampleDrinks
-            cachedBrands = Brand.sorted(Brand.sampleBrands)
-        }
+        }.value
+        
+        self.cachedDrinks = result.0
+        self.cachedBrands = result.1
+        self.isLoaded = true
+        
+        print("✅ 成功非同步載入 SampleData: \(self.cachedBrands?.count ?? 0) 品牌, \(self.cachedDrinks?.count ?? 0) 飲料")
     }
     
     // MARK: - Category Mapping
