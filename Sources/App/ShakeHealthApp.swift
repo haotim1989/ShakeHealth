@@ -45,6 +45,12 @@ struct ShakeHealthApp: App {
                 .environmentObject(appState)
                 .environmentObject(userManager)
                 .task {
+                    // Crashlytics 用戶綁定 (必須在 View 掛載後才能存取 StateObject)
+                    #if canImport(FirebaseCrashlytics)
+                    Crashlytics.crashlytics().setUserID(appState.userId)
+                    Crashlytics.crashlytics().setCustomValue(userManager.isProUser, forKey: "isProUser")
+                    #endif
+                    
                     // 延遲請求 ATT 追蹤授權 (避免啟動時立即彈窗)
                     try? await Task.sleep(nanoseconds: 2_000_000_000)
                     await AdManager.shared.requestTrackingAuthorization()
@@ -58,11 +64,6 @@ struct ShakeHealthApp: App {
         // 注意：若無 GoogleService-Info.plist 會閃退，這裡做個防呆
         if Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil {
             FirebaseApp.configure()
-            
-            #if canImport(FirebaseCrashlytics)
-            Crashlytics.crashlytics().setUserID(appState.userId)
-            Crashlytics.crashlytics().setCustomValue(userManager.isProUser, forKey: "isProUser")
-            #endif
             
             print("🔥 Firebase 已初始化")
         } else {
