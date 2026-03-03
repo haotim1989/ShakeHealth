@@ -95,9 +95,18 @@ struct OnboardingView: View {
                                 RoundedRectangle(cornerRadius: 16)
                                     .fill(Color.teaBrown)
                             )
-                            .shadow(color: .teaBrown.opacity(0.3), radius: 8, y: 4)
                     }
                     .padding(.horizontal, 24)
+                    
+                    if currentPage == pages.count - 1 {
+                        Text("免責聲明：本 App 提供的營養與熱量數據僅供參考，不構成專業醫療建議。如有健康疑慮，請諮詢專業醫師。")
+                            .font(.system(size: 10))
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 32)
+                            .padding(.top, 8)
+                            .transition(.opacity)
+                    }
                 }
                 .padding(.bottom, 40)
             }

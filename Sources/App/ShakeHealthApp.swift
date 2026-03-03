@@ -3,6 +3,9 @@ import SwiftData
 #if canImport(FirebaseCore)
 import FirebaseCore
 #endif
+#if canImport(FirebaseCrashlytics)
+import FirebaseCrashlytics
+#endif
 
 @main
 struct ShakeHealthApp: App {
@@ -55,6 +58,12 @@ struct ShakeHealthApp: App {
         // 注意：若無 GoogleService-Info.plist 會閃退，這裡做個防呆
         if Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil {
             FirebaseApp.configure()
+            
+            #if canImport(FirebaseCrashlytics)
+            Crashlytics.crashlytics().setUserID(appState.userId)
+            Crashlytics.crashlytics().setCustomValue(userManager.isProUser, forKey: "isProUser")
+            #endif
+            
             print("🔥 Firebase 已初始化")
         } else {
             print("⚠️ 未找到 GoogleService-Info.plist，Firebase 略過初始化")

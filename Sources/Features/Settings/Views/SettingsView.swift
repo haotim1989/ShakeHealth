@@ -56,6 +56,9 @@ struct SettingsView: View {
                 // MARK: - 關於
                 aboutSection
                 
+                // MARK: - 聯絡我們
+                contactSection
+                
                 // MARK: - 法律資訊
                 legalInfoSection
             }
@@ -398,6 +401,37 @@ struct SettingsView: View {
             .buttonStyle(.plain)
         } header: {
             Text("法律資訊")
+        } footer: {
+            Text("免責聲明：本 App 提供的營養與熱量數據僅供參考，不構成專業醫療建議。如有健康疑慮，請諮詢專業醫師。")
+                .font(.caption2)
+                .foregroundColor(.secondary)
+                .padding(.top, 4)
+        }
+    }
+    
+    // MARK: - 聯絡我們
+    
+    private var contactSection: some View {
+        Section {
+            Button {
+                if let url = URL(string: "mailto:\(Constants.Legal.supportEmail)") {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                HStack {
+                    Label("聯絡我們", systemImage: "envelope.fill")
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Text(Constants.Legal.supportEmail)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+        } header: {
+            Text("支援")
         }
     }
     

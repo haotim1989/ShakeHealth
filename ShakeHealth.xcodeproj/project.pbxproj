@@ -71,6 +71,7 @@
 		DAT001 /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		EE2609222F554CA300E0EFC4 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		EE2609242F558D0200E0EFC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE2609262F56926800E0EFC4 /* ShakeHealthDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ShakeHealthDebug.entitlements; path = ShakeHealth/ShakeHealthDebug.entitlements; sourceTree = "<group>"; };
 		EE28EC402F4C839900010618 /* ShakeHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ShakeHealth.entitlements; path = ShakeHealth/ShakeHealth.entitlements; sourceTree = "<group>"; };
 		EEFB60122F2DD17C000D7169 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		PROD01 /* ShakeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,6 +397,7 @@
 		ROOT = {
 			isa = PBXGroup;
 			children = (
+				EE2609262F56926800E0EFC4 /* ShakeHealthDebug.entitlements */,
 				EE28EC402F4C839900010618 /* ShakeHealth.entitlements */,
 				EE2609222F554CA300E0EFC4 /* Secrets.plist */,
 				GRP001 /* Sources */,
@@ -662,9 +664,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ShakeHealth/ShakeHealth.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ShakeHealth/ShakeHealthDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = UDY7T62478;
 				ENABLE_PREVIEWS = YES;
@@ -672,11 +674,13 @@
 				INFOPLIST_FILE = ShakeHealth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "飲料日記";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "此 App 會收集追蹤資料以提供個人化廣告體驗";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,7 +701,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ShakeHealth/ShakeHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = UDY7T62478;
 				ENABLE_PREVIEWS = YES;
@@ -705,11 +709,13 @@
 				INFOPLIST_FILE = ShakeHealth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "飲料日記";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "此 App 會收集追蹤資料以提供個人化廣告體驗";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
