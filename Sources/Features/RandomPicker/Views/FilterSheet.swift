@@ -220,6 +220,17 @@ struct FilterSheet: View {
                     }
                 )
             )
+            
+            // 自訂飲料不適用提醒
+            HStack(spacing: 6) {
+                Image(systemName: "info.circle")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+                Text("自訂飲料不適用於隨機喝功能")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.top, 4)
         }
         .padding()
         .background(

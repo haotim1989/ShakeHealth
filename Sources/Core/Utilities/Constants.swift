@@ -47,7 +47,7 @@ enum Constants {
     
     /// App Store (分享功能用)
     enum AppStore {
-        static let appId = "id000000000"  // TODO: 替換為實際的 App ID
+        static let appId = "id6759603590"
         static let downloadURL = "https://apps.apple.com/app/\(appId)"
         /// 管理訂閱 (iOS 設定頁面)
         static let manageSubscriptionURL = "https://apps.apple.com/account/subscriptions"
