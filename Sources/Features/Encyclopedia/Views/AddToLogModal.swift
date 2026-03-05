@@ -364,6 +364,13 @@ struct AddToLogModal: View {
             brandName: drink.brand?.name ?? "",
             caloriesSnapshot: estimatedCalories,
             hasCaffeineSnapshot: drink.hasCaffeine ?? false,
+            caffeineSnapshot: {
+                // 三態保存：true → 實際值, false → 0, nil → nil (資料不足)
+                if let hasCaffeine = drink.hasCaffeine {
+                    return hasCaffeine ? (drink.caffeineContent ?? 0) : 0
+                }
+                return nil  // 資料不足
+            }(),
             toppingsSnapshot: Topping.serialize(selectedToppings),
             tasteTexture: tasteTexture,
             tasteTea: tasteTea,

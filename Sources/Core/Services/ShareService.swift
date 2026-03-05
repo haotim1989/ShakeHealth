@@ -60,16 +60,34 @@ enum ShareService {
     /// 生成日記分享訊息
     static func generateShareMessage(for log: DrinkLog) -> String {
         let stars = String(repeating: "★", count: log.rating) + String(repeating: "☆", count: 5 - log.rating)
-        let caffeineText = log.hasCaffeineSnapshot ? "☕ 含咖啡因" : "🌿 無咖啡因"
+        
+        // 三態咖啡因判斷（含舊資料相容）
+        let caffeineText: String
+        if let mg = log.caffeineSnapshot {
+            if mg > 0 {
+                caffeineText = "☕ 咖啡因 \(mg)mg"
+            } else {
+                caffeineText = "🌿 無咖啡因"
+            }
+        } else if log.hasCaffeineSnapshot {
+            // 舊資料相容：caffeineSnapshot 沒存但 hasCaffeineSnapshot 為 true
+            caffeineText = "☕ 含咖啡因"
+        } else {
+            caffeineText = "☕ 咖啡因資訊不足"
+        }
         
         var message = """
         🧋 我今天喝了【\(log.brandName) \(log.drinkName)】！
         
         📊 規格：\(log.selectedSugar.shortName) / \(log.selectedIce.rawValue)
         🔥 熱量：\(log.caloriesSnapshot) kcal
-        \(caffeineText)
-        ⭐ 評分：\(stars)
         """
+        
+        if !caffeineText.isEmpty {
+            message += "\n\(caffeineText)"
+        }
+        
+        message += "\n⭐ 評分：\(stars)"
         
         if !log.comment.isEmpty {
             message += "\n💬 感想：\(log.comment)"
