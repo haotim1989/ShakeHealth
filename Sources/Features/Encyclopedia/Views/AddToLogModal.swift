@@ -399,6 +399,7 @@ struct AddToLogModal: View {
             ])
             
             HapticManager.shared.success()
+            ReviewManager.shared.trackDiarySave()
             
             // 檢查是否需要顯示廣告 (非 Pro 且當天第 3 筆以上)
             if !userManager.isProUser {
