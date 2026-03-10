@@ -62,6 +62,7 @@
 		SVC008 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC038 /* SubscriptionService.swift */; };
 		SVC009 /* CSVExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC039 /* CSVExportService.swift */; };
 		SVC010 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC045 /* AnalyticsService.swift */; };
+		SVC011 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC050 /* ReviewManager.swift */; };
 		UTL001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* Color+Theme.swift */; };
 		UTL002 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* HapticManager.swift */; };
 		UTL003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* Constants.swift */; };
@@ -125,6 +126,7 @@
 		SRC047 /* TasteProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteProfileSection.swift; sourceTree = "<group>"; };
 		SRC048 /* ConsumerExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerExperience.swift; sourceTree = "<group>"; };
 		SRC049 /* ConsumerExperienceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerExperienceSection.swift; sourceTree = "<group>"; };
+		SRC050 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 				SRC038 /* SubscriptionService.swift */,
 				SRC039 /* CSVExportService.swift */,
 				SRC045 /* AnalyticsService.swift */,
+				SRC050 /* ReviewManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				CMP011 /* TasteProfileSection.swift in Sources */,
 				MOD008 /* ConsumerExperience.swift in Sources */,
 				CMP012 /* ConsumerExperienceSection.swift in Sources */,
+				SVC011 /* ReviewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
