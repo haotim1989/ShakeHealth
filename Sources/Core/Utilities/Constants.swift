@@ -55,9 +55,8 @@ enum Constants {
     
     /// 法律相關連結
     enum Legal {
-        static let privacyPolicyURL = "https://flaxen-enemy-762.notion.site/Privacy-Policy-311e20662b8c804a84acf7bc16f5d0bd"
-        static let termsOfServiceURL = "https://flaxen-enemy-762.notion.site/Terms-of-Service-311e20662b8c8095a9d4f9bc9264b482"
-        // TODO: 替換為實際的專屬客服信箱
+        static let privacyPolicyURL = "https://haotim1989.github.io/privacy.html"
+        static let termsOfServiceURL = "https://haotim1989.github.io/terms.html"
         static let supportEmail = "shakehealthtw@gmail.com"
     }
 }
