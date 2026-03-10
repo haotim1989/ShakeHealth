@@ -262,26 +262,6 @@ struct SettingsView: View {
             }
             .buttonStyle(.plain)
             
-            // 聯絡我們
-            Button {
-                let email = Constants.Legal.supportEmail
-                if let url = URL(string: "mailto:\(email)"), UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url)
-                } else {
-                    // 如果無法開啟郵件 App (例如在模擬器或未設定信箱的設備)，則複製到剪貼簿
-                    UIPasteboard.general.string = email
-                    showCopiedAlert = true
-                }
-            } label: {
-                HStack {
-                    Label("聯絡我們", systemImage: "envelope.fill")
-                        .foregroundColor(.primary)
-                    Spacer()
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            
             // 撰寫評論
             Button {
                 if let url = URL(string: "https://apps.apple.com/app/\(Constants.AppStore.appId)?action=write-review") {
