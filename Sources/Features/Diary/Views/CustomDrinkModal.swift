@@ -61,9 +61,9 @@ struct CustomDrinkModal: View {
     // Paywall
     @State private var showPaywall = false
     
-    // 可選的糖度與冰塊
-    private let allSugarLevels: [SugarLevel] = [.sugar0, .sugar30, .sugar50, .sugar70, .sugar100]
-    private let allIceLevels: [IceLevel] = [.hot, .noIce, .lightIce, .lessIce, .normalIce]
+    // 可選的糖度與溫度
+    private let allSugarLevels: [SugarLevel] = [.sugar0, .sugar10, .sugar30, .sugar50, .sugar70, .sugar100]
+    private let allIceLevels: [IceLevel] = [.hot, .warm, .roomTemp, .completelyNoIce, .noIce, .lightIce, .lessIce, .normalIce]
     
     private var isValidForm: Bool {
         !drinkName.trimmingCharacters(in: .whitespaces).isEmpty &&
@@ -367,9 +367,9 @@ struct CustomDrinkModal: View {
                 }
             }
             
-            // 冰塊
+            // 溫度
             VStack(alignment: .leading, spacing: 8) {
-                Text("冰塊")
+                Text("溫度")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 

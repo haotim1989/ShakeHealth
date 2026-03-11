@@ -4,6 +4,7 @@ import SwiftUI
 /// 甜度等級
 enum SugarLevel: String, Codable, CaseIterable, Identifiable {
     case sugar0 = "無糖"
+    case sugar10 = "一分糖"
     case sugar30 = "微糖"
     case sugar50 = "半糖"
     case sugar70 = "少糖"
@@ -11,10 +12,11 @@ enum SugarLevel: String, Codable, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
-    /// 熱量係數 (相對於正常糖)
+    /// 熱量係數 (相對於正常糖) - fallback 用，有 sugarGrams 時不使用
     var multiplier: Double {
         switch self {
         case .sugar0: return 0.6
+        case .sugar10: return 0.64
         case .sugar30: return 0.75
         case .sugar50: return 0.85
         case .sugar70: return 0.92
@@ -26,6 +28,7 @@ enum SugarLevel: String, Codable, CaseIterable, Identifiable {
     var shortName: String {
         switch self {
         case .sugar0: return "無糖"
+        case .sugar10: return "一分糖"
         case .sugar30: return "微糖"
         case .sugar50: return "半糖"
         case .sugar70: return "少糖"
@@ -34,10 +37,11 @@ enum SugarLevel: String, Codable, CaseIterable, Identifiable {
     }
     
     /// 糖分比例 (0.0 - 1.0)
-    /// 微糖=40%, 半糖=60%, 少糖=80%, 全糖=100%
+    /// 一分糖=10%, 微糖=40%, 半糖=60%, 少糖=80%, 全糖=100%
     var sugarPercentage: Double {
         switch self {
         case .sugar0: return 0.0
+        case .sugar10: return 0.1   // 一分糖
         case .sugar30: return 0.4   // 微糖
         case .sugar50: return 0.6   // 半糖
         case .sugar70: return 0.8   // 少糖
@@ -46,13 +50,16 @@ enum SugarLevel: String, Codable, CaseIterable, Identifiable {
     }
 }
 
-/// 冰塊等級
+/// 溫度等級
 enum IceLevel: String, Codable, CaseIterable, Identifiable {
+    case hot = "熱"
+    case warm = "溫"
+    case roomTemp = "常溫"
+    case completelyNoIce = "完全去冰"
     case noIce = "去冰"
-    case lessIce = "少冰"
     case lightIce = "微冰"
+    case lessIce = "少冰"
     case normalIce = "正常冰"
-    case hot = "熱飲"
     
     var id: String { rawValue }
 }

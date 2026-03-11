@@ -274,9 +274,9 @@ struct AddToLogModal: View {
                 }
             }
             
-            // 冰塊
+            // 溫度
             VStack(alignment: .leading, spacing: 8) {
-                Text("冰塊")
+                Text("溫度")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 

@@ -336,7 +336,7 @@ struct DiaryDetailView: View {
                 Spacer()
                 
                 specItem(
-                    title: "冰塊",
+                    title: "溫度",
                     value: isEditing ? editedIce.rawValue : log.selectedIce.rawValue,
                     icon: "snowflake"
                 )
@@ -365,9 +365,9 @@ struct DiaryDetailView: View {
                     }
                 }
                 
-                // 冰塊選擇
+                // 溫度選擇
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("修改冰塊")
+                    Text("修改溫度")
                         .font(.caption)
                         .foregroundColor(.secondary)
                     

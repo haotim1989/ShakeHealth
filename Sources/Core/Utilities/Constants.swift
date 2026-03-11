@@ -14,7 +14,7 @@ enum Constants {
         static let interstitialAdsEnabled = true
         
         /// 插頁廣告觸發閾值 (每日第 N 次抽獎)
-        static let interstitialPickThreshold = 3
+        static let interstitialPickThreshold = 5
         
         /// 免費用戶每日日記筆數限制
         static let freeDailyDiaryLimit = 1

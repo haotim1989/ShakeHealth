@@ -53,7 +53,16 @@ final class DrinkLog {
     }
     
     var selectedIce: IceLevel {
-        get { IceLevel(rawValue: selectedIceRaw) ?? .normalIce }
+        get {
+            if let level = IceLevel(rawValue: selectedIceRaw) {
+                return level
+            }
+            // 向下相容：舊版 rawValue 映射
+            switch selectedIceRaw {
+            case "熱飲": return .hot
+            default: return .normalIce
+            }
+        }
         set { selectedIceRaw = newValue.rawValue }
     }
     
