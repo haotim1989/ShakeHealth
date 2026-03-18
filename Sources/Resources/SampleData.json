@@ -365,6 +365,36 @@
       "brand_name": "7-11 系列",
       "logo_url": null,
       "is_active": true
+    },
+    {
+      "brand_id": "letscafe",
+      "brand_name": "全家 Let's Cafe",
+      "logo_url": null,
+      "is_active": true
+    },
+    {
+      "brand_id": "letstea",
+      "brand_name": "全家 Let's Tea",
+      "logo_url": null,
+      "is_active": true
+    },
+    {
+      "brand_id": "citytea",
+      "brand_name": "CITY TEA",
+      "logo_url": null,
+      "is_active": true
+    },
+    {
+      "brand_id": "citypearl",
+      "brand_name": "CITY PEARL",
+      "logo_url": null,
+      "is_active": true
+    },
+    {
+      "brand_id": "cityprima",
+      "brand_name": "City Prima",
+      "logo_url": null,
+      "is_active": true
     }
   ],
   "drinks": [
@@ -63462,6 +63492,5443 @@
         "少冰",
         "微冰",
         "去冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_001",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合美式（熱／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 15,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 300,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_071",
+      "brand_id": "chatanghui",
+      "name": "翡翠綠茶",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 181,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 350,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_001",
+      "brand_id": "letstea",
+      "name": "阿里山高冷烏龍 (熱/大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 0,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 102,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_021",
+      "brand_id": "citycafe",
+      "name": "蕉財進寶香蕉風味拿鐵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 295,
+      "sugar_grams": 31.3,
+      "has_caffeine": true,
+      "caffeine_content": 149,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_001",
+      "brand_id": "citytea",
+      "name": "喵財進寶提拉米蘇風味奶茶 (大杯/熱)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 316,
+      "sugar_grams": 39.0,
+      "has_caffeine": true,
+      "caffeine_content": 118,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_002",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合美式（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 19,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 354,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_072",
+      "brand_id": "chatanghui",
+      "name": "茉莉綠茶",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 181,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_002",
+      "brand_id": "letstea",
+      "name": "唐寧經典伯爵茶 (熱/大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 6,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 76,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_022",
+      "brand_id": "citycafe",
+      "name": "蕉財進寶香蕉風味拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 303,
+      "sugar_grams": 31.8,
+      "has_caffeine": true,
+      "caffeine_content": 200,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_002",
+      "brand_id": "citytea",
+      "name": "冰蘋果風味紅茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 520,
+      "sugar_grams": 113.8,
+      "has_caffeine": true,
+      "caffeine_content": 215,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_003",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合美式（冰／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 12,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 209,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_073",
+      "brand_id": "chatanghui",
+      "name": "蔗香紅茶",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 181,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_003",
+      "brand_id": "letstea",
+      "name": "唐寧伯爵醇奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 173,
+      "sugar_grams": 12.0,
+      "has_caffeine": true,
+      "caffeine_content": 114,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_023",
+      "brand_id": "citycafe",
+      "name": "奶油爆米花風味拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 450,
+      "sugar_grams": 52.7,
+      "has_caffeine": true,
+      "caffeine_content": 242,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_003",
+      "brand_id": "citytea",
+      "name": "文旦肉肉青茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 353,
+      "sugar_grams": 76.6,
+      "has_caffeine": true,
+      "caffeine_content": 111,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_004",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合美式（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 16,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 301,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_074",
+      "brand_id": "chatanghui",
+      "name": "碧螺春",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 181,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_004",
+      "brand_id": "letstea",
+      "name": "仙女紅茶 (熱/大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 134,
+      "sugar_grams": 32.0,
+      "has_caffeine": true,
+      "caffeine_content": 76,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_024",
+      "brand_id": "citycafe",
+      "name": "奶油爆米花風味拿鐵(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 487,
+      "sugar_grams": 53.4,
+      "has_caffeine": true,
+      "caffeine_content": 210,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_004",
+      "brand_id": "citytea",
+      "name": "紫桑果粒小葉紅茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 284,
+      "sugar_grams": 68.7,
+      "has_caffeine": true,
+      "caffeine_content": 163,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_005",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合拿鐵（熱／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 211,
+      "sugar_grams": 15.0,
+      "has_caffeine": true,
+      "caffeine_content": 194,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_075",
+      "brand_id": "chatanghui",
+      "name": "鐵觀音",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 181,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_005",
+      "brand_id": "letstea",
+      "name": "仙女紅茶 (冰/大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 132,
+      "sugar_grams": 29.0,
+      "has_caffeine": true,
+      "caffeine_content": 76,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citycafe_025",
+      "brand_id": "citycafe",
+      "name": "香草焦糖風味瑪奇朵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 329,
+      "sugar_grams": 40.6,
+      "has_caffeine": true,
+      "caffeine_content": 195,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_005",
+      "brand_id": "citytea",
+      "name": "紫桑果粒梔子花青茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 277,
+      "sugar_grams": 69.2,
+      "has_caffeine": true,
+      "caffeine_content": 129,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_006",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 261,
+      "sugar_grams": 19.0,
+      "has_caffeine": true,
+      "caffeine_content": 243,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_076",
+      "brand_id": "chatanghui",
+      "name": "素胚皮丘 (純茶)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 181,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_006",
+      "brand_id": "letstea",
+      "name": "仙女醇奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 278,
+      "sugar_grams": 43.0,
+      "has_caffeine": true,
+      "caffeine_content": 76,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_026",
+      "brand_id": "citycafe",
+      "name": "香草焦糖風味瑪奇朵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 331,
+      "sugar_grams": 40.9,
+      "has_caffeine": true,
+      "caffeine_content": 269,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_006",
+      "brand_id": "citytea",
+      "name": "梔子花青茶 (大杯/熱)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 182,
+      "sugar_grams": 41.5,
+      "has_caffeine": true,
+      "caffeine_content": 105,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_007",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合拿鐵（冰／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 108,
+      "sugar_grams": 8.0,
+      "has_caffeine": true,
+      "caffeine_content": 117,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "louisa_045",
+      "brand_id": "louisa",
+      "name": "莊園級輕拿鐵 (大/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 198,
+      "sugar_grams": 33.0,
+      "has_caffeine": true,
+      "caffeine_content": 333,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_077",
+      "brand_id": "chatanghui",
+      "name": "翡翠奶茶",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 549,
+      "sugar_grams": 45.0,
+      "has_caffeine": true,
+      "caffeine_content": 350,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_007",
+      "brand_id": "letstea",
+      "name": "仙女醇奶茶 (冰/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 214,
+      "sugar_grams": 33.0,
+      "has_caffeine": true,
+      "caffeine_content": 76,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citycafe_027",
+      "brand_id": "citycafe",
+      "name": "黃金榛果太妃風味拿鐵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 304,
+      "sugar_grams": 33.8,
+      "has_caffeine": true,
+      "caffeine_content": 205,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_007",
+      "brand_id": "citytea",
+      "name": "梔子花青茶 (特大/冰)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 184,
+      "sugar_grams": 42.8,
+      "has_caffeine": true,
+      "caffeine_content": 129,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_008",
+      "brand_id": "letscafe",
+      "name": "阿里山極選綜合拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 183,
+      "sugar_grams": 13.0,
+      "has_caffeine": true,
+      "caffeine_content": 179,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "louisa_046",
+      "brand_id": "louisa",
+      "name": "莊園級輕拿鐵 (大/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 140,
+      "sugar_grams": 18.5,
+      "has_caffeine": true,
+      "caffeine_content": 333,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_078",
+      "brand_id": "chatanghui",
+      "name": "茉莉奶茶",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 549,
+      "sugar_grams": 45.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_008",
+      "brand_id": "letstea",
+      "name": "四季春青茶 (熱/大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 0,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 92,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_028",
+      "brand_id": "citycafe",
+      "name": "黃金榛果太妃風味拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 312,
+      "sugar_grams": 33.9,
+      "has_caffeine": true,
+      "caffeine_content": 298,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_008",
+      "brand_id": "citytea",
+      "name": "琥珀小葉紅茶 (大杯/熱)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 180,
+      "sugar_grams": 42.6,
+      "has_caffeine": true,
+      "caffeine_content": 199,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_009",
+      "brand_id": "letscafe",
+      "name": "經典美式（熱／小杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 7,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 108,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "louisa_047",
+      "brand_id": "louisa",
+      "name": "輕奶拿鐵 (大/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 198,
+      "sugar_grams": 33.0,
+      "has_caffeine": true,
+      "caffeine_content": 381,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_079",
+      "brand_id": "chatanghui",
+      "name": "蔗香奶茶",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 549,
+      "sugar_grams": 45.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_009",
+      "brand_id": "letstea",
+      "name": "厚濃靜岡抹茶拿鐵 (熱/大杯)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 329,
+      "sugar_grams": 45.0,
+      "has_caffeine": true,
+      "caffeine_content": 128,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_009",
+      "brand_id": "citytea",
+      "name": "琥珀小葉紅茶 (特大/冰)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 191,
+      "sugar_grams": 35.0,
+      "has_caffeine": true,
+      "caffeine_content": 221,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_010",
+      "brand_id": "letscafe",
+      "name": "經典美式（熱／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 11,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 168,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "louisa_048",
+      "brand_id": "louisa",
+      "name": "輕奶拿鐵 (大/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 142,
+      "sugar_grams": 18.5,
+      "has_caffeine": true,
+      "caffeine_content": 381,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_080",
+      "brand_id": "chatanghui",
+      "name": "碧螺春奶茶",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 549,
+      "sugar_grams": 45.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_010",
+      "brand_id": "letstea",
+      "name": "厚濃靜岡抹茶拿鐵 (冰/大杯)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 301,
+      "sugar_grams": 45.0,
+      "has_caffeine": true,
+      "caffeine_content": 127,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_010",
+      "brand_id": "citytea",
+      "name": "梔子花奶青 (大杯/熱)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 330,
+      "sugar_grams": 53.6,
+      "has_caffeine": true,
+      "caffeine_content": 137,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_011",
+      "brand_id": "letscafe",
+      "name": "經典美式（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 15,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 241,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_011",
+      "brand_id": "letstea",
+      "name": "焙茶拿鐵 (熱/大杯)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 441,
+      "sugar_grams": 50.0,
+      "has_caffeine": true,
+      "caffeine_content": 154,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_011",
+      "brand_id": "citytea",
+      "name": "梔子花奶青 (特大/冰)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 307,
+      "sugar_grams": 50.8,
+      "has_caffeine": true,
+      "caffeine_content": 153,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_012",
+      "brand_id": "letscafe",
+      "name": "經典美式（熱／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 19,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 267,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_081",
+      "brand_id": "chatanghui",
+      "name": "翡翠拿鐵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 290,
+      "sugar_grams": 44.0,
+      "has_caffeine": true,
+      "caffeine_content": 350,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_012",
+      "brand_id": "letstea",
+      "name": "焙茶拿鐵 (冰/大杯)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 394,
+      "sugar_grams": 44.0,
+      "has_caffeine": true,
+      "caffeine_content": 159,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_012",
+      "brand_id": "citytea",
+      "name": "琥珀小葉奶茶 (大杯/熱)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 327,
+      "sugar_grams": 50.9,
+      "has_caffeine": true,
+      "caffeine_content": 184,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_013",
+      "brand_id": "letscafe",
+      "name": "經典美式（冰／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 10,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 163,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_082",
+      "brand_id": "chatanghui",
+      "name": "茉莉拿鐵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 290,
+      "sugar_grams": 44.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_013",
+      "brand_id": "letstea",
+      "name": "好喝奶茶 (冰/特大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 489,
+      "sugar_grams": 66.0,
+      "has_caffeine": true,
+      "caffeine_content": 152,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_013",
+      "brand_id": "citytea",
+      "name": "琥珀小葉奶茶 (特大/冰)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 322,
+      "sugar_grams": 53.4,
+      "has_caffeine": true,
+      "caffeine_content": 214,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_014",
+      "brand_id": "letscafe",
+      "name": "經典美式（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 16,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 243,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_083",
+      "brand_id": "chatanghui",
+      "name": "蔗香拿鐵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 290,
+      "sugar_grams": 44.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_014",
+      "brand_id": "letstea",
+      "name": "芝麻糊糊 (熱/大杯)",
+      "category": "fresh",
+      "image_url": null,
+      "base_calories": 480,
+      "sugar_grams": 39.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_029",
+      "brand_id": "citycafe",
+      "name": "厚乳拿鐵(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 290,
+      "sugar_grams": 20.1,
+      "has_caffeine": true,
+      "caffeine_content": 162,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_014",
+      "brand_id": "citytea",
+      "name": "莓好果粒冰茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 338,
+      "sugar_grams": 73.9,
+      "has_caffeine": true,
+      "caffeine_content": 142,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_015",
+      "brand_id": "letscafe",
+      "name": "經典美式（冰／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 20,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 296,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_084",
+      "brand_id": "chatanghui",
+      "name": "碧螺春拿鐵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 290,
+      "sugar_grams": 44.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_015",
+      "brand_id": "letstea",
+      "name": "燒燒仙草 (熱/大杯)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 288,
+      "sugar_grams": 42.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_030",
+      "brand_id": "citycafe",
+      "name": "厚乳拿鐵(特大/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 396,
+      "sugar_grams": 27.8,
+      "has_caffeine": true,
+      "caffeine_content": 207,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citytea_015",
+      "brand_id": "citytea",
+      "name": "香鑽水果茶 (大杯/熱)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 352,
+      "sugar_grams": 72.8,
+      "has_caffeine": true,
+      "caffeine_content": 164,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_016",
+      "brand_id": "letscafe",
+      "name": "特濃美式（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 19,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 274,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_016",
+      "brand_id": "letstea",
+      "name": "香蕉火龍果牛奶 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 385,
+      "sugar_grams": 65.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citycafe_031",
+      "brand_id": "citycafe",
+      "name": "厚乳拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 202,
+      "sugar_grams": 13.5,
+      "has_caffeine": true,
+      "caffeine_content": 139,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_016",
+      "brand_id": "citytea",
+      "name": "香鑽水果茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 375,
+      "sugar_grams": 79.1,
+      "has_caffeine": true,
+      "caffeine_content": 164,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_017",
+      "brand_id": "letscafe",
+      "name": "特濃美式（熱／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 19,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 311,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_017",
+      "brand_id": "letstea",
+      "name": "百香QQ綠 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 416,
+      "sugar_grams": 85.0,
+      "has_caffeine": true,
+      "caffeine_content": 85,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citycafe_032",
+      "brand_id": "citycafe",
+      "name": "厚乳拿鐵(特大/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 287,
+      "sugar_grams": 21.0,
+      "has_caffeine": true,
+      "caffeine_content": 165,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_017",
+      "brand_id": "citytea",
+      "name": "冰淇淋紅茶 (特大/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 439,
+      "sugar_grams": 68.1,
+      "has_caffeine": true,
+      "caffeine_content": 211,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_018",
+      "brand_id": "letscafe",
+      "name": "特濃美式（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 14,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 238,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_040",
+      "brand_id": "starbucks",
+      "name": "冰黑櫻桃風味瑪奇朵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 657,
+      "sugar_grams": 89.0,
+      "has_caffeine": true,
+      "caffeine_content": 195,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_085",
+      "brand_id": "chatanghui",
+      "name": "珍珠拿鐵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 442,
+      "sugar_grams": 51.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_018",
+      "brand_id": "letstea",
+      "name": "冬瓜QQ撞奶 (冰/特大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 486,
+      "sugar_grams": 63.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_018",
+      "brand_id": "citytea",
+      "name": "青梅冰茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 428,
+      "sugar_grams": 86.0,
+      "has_caffeine": true,
+      "caffeine_content": 161,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_019",
+      "brand_id": "letscafe",
+      "name": "特濃美式（冰／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 21,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 308,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_041",
+      "brand_id": "starbucks",
+      "name": "黑櫻桃風味瑪奇朵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 657,
+      "sugar_grams": 89.0,
+      "has_caffeine": true,
+      "caffeine_content": 195,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_019",
+      "brand_id": "letstea",
+      "name": "紅心芭樂牛奶 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 432,
+      "sugar_grams": 69.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_019",
+      "brand_id": "citytea",
+      "name": "一顆檸檬青茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 361,
+      "sugar_grams": 65.6,
+      "has_caffeine": true,
+      "caffeine_content": 184,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_020",
+      "brand_id": "letscafe",
+      "name": "卡布奇諾（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 139,
+      "sugar_grams": 9.0,
+      "has_caffeine": true,
+      "caffeine_content": 169,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_020",
+      "brand_id": "letstea",
+      "name": "好喝蕎麥奶茶 (冰/特大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 256,
+      "sugar_grams": 32.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_020",
+      "brand_id": "citytea",
+      "name": "一顆檸檬紅茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 357,
+      "sugar_grams": 70.8,
+      "has_caffeine": true,
+      "caffeine_content": 153,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_021",
+      "brand_id": "letscafe",
+      "name": "經典冰磚拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 214,
+      "sugar_grams": 20.0,
+      "has_caffeine": true,
+      "caffeine_content": 167,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_086",
+      "brand_id": "chatanghui",
+      "name": "珍珠燕麥拿鐵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 487,
+      "sugar_grams": 56.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_021",
+      "brand_id": "letstea",
+      "name": "卡曼橘青茶 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 238,
+      "sugar_grams": 55.0,
+      "has_caffeine": true,
+      "caffeine_content": 92,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_021",
+      "brand_id": "citytea",
+      "name": "香草奶蓋",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 163,
+      "sugar_grams": 10.1,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_022",
+      "brand_id": "letscafe",
+      "name": "卡曼橘美式（冰／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 200,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 239,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letstea_022",
+      "brand_id": "letstea",
+      "name": "荔枝貴妃紅茶 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 253,
+      "sugar_grams": 55.0,
+      "has_caffeine": true,
+      "caffeine_content": 204,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citytea_022",
+      "brand_id": "citytea",
+      "name": "原味黑珍珠",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 285,
+      "sugar_grams": 30.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_023",
+      "brand_id": "letscafe",
+      "name": "經典拿鐵（熱／小杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 124,
+      "sugar_grams": 8.0,
+      "has_caffeine": true,
+      "caffeine_content": 61,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_087",
+      "brand_id": "chatanghui",
+      "name": "鮮桔檸檬",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 292,
+      "sugar_grams": 68.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_023",
+      "brand_id": "letstea",
+      "name": "柳橙香柚綠茶 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 298,
+      "sugar_grams": 70.0,
+      "has_caffeine": true,
+      "caffeine_content": 218,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_001",
+      "brand_id": "citypearl",
+      "name": "椰香芋見西米露 (大杯/熱)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 367,
+      "sugar_grams": 38.7,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_024",
+      "brand_id": "letscafe",
+      "name": "經典拿鐵（熱／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 172,
+      "sugar_grams": 11.0,
+      "has_caffeine": true,
+      "caffeine_content": 127,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_042",
+      "brand_id": "starbucks",
+      "name": "脆糖紫紅薯燕麥瑪奇朵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 422,
+      "sugar_grams": 58.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_088",
+      "brand_id": "chatanghui",
+      "name": "葡萄柚綠茶",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 227,
+      "sugar_grams": 49.0,
+      "has_caffeine": true,
+      "caffeine_content": 350,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_024",
+      "brand_id": "letstea",
+      "name": "桃粿仙女紅茶 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 353,
+      "sugar_grams": 69.0,
+      "has_caffeine": true,
+      "caffeine_content": 67,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_002",
+      "brand_id": "citypearl",
+      "name": "黑金燒仙草 (大杯/熱)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 306,
+      "sugar_grams": 29.9,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_025",
+      "brand_id": "letscafe",
+      "name": "經典拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 222,
+      "sugar_grams": 13.0,
+      "has_caffeine": true,
+      "caffeine_content": 152,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_089",
+      "brand_id": "chatanghui",
+      "name": "冬瓜茶",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 192,
+      "sugar_grams": 48.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_025",
+      "brand_id": "letstea",
+      "name": "夏芒粉角青茶 (冰/特大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 437,
+      "sugar_grams": 84.0,
+      "has_caffeine": true,
+      "caffeine_content": 80,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_003",
+      "brand_id": "citypearl",
+      "name": "杏仁豆腐冰沙 (大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 436,
+      "sugar_grams": 37.2,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_026",
+      "brand_id": "letscafe",
+      "name": "經典拿鐵（熱／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 276,
+      "sugar_grams": 17.0,
+      "has_caffeine": true,
+      "caffeine_content": 195,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_090",
+      "brand_id": "chatanghui",
+      "name": "冬瓜檸檬",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 211,
+      "sugar_grams": 52.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_026",
+      "brand_id": "letstea",
+      "name": "芒樂檸檬綠 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 307,
+      "sugar_grams": 77.0,
+      "has_caffeine": true,
+      "caffeine_content": 80,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_004",
+      "brand_id": "citypearl",
+      "name": "黑糖粉粿剉冰 (大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 332,
+      "sugar_grams": 70.9,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_027",
+      "brand_id": "letscafe",
+      "name": "經典拿鐵（冰／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 97,
+      "sugar_grams": 7.0,
+      "has_caffeine": true,
+      "caffeine_content": 61,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letstea_027",
+      "brand_id": "letstea",
+      "name": "蘋果芒芒綠 (冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 294,
+      "sugar_grams": 62.0,
+      "has_caffeine": true,
+      "caffeine_content": 80,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_005",
+      "brand_id": "citypearl",
+      "name": "統一布丁冰沙 (大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 170,
+      "sugar_grams": 27.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_028",
+      "brand_id": "letscafe",
+      "name": "經典拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 174,
+      "sugar_grams": 11.0,
+      "has_caffeine": true,
+      "caffeine_content": 86,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_043",
+      "brand_id": "starbucks",
+      "name": "卡布奇諾",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 257,
+      "sugar_grams": 22.0,
+      "has_caffeine": true,
+      "caffeine_content": 195,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_028",
+      "brand_id": "letstea",
+      "name": "能量仙女紅 (葡萄風味)(冰/特大杯)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 271,
+      "sugar_grams": 64.0,
+      "has_caffeine": true,
+      "caffeine_content": 180,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_006",
+      "brand_id": "citypearl",
+      "name": "HERSHEY'S 巧克力冰沙 (大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 366,
+      "sugar_grams": 52.0,
+      "has_caffeine": true,
+      "caffeine_content": 11,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_029",
+      "brand_id": "letscafe",
+      "name": "經典拿鐵（冰／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 233,
+      "sugar_grams": 15.0,
+      "has_caffeine": true,
+      "caffeine_content": 160,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "louisa_049",
+      "brand_id": "louisa",
+      "name": "抹茶風味拿鐵 (大/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 359,
+      "sugar_grams": 43.1,
+      "has_caffeine": true,
+      "caffeine_content": 524,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_091",
+      "brand_id": "chatanghui",
+      "name": "養樂多檸檬",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 334,
+      "sugar_grams": 77.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_029",
+      "brand_id": "letstea",
+      "name": "能量仙女紅 (野莓風味)(冰/特大杯)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 132,
+      "sugar_grams": 29.0,
+      "has_caffeine": true,
+      "caffeine_content": 180,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_007",
+      "brand_id": "citypearl",
+      "name": "楊枝甘露 (大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 233,
+      "sugar_grams": 52.9,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_030",
+      "brand_id": "letscafe",
+      "name": "特濃拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 228,
+      "sugar_grams": 15.0,
+      "has_caffeine": true,
+      "caffeine_content": 198,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "louisa_050",
+      "brand_id": "louisa",
+      "name": "抹茶風味拿鐵 (大/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 327,
+      "sugar_grams": 30.9,
+      "has_caffeine": true,
+      "caffeine_content": 524,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_092",
+      "brand_id": "chatanghui",
+      "name": "脆梅綠茶",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 250,
+      "sugar_grams": 56.0,
+      "has_caffeine": true,
+      "caffeine_content": 350,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_030",
+      "brand_id": "letstea",
+      "name": "白奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 142,
+      "sugar_grams": 11.0,
+      "has_caffeine": true,
+      "caffeine_content": 169,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_008",
+      "brand_id": "citypearl",
+      "name": "懷舊鳳梨冰 (大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 262,
+      "sugar_grams": 60.6,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_031",
+      "brand_id": "letscafe",
+      "name": "特濃拿鐵（熱／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 270,
+      "sugar_grams": 17.0,
+      "has_caffeine": true,
+      "caffeine_content": 213,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_093",
+      "brand_id": "chatanghui",
+      "name": "脆梅檸檬",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 269,
+      "sugar_grams": 60.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_031",
+      "brand_id": "letstea",
+      "name": "白烏龍醇奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 143,
+      "sugar_grams": 10.0,
+      "has_caffeine": true,
+      "caffeine_content": 179,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_009",
+      "brand_id": "citypearl",
+      "name": "CITY 蜜桃果粒冰茶 (特大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 300,
+      "sugar_grams": 59.4,
+      "has_caffeine": true,
+      "caffeine_content": 124,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_032",
+      "brand_id": "letscafe",
+      "name": "特濃拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 166,
+      "sugar_grams": 12.0,
+      "has_caffeine": true,
+      "caffeine_content": 108,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letstea_032",
+      "brand_id": "letstea",
+      "name": "紅奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 142,
+      "sugar_grams": 11.0,
+      "has_caffeine": true,
+      "caffeine_content": 226,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_010",
+      "brand_id": "citypearl",
+      "name": "蜜香伯爵拿鐵 (大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 275,
+      "sugar_grams": 33.5,
+      "has_caffeine": true,
+      "caffeine_content": 61,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_033",
+      "brand_id": "letscafe",
+      "name": "特濃拿鐵（冰／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 215,
+      "sugar_grams": 14.0,
+      "has_caffeine": true,
+      "caffeine_content": 148,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "chatanghui_094",
+      "brand_id": "chatanghui",
+      "name": "蜂蜜檸檬",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 248,
+      "sugar_grams": 54.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_033",
+      "brand_id": "letstea",
+      "name": "鮮露醇奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 143,
+      "sugar_grams": 10.0,
+      "has_caffeine": true,
+      "caffeine_content": 228,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_011",
+      "brand_id": "citypearl",
+      "name": "蜜香伯爵拿鐵 (大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 370,
+      "sugar_grams": 37.9,
+      "has_caffeine": true,
+      "caffeine_content": 96,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_034",
+      "brand_id": "letscafe",
+      "name": "Cona's 草莓白巧可可（熱／中杯）",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 289,
+      "sugar_grams": 31.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_034",
+      "brand_id": "letstea",
+      "name": "慢煮焦糖白奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 196,
+      "sugar_grams": 24.0,
+      "has_caffeine": true,
+      "caffeine_content": 186,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_012",
+      "brand_id": "citypearl",
+      "name": "珍珠焙火烏龍奶茶 (特大/冰)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 484,
+      "sugar_grams": 53.4,
+      "has_caffeine": true,
+      "caffeine_content": 80,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_035",
+      "brand_id": "letscafe",
+      "name": "Cona's 草莓白巧可可（冰／大杯）",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 220,
+      "sugar_grams": 26.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_044",
+      "brand_id": "starbucks",
+      "name": "芒果火龍果檸檬星沁爽",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 273,
+      "sugar_grams": 71.0,
+      "has_caffeine": true,
+      "caffeine_content": 67,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_035",
+      "brand_id": "letstea",
+      "name": "慢煮焦糖紅奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 196,
+      "sugar_grams": 24.0,
+      "has_caffeine": true,
+      "caffeine_content": 243,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_013",
+      "brand_id": "citypearl",
+      "name": "珍珠焙火烏龍奶茶 (大杯/熱)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 484,
+      "sugar_grams": 53.4,
+      "has_caffeine": true,
+      "caffeine_content": 80,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_036",
+      "brand_id": "letscafe",
+      "name": "經典巧克力飲（熱／中杯）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 445,
+      "sugar_grams": 54.0,
+      "has_caffeine": true,
+      "caffeine_content": 25,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_045",
+      "brand_id": "starbucks",
+      "name": "芒果火龍果椰奶星沁爽",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 252,
+      "sugar_grams": 55.0,
+      "has_caffeine": true,
+      "caffeine_content": 67,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_036",
+      "brand_id": "letstea",
+      "name": "豆乳紅茶 (熱/大杯)",
+      "category": "fresh",
+      "image_url": null,
+      "base_calories": 293,
+      "sugar_grams": 34.0,
+      "has_caffeine": true,
+      "caffeine_content": 147,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_014",
+      "brand_id": "citypearl",
+      "name": "CITY 水果冰沙多肉葡萄 (大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 221,
+      "sugar_grams": 55.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_037",
+      "brand_id": "letscafe",
+      "name": "經典巧克力飲（冰／大杯）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 336,
+      "sugar_grams": 46.0,
+      "has_caffeine": true,
+      "caffeine_content": 25,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "louisa_051",
+      "brand_id": "louisa",
+      "name": "生椰美式 (大/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 144,
+      "sugar_grams": 20.8,
+      "has_caffeine": true,
+      "caffeine_content": 190,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_046",
+      "brand_id": "starbucks",
+      "name": "奇異果百香果爆爆檸檬星沁爽",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 394,
+      "sugar_grams": 88.0,
+      "has_caffeine": true,
+      "caffeine_content": 87,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_037",
+      "brand_id": "letstea",
+      "name": "五窨茉莉茶后 (熱/大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 0,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 105,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_015",
+      "brand_id": "citypearl",
+      "name": "珍珠奶茶 (特大/冰)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 568,
+      "sugar_grams": 40.5,
+      "has_caffeine": true,
+      "caffeine_content": 195,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_038",
+      "brand_id": "letscafe",
+      "name": "西西里咖啡（冰／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 253,
+      "sugar_grams": 53.0,
+      "has_caffeine": true,
+      "caffeine_content": 239,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_047",
+      "brand_id": "starbucks",
+      "name": "奇異果百香果爆爆椰奶星沁爽",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 513,
+      "sugar_grams": 79.0,
+      "has_caffeine": true,
+      "caffeine_content": 90,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_038",
+      "brand_id": "letstea",
+      "name": "金焙蕎麥茶 (熱/大杯)",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 0,
+      "sugar_grams": 0.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_033",
+      "brand_id": "citycafe",
+      "name": "卡布奇諾(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 145,
+      "sugar_grams": 9.3,
+      "has_caffeine": true,
+      "caffeine_content": 235,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_016",
+      "brand_id": "citypearl",
+      "name": "珍珠奶茶 (大杯/熱)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 565,
+      "sugar_grams": 38.8,
+      "has_caffeine": true,
+      "caffeine_content": 194,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_039",
+      "brand_id": "letscafe",
+      "name": "鮮乳坊嘉明拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 196,
+      "sugar_grams": 13.0,
+      "has_caffeine": true,
+      "caffeine_content": 141,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_048",
+      "brand_id": "starbucks",
+      "name": "草莓巴西莓風味冰雪星沁爽",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 281,
+      "sugar_grams": 65.0,
+      "has_caffeine": true,
+      "caffeine_content": 94,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_039",
+      "brand_id": "letstea",
+      "name": "五窨茉莉茶醇奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 143,
+      "sugar_grams": 10.0,
+      "has_caffeine": true,
+      "caffeine_content": 209,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_034",
+      "brand_id": "citycafe",
+      "name": "卡布奇諾(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 186,
+      "sugar_grams": 12.1,
+      "has_caffeine": true,
+      "caffeine_content": 295,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_017",
+      "brand_id": "citypearl",
+      "name": "咖啡珍珠歐蕾 (大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 388,
+      "sugar_grams": 35.5,
+      "has_caffeine": true,
+      "caffeine_content": 135,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_040",
+      "brand_id": "letscafe",
+      "name": "鮮乳坊A2 β 酪蛋白拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 201,
+      "sugar_grams": 13.0,
+      "has_caffeine": true,
+      "caffeine_content": 141,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_049",
+      "brand_id": "starbucks",
+      "name": "芒果火龍果冰雪星沁爽",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 313,
+      "sugar_grams": 77.0,
+      "has_caffeine": true,
+      "caffeine_content": 102,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letstea_040",
+      "brand_id": "letstea",
+      "name": "金焙蕎麥醇奶茶 (熱/大杯)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 143,
+      "sugar_grams": 10.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_035",
+      "brand_id": "citycafe",
+      "name": "卡布奇諾(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 143,
+      "sugar_grams": 9.3,
+      "has_caffeine": true,
+      "caffeine_content": 292,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citypearl_018",
+      "brand_id": "citypearl",
+      "name": "咖啡珍珠歐蕾 (大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 385,
+      "sugar_grams": 35.5,
+      "has_caffeine": true,
+      "caffeine_content": 135,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_041",
+      "brand_id": "letscafe",
+      "name": "泰式椰奶拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 180,
+      "sugar_grams": 13.0,
+      "has_caffeine": true,
+      "caffeine_content": 141,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_050",
+      "brand_id": "starbucks",
+      "name": "冰脆糖紫紅薯燕麥瑪奇朵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 310,
+      "sugar_grams": 50.0,
+      "has_caffeine": true,
+      "caffeine_content": 150,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_036",
+      "brand_id": "citycafe",
+      "name": "燕麥拿鐵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 198,
+      "sugar_grams": 8.0,
+      "has_caffeine": true,
+      "caffeine_content": 247,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_019",
+      "brand_id": "citypearl",
+      "name": "黑糖珍珠撞奶 (大杯/冰)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 371,
+      "sugar_grams": 32.5,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_042",
+      "brand_id": "letscafe",
+      "name": "泰式椰奶拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 180,
+      "sugar_grams": 13.0,
+      "has_caffeine": true,
+      "caffeine_content": 141,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citycafe_037",
+      "brand_id": "citycafe",
+      "name": "燕麥拿鐵(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 248,
+      "sugar_grams": 10.4,
+      "has_caffeine": true,
+      "caffeine_content": 290,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citypearl_020",
+      "brand_id": "citypearl",
+      "name": "黑糖珍珠撞奶 (大杯/熱)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 357,
+      "sugar_grams": 35.2,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_043",
+      "brand_id": "letscafe",
+      "name": "愛之味燕麥奶拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 179,
+      "sugar_grams": 11.0,
+      "has_caffeine": true,
+      "caffeine_content": 103,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_038",
+      "brand_id": "citycafe",
+      "name": "燕麥拿鐵(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 164,
+      "sugar_grams": 8.6,
+      "has_caffeine": true,
+      "caffeine_content": 252,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_044",
+      "brand_id": "letscafe",
+      "name": "愛之味燕麥奶拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 196,
+      "sugar_grams": 12.0,
+      "has_caffeine": true,
+      "caffeine_content": 113,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "louisa_052",
+      "brand_id": "louisa",
+      "name": "小農鮮奶咖啡 (大/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 217,
+      "sugar_grams": 35.5,
+      "has_caffeine": true,
+      "caffeine_content": 381,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_039",
+      "brand_id": "citycafe",
+      "name": "燕麥拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 226,
+      "sugar_grams": 10.2,
+      "has_caffeine": true,
+      "caffeine_content": 300,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_045",
+      "brand_id": "letscafe",
+      "name": "Oatly 燕麥奶拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 228,
+      "sugar_grams": 16.0,
+      "has_caffeine": true,
+      "caffeine_content": 141,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "louisa_053",
+      "brand_id": "louisa",
+      "name": "小農鮮奶咖啡 (大/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 175,
+      "sugar_grams": 22.5,
+      "has_caffeine": true,
+      "caffeine_content": 381,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_051",
+      "brand_id": "starbucks",
+      "name": "雲朵冰搖濃縮咖啡",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 153,
+      "sugar_grams": 28.0,
+      "has_caffeine": true,
+      "caffeine_content": 291,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_040",
+      "brand_id": "citycafe",
+      "name": "榛果風味燕麥拿鐵(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 308,
+      "sugar_grams": 31.7,
+      "has_caffeine": true,
+      "caffeine_content": 235,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_046",
+      "brand_id": "letscafe",
+      "name": "Oatly 燕麥奶拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 228,
+      "sugar_grams": 16.0,
+      "has_caffeine": true,
+      "caffeine_content": 141,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "louisa_054",
+      "brand_id": "louisa",
+      "name": "精選英式奶茶 (大/冰)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 340,
+      "sugar_grams": 47.0,
+      "has_caffeine": true,
+      "caffeine_content": 177,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_041",
+      "brand_id": "citycafe",
+      "name": "榛果風味燕麥拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 317,
+      "sugar_grams": 31.8,
+      "has_caffeine": true,
+      "caffeine_content": 245,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_047",
+      "brand_id": "letscafe",
+      "name": "經典摩卡拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 346,
+      "sugar_grams": 31.0,
+      "has_caffeine": true,
+      "caffeine_content": 177,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "louisa_055",
+      "brand_id": "louisa",
+      "name": "精選英式奶茶 (大/熱)",
+      "category": "milkTea",
+      "image_url": null,
+      "base_calories": 280,
+      "sugar_grams": 32.0,
+      "has_caffeine": true,
+      "caffeine_content": 177,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_048",
+      "brand_id": "letscafe",
+      "name": "經典摩卡拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 301,
+      "sugar_grams": 29.0,
+      "has_caffeine": true,
+      "caffeine_content": 118,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_049",
+      "brand_id": "letscafe",
+      "name": "椰棗蜜拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 316,
+      "sugar_grams": 35.0,
+      "has_caffeine": true,
+      "caffeine_content": 177,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_050",
+      "brand_id": "letscafe",
+      "name": "椰棗蜜拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 271,
+      "sugar_grams": 33.0,
+      "has_caffeine": true,
+      "caffeine_content": 118,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "louisa_056",
+      "brand_id": "louisa",
+      "name": "泰勒伯爵水果茶 (大/冰)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 63,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 67,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_052",
+      "brand_id": "starbucks",
+      "name": "蜜桃雙茶咖啡果昔",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 187,
+      "sugar_grams": 32.0,
+      "has_caffeine": true,
+      "caffeine_content": 398,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_051",
+      "brand_id": "letscafe",
+      "name": "椰棗蜜牛奶（熱／中杯）",
+      "category": "fresh",
+      "image_url": null,
+      "base_calories": 323,
+      "sugar_grams": 38.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "louisa_057",
+      "brand_id": "louisa",
+      "name": "南非國寶青檸茶 (大/熱)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 201,
+      "sugar_grams": 49.3,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_053",
+      "brand_id": "starbucks",
+      "name": "冰咖啡密斯朵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 219,
+      "sugar_grams": 19.0,
+      "has_caffeine": true,
+      "caffeine_content": 273,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_052",
+      "brand_id": "letscafe",
+      "name": "椰棗蜜牛奶（冰／大杯）",
+      "category": "fresh",
+      "image_url": null,
+      "base_calories": 214,
+      "sugar_grams": 30.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_054",
+      "brand_id": "starbucks",
+      "name": "每日精選咖啡",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 37,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 583,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_053",
+      "brand_id": "letscafe",
+      "name": "義式濃縮咖啡（熱／30 ml）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 11,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 141,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_055",
+      "brand_id": "starbucks",
+      "name": "冰每日精選咖啡",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 36,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 366,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_042",
+      "brand_id": "citycafe",
+      "name": "HERSHEY'S好時經典可可(中杯/熱)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 399,
+      "sugar_grams": 40.1,
+      "has_caffeine": true,
+      "caffeine_content": 43,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_054",
+      "brand_id": "letscafe",
+      "name": "美好分享壺（熱／2880 ml）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 108,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 1630,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_056",
+      "brand_id": "starbucks",
+      "name": "咖啡密斯朵",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 219,
+      "sugar_grams": 19.0,
+      "has_caffeine": true,
+      "caffeine_content": 273,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_043",
+      "brand_id": "citycafe",
+      "name": "HERSHEY'S好時經典可可(大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 455,
+      "sugar_grams": 41.6,
+      "has_caffeine": true,
+      "caffeine_content": 44,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_055",
+      "brand_id": "letscafe",
+      "name": "慢煮焦糖拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 310,
+      "sugar_grams": 37.0,
+      "has_caffeine": true,
+      "caffeine_content": 177,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_044",
+      "brand_id": "citycafe",
+      "name": "西西里風檸檬氣泡咖啡(特大/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 325,
+      "sugar_grams": 66.3,
+      "has_caffeine": true,
+      "caffeine_content": 356,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_056",
+      "brand_id": "letscafe",
+      "name": "慢煮焦糖拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 265,
+      "sugar_grams": 35.0,
+      "has_caffeine": true,
+      "caffeine_content": 118,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_057",
+      "brand_id": "letscafe",
+      "name": "經典咖啡凍拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 188,
+      "sugar_grams": 28.0,
+      "has_caffeine": true,
+      "caffeine_content": 119,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citycafe_045",
+      "brand_id": "citycafe",
+      "name": "福岡八女濃抹茶拿鐵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 369,
+      "sugar_grams": 33.5,
+      "has_caffeine": true,
+      "caffeine_content": 218,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_058",
+      "brand_id": "letscafe",
+      "name": "金門高粱酒香．凍檸美式（冰／特大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 355,
+      "sugar_grams": 82.0,
+      "has_caffeine": true,
+      "caffeine_content": 239,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "citycafe_046",
+      "brand_id": "citycafe",
+      "name": "福岡八女濃抹茶拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 438,
+      "sugar_grams": 41.6,
+      "has_caffeine": true,
+      "caffeine_content": 223,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_059",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜美式（熱／小杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 8,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 145,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_047",
+      "brand_id": "citycafe",
+      "name": "鹿兒島濃焙茶拿鐵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 345,
+      "sugar_grams": 35.9,
+      "has_caffeine": true,
+      "caffeine_content": 165,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_060",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜美式（熱／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 15,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 247,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "citycafe_048",
+      "brand_id": "citycafe",
+      "name": "鹿兒島濃焙茶拿鐵(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 457,
+      "sugar_grams": 46.5,
+      "has_caffeine": true,
+      "caffeine_content": 163,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_061",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜美式（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 20,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 310,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_057",
+      "brand_id": "starbucks",
+      "name": "西印度櫻桃香檸冷萃",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 266,
+      "sugar_grams": 65.0,
+      "has_caffeine": true,
+      "caffeine_content": 399,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_001",
+      "brand_id": "cityprima",
+      "name": "黑爵士黑醋栗冰磚(大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 164,
+      "sugar_grams": 35.8,
+      "has_caffeine": true,
+      "caffeine_content": 238,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_062",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜美式（冰／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 13,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 188,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_002",
+      "brand_id": "cityprima",
+      "name": "大溪地檸檬冰磚(大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 219,
+      "sugar_grams": 37.1,
+      "has_caffeine": true,
+      "caffeine_content": 285,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_063",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜美式（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 14,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 235,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_058",
+      "brand_id": "starbucks",
+      "name": "鹹焦糖風味氮氣歐蕾",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 193,
+      "sugar_grams": 42.0,
+      "has_caffeine": true,
+      "caffeine_content": 546,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_003",
+      "brand_id": "cityprima",
+      "name": "紅寶石葡萄柚冰磚(大杯/冰)",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 185,
+      "sugar_grams": 20.2,
+      "has_caffeine": true,
+      "caffeine_content": 290,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_064",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜拿鐵（熱／小杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 130,
+      "sugar_grams": 9.0,
+      "has_caffeine": true,
+      "caffeine_content": 85,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_004",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品香椰厚拿鐵(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 256,
+      "sugar_grams": 23.4,
+      "has_caffeine": true,
+      "caffeine_content": 204,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_065",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜拿鐵（熱／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 208,
+      "sugar_grams": 14.0,
+      "has_caffeine": true,
+      "caffeine_content": 159,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_005",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品香椰厚拿鐵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 173,
+      "sugar_grams": 10.5,
+      "has_caffeine": true,
+      "caffeine_content": 126,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_066",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜拿鐵（熱／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 253,
+      "sugar_grams": 18.0,
+      "has_caffeine": true,
+      "caffeine_content": 235,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_006",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品馥芮白(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 136,
+      "sugar_grams": 7.8,
+      "has_caffeine": true,
+      "caffeine_content": 200,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_067",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜拿鐵（冰／中杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 94,
+      "sugar_grams": 6.0,
+      "has_caffeine": true,
+      "caffeine_content": 64,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_007",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品馥芮白(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 155,
+      "sugar_grams": 9.1,
+      "has_caffeine": true,
+      "caffeine_content": 179,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_068",
+      "brand_id": "letscafe",
+      "name": "瓜地馬拉安堤瓜拿鐵（冰／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 152,
+      "sugar_grams": 10.0,
+      "has_caffeine": true,
+      "caffeine_content": 143,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_008",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品馥芮白(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 162,
+      "sugar_grams": 9.3,
+      "has_caffeine": true,
+      "caffeine_content": 228,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_069",
+      "brand_id": "letscafe",
+      "name": "經典黑炫酷繽沙（牛奶／大杯）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 347,
+      "sugar_grams": 37.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_009",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品馥芮白(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 194,
+      "sugar_grams": 11.7,
+      "has_caffeine": true,
+      "caffeine_content": 207,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_070",
+      "brand_id": "letscafe",
+      "name": "經典黑炫酷繽沙（咖啡／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 303,
+      "sugar_grams": 33.0,
+      "has_caffeine": true,
+      "caffeine_content": 181,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_010",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品燕麥拿鐵(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 184,
+      "sugar_grams": 7.0,
+      "has_caffeine": true,
+      "caffeine_content": 193,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_071",
+      "brand_id": "letscafe",
+      "name": "芒好喝酷繽沙（牛奶／大杯）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 261,
+      "sugar_grams": 51.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_011",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品燕麥拿鐵(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 193,
+      "sugar_grams": 7.0,
+      "has_caffeine": true,
+      "caffeine_content": 197,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_072",
+      "brand_id": "letscafe",
+      "name": "芒好喝酷繽沙（咖啡／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 217,
+      "sugar_grams": 47.0,
+      "has_caffeine": true,
+      "caffeine_content": 181,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_012",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品拿鐵咖啡(小杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 121,
+      "sugar_grams": 8.3,
+      "has_caffeine": true,
+      "caffeine_content": 119,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_073",
+      "brand_id": "letscafe",
+      "name": "芋賣尬酷繽沙（牛奶／大杯）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 320,
+      "sugar_grams": 41.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_013",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品拿鐵咖啡(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 161,
+      "sugar_grams": 11.2,
+      "has_caffeine": true,
+      "caffeine_content": 159,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_074",
+      "brand_id": "letscafe",
+      "name": "芋賣尬酷繽沙（咖啡／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 276,
+      "sugar_grams": 37.0,
+      "has_caffeine": true,
+      "caffeine_content": 181,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_014",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品拿鐵咖啡(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 188,
+      "sugar_grams": 13.7,
+      "has_caffeine": true,
+      "caffeine_content": 136,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_075",
+      "brand_id": "letscafe",
+      "name": "香蕉酷繽沙（牛奶／大杯）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 384,
+      "sugar_grams": 55.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_015",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品拿鐵咖啡(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 179,
+      "sugar_grams": 11.4,
+      "has_caffeine": true,
+      "caffeine_content": 200,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_076",
+      "brand_id": "letscafe",
+      "name": "香蕉酷繽沙（咖啡／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 328,
+      "sugar_grams": 50.0,
+      "has_caffeine": true,
+      "caffeine_content": 181,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_016",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品拿鐵咖啡(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 242,
+      "sugar_grams": 16.0,
+      "has_caffeine": true,
+      "caffeine_content": 197,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_077",
+      "brand_id": "letscafe",
+      "name": "MM 巧克力酷繽沙（牛奶／大杯）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 399,
+      "sugar_grams": 61.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_017",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品美式咖啡(小杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 10,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 200,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "letscafe_078",
+      "brand_id": "letscafe",
+      "name": "MM 巧克力酷繽沙（咖啡／大杯）",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 342,
+      "sugar_grams": 56.0,
+      "has_caffeine": true,
+      "caffeine_content": 181,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_059",
+      "brand_id": "starbucks",
+      "name": "冰搖紅茶",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 110,
+      "sugar_grams": 29.0,
+      "has_caffeine": true,
+      "caffeine_content": 174,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_018",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品美式咖啡(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 14,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 223,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "letscafe_079",
+      "brand_id": "letscafe",
+      "name": "Fami 奶昔（冰／中杯，每100g數據）",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 295,
+      "sugar_grams": 41.0,
+      "has_caffeine": true,
+      "caffeine_content": 10,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_019",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品美式咖啡(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 18,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 229,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_020",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品美式咖啡(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 20,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 259,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_060",
+      "brand_id": "starbucks",
+      "name": "洋甘菊花草茶",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 4,
+      "sugar_grams": 0.2,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_021",
+      "brand_id": "cityprima",
+      "name": "衣索比亞精品美式咖啡(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 21,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 271,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "louisa_058",
+      "brand_id": "louisa",
+      "name": "水蜜桃蘋果風味茶 (大/熱)",
+      "category": "fruitTea",
+      "image_url": null,
+      "base_calories": 211,
+      "sugar_grams": 50.2,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_061",
+      "brand_id": "starbucks",
+      "name": "英式紅茶",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 10,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 325,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_022",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品拿鐵咖啡(小杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 110,
+      "sugar_grams": 8.7,
+      "has_caffeine": true,
+      "caffeine_content": 130,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_023",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品拿鐵咖啡(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 166,
+      "sugar_grams": 11.2,
+      "has_caffeine": true,
+      "caffeine_content": 193,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_062",
+      "brand_id": "starbucks",
+      "name": "阿里山烏龍茶",
+      "category": "pureTea",
+      "image_url": null,
+      "base_calories": 6,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 220,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_024",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品拿鐵咖啡(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 191,
+      "sugar_grams": 13.5,
+      "has_caffeine": true,
+      "caffeine_content": 191,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_025",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品拿鐵咖啡(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 182,
+      "sugar_grams": 12.0,
+      "has_caffeine": true,
+      "caffeine_content": 255,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_026",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品拿鐵咖啡(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 233,
+      "sugar_grams": 16.6,
+      "has_caffeine": true,
+      "caffeine_content": 253,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_027",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品美式咖啡(小杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 12,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 178,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_028",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品美式咖啡(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 16,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 245,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_029",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品美式咖啡(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 16,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 219,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_030",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品美式咖啡(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 20,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 292,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_031",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品美式咖啡(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 21,
+      "sugar_grams": 0.2,
+      "has_caffeine": true,
+      "caffeine_content": 313,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_032",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品馥芮白(中杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 121,
+      "sugar_grams": 7.8,
+      "has_caffeine": true,
+      "caffeine_content": 225,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "cityprima_033",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品馥芮白(中杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 161,
+      "sugar_grams": 11.0,
+      "has_caffeine": true,
+      "caffeine_content": 220,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_063",
+      "brand_id": "starbucks",
+      "name": "繽紛紫紅薯奶霜星冰樂",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 455,
+      "sugar_grams": 66.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_034",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品馥芮白(大杯/冰)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 136,
+      "sugar_grams": 9.1,
+      "has_caffeine": true,
+      "caffeine_content": 297,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "正常冰"
+      ]
+    },
+    {
+      "drink_id": "starbucks_064",
+      "brand_id": "starbucks",
+      "name": "奶油餅乾風味奶霜星冰樂",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 668,
+      "sugar_grams": 101.0,
+      "has_caffeine": false,
+      "caffeine_content": 0,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_035",
+      "brand_id": "cityprima",
+      "name": "瓜地馬拉精品馥芮白(大杯/熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 189,
+      "sugar_grams": 12.4,
+      "has_caffeine": true,
+      "caffeine_content": 282,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "starbucks_065",
+      "brand_id": "starbucks",
+      "name": "薄荷巧克力風味奶霜星冰樂",
+      "category": "special",
+      "image_url": null,
+      "base_calories": 732,
+      "sugar_grams": 107.0,
+      "has_caffeine": true,
+      "caffeine_content": 17,
+      "available_sugar_levels": [
+        "正常糖",
+        "少糖",
+        "半糖",
+        "微糖",
+        "無糖"
+      ],
+      "available_ice_levels": [
+        "正常冰",
+        "少冰",
+        "微冰",
+        "去冰",
+        "熱"
+      ]
+    },
+    {
+      "drink_id": "cityprima_036",
+      "brand_id": "cityprima",
+      "name": "衣索比亞ESPRESSO (熱)",
+      "category": "coffee",
+      "image_url": null,
+      "base_calories": 9,
+      "sugar_grams": 0.0,
+      "has_caffeine": true,
+      "caffeine_content": 84,
+      "available_sugar_levels": [
+        "正常糖"
+      ],
+      "available_ice_levels": [
+        "熱"
       ]
     }
   ]
