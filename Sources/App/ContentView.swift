@@ -26,6 +26,7 @@ struct ContentView: View {
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
         UITabBar.appearance().unselectedItemTintColor = .systemGray
+        UITabBar.appearance().tintColor = UIColor(Color.teaBrown)  // 選取狀態的顏色改由 UIKit 控制
     }
     
     var body: some View {
@@ -86,7 +87,7 @@ struct ContentView: View {
                     }
                     .tag(AppState.Tab.settings)
                 }
-                .tint(.teaBrown)
+                // .tint(.teaBrown) — 已移至 init() 由 UIKit 統一控制，避免 iOS 18 每次渲染覆蓋未選取顏色
                 .preferredColorScheme(.light)
                 .transition(.opacity)
                 .fullScreenCover(isPresented: $showOnboarding) {
