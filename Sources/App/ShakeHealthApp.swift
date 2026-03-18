@@ -85,6 +85,11 @@ struct ShakeHealthApp: App {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = UIColor(Color.backgroundPrimary)
+        
+        // 修正 iOS 18+ 未選取標籤全黑的問題
+        tabBarAppearance.stackedLayoutAppearance.normal.iconColor = .systemGray
+        tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.systemGray]
+        
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         

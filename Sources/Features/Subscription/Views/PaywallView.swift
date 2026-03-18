@@ -15,7 +15,7 @@ struct PaywallView: View {
     @State private var showRestoreSuccess = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.backgroundPrimary
                     .ignoresSafeArea()
