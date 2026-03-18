@@ -21,7 +21,7 @@ struct ContentView: View {
         // 將修復套用至所有排版
         appearance.stackedLayoutAppearance = itemAppearance
         appearance.inlineLayoutAppearance = itemAppearance
-        appearance.compactLayoutAppearance = itemAppearance
+        appearance.compactInlineLayoutAppearance = itemAppearance
         
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
