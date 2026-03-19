@@ -81,18 +81,22 @@ struct ShakeHealthApp: App {
     }
     
     private func setupAppearance() {
-        // 設定 Tab Bar 外觀 (iOS 18 / Xcode 16 終極相容方案)
+        // 設定 Tab Bar 外觀 (針對 iOS 18 Liquid Glass 特性強化)
         let appearance = UITabBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        // 使用硬編碼色值確保在啟動最早期就能正確載入
-        appearance.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 245/255, alpha: 1.0) // #FFFBF5
+        
+        // 使用 DefaultShadow 確保玻璃材質下的邊界與渲染路徑正確
+        appearance.configureWithDefaultShadow()
+        // 硬編碼背景色 (#FFFBF5)
+        appearance.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 245/255, alpha: 1.0)
         
         let itemAppearance = UITabBarItemAppearance()
         
-        // --- 1. 未選取狀態 (Normal) ---
-        itemAppearance.normal.iconColor = .systemGray
+        // --- 1. 未選取狀態 (Normal) --- 
+        // iOS 18 必須給定明確色值，不可依賴系統預設 Gray
+        let unselectedColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0) // #999999
+        itemAppearance.normal.iconColor = unselectedColor
         itemAppearance.normal.titleTextAttributes = [
-            .foregroundColor: UIColor.systemGray
+            .foregroundColor: unselectedColor
         ]
         
         // --- 2. 選取狀態 (Selected) ---
@@ -102,16 +106,14 @@ struct ShakeHealthApp: App {
             .foregroundColor: selectedColor
         ]
         
-        // 套用到所有版面
+        // 套用到所有佈局方式
         appearance.stackedLayoutAppearance = itemAppearance
         appearance.inlineLayoutAppearance = itemAppearance
         appearance.compactInlineLayoutAppearance = itemAppearance
         
-        // 全域套用
+        // 強制套用到全域
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
-        UITabBar.appearance().unselectedItemTintColor = .systemGray // 保險層面
-        UITabBar.appearance().tintColor = selectedColor             // 保險層面
         
         // 設定 Navigation Bar 外觀
         let navBarAppearance = UINavigationBarAppearance()

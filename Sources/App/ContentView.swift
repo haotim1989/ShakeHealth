@@ -32,7 +32,9 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Label("我的日記", systemImage: "book.fill")
+                        Image(systemName: "book.fill")
+                            .renderingMode(.template)
+                        Text("我的日記")
                     }
                     .tag(AppState.Tab.diary)
                     
@@ -41,7 +43,9 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Label("隨機喝", systemImage: "dice.fill")
+                        Image(systemName: "dice.fill")
+                            .renderingMode(.template)
+                        Text("隨機喝")
                     }
                     .tag(AppState.Tab.randomPicker)
                     
@@ -51,7 +55,9 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Label("找熱量", systemImage: "magnifyingglass")
+                        Image(systemName: "magnifyingglass")
+                            .renderingMode(.template)
+                        Text("找熱量")
                     }
                     .tag(AppState.Tab.encyclopedia)
                     
@@ -60,7 +66,9 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Label("設定", systemImage: "gearshape.fill")
+                        Image(systemName: "gearshape.fill")
+                            .renderingMode(.template)
+                        Text("設定")
                     }
                     .tag(AppState.Tab.settings)
                 }
