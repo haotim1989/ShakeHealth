@@ -32,9 +32,7 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Image(systemName: "book.fill")
-                            .renderingMode(.template)
-                        Text("我的日記")
+                        tabIcon(name: "book.fill", title: "我的日記", isSelected: appState.selectedTab == .diary)
                     }
                     .tag(AppState.Tab.diary)
                     
@@ -43,9 +41,7 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Image(systemName: "dice.fill")
-                            .renderingMode(.template)
-                        Text("隨機喝")
+                        tabIcon(name: "dice.fill", title: "隨機喝", isSelected: appState.selectedTab == .randomPicker)
                     }
                     .tag(AppState.Tab.randomPicker)
                     
@@ -55,9 +51,7 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Image(systemName: "magnifyingglass")
-                            .renderingMode(.template)
-                        Text("找熱量")
+                        tabIcon(name: "magnifyingglass", title: "找熱量", isSelected: appState.selectedTab == .encyclopedia)
                     }
                     .tag(AppState.Tab.encyclopedia)
                     
@@ -66,9 +60,7 @@ struct ContentView: View {
                         BannerAdView()
                     }
                     .tabItem {
-                        Image(systemName: "gearshape.fill")
-                            .renderingMode(.template)
-                        Text("設定")
+                        tabIcon(name: "gearshape.fill", title: "設定", isSelected: appState.selectedTab == .settings)
                     }
                     .tag(AppState.Tab.settings)
                 }
@@ -79,6 +71,23 @@ struct ContentView: View {
                     OnboardingView(isPresented: $showOnboarding)
                 }
             }
+        }
+    }
+    
+    /// 100% 自信解決方案：生成預先染色且為 .alwaysOriginal 的圖片
+    /// 避免 iOS 18 Liquid Glass 渲染機制強制將圖示塗黑/變藍
+    @ViewBuilder
+    private func tabIcon(name: String, title: String, isSelected: Bool) -> some View {
+        let color = isSelected ? UIColor(red: 139/255, green: 111/255, blue: 71/255, alpha: 1.0) : UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0)
+        
+        if let uiImage = UIImage(systemName: name)?.withTintColor(color, renderingMode: .alwaysOriginal) {
+            Image(uiImage: uiImage)
+            Text(title)
+                .foregroundColor(Color(color)) // 保險起見文字也指定顏色
+        } else {
+            // Fallback (通常不會發生)
+            Image(systemName: name)
+            Text(title)
         }
     }
     
