@@ -84,8 +84,8 @@ struct ShakeHealthApp: App {
         // 設定 Tab Bar 外觀 (針對 iOS 18 Liquid Glass 特性強化)
         let appearance = UITabBarAppearance()
         
-        // 使用 DefaultShadow 確保玻璃材質下的邊界與渲染路徑正確
-        appearance.configureWithDefaultShadow()
+        // 使用 OpaqueBackground 確保背景與材質渲染路徑正確
+        appearance.configureWithOpaqueBackground()
         // 硬編碼背景色 (#FFFBF5)
         appearance.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 245/255, alpha: 1.0)
         
