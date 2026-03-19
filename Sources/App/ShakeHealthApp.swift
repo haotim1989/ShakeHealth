@@ -81,15 +81,44 @@ struct ShakeHealthApp: App {
     }
     
     private func setupAppearance() {
-        // TabBar 外觀已移至 ContentView.init() 統一管理
-        // (避免 iOS 18 SwiftUI 重渲染覆蓋 UIKit 設定)
+        // 設定 Tab Bar 外觀 (iOS 18 / Xcode 16 終極相容方案)
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        // 使用硬編碼色值確保在啟動最早期就能正確載入
+        appearance.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 245/255, alpha: 1.0) // #FFFBF5
+        
+        let itemAppearance = UITabBarItemAppearance()
+        
+        // --- 1. 未選取狀態 (Normal) ---
+        itemAppearance.normal.iconColor = .systemGray
+        itemAppearance.normal.titleTextAttributes = [
+            .foregroundColor: UIColor.systemGray
+        ]
+        
+        // --- 2. 選取狀態 (Selected) ---
+        let selectedColor = UIColor(red: 139/255, green: 111/255, blue: 71/255, alpha: 1.0) // #8B6F47 (teaBrown)
+        itemAppearance.selected.iconColor = selectedColor
+        itemAppearance.selected.titleTextAttributes = [
+            .foregroundColor: selectedColor
+        ]
+        
+        // 套用到所有版面
+        appearance.stackedLayoutAppearance = itemAppearance
+        appearance.inlineLayoutAppearance = itemAppearance
+        appearance.compactInlineLayoutAppearance = itemAppearance
+        
+        // 全域套用
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        UITabBar.appearance().unselectedItemTintColor = .systemGray // 保險層面
+        UITabBar.appearance().tintColor = selectedColor             // 保險層面
         
         // 設定 Navigation Bar 外觀
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = UIColor(Color.backgroundPrimary)
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.teaBrown)]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color.teaBrown)]
+        navBarAppearance.backgroundColor = UIColor(red: 255/255, green: 251/255, blue: 245/255, alpha: 1.0)
+        navBarAppearance.titleTextAttributes = [.foregroundColor: selectedColor]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: selectedColor]
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     }

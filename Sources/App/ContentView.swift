@@ -6,29 +6,6 @@ struct ContentView: View {
     
     @State private var showOnboarding = !UserDefaults.standard.bool(forKey: Constants.StorageKeys.onboardingCompleted)
     
-    init() {
-        // iOS 18 / Xcode 16 終極解法：一定要在包含 TabView 的 View 建立時注入，避免被 SwiftUI 生命週期覆寫
-        let appearance = UITabBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        // 確保底部背景色與你的主題相符
-        appearance.backgroundColor = UIColor(Color.backgroundPrimary)
-        
-        // 徹底壓制所有「未選取」項目的顏色為 systemGray
-        let itemAppearance = UITabBarItemAppearance()
-        itemAppearance.normal.iconColor = .systemGray
-        itemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.systemGray]
-        
-        // 將修復套用至所有排版
-        appearance.stackedLayoutAppearance = itemAppearance
-        appearance.inlineLayoutAppearance = itemAppearance
-        appearance.compactInlineLayoutAppearance = itemAppearance
-        
-        UITabBar.appearance().standardAppearance = appearance
-        UITabBar.appearance().scrollEdgeAppearance = appearance
-        UITabBar.appearance().unselectedItemTintColor = .systemGray
-        UITabBar.appearance().tintColor = UIColor(Color.teaBrown)  // 選取狀態的顏色改由 UIKit 控制
-    }
-    
     var body: some View {
         ZStack {
             if !appState.isDataLoaded {
@@ -87,7 +64,7 @@ struct ContentView: View {
                     }
                     .tag(AppState.Tab.settings)
                 }
-                // .tint(.teaBrown) — 已移至 init() 由 UIKit 統一控制，避免 iOS 18 每次渲染覆蓋未選取顏色
+                .tint(.teaBrown) // 恢復 tint 以確保按鈕與選取狀態正確
                 .preferredColorScheme(.light)
                 .transition(.opacity)
                 .fullScreenCover(isPresented: $showOnboarding) {
