@@ -34,6 +34,9 @@ struct AddToLogModal: View {
     @State private var expPortion: String = ""
     @State private var expWaitTime: String = ""
     
+    // 價格
+    @State private var priceText: String = ""
+    
     // 日期選擇 (Pro 功能)
     @State private var selectedDate: Date = Date()
     @State private var showDatePicker = false
@@ -91,6 +94,9 @@ struct AddToLogModal: View {
                     
                     // 評分
                     ratingSection
+                    
+                    // 價格
+                    priceSection
                     
                     // 評論
                     commentSection
@@ -344,7 +350,38 @@ struct AddToLogModal: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
     
-    // MARK: - Actions
+    private var priceSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: "dollarsign.circle.fill")
+                    .foregroundColor(.teaBrown)
+                Text("價格")
+                    .font(.headline)
+                
+                Spacer()
+                
+                Text("選填")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            
+            HStack(spacing: 8) {
+                Text("NT$")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                
+                TextField("0", text: $priceText)
+                    .keyboardType(.numberPad)
+                    .textFieldStyle(.plain)
+                    .padding(12)
+                    .background(Color.gray.opacity(0.05))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+        }
+        .padding(16)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
     
     private func attemptSave() {
         saveLog()
@@ -384,6 +421,7 @@ struct AddToLogModal: View {
             expRepurchase: expRepurchase,
             expPortion: expPortion,
             expWaitTime: expWaitTime,
+            price: Int(priceText),
             createdAt: selectedDate
         )
         

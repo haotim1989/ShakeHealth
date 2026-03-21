@@ -20,6 +20,7 @@ struct DiaryDetailView: View {
     @State private var editedCalories: String
     @State private var editedSugarSnapshot: String
     @State private var editedCaffeineSnapshot: String
+    @State private var editedPriceText: String
     
     // 配料 & 風味評鑑
     @State private var editedToppings: Set<Topping>
@@ -53,6 +54,7 @@ struct DiaryDetailView: View {
         self._editedCalories = State(initialValue: String(log.caloriesSnapshot - log.toppingsCalories))
         self._editedSugarSnapshot = State(initialValue: log.sugarSnapshot.map { String(format: "%.0f", $0) } ?? "")
         self._editedCaffeineSnapshot = State(initialValue: log.caffeineSnapshot.map { String($0) } ?? "")
+        self._editedPriceText = State(initialValue: log.price.map { String($0) } ?? "")
         
         // 配料 & 風味
         self._editedToppings = State(initialValue: log.selectedToppings)
@@ -292,6 +294,35 @@ struct DiaryDetailView: View {
             Text(log.createdAt.formatted(date: .abbreviated, time: .shortened))
                 .font(.caption)
                 .foregroundColor(.secondary)
+            
+            // 價格顯示 / 編輯
+            if isEditing {
+                HStack(spacing: 8) {
+                    Image(systemName: "dollarsign.circle.fill")
+                        .foregroundColor(.teaBrown)
+                    Text("NT$")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    TextField("0", text: $editedPriceText)
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(.plain)
+                        .multilineTextAlignment(.center)
+                        .padding(8)
+                        .background(Color.gray.opacity(0.1))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .frame(width: 100)
+                }
+            } else if let price = log.price, price > 0 {
+                HStack(spacing: 4) {
+                    Image(systemName: "dollarsign.circle")
+                        .font(.caption)
+                        .foregroundColor(.teaBrown)
+                    Text("NT$ \(price)")
+                        .font(.subheadline)
+                        .foregroundColor(.teaBrown)
+                        .fontWeight(.medium)
+                }
+            }
             
             // 分享按鈕
             shareButton
@@ -736,6 +767,7 @@ struct DiaryDetailView: View {
         log.expRepurchase = editedExpRepurchase
         log.expPortion = editedExpPortion
         log.expWaitTime = editedExpWaitTime
+        log.price = Int(editedPriceText)
         log.createdAt = editedDate
         log.updatedAt = Date()
         

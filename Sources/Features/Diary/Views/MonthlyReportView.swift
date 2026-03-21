@@ -151,6 +151,33 @@ struct MonthlyReportView: View {
         return totalCaffeine
     }
     
+    // MARK: - Spending Calculation
+    
+    /// 計算月總花費
+    private func calculateTotalSpending() -> Int {
+        monthlyLogs.compactMap { $0.price }.reduce(0, +)
+    }
+    
+    /// 計算每日花費明細
+    private func dailySpending() -> [(date: String, amount: Int)] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M/d"
+        
+        var dayMap: [String: Int] = [:]
+        var dayOrder: [String] = []
+        
+        for log in monthlyLogs {
+            guard let price = log.price, price > 0 else { continue }
+            let key = formatter.string(from: log.createdAt)
+            if dayMap[key] == nil {
+                dayOrder.append(key)
+            }
+            dayMap[key, default: 0] += price
+        }
+        
+        return dayOrder.map { (date: $0, amount: dayMap[$0]!) }
+    }
+    
     // MARK: - Health Status Enum (Sugar)
     enum HealthStatus {
         case green, yellow, red
@@ -245,6 +272,11 @@ struct MonthlyReportView: View {
                     // 無資料提示
                     if monthlyLogs.isEmpty {
                         noDataView
+                    }
+                    
+                    // 花費統計 (包含每日明細)
+                    if calculateTotalSpending() > 0 {
+                        spendingSection
                     }
                 }
                 .padding()
@@ -485,6 +517,13 @@ struct MonthlyReportView: View {
                 statCard(title: "總糖量", value: String(format: "%.0f", calculateTotalSugar()), unit: "g", icon: "cube.fill", color: .pink)
                 statCard(title: "總咖啡因", value: String(format: "%.0f", calculateTotalCaffeine()), unit: "mg", icon: "drop.fill", color: .coffeeBrown)
             }
+            
+            if calculateTotalSpending() > 0 {
+                HStack(spacing: 16) {
+                    statCard(title: "總花費", value: "\(calculateTotalSpending())", unit: "元", icon: "dollarsign.circle.fill", color: .green)
+                    statCard(title: "日均花費", value: String(format: "%.0f", daysInMonth > 0 ? Double(calculateTotalSpending()) / Double(daysInMonth) : 0), unit: "元", icon: "calendar.badge.clock", color: .green)
+                }
+            }
         }
     }
     
@@ -563,6 +602,47 @@ struct MonthlyReportView: View {
         case 2: return .orange
         default: return .teaBrown
         }
+    }
+    
+    // MARK: - Spending Section
+    
+    private var spendingSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Image(systemName: "dollarsign.circle.fill")
+                    .foregroundColor(.green)
+                Text("花費明細")
+                    .font(.headline)
+            }
+            
+            let daily = dailySpending()
+            
+            ForEach(Array(daily.enumerated()), id: \.offset) { _, item in
+                HStack {
+                    Text(item.date)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .frame(width: 50, alignment: .leading)
+                    
+                    // 簡易長條圖
+                    GeometryReader { geo in
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(Color.green.opacity(0.6))
+                            .frame(width: geo.size.width * CGFloat(item.amount) / CGFloat(daily.map(\.amount).max() ?? 1))
+                    }
+                    .frame(height: 12)
+                    
+                    Text("NT$ \(item.amount)")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .frame(width: 80, alignment: .trailing)
+                }
+                .padding(.vertical, 4)
+            }
+        }
+        .padding()
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }
 

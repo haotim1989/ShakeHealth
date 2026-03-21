@@ -42,6 +42,9 @@ final class DrinkLog {
     var expPortion: String = ""           // 份量
     var expWaitTime: String = ""          // 等待時長
     
+    // 價格（選填，單位：新台幣）
+    var price: Int?
+    
     var createdAt: Date = Date()
     var updatedAt: Date = Date()
     
@@ -114,6 +117,7 @@ final class DrinkLog {
         expRepurchase: String = "",
         expPortion: String = "",
         expWaitTime: String = "",
+        price: Int? = nil,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -144,6 +148,7 @@ final class DrinkLog {
         self.expRepurchase = expRepurchase
         self.expPortion = expPortion
         self.expWaitTime = expWaitTime
+        self.price = price
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
@@ -193,6 +198,7 @@ extension DrinkLog {
             "exp_repurchase": expRepurchase,
             "exp_portion": expPortion,
             "exp_wait_time": expWaitTime,
+            "price": price ?? NSNull(),
             "created_at": createdAt,
             "updated_at": updatedAt
         ]
