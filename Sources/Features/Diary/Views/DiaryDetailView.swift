@@ -22,6 +22,15 @@ struct DiaryDetailView: View {
     @State private var editedCaffeineSnapshot: String
     @State private var editedPriceText: String
     
+    // Focus State
+    enum Field: Hashable {
+        case price
+        case calories
+        case sugar
+        case caffeine
+    }
+    @FocusState private var focusedField: Field?
+    
     // 配料 & 風味評鑑
     @State private var editedToppings: Set<Topping>
     @State private var editedTasteTexture: String
@@ -172,6 +181,15 @@ struct DiaryDetailView: View {
                 .fontWeight(.semibold)
                 .disabled(isEditing && !isValidForm)
             }
+            
+            // 鍵盤工具列
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("完成") {
+                    focusedField = nil
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+            }
         }
         .alert("確認刪除", isPresented: $showDeleteConfirmation) {
             Button("取消", role: .cancel) {}
@@ -240,19 +258,22 @@ struct DiaryDetailView: View {
                             title: "熱量 (kcal)",
                             text: $editedCalories,
                             keyboardType: .numberPad,
-                            isValid: (Int(editedCalories) ?? 0) <= 9999
+                            isValid: (Int(editedCalories) ?? 0) <= 9999,
+                            fieldType: .calories
                         )
                         editNutritionInput(
                             title: "糖分 (g)",
                             text: $editedSugarSnapshot,
                             keyboardType: .decimalPad,
-                            isValid: (Double(editedSugarSnapshot) ?? 0) <= 9999
+                            isValid: (Double(editedSugarSnapshot) ?? 0) <= 9999,
+                            fieldType: .sugar
                         )
                         editNutritionInput(
                             title: "咖啡因 (mg)",
                             text: $editedCaffeineSnapshot,
                             keyboardType: .numberPad,
-                            isValid: (Int(editedCaffeineSnapshot) ?? 0) <= 9999
+                            isValid: (Int(editedCaffeineSnapshot) ?? 0) <= 9999,
+                            fieldType: .caffeine
                         )
                     }
                 }
@@ -304,6 +325,7 @@ struct DiaryDetailView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     TextField("0", text: $editedPriceText)
+                        .focused($focusedField, equals: .price)
                         .keyboardType(.numberPad)
                         .textFieldStyle(.plain)
                         .multilineTextAlignment(.center)
@@ -785,7 +807,7 @@ struct DiaryDetailView: View {
         dismiss()
     }
     
-    private func editNutritionInput(title: String, text: Binding<String>, keyboardType: UIKeyboardType, isValid: Bool) -> some View {
+    private func editNutritionInput(title: String, text: Binding<String>, keyboardType: UIKeyboardType, isValid: Bool, fieldType: Field) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
                 .font(.caption2)
@@ -793,6 +815,7 @@ struct DiaryDetailView: View {
             
             VStack(spacing: 4) {
                 TextField("0", text: text)
+                    .focused($focusedField, equals: fieldType)
                     .keyboardType(keyboardType)
                     .textFieldStyle(.plain)
                     .multilineTextAlignment(.center)

@@ -125,9 +125,6 @@ struct CustomDrinkModal: View {
                     // 評分
                     ratingSection
                     
-                    // 價格
-                    priceSection
-                    
                     // 評論
                     commentSection
                 }
@@ -267,6 +264,28 @@ struct CustomDrinkModal: View {
                     .padding(12)
                     .background(Color.gray.opacity(0.05))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            
+            // 價格輸入
+            VStack(alignment: .leading, spacing: 6) {
+                Text("價格 (選填)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                
+                HStack(spacing: 8) {
+                    Text("NT$")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    TextField("例如：50", text: $priceText)
+                        .focused($focusedField, equals: .price)
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(.plain)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(12)
+                .background(Color.gray.opacity(0.05))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             
             // 營養標示
@@ -442,42 +461,6 @@ struct CustomDrinkModal: View {
                 text: $comment,
                 placeholder: "記錄一下你的感想吧..."
             )
-        }
-        .padding(16)
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-    }
-    
-    // MARK: - Price Section
-    
-    private var priceSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Image(systemName: "dollarsign.circle.fill")
-                    .foregroundColor(.teaBrown)
-                Text("價格")
-                    .font(.headline)
-                
-                Spacer()
-                
-                Text("選填")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-            
-            HStack(spacing: 8) {
-                Text("NT$")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                
-                TextField("0", text: $priceText)
-                    .focused($focusedField, equals: .price)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(.plain)
-                    .padding(12)
-                    .background(Color.gray.opacity(0.05))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
         }
         .padding(16)
         .background(Color.white)

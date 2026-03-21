@@ -37,6 +37,12 @@ struct AddToLogModal: View {
     // 價格
     @State private var priceText: String = ""
     
+    // Focus State
+    enum Field: Hashable {
+        case price
+    }
+    @FocusState private var focusedField: Field?
+    
     // 日期選擇 (Pro 功能)
     @State private var selectedDate: Date = Date()
     @State private var showDatePicker = false
@@ -128,6 +134,15 @@ struct AddToLogModal: View {
                     }
                     .fontWeight(.semibold)
                     .disabled(!isValidForm)
+                }
+                
+                // 鍵盤工具列
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("完成") {
+                        focusedField = nil
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
                 }
             }
             .sheet(isPresented: $showPaywall) {
@@ -371,6 +386,7 @@ struct AddToLogModal: View {
                     .foregroundColor(.secondary)
                 
                 TextField("0", text: $priceText)
+                    .focused($focusedField, equals: .price)
                     .keyboardType(.numberPad)
                     .textFieldStyle(.plain)
                     .padding(12)
