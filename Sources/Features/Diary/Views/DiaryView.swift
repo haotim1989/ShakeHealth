@@ -462,7 +462,7 @@ struct DiaryView: View {
                 
                 statisticCard(
                     title: "日均花費",
-                    value: "\(thisMonthDailyAvgSpending)",
+                    value: thisMonthDailyAvgSpending,
                     unit: "元",
                     icon: "chart.line.uptrend.xyaxis",
                     color: .blue
@@ -560,11 +560,11 @@ struct DiaryView: View {
             .reduce(0, +)
     }
     
-    private var thisMonthDailyAvgSpending: Int {
+    private var thisMonthDailyAvgSpending: String {
         let calendar = Calendar.current
         let daysPassed = calendar.component(.day, from: Date())
-        guard daysPassed > 0 else { return 0 }
-        return thisMonthSpending / daysPassed
+        guard daysPassed > 0 else { return "0" }
+        return String(format: "%.0f", Double(thisMonthSpending) / Double(daysPassed))
     }
     
     // MARK: - Actions
