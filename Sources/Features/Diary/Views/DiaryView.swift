@@ -431,7 +431,12 @@ struct DiaryView: View {
     
     private var statisticsSection: some View {
         Section {
-            HStack(spacing: 16) {
+            let columns = [
+                GridItem(.flexible(), spacing: 12),
+                GridItem(.flexible(), spacing: 12)
+            ]
+            
+            LazyVGrid(columns: columns, spacing: 12) {
                 statisticCard(
                     title: "本週飲料",
                     value: "\(thisWeekCount)",
@@ -445,6 +450,22 @@ struct DiaryView: View {
                     unit: "kcal",
                     icon: "flame.fill",
                     color: Color.forCalories(thisWeekCalories / max(thisWeekCount, 1))
+                )
+                
+                statisticCard(
+                    title: "本月花費",
+                    value: "\(thisMonthSpending)",
+                    unit: "元",
+                    icon: "dollarsign.circle.fill",
+                    color: .teal
+                )
+                
+                statisticCard(
+                    title: "日均花費",
+                    value: "\(thisMonthDailyAvgSpending)",
+                    unit: "元",
+                    icon: "chart.line.uptrend.xyaxis",
+                    color: .blue
                 )
             }
             .listRowBackground(Color.clear)
@@ -460,32 +481,37 @@ struct DiaryView: View {
         icon: String,
         color: Color
     ) -> some View {
-        VStack(spacing: 8) {
-            HStack(spacing: 6) {
+        HStack(spacing: 8) {
+            ZStack {
+                Circle()
+                    .fill(color.opacity(0.1))
+                    .frame(width: 32, height: 32)
                 Image(systemName: icon)
-                    .font(.subheadline)
+                    .font(.caption)
                     .foregroundColor(color)
-                Text(title)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundColor(.secondary)
             }
             
-            HStack(alignment: .firstTextBaseline, spacing: 2) {
-                Text(value)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(color)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
                 
-                if let unit = unit {
-                    Text(unit)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                HStack(alignment: .firstTextBaseline, spacing: 2) {
+                    Text(value)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(color)
+                    
+                    if let unit = unit {
+                        Text(unit)
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
+            Spacer(minLength: 0)
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 16)
+        .padding(12)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .shadow(color: .black.opacity(0.03), radius: 5, y: 2)
@@ -523,6 +549,22 @@ struct DiaryView: View {
         return logs
             .filter { $0.createdAt >= weekAgo }
             .reduce(0) { $0 + $1.caloriesSnapshot }
+    }
+    
+    private var thisMonthSpending: Int {
+        let calendar = Calendar.current
+        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: Date())) ?? Date()
+        return logs
+            .filter { $0.createdAt >= startOfMonth }
+            .compactMap { $0.price }
+            .reduce(0, +)
+    }
+    
+    private var thisMonthDailyAvgSpending: Int {
+        let calendar = Calendar.current
+        let daysPassed = calendar.component(.day, from: Date())
+        guard daysPassed > 0 else { return 0 }
+        return thisMonthSpending / daysPassed
     }
     
     // MARK: - Actions
