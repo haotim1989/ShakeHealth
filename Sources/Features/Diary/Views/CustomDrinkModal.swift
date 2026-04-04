@@ -527,14 +527,16 @@ struct CustomDrinkModal: View {
             HapticManager.shared.success()
             ReviewManager.shared.trackDiarySave()
             
-            // 檢查是否需要顯示廣告 (非 Pro 且當天第 3 筆)
+            // 檢查是否需要顯示廣告 (分級策略)
             if !userManager.isProUser {
                 let calendar = Calendar.current
                 let descriptor = FetchDescriptor<DrinkLog>()
                 if let allLogs = try? modelContext.fetch(descriptor) {
-                    let todayLogsCount = allLogs.filter { calendar.isDateInToday($0.createdAt) }.count
+                    let totalCount = allLogs.count
+                    let todayCount = allLogs.filter { calendar.isDateInToday($0.createdAt) }.count
                     
-                    if todayLogsCount >= 3 {
+                    if let threshold = DiaryAdPolicy.dailyAdThreshold(totalLogCount: totalCount),
+                       todayCount >= threshold {
                         InterstitialAdManager.shared.showAd {
                             onSave()
                         }

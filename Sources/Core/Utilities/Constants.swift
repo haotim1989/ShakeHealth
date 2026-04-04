@@ -16,6 +16,10 @@ enum Constants {
         /// 插頁廣告觸發閾值 (每日第 5 次抽獎開始顯示)
         static let interstitialPickThreshold = 5
         
+        /// 日記廣告分級門檻 (累積日記筆數)
+        static let diaryAdTier1Threshold = 50   // ≥ 50 筆：每天第 3 次儲存開始跳廣告
+        static let diaryAdTier2Threshold = 100  // ≥ 100 筆：每天第 2 次儲存開始跳廣告
+        
         /// 免費用戶每日日記筆數限制
         static let freeDailyDiaryLimit = 1
     }
