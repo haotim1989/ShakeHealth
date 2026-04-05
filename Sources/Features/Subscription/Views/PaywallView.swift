@@ -8,6 +8,8 @@ struct PaywallView: View {
     @StateObject private var subscriptionService = SubscriptionService.shared
     @Environment(\.dismiss) private var dismiss
     
+    let source: String // 標記進入來源 (onboarding, settings, feature_lock等)
+    
     @State private var selectedPackage: Package?
     @State private var isPurchasing = false
     @State private var showError = false
@@ -84,7 +86,7 @@ struct PaywallView: View {
         }
         .onAppear {
             AnalyticsService.shared.logEvent(.paywallView, parameters: [
-                AnalyticsService.ParamKey.source: "unknown" // 可以之後擴展傳入
+                AnalyticsService.ParamKey.source: source
             ])
         }
     }
@@ -320,11 +322,27 @@ struct PaywallView: View {
         
         do {
             _ = try await subscriptionService.purchase(package: package)
+            
+            AnalyticsService.shared.logEvent(.paywallPurchaseSuccess, parameters: [
+                AnalyticsService.ParamKey.source: source,
+                AnalyticsService.ParamKey.packageType: package.identifier
+            ])
+            
             HapticManager.shared.success()
             dismiss()
         } catch SubscriptionError.userCancelled {
-            // 使用者取消，不顯示錯誤
+            // 使用者取消
+            AnalyticsService.shared.logEvent(.paywallPurchaseCancel, parameters: [
+                AnalyticsService.ParamKey.source: source,
+                AnalyticsService.ParamKey.packageType: package.identifier
+            ])
         } catch {
+            // 購買失敗
+            AnalyticsService.shared.logEvent(.paywallPurchaseError, parameters: [
+                AnalyticsService.ParamKey.source: source,
+                AnalyticsService.ParamKey.packageType: package.identifier,
+                "error": error.localizedDescription
+            ])
             errorMessage = error.localizedDescription
             showError = true
         }
@@ -572,6 +590,6 @@ private struct PackageCard: View {
 }
 
 #Preview {
-    PaywallView()
+    PaywallView(source: "preview")
         .environmentObject(UserManager.shared)
 }

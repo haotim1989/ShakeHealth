@@ -77,7 +77,7 @@ struct ContentView: View {
                     OnboardingView(isPresented: $showOnboarding)
                 }
                 .sheet(isPresented: $showPaywallAfterOnboarding) {
-                    PaywallView()
+                    PaywallView(source: "onboarding")
                         .environmentObject(userManager)
                 }
             }

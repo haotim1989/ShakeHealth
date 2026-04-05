@@ -61,6 +61,9 @@ extension AnalyticsService {
         case paywallView = "paywall_view"
         case paywallPackageSelect = "paywall_package_select"
         case paywallPurchaseStart = "paywall_purchase_start"
+        case paywallPurchaseSuccess = "paywall_purchase_success"
+        case paywallPurchaseCancel = "paywall_purchase_cancel"
+        case paywallPurchaseError = "paywall_purchase_error"
         case paywallRestoreClick = "paywall_restore_click"
         
         // Engagement

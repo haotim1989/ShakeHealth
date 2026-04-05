@@ -163,7 +163,7 @@ struct CustomDrinkModal: View {
                 }
             }
             .sheet(isPresented: $showPaywall) {
-                PaywallView()
+                PaywallView(source: "feature_lock_custom")
                     .environmentObject(userManager)
             }
         }

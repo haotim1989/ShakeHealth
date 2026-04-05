@@ -159,7 +159,7 @@ struct FilterSheet: View {
                 }
             }
             .sheet(isPresented: $showPaywall) {
-                PaywallView()
+                PaywallView(source: "feature_lock_filter")
                     .environmentObject(userManager)
             }
         }

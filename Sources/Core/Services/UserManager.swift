@@ -50,6 +50,9 @@ final class UserManager: ObservableObject {
                 self?.isProUser = isProUser
                 self?.subscriptionStatus = isProUser ? .pro : .free
                 
+                // 更新 Analytics 用戶屬性
+                AnalyticsService.shared.setUserProperty(value: isProUser ? "true" : "false", forName: .isPremium)
+                
                 // 同步更新廣告顯示狀態
                 self?.adManager.updateAdVisibility(isProUser: isProUser)
             }

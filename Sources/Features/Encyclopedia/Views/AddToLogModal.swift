@@ -146,7 +146,7 @@ struct AddToLogModal: View {
                 }
             }
             .sheet(isPresented: $showPaywall) {
-                PaywallView()
+                PaywallView(source: "feature_lock_add_log")
                     .environmentObject(userManager)
             }
         }

@@ -71,7 +71,7 @@ struct SettingsView: View {
             .toolbar(.hidden, for: .navigationBar)
             }
             .sheet(isPresented: $showPaywall) {
-                PaywallView()
+                PaywallView(source: "settings_list")
                     .environmentObject(userManager)
             }
             .fileImporter(
@@ -264,12 +264,36 @@ struct SettingsView: View {
             let targetPackage = packages.first { $0.packageType == .annual } ?? packages.first
             
             if let targetPackage = targetPackage {
+                // 記錄開始購買直購方案
+                AnalyticsService.shared.logEvent(.paywallPurchaseStart, parameters: [
+                    AnalyticsService.ParamKey.source: "settings_promo_banner",
+                    AnalyticsService.ParamKey.packageType: targetPackage.identifier
+                ])
+                
                 do {
                     _ = try await service.purchase(package: targetPackage)
+                    
+                    // 記錄購買成功
+                    AnalyticsService.shared.logEvent(.paywallPurchaseSuccess, parameters: [
+                        AnalyticsService.ParamKey.source: "settings_promo_banner",
+                        AnalyticsService.ParamKey.packageType: targetPackage.identifier
+                    ])
+                    
                     // 成功購買後狀態會由 SubscriptionService 透過 Combine 廣播給 UserManager
                 } catch {
-                    // 若是被使用者取消，忽略錯誤
-                    if !error.localizedDescription.contains("cancelled") {
+                    // 若是被使用者取消
+                    if error.localizedDescription.contains("cancelled") {
+                        AnalyticsService.shared.logEvent(.paywallPurchaseCancel, parameters: [
+                            AnalyticsService.ParamKey.source: "settings_promo_banner",
+                            AnalyticsService.ParamKey.packageType: targetPackage.identifier
+                        ])
+                    } else {
+                        // 真的錯誤
+                        AnalyticsService.shared.logEvent(.paywallPurchaseError, parameters: [
+                            AnalyticsService.ParamKey.source: "settings_promo_banner",
+                            AnalyticsService.ParamKey.packageType: targetPackage.identifier,
+                            "error": error.localizedDescription
+                        ])
                         errorMessage = error.localizedDescription
                         showPurchaseError = true
                     }

@@ -64,7 +64,7 @@ struct DiaryView: View {
                     .environmentObject(userManager)
             }
             .sheet(isPresented: $showPaywall) {
-                PaywallView()
+                PaywallView(source: "feature_lock_diary")
                     .environmentObject(userManager)
             }
             .sheet(isPresented: $showCustomDrinkModal) {

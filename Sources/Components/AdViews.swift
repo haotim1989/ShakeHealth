@@ -23,7 +23,8 @@ struct BannerAdView: View {
                 }
             }
             .sheet(isPresented: $showPaywall) {
-                PaywallView()
+                PaywallView(source: "ad_banner_lock")
+                    .environmentObject(userManager)
             }
         }
     }
