@@ -190,13 +190,13 @@ struct SettingsView: View {
                                             .font(.headline)
                                             .fontWeight(.heavy)
                                             .foregroundColor(.primary)
-                                        Text("Pro")
+                                        Text("Premium")
                                             .font(.headline)
                                             .fontWeight(.heavy)
                                             .foregroundColor(.teaBrown)
                                     }
                                     
-                                    Text("之後 $290.00/年，可隨時取消")
+                                    Text("之後 $390/年，可隨時取消")
                                         .font(.caption2)
                                         .foregroundColor(.secondary)
                                 }
