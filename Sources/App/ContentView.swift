@@ -5,6 +5,7 @@ struct ContentView: View {
     @EnvironmentObject var userManager: UserManager
     
     @State private var showOnboarding = !UserDefaults.standard.bool(forKey: Constants.StorageKeys.onboardingCompleted)
+    @State private var showPaywallAfterOnboarding = false
     
     var body: some View {
         ZStack {
@@ -69,6 +70,15 @@ struct ContentView: View {
                 .transition(.opacity)
                 .fullScreenCover(isPresented: $showOnboarding) {
                     OnboardingView(isPresented: $showOnboarding)
+                } onDismiss: {
+                    // 教學結束後，非 Pro 用戶才彈出訂閱牆（僅首次）
+                    if !userManager.isProUser {
+                        showPaywallAfterOnboarding = true
+                    }
+                }
+                .sheet(isPresented: $showPaywallAfterOnboarding) {
+                    PaywallView()
+                        .environmentObject(userManager)
                 }
             }
         }
