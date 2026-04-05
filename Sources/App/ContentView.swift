@@ -68,13 +68,13 @@ struct ContentView: View {
                 .tint(.teaBrown) // 恢復 tint 以確保按鈕與選取狀態正確
                 .preferredColorScheme(.light)
                 .transition(.opacity)
-                .fullScreenCover(isPresented: $showOnboarding) {
-                    OnboardingView(isPresented: $showOnboarding)
-                } onDismiss: {
+                .fullScreenCover(isPresented: $showOnboarding, onDismiss: {
                     // 教學結束後，非 Pro 用戶才彈出訂閱牆（僅首次）
                     if !userManager.isProUser {
                         showPaywallAfterOnboarding = true
                     }
+                }) {
+                    OnboardingView(isPresented: $showOnboarding)
                 }
                 .sheet(isPresented: $showPaywallAfterOnboarding) {
                     PaywallView()
