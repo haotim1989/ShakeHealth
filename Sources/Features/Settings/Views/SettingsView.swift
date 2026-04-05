@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import StoreKit
+import RevenueCat
 
 /// 設定頁面
 struct SettingsView: View {
@@ -10,6 +11,8 @@ struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
     
     @State private var showPaywall = false
+    @State private var isPurchasing = false
+    @State private var showPurchaseError = false
     @State private var showExportSheet = false
     @State private var showImportPicker = false
     @State private var showImportSuccess = false
@@ -98,6 +101,11 @@ struct SettingsView: View {
             } message: {
                 Text(errorMessage)
             }
+            .alert("購買失敗", isPresented: $showPurchaseError) {
+                Button("確定", role: .cancel) {}
+            } message: {
+                Text(errorMessage)
+            }
             .alert("已複製信箱", isPresented: $showCopiedAlert) {
                 Button("確定", role: .cancel) {}
             } message: {
@@ -111,58 +119,168 @@ struct SettingsView: View {
     // MARK: - 訂閱區塊
     
     private var subscriptionSection: some View {
-        Section {
+        Group {
             if userManager.isProUser {
-                subscriptionCardContent
-            } else {
-                Button {
-                    showPaywall = true
-                } label: {
-                    subscriptionCardContent
+                // 原有的 Pro 會員設計不變，直接放進 Section
+                Section {
+                    HStack(spacing: 16) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(
+                                    colors: [.yellow, .orange],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ))
+                                .frame(width: 44, height: 44)
+                            
+                            Image(systemName: "crown.fill")
+                                .font(.title2)
+                                .foregroundColor(.white)
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Premium 會員")
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            Text("感謝您的支持！")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                    }
+                    .padding(.vertical, 4)
+                } header: {
+                    Text("訂閱")
                 }
-                .buttonStyle(.plain)
+            } else {
+                // 非 Pro 用戶的全新圖文促銷卡片 (符合飲料日記設計規範)
+                Section {
+                    VStack(alignment: .trailing, spacing: 12) {
+                        // 卡片本體
+                        Button {
+                            Task { await purchaseAnnualPlan() }
+                        } label: {
+                            HStack(alignment: .center) {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    HStack(spacing: 4) {
+                                        Image(systemName: "sparkles")
+                                            .foregroundColor(.teaBrown.opacity(0.8))
+                                            .font(.caption)
+                                        Text("恭喜獲得試用機會")
+                                            .font(.footnote)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.primary.opacity(0.8))
+                                        Image(systemName: "sparkles")
+                                            .foregroundColor(.teaBrown.opacity(0.8))
+                                            .font(.caption)
+                                    }
+                                    
+                                    HStack(spacing: 2) {
+                                        Text("7")
+                                            .font(.system(size: 26, weight: .black, design: .rounded))
+                                            .foregroundColor(.teaBrown)
+                                        Text(" 天免費試用")
+                                            .font(.system(size: 20, weight: .bold))
+                                            .foregroundStyle(LinearGradient(colors: [Color(red: 0.6, green: 0.5, blue: 0.4), Color.orange.opacity(0.8)], startPoint: .leading, endPoint: .trailing))
+                                    }
+                                    
+                                    HStack(spacing: 4) {
+                                        Text("飲料日記")
+                                            .font(.headline)
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.primary)
+                                        Text("Pro")
+                                            .font(.headline)
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.teaBrown)
+                                    }
+                                    
+                                    Text("之後 $290.00/年，可隨時取消")
+                                        .font(.caption2)
+                                        .foregroundColor(.secondary)
+                                }
+                                
+                                Spacer()
+                                
+                                if isPurchasing {
+                                    ProgressView()
+                                        .tint(.white)
+                                        .padding(.horizontal, 30)
+                                        .padding(.vertical, 12)
+                                        .background(Color.teaBrown)
+                                        .clipShape(Capsule())
+                                } else {
+                                    Text("領取試用")
+                                        .font(.subheadline)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 12)
+                                        .background(Color.teaBrown)
+                                        .clipShape(Capsule())
+                                }
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 24)
+                            .background(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 24))
+                            .shadow(color: .black.opacity(0.04), radius: 10, y: 4)
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(isPurchasing)
+                        
+                        // 底部文字
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            HStack(spacing: 4) {
+                                Text("查看所有訂閱方案")
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 10, weight: .bold))
+                            }
+                            .font(.footnote)
+                            .fontWeight(.medium)
+                            .foregroundColor(.teaBrown.opacity(0.8))
+                        }
+                        .padding(.trailing, 8)
+                        .padding(.bottom, 8)
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 4, trailing: 0))
+                }
             }
-        } header: {
-            Text("訂閱")
         }
     }
     
-    private var subscriptionCardContent: some View {
-        HStack(spacing: 16) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(LinearGradient(
-                        colors: [.yellow, .orange],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ))
-                    .frame(width: 44, height: 44)
-                
-                Image(systemName: "crown.fill")
-                    .font(.title2)
-                    .foregroundColor(.white)
-            }
+    private func purchaseAnnualPlan() async {
+        guard !isPurchasing else { return }
+        isPurchasing = true
+        defer { isPurchasing = false }
+        
+        let service = SubscriptionService.shared
+        if let packages = service.offerings?.current?.availablePackages {
+            // 嘗試取得年度方案 ($rc_annual) 或 fallback 到第一個方案
+            let targetPackage = packages.first { $0.packageType == .annual } ?? packages.first
             
-            VStack(alignment: .leading, spacing: 4) {
-                Text(userManager.isProUser ? "Premium 會員" : "升級 Premium")
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                
-                Text(userManager.isProUser ? "感謝您的支持！" : "解鎖所有進階功能")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+            if let targetPackage = targetPackage {
+                do {
+                    _ = try await service.purchase(package: targetPackage)
+                    // 成功購買後狀態會由 SubscriptionService 透過 Combine 廣播給 UserManager
+                } catch {
+                    // 若是被使用者取消，忽略錯誤
+                    if !error.localizedDescription.contains("cancelled") {
+                        errorMessage = error.localizedDescription
+                        showPurchaseError = true
+                    }
+                }
+            } else {
+                // 如果抓不到 package，退回顯示 Paywall
+                showPaywall = true
             }
-            
-            Spacer()
-            
-            if !userManager.isProUser {
-                Image(systemName: "chevron.right")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
+        } else {
+            showPaywall = true
         }
-        .padding(.vertical, 4)
-        .contentShape(Rectangle())
     }
     
     // MARK: - 資料備份
