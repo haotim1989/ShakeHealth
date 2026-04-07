@@ -280,23 +280,21 @@ struct SettingsView: View {
                     ])
                     
                     // 成功購買後狀態會由 SubscriptionService 透過 Combine 廣播給 UserManager
-                } catch {
+                } catch SubscriptionError.userCancelled {
                     // 若是被使用者取消
-                    if error.localizedDescription.contains("cancelled") {
-                        AnalyticsService.shared.logEvent(.paywallPurchaseCancel, parameters: [
-                            AnalyticsService.ParamKey.source: "settings_promo_banner",
-                            AnalyticsService.ParamKey.packageType: targetPackage.identifier
-                        ])
-                    } else {
-                        // 真的錯誤
-                        AnalyticsService.shared.logEvent(.paywallPurchaseError, parameters: [
-                            AnalyticsService.ParamKey.source: "settings_promo_banner",
-                            AnalyticsService.ParamKey.packageType: targetPackage.identifier,
-                            "error": error.localizedDescription
-                        ])
-                        errorMessage = error.localizedDescription
-                        showPurchaseError = true
-                    }
+                    AnalyticsService.shared.logEvent(.paywallPurchaseCancel, parameters: [
+                        AnalyticsService.ParamKey.source: "settings_promo_banner",
+                        AnalyticsService.ParamKey.packageType: targetPackage.identifier
+                    ])
+                } catch {
+                    // 真的錯誤
+                    AnalyticsService.shared.logEvent(.paywallPurchaseError, parameters: [
+                        AnalyticsService.ParamKey.source: "settings_promo_banner",
+                        AnalyticsService.ParamKey.packageType: targetPackage.identifier,
+                        "error": error.localizedDescription
+                    ])
+                    errorMessage = error.localizedDescription
+                    showPurchaseError = true
                 }
             } else {
                 // 如果抓不到 package，退回顯示 Paywall
@@ -444,6 +442,9 @@ struct SettingsView: View {
         Section {
             // 恢復購買
             Button {
+                AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
+                    AnalyticsService.ParamKey.source: "settings_list"
+                ])
                 Task { await restorePurchases() }
             } label: {
                 HStack {

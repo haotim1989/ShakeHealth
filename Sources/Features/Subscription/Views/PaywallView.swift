@@ -268,7 +268,7 @@ struct PaywallView: View {
             HStack(spacing: 16) {
                 Button("恢復購買") {
                     AnalyticsService.shared.logEvent(.paywallRestoreClick, parameters: [
-                        AnalyticsService.ParamKey.source: "paywall"
+                        AnalyticsService.ParamKey.source: source
                     ])
                     Task { await handleRestore() }
                 }
