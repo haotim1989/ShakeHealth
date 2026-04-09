@@ -31,30 +31,25 @@ struct EncyclopediaView: View {
             .onChange(of: viewModel.searchText) { _, _ in
                 viewModel.filterDrinks()
             }
-            .sheet(isPresented: $viewModel.showAddLogModal) {
-                if let drink = viewModel.selectedDrinkForLog {
-                    AddToLogModal(
-                        drink: drink,
-                        onDismiss: { viewModel.dismissAddLogModal() },
-                        onSave: { _, _, _, _ in
-                            // 由 DiaryViewModel 處理儲存
-                            viewModel.dismissAddLogModal()
-                            // 跳轉到日記頁
-                            appState.selectedTab = .diary
-                        }
-                    )
-                    .environmentObject(appState)
-                    .environmentObject(userManager)
-                    .presentationDetents([.medium])
-                }
+            .sheet(item: $viewModel.selectedDrinkForLog) { drink in
+                AddToLogModal(
+                    drink: drink,
+                    onDismiss: { viewModel.dismissAddLogModal() },
+                    onSave: { _, _, _, _ in
+                        // 由 DiaryViewModel 處理儲存
+                        viewModel.dismissAddLogModal()
+                        // 跳轉到日記頁
+                        appState.selectedTab = .diary
+                    }
+                )
+                .environmentObject(appState)
+                .environmentObject(userManager)
+                .presentationDetents([.medium])
             }
             .alert("關於找熱量", isPresented: $showInfoAlert) {
                 Button("了解", role: .cancel) { }
             } message: {
                 Text("本圖鑑之熱量、糖分與咖啡因數據僅供參考，實際數值可能因店家配方調整、溫度甜度選擇而有差異。\n若有醫療需求，請諮詢專業醫師。")
-            }
-            .onTapGesture {
-                hideKeyboard()
             }
             .task {
                 if viewModel.drinks.isEmpty {

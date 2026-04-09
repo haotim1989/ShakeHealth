@@ -14,7 +14,6 @@ final class EncyclopediaViewModel: ObservableObject {
     
     // Add to Log Modal
     @Published var selectedDrinkForLog: Drink?
-    @Published var showAddLogModal = false
     
     // MARK: - Dependencies
     private let drinkService: DrinkServiceProtocol
@@ -74,7 +73,6 @@ final class EncyclopediaViewModel: ObservableObject {
     /// 準備新增日記
     func prepareAddLog(for drink: Drink) {
         selectedDrinkForLog = drink
-        showAddLogModal = true
         HapticManager.shared.light()
         
         AnalyticsService.shared.logEvent(.diaryAddClick, parameters: [
@@ -84,7 +82,6 @@ final class EncyclopediaViewModel: ObservableObject {
     
     /// 關閉新增日記 Modal
     func dismissAddLogModal() {
-        showAddLogModal = false
         selectedDrinkForLog = nil
     }
     
